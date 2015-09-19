@@ -10,3 +10,12 @@
 [submodule "workfeature"]
 	path = workfeature
 	url = git@github.com:Rentlau/WorkFeature.git
+[submodule "fasteners"]
+	path = fasteners
+	url = git@github.com:shaise/FreeCAD_FastenersWB.git
+[submodule "sheetmetal"]
+	path = sheetmetal
+	url = git@github.com:shaise/FreeCAD_SheetMetal.git
+[submodule "lattice"]
+	path = lattice
+	url = git@github.com:DeepSOIC/Lattice.git
