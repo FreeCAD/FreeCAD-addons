@@ -1,0 +1,6 @@
+[submodule "assembly2"]
+	path = assembly2
+	url = git@github.com:hamish2014/FreeCAD_assembly2.git
+[submodule "drawing_dimensioning"]
+	path = drawing_dimensioning
+	url = git@github.com:hamish2014/FreeCAD_drawing_dimensioning.git
