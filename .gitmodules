@@ -4,3 +4,9 @@
 [submodule "drawing_dimensioning"]
 	path = drawing_dimensioning
 	url = git@github.com:hamish2014/FreeCAD_drawing_dimensioning.git
+[submodule "pluginloader"]
+	path = pluginloader
+	url = git@github.com:microelly2/freecad-pluginloader.git
+[submodule "workfeature"]
+	path = workfeature
+	url = git@github.com:Rentlau/WorkFeature.git
