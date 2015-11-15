@@ -22,3 +22,6 @@
 [submodule "timber"]
 	path = timber
 	url = https://github.com/wood-galaxy/FreeCAD-Timber.git
+[submodule "bolts"]
+	path = bolts
+	url = https://github.com/jreinhardt/BOLTS.git
