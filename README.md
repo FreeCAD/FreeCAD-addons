@@ -8,7 +8,7 @@ Once cloned, you can update all the submodules at once with:
 
     git submodule foreach git pull
 
-There are different ways to us ethe contents of thisrepository:
+There are different ways to use the contents of thisrepository:
 
 1) Use the "pluginloader" module
 
