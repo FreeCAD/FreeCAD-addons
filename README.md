@@ -1,22 +1,26 @@
 This repository doesn't contain code itself, but uses git submodules system to 
 gather interesting addons for FreeCAD made by the community into one convenient
-place. By cloning this repository, you get all of them at once.
+place. By cloning this repository, you get all of them at once:
+
+    git clone https://github.com/FreeCAD/FreeCAD-addons.git
 
 Once cloned, you can update all the submodules at once with:
 
-    git submodule update
-    
-At the moment, the repository is made more for developers, because it still 
-requires manual operations to add the different modules to your FreeCAD
-installation. See instructions provided in each of the submodule. There are,
-however, two easier ways to use all the addons at once:
+    git submodule foreach git pull
+
+There are different ways to us ethe contents of thisrepository:
 
 1) Use the "pluginloader" module
 
-2) Once git-cloned, add the path of this repo to your FreeCAD modules path
-by starting it with the -M (additional modules path) switch:
+2) Add this repository as additional modules foler to FreeCAD
+by starting FreeCAD with the -M switch like this:
 
     FreeCAD -M /path/to/this/folder
+    
+3) Symlink or copy individual submodules of your choice to
+your modules folder, which is normally /home/YOUR_USER/.FreeCAD/Mod
+on Linux and Mac, and C:\Users\YOUR_USER\Application Data\Roaming\FreeCAD\Mod
+on Wndows (the Mod subfolder should be created if needed).
     
 Note that some of the submodules of this repo are not made to be used as
 FreeCAD modules, and therefore won't be enabled by method 2) above.
