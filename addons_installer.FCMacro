@@ -1,0 +1,159 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+#***************************************************************************
+#*                                                                         *
+#*   Copyright (c) 2015 Yorik van Havre <yorik@uncreated.net>              *
+#*                                                                         *
+#*   This program is free software; you can redistribute it and/or modify  *
+#*   it under the terms of the GNU Lesser General Public License (LGPL)    *
+#*   as published by the Free Software Foundation; either version 2 of     *
+#*   the License, or (at your option) any later version.                   *
+#*   for detail see the LICENCE text file.                                 *
+#*                                                                         *
+#*   This program is distributed in the hope that it will be useful,       *
+#*   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+#*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+#*   GNU Library General Public License for more details.                  *
+#*                                                                         *
+#*   You should have received a copy of the GNU Library General Public     *
+#*   License along with this program; if not, write to the Free Software   *
+#*   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  *
+#*   USA                                                                   *
+#*                                                                         *
+#***************************************************************************
+
+from __future__ import print_function
+
+__title__="FreeCAD Addons installer Macro"
+__author__ = "Yorik van Havre"
+__url__ = "http://www.freecadweb.org"
+
+'''
+FreeCAD Addons installer macro
+
+INSTALLATION
+
+This script is made to be used as a FreeCAD macro, and to be placed
+inside your macros folder (default is $HOME/.FreeCAD on mac/linux,
+C:/Users/youruser/Application Data/FreeCAD on windows).
+
+It will fetch its contents from https://github.com/FreeCAD/FreeCAD-addons
+You need a working internet connection, and the python-git package
+installed.
+'''
+
+from PySide import QtCore, QtGui
+import FreeCAD,urllib2,re,os
+
+
+class AddonsInstaller(QtGui.QDialog):
+    
+    def __init__(self):
+        QtGui.QDialog.__init__(self)
+        self.repos = []
+        self.setObjectName("AddonsInstaller")
+        self.resize(326, 304)
+        self.verticalLayout = QtGui.QVBoxLayout(self)
+        self.listAddons = QtGui.QListWidget()
+        self.verticalLayout.addWidget(self.listAddons)
+        self.labelDescription = QtGui.QLabel()
+        self.labelDescription.setMinimumSize(QtCore.QSize(0, 75))
+        self.labelDescription.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.labelDescription.setWordWrap(True)
+        self.verticalLayout.addWidget(self.labelDescription)
+        self.horizontalLayout = QtGui.QHBoxLayout()
+        spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.buttonCancel = QtGui.QPushButton()
+        icon = QtGui.QIcon.fromTheme("cancel")
+        self.buttonCancel.setIcon(icon)
+        self.horizontalLayout.addWidget(self.buttonCancel)
+        self.buttonInstall = QtGui.QPushButton()
+        icon = QtGui.QIcon.fromTheme("download")
+        self.buttonInstall.setIcon(icon)
+        self.horizontalLayout.addWidget(self.buttonInstall)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+
+        self.retranslateUi()
+        QtCore.QObject.connect(self.listAddons, QtCore.SIGNAL("currentRowChanged(int)"), self.show)
+        QtCore.QObject.connect(self.buttonCancel, QtCore.SIGNAL("clicked()"), self.reject)
+        QtCore.QObject.connect(self.buttonInstall, QtCore.SIGNAL("clicked()"), self.install)
+        QtCore.QObject.connect(self.labelDescription, QtCore.SIGNAL("linkActivated(QString)"), self.showlink)
+        QtCore.QMetaObject.connectSlotsByName(self)
+        self.update()
+        
+    def retranslateUi(self):
+        self.setWindowTitle(QtGui.QApplication.translate("AddonsInstaller", "Addons installer", None, QtGui.QApplication.UnicodeUTF8))
+        self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Downloading addons list...", None, QtGui.QApplication.UnicodeUTF8))
+        self.buttonCancel.setText(QtGui.QApplication.translate("AddonsInstaller", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
+        self.buttonInstall.setText(QtGui.QApplication.translate("AddonsInstaller", "Install / update", None, QtGui.QApplication.UnicodeUTF8))
+        
+    def update(self):
+        "populates the list of addons"
+        self.listAddons.clear()
+        #print("downloading list from https://github.com/FreeCAD/FreeCAD-addons...")
+        u = urllib2.urlopen("https://github.com/FreeCAD/FreeCAD-addons")
+        p = u.read()
+        u.close()
+        p = p.replace("\n"," ")
+        p = re.findall("octicon-file-submodule(.*?)message",p)
+        self.repos = []
+        for l in p:
+            name = re.findall("data-skip-pjax=\"true\">(.*?)<",l)[0]
+            url = re.findall("title=\"(.*?) @",l)[0]
+            self.repos.append([name,url])
+            self.listAddons.addItem(name)
+        if not self.repos:
+            self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Unable to download addons list.", None, QtGui.QApplication.UnicodeUTF8))
+
+    def show(self,idx):
+        "downloads and shows the description of an addon"
+        if self.repos and idx >= 0:
+            self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Retrieving description...", None, QtGui.QApplication.UnicodeUTF8))
+            if len(self.repos[idx]) == 3:
+                desc = self.repos[idx][2]
+            else:
+                url = self.repos[idx][1]
+                #print("retrieving info from ",url,"...")
+                u = urllib2.urlopen(url)
+                p = u.read()
+                u.close()
+                desc = re.findall("<meta content=\"(.*?)\" name",p)[3]
+                self.repos[idx].append(desc)
+            self.labelDescription.setText(desc+' - <a href="'+self.repos[idx][1]+'"><span style="text-decoration: underline; color:#0000ff;">'+self.repos[idx][1]+'</span></a>')
+
+    def showlink(self,link):
+        "opens a link with the system browser"
+        #print("clicked: ",link)
+        QtGui.QDesktopServices.openUrl(QtCore.QUrl(link, QtCore.QUrl.TolerantMode))
+
+    def install(self):
+        "installs or updates the selected addon"
+        try:
+            import git
+        except:
+            FreeCAD.Console.PrintError("python-git not found.\n")
+            return
+        idx = self.listAddons.currentRow()
+        if idx < 0:
+            return
+        if not self.repos:
+            return
+        basedir = FreeCAD.ConfigGet("UserAppData")
+        moddir = basedir + os.sep + "Mod"
+        if not os.path.exists(moddir):
+            os.makedirs(moddir)
+        clonedir = moddir + os.sep + self.repos[idx][0]
+        if os.path.exists(clonedir):
+            self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Updating module...", None, QtGui.QApplication.UnicodeUTF8))
+            repo = git.Repo(clonedir)
+            repo.pull()
+        else:
+            self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Cloning module...", None, QtGui.QApplication.UnicodeUTF8))
+            repo = git.Repo.clone_from(self.repos[idx][1], clonedir, branch='master')
+        self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Done. Please restart FreeCAD to apply the changes.", None, QtGui.QApplication.UnicodeUTF8))
+
+
+dialog = AddonsInstaller()
+dialog.exec_()
