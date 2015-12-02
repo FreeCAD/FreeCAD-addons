@@ -25,3 +25,6 @@
 [submodule "bolts"]
 	path = bolts
 	url = https://github.com/jreinhardt/BOLTS.git
+[submodule "cadquery_module"]
+	path = cadquery_module
+	url = https://github.com/jmwright/cadquery-freecad-module.git
