@@ -47,6 +47,21 @@ from PySide import QtCore, QtGui
 import FreeCAD,urllib2,re,os
 
 
+def symlink(source, link_name):
+    import os
+    os_symlink = getattr(os, "symlink", None)
+    if callable(os_symlink):
+        os_symlink(source, link_name)
+    else:
+        import ctypes
+        csl = ctypes.windll.kernel32.CreateSymbolicLinkW
+        csl.argtypes = (ctypes.c_wchar_p, ctypes.c_wchar_p, ctypes.c_uint32)
+        csl.restype = ctypes.c_ubyte
+        flags = 1 if os.path.isdir(source) else 0
+        if csl(link_name, source, flags) == 0:
+            raise ctypes.WinError()
+
+
 class AddonsInstaller(QtGui.QDialog):
     
     def __init__(self):
@@ -109,7 +124,7 @@ class AddonsInstaller(QtGui.QDialog):
     def add_addon_repo(self, addon_repo):
         self.repos.append(addon_repo)
         if addon_repo[2] == 1 :
-            self.listAddons.addItem(str(addon_repo[0]) + str(" - Installed"))
+            self.listAddons.addItem(str(addon_repo[0]) + str(" (Installed)"))
         else:
             self.listAddons.addItem(str(addon_repo[0]))
     
@@ -144,9 +159,10 @@ class AddonsInstaller(QtGui.QDialog):
             self.progressBar.show()
         else:
             self.progressBar.hide()
-        
+
+
 class UpdateWorker(QtCore.QThread):
-	
+
     info_label = QtCore.Signal(str)
     addon_repo = QtCore.Signal(object)
     progressbar_show = QtCore.Signal(bool)
@@ -177,14 +193,15 @@ class UpdateWorker(QtCore.QThread):
             repos.append([name,url,state])
             self.addon_repo.emit([name,url,state])
         if not repos:
-			self.info_label.emit("Unable to download addons list.")
+            self.info_label.emit("Unable to download addons list.")
         else:
-			self.info_label.emit("Addons list was updated.")
+            self.info_label.emit("Addons list was updated.")
         self.progressbar_show.emit(False)
         self.stop = True
 
+
 class ShowWorker(QtCore.QThread):
-	
+
     info_label = QtCore.Signal(str)
     addon_repos = QtCore.Signal(object)
     progressbar_show = QtCore.Signal(bool)
@@ -216,8 +233,9 @@ class ShowWorker(QtCore.QThread):
         self.progressbar_show.emit(False)
         self.stop = True
 
+
 class InstallWorker(QtCore.QThread):
-	
+
     info_label = QtCore.Signal(str)
     progressbar_show = QtCore.Signal(bool)
     
@@ -231,8 +249,8 @@ class InstallWorker(QtCore.QThread):
         try:
             import git
         except:
-            self.info_label.emit("python-git not found.\n")
-            #FreeCAD.Console.PrintError("python-git not found.\n")
+            self.info_label.emit("python-git not found.")
+            FreeCAD.Console.PrintError("python-git not found.\n")
             return
         if self.idx < 0:
             return
@@ -251,10 +269,16 @@ class InstallWorker(QtCore.QThread):
         else:
             self.info_label.emit("Cloning module...")
             repo = git.Repo.clone_from(self.repos[self.idx][1], clonedir, branch='master')
+            # symlink any macro contained in the module to the macros folder
+            macrodir = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Macro").GetString("MacroPath")
+            for f in os.listdir(clonedir):
+                if f.lower().endswith(".fcmacro"):
+                    symlink(clonedir+os.sep+f,macrodir+os.sep+f)
             answer = "Done. Please restart FreeCAD to apply the changes."
         self.info_label.emit(answer)
         self.progressbar_show.emit(False)
         self.stop = True
+
 
 dialog = AddonsInstaller()
 dialog.exec_()
