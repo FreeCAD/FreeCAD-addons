@@ -274,6 +274,7 @@ class InstallWorker(QtCore.QThread):
             for f in os.listdir(clonedir):
                 if f.lower().endswith(".fcmacro"):
                     symlink(clonedir+os.sep+f,macrodir+os.sep+f)
+                    FreeCAD.ParamGet('User parameter:Plugins/'+self.repos[self.idx][0]).SetString("destination",clonedir)
             answer = "Done. Please restart FreeCAD to apply the changes."
         self.info_label.emit(answer)
         self.progressbar_show.emit(False)
