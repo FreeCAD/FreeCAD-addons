@@ -44,7 +44,7 @@ installed.
 '''
 
 from PySide import QtCore, QtGui
-import FreeCAD,urllib2,re,os
+import FreeCAD,urllib2,re,os,shutil
 
 
 def symlink(source, link_name):
@@ -88,20 +88,25 @@ class AddonsInstaller(QtGui.QDialog):
         self.horizontalLayout = QtGui.QHBoxLayout()
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.buttonCancel = QtGui.QPushButton()
-        icon = QtGui.QIcon.fromTheme("cancel")
-        self.buttonCancel.setIcon(icon)
-        self.horizontalLayout.addWidget(self.buttonCancel)
         self.buttonInstall = QtGui.QPushButton()
         icon = QtGui.QIcon.fromTheme("download")
         self.buttonInstall.setIcon(icon)
         self.horizontalLayout.addWidget(self.buttonInstall)
+        self.buttonRemove = QtGui.QPushButton()
+        icon = QtGui.QIcon.fromTheme("edit-delete")
+        self.buttonRemove.setIcon(icon)
+        self.horizontalLayout.addWidget(self.buttonRemove)
+        self.buttonCancel = QtGui.QPushButton()
+        icon = QtGui.QIcon.fromTheme("cancel")
+        self.buttonCancel.setIcon(icon)
+        self.horizontalLayout.addWidget(self.buttonCancel)
         self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.retranslateUi()
         
         QtCore.QObject.connect(self.buttonCancel, QtCore.SIGNAL("clicked()"), self.reject)
         QtCore.QObject.connect(self.buttonInstall, QtCore.SIGNAL("clicked()"), self.install)
+        QtCore.QObject.connect(self.buttonRemove, QtCore.SIGNAL("clicked()"), self.remove)
         QtCore.QObject.connect(self.labelDescription, QtCore.SIGNAL("linkActivated(QString)"), self.showlink)
         QtCore.QObject.connect(self.listAddons, QtCore.SIGNAL("currentRowChanged(int)"), self.show)
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -110,8 +115,9 @@ class AddonsInstaller(QtGui.QDialog):
     def retranslateUi(self):
         self.setWindowTitle(QtGui.QApplication.translate("AddonsInstaller", "Addons installer", None, QtGui.QApplication.UnicodeUTF8))
         self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Downloading addons list...", None, QtGui.QApplication.UnicodeUTF8))
-        self.buttonCancel.setText(QtGui.QApplication.translate("AddonsInstaller", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
+        self.buttonCancel.setText(QtGui.QApplication.translate("AddonsInstaller", "Close", None, QtGui.QApplication.UnicodeUTF8))
         self.buttonInstall.setText(QtGui.QApplication.translate("AddonsInstaller", "Install / update", None, QtGui.QApplication.UnicodeUTF8))
+        self.buttonRemove.setText(QtGui.QApplication.translate("AddonsInstaller", "Remove", None, QtGui.QApplication.UnicodeUTF8))
         
     def update(self):
         self.update_worker = UpdateWorker()
@@ -159,7 +165,17 @@ class AddonsInstaller(QtGui.QDialog):
             self.progressBar.show()
         else:
             self.progressBar.hide()
-
+            
+    def remove(self):
+        idx = self.listAddons.currentRow()
+        basedir = FreeCAD.ConfigGet("UserAppData")
+        moddir = basedir + os.sep + "Mod"
+        clonedir = basedir + os.sep + "Mod" + os.sep + self.repos[idx][0]
+        if os.path.exists(clonedir):
+            shutil.rmtree(clonedir)
+            self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Addon successfully removed. Please restart FreeCAD", None, QtGui.QApplication.UnicodeUTF8))
+        else:
+            self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Unable to remove this addon", None, QtGui.QApplication.UnicodeUTF8))
 
 class UpdateWorker(QtCore.QThread):
 
@@ -246,16 +262,23 @@ class InstallWorker(QtCore.QThread):
 
     def run(self):
         "installs or updates the selected addon"
+        git = None
         try:
             import git
         except:
             self.info_label.emit("python-git not found.")
-            FreeCAD.Console.PrintError("python-git not found.\n")
-            return
+            FreeCAD.Console.PrintWarning("python-git not found. Using standard download instead.\n")
+            try:
+                import zipfile,StringIO
+            except:
+                self.info_label.emit("no zip support.")
+                FreeCAD.Console.PrintError("your version of python doesn't appear to support ZIP files. Unable to proceed.\n")
+                return
         if self.idx < 0:
             return
         if not self.repos:
             return
+        # git = None # uncomment this to force standard download mode
         basedir = FreeCAD.ConfigGet("UserAppData")
         moddir = basedir + os.sep + "Mod"
         if not os.path.exists(moddir):
@@ -264,11 +287,17 @@ class InstallWorker(QtCore.QThread):
         self.progressbar_show.emit(True)
         if os.path.exists(clonedir):
             self.info_label.emit("Updating module...")
-            repo = git.Git(clonedir)
-            answer = repo.pull()
+            if git:
+                repo = git.Git(clonedir)
+                answer = repo.pull()
+            else:
+                answer = self.download(self.repos[self.idx][1],clonedir)
         else:
             self.info_label.emit("Cloning module...")
-            repo = git.Repo.clone_from(self.repos[self.idx][1], clonedir, branch='master')
+            if git:
+                repo = git.Repo.clone_from(self.repos[self.idx][1], clonedir, branch='master')
+            else:
+                self.download(self.repos[self.idx][1],clonedir)
             # symlink any macro contained in the module to the macros folder
             macrodir = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Macro").GetString("MacroPath")
             for f in os.listdir(clonedir):
@@ -280,6 +309,30 @@ class InstallWorker(QtCore.QThread):
         self.progressbar_show.emit(False)
         self.stop = True
 
+    def download(self,giturl,clonedir):
+        "downloads and unzip from github"
+        import StringIO,zipfile
+        bakdir = None
+        if os.path.exists(clonedir):
+            bakdir = clonedir+".bak"
+            os.rename(clonedir,bakdir)
+        os.makedirs(clonedir)
+        zipurl = giturl[:-4]+"/archive/master.zip"
+        u = urllib2.urlopen(zipurl)
+        zfile = StringIO.StringIO()
+        zfile.write(u.read())
+        zfile = zipfile.ZipFile(zfile)
+        master = zfile.namelist()[0] # github will put everything in a subfolder
+        zfile.extractall(clonedir)
+        u.close()
+        zfile.close()
+        for filename in os.listdir(clonedir+os.sep+master):
+            shutil.move(clonedir+os.sep+master+os.sep+filename, clonedir+os.sep+filename)
+        os.rmdir(clonedir+os.sep+master)
+        if bakdir:
+            shutil.rmtree(bakdir)
+        return "Successfully installed "+zipurl
+        
 
 dialog = AddonsInstaller()
 dialog.exec_()
