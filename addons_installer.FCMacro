@@ -48,18 +48,20 @@ import FreeCAD,urllib2,re,os,shutil
 
 
 def symlink(source, link_name):
-    import os
-    os_symlink = getattr(os, "symlink", None)
-    if callable(os_symlink):
-        os_symlink(source, link_name)
+    if os.path.exists(link_name):
+        print("symlink already exists")
     else:
-        import ctypes
-        csl = ctypes.windll.kernel32.CreateSymbolicLinkW
-        csl.argtypes = (ctypes.c_wchar_p, ctypes.c_wchar_p, ctypes.c_uint32)
-        csl.restype = ctypes.c_ubyte
-        flags = 1 if os.path.isdir(source) else 0
-        if csl(link_name, source, flags) == 0:
-            raise ctypes.WinError()
+        os_symlink = getattr(os, "symlink", None)
+        if callable(os_symlink):
+            os_symlink(source, link_name)
+        else:
+            import ctypes
+            csl = ctypes.windll.kernel32.CreateSymbolicLinkW
+            csl.argtypes = (ctypes.c_wchar_p, ctypes.c_wchar_p, ctypes.c_uint32)
+            csl.restype = ctypes.c_ubyte
+            flags = 1 if os.path.isdir(source) else 0
+            if csl(link_name, source, flags) == 0:
+                raise ctypes.WinError()
 
 
 class AddonsInstaller(QtGui.QDialog):
@@ -71,6 +73,7 @@ class AddonsInstaller(QtGui.QDialog):
         self.resize(326, 304)
         self.verticalLayout = QtGui.QVBoxLayout(self)
         self.listAddons = QtGui.QListWidget()
+        self.listAddons.setIconSize(QtCore.QSize(16,16))
         self.verticalLayout.addWidget(self.listAddons)
         self.labelDescription = QtGui.QLabel()
         self.labelDescription.setMinimumSize(QtCore.QSize(0, 75))
@@ -130,9 +133,9 @@ class AddonsInstaller(QtGui.QDialog):
     def add_addon_repo(self, addon_repo):
         self.repos.append(addon_repo)
         if addon_repo[2] == 1 :
-            self.listAddons.addItem(str(addon_repo[0]) + str(" (Installed)"))
+            self.listAddons.addItem(QtGui.QListWidgetItem(QtGui.QIcon.fromTheme("dialog-ok"),str(addon_repo[0]) + str(" (Installed)")))
         else:
-            self.listAddons.addItem(str(addon_repo[0]))
+            self.listAddons.addItem("        "+str(addon_repo[0]))
     
     def set_information_label(self, label):
         self.labelDescription.setText(label)
@@ -242,7 +245,7 @@ class ShowWorker(QtCore.QThread):
             self.repos[self.idx].append(desc)
             self.addon_repos.emit(self.repos)
         if self.repos[self.idx][2] == 1 :
-            message = "<strong>Installed.</strong><br>" + desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
+            message = "<strong>This addon is already installed.</strong><br>" + desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
         else:
             message = desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
         self.info_label.emit( message )
@@ -298,13 +301,15 @@ class InstallWorker(QtCore.QThread):
                 repo = git.Repo.clone_from(self.repos[self.idx][1], clonedir, branch='master')
             else:
                 self.download(self.repos[self.idx][1],clonedir)
+            answer = "Done. Please restart FreeCAD to apply the changes."
             # symlink any macro contained in the module to the macros folder
             macrodir = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Macro").GetString("MacroPath")
             for f in os.listdir(clonedir):
                 if f.lower().endswith(".fcmacro"):
                     symlink(clonedir+os.sep+f,macrodir+os.sep+f)
                     FreeCAD.ParamGet('User parameter:Plugins/'+self.repos[self.idx][0]).SetString("destination",clonedir)
-            answer = "Done. Please restart FreeCAD to apply the changes."
+                    answer += " A macro has been installed and is available the Macros menu: <b>"
+                    answer += f + "</b>"
         self.info_label.emit(answer)
         self.progressbar_show.emit(False)
         self.stop = True
@@ -333,6 +338,13 @@ class InstallWorker(QtCore.QThread):
             shutil.rmtree(bakdir)
         return "Successfully installed "+zipurl
         
-
-dialog = AddonsInstaller()
-dialog.exec_()
+# first use dialog
+readWarning = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetBool('readWarning',False)
+if not readWarning:
+    if QtGui.QMessageBox.warning(None,"FreeCAD",QtGui.QApplication.translate("AddonsInstaller", "The addons that can be installed here are not officially part of FreeCAD, and are not reviewed by the FreeCAD team. Make sure you know what you are installing!", None, QtGui.QApplication.UnicodeUTF8), QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok) != QtGui.QMessageBox.StandardButton.Cancel:
+        FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetBool('readWarning',True)
+        readWarning = True
+        
+if readWarning:
+    dialog = AddonsInstaller()
+    dialog.exec_()
