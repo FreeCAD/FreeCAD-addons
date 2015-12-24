@@ -24,3 +24,6 @@ on Wndows (the Mod subfolder should be created if needed).
     
 Note that some of the submodules of this repo are not made to be used as
 FreeCAD modules, and therefore won't be enabled by method 2) above.
+
+4) EXPERIMENTAL - download the addons_installer macro, place it in your macros
+folder, restart FreeCAD and run it form the macros menu.
