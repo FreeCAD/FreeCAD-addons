@@ -37,3 +37,9 @@
 [submodule "symbols_library"]
 	path = symbols_library
 	url = https://github.com/FreeCAD/FreeCAD-symbols.git
+[submodule "animation"]
+	path = animation
+	url = https://github.com/microelly2/Animation.git
+[submodule "fcgear"]
+	path = fcgear
+	url = https://github.com/looooo/FCGear.git
