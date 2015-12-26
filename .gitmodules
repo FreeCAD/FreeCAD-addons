@@ -34,3 +34,6 @@
 [submodule "eaglepcb"]
 	path = eaglepcb
 	url = https://github.com/sgrogan/freecad-extras-eaglepcb2.git
+[submodule "symbols_library"]
+	path = symbols_library
+	url = https://github.com/FreeCAD/FreeCAD-symbols.git
