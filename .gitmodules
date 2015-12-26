@@ -31,3 +31,6 @@
 [submodule "library"]
 	path = parts_library
 	url = https://github.com/FreeCAD/FreeCAD-library.git
+[submodule "eaglepcb"]
+	path = eaglepcb
+	url = https://github.com/sgrogan/freecad-extras-eaglepcb2.git
