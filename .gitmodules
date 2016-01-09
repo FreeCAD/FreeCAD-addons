@@ -43,3 +43,6 @@
 [submodule "fcgear"]
 	path = fcgear
 	url = https://github.com/looooo/FCGear.git
+[submodule "cura_engine"]
+	path = cura_engine
+	url = https://github.com/cblt2l/FreeCAD-CuraEngine-Plugin.git
