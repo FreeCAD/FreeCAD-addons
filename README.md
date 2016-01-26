@@ -1,29 +1,29 @@
-This repository doesn't contain code itself, but uses git submodules system to 
-gather interesting addons for FreeCAD made by the community into one convenient
-place. By cloning this repository, you get all of them at once:
+# add-ons repository for FreeCAD
 
-    git clone https://github.com/FreeCAD/FreeCAD-addons.git
+This repository is a collection of useful additional workbenches and modules for FreeCAD made by community members, gathered here for your convenience.
 
-Once cloned, you can update all the submodules at once with:
+Since these are not part of the official FreeCAD package and not supported by the FreeCAD team, you should read the information provided on each of the addons page above before installing any of them, to make sure you know what you are installing. Also, bug reports and feature requests should be made directly on each addon page.
 
-    git submodule foreach git pull
+### Installing
 
-There are different ways to use the contents of thisrepository:
+There are three ways to install any of the addons above:
 
-1) Use the "pluginloader" module
+#### 1. Using the installer macro
 
-2) Add this repository as additional modules foler to FreeCAD
-by starting FreeCAD with the -M switch like this:
+The installer macro can be launched from inside FreeCAD, and will download and install any of the addons above automatically. To install the installer macro:
 
-    FreeCAD -M /path/to/this/folder
-    
-3) Symlink or copy individual submodules of your choice to
-your modules folder, which is normally /home/YOUR_USER/.FreeCAD/Mod
-on Linux and Mac, and C:\Users\YOUR_USER\Application Data\Roaming\FreeCAD\Mod
-on Wndows (the Mod subfolder should be created if needed).
-    
-Note that some of the submodules of this repo are not made to be used as
-FreeCAD modules, and therefore won't be enabled by method 2) above.
+1. Right-click on [addons_installer.FCMacro](https://github.com/FreeCAD/FreeCAD-addons/raw/master/addons_installer.FCMacro) and choose **Save as...**
+2. Place the downloaded macro in your **FreeCAD Macros folder**. The FreeCAD Macros folder location is indicated in menu **Macros -> Macros -> User macros location**
+3. Restart FreeCAD. The addons installer will now be listed and can be launched in menu **Macro -> Macros**
 
-4) EXPERIMENTAL - download the addons_installer macro, place it in your macros
-folder, restart FreeCAD and run it form the macros menu.
+#### 2. Using the "pluginloader" addon
+
+The plugin loader is a much more elaborate way to install and manage additional content for freecad. Install it with the method above, or following the instructions on the [pluginloader page](https://github.com/microelly2/freecad-pluginloader).
+
+#### 3. Manual install
+
+Each of these addons can be downloaded by clicking the **Download ZIP** button found on top of each addon page, or using **Git**. Most of the addons must either be placed in your user's FreeCAD/Mod folder, or in the Macros folder. Refer to the instructions on each addon page for complete instructions.
+
+### Adding your workbench to the collection
+
+Have you made an interesting workbench or module that we are not aware of? Tell us on the [FreeCAD forum](http://forum.freecadweb.org) so we can add it here!
