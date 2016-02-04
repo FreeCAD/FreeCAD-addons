@@ -52,3 +52,6 @@
 [submodule "kerkythea"]
 	path = kerkythea
 	url = https://github.com/marmni/FreeCAD-Kerkythea.git
+[submodule "lattice2"]
+	path = lattice2
+	url = https://github.com/DeepSOIC/Lattice2.git
