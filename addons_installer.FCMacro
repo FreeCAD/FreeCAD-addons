@@ -45,6 +45,7 @@ installed.
 
 from PySide import QtCore, QtGui
 import FreeCAD,urllib2,re,os,shutil
+import ConfigParser, StringIO
 
 
 def symlink(source, link_name):
@@ -192,18 +193,22 @@ class UpdateWorker(QtCore.QThread):
     def run(self):
         "populates the list of addons"
         self.progressbar_show.emit(True)
-        u = urllib2.urlopen("https://github.com/FreeCAD/FreeCAD-addons")
-        p = u.read()
+        u = urllib2.urlopen("https://raw.githubusercontent.com/FreeCAD/FreeCAD-addons/master/.gitmodules")
+        # Use config parser to read the ini-ish format file
+        # Need to mangle slightly as ConfigParser (pre-python-3.2)
+        # doesn't accept leading whitespace
+        c = ConfigParser.ConfigParser()
+        p = "\n".join([i.strip() for i in u.readlines()])
         u.close()
-        p = p.replace("\n"," ")
-        p = re.findall("octicon-file-submodule(.*?)message",p)
+        buf = StringIO.StringIO(p)
+        c.readfp(buf)
+        repos = []
         basedir = FreeCAD.ConfigGet("UserAppData")
         moddir = basedir + os.sep + "Mod"
-        repos = []
-        for l in p:
-            name = re.findall("data-skip-pjax=\"true\">(.*?)<",l)[0]
+        for section in c.sections():
+            name = c.get(section, 'path')
             self.info_label.emit(name)
-            url = re.findall("title=\"(.*?) @",l)[0]
+            url = c.get(section, 'url')
             addondir = moddir + os.sep + name
             if not os.path.exists(addondir):
                 state = 0
