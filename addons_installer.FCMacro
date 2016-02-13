@@ -201,9 +201,11 @@ class UpdateWorker(QtCore.QThread):
         moddir = basedir + os.sep + "Mod"
         repos = []
         for l in p:
-            name = re.findall("data-skip-pjax=\"true\">(.*?)<",l)[0]
+            #name = re.findall("data-skip-pjax=\"true\">(.*?)<",l)[0]
+            name = re.findall("title=\"(.*?) @",l)[0]
             self.info_label.emit(name)
-            url = re.findall("title=\"(.*?) @",l)[0]
+            #url = re.findall("title=\"(.*?) @",l)[0]
+            url = "https://github.com/" + re.findall("href=\"\/(.*?)\/tree",l)[0]
             addondir = moddir + os.sep + name
             if not os.path.exists(addondir):
                 state = 0
