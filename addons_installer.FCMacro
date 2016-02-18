@@ -327,6 +327,7 @@ class InstallWorker(QtCore.QThread):
             os.rename(clonedir,bakdir)
         os.makedirs(clonedir)
         zipurl = giturl[:-4]+"/archive/master.zip"
+        print "Downloading from "+zipurl
         u = urllib2.urlopen(zipurl)
         zfile = StringIO.StringIO()
         zfile.write(u.read())
