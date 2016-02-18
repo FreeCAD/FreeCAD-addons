@@ -322,6 +322,8 @@ class InstallWorker(QtCore.QThread):
         bakdir = None
         if os.path.exists(clonedir):
             bakdir = clonedir+".bak"
+            if os.path.exists(bakdir):
+                shutil.rmtree(bakdir)
             os.rename(clonedir,bakdir)
         os.makedirs(clonedir)
         zipurl = giturl[:-4]+"/archive/master.zip"
