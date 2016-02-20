@@ -46,6 +46,8 @@ installed.
 from PySide import QtCore, QtGui
 import FreeCAD,urllib2,re,os,shutil
 
+NOGIT = False # for debugging purposes, set this to True to always use http downloads
+
 
 def symlink(source, link_name):
     if os.path.exists(link_name):
@@ -283,7 +285,8 @@ class InstallWorker(QtCore.QThread):
             return
         if not self.repos:
             return
-        # git = None # uncomment this to force standard download mode
+        if NOGIT:
+            git = None
         basedir = FreeCAD.ConfigGet("UserAppData")
         moddir = basedir + os.sep + "Mod"
         if not os.path.exists(moddir):
@@ -298,10 +301,11 @@ class InstallWorker(QtCore.QThread):
             else:
                 answer = self.download(self.repos[self.idx][1],clonedir)
         else:
-            self.info_label.emit("Cloning module...")
             if git:
+                self.info_label.emit("Cloning module...")
                 repo = git.Repo.clone_from(self.repos[self.idx][1], clonedir, branch='master')
             else:
+                self.info_label.emit("Downloading module...")
                 self.download(self.repos[self.idx][1],clonedir)
             answer = "Done. Please restart FreeCAD to apply the changes."
             # symlink any macro contained in the module to the macros folder
@@ -326,8 +330,9 @@ class InstallWorker(QtCore.QThread):
                 shutil.rmtree(bakdir)
             os.rename(clonedir,bakdir)
         os.makedirs(clonedir)
-        zipurl = giturl[:-4]+"/archive/master.zip"
+        zipurl = giturl+"/archive/master.zip"
         try:
+            print("Downloading "+zipurl)
             u = urllib2.urlopen(zipurl)
         except:
             return "Error: Unable to download "+zipurl
