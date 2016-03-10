@@ -12,7 +12,7 @@ There are three ways to install any of the addons above:
 
 The installer macro can be launched from inside FreeCAD, and will download and install any of the addons above automatically. To install the installer macro:
 
-1. Right-click on [addons_installer.FCMacro](https://github.com/FreeCAD/FreeCAD-addons/raw/master/addons_installer.FCMacro) and choose **Save as...**
+1. Click on [addons_installer.FCMacro](https://github.com/FreeCAD/FreeCAD-addons/blob/master/addons_installer.FCMacro),right-click on the ***Raw** button at the top of the page and choose **Save as...**
 2. Place the downloaded macro in your **FreeCAD Macros folder**. The FreeCAD Macros folder location is indicated in menu **Macros -> Macros -> User macros location**:
 ![the execute macro dialog](http://www.freecadweb.org/wiki/images/1/1e/Macro_installer_01.jpg)
 3. Restart FreeCAD. The addons installer will now be listed in menu **Macro -> Macros** and can be launched by selecting it then clicking the **Execute** button:
