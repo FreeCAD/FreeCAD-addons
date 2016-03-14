@@ -57,4 +57,4 @@
 	url = https://github.com/DeepSOIC/Lattice2.git
 [submodule "exploded_animation"]
 	path = exploded_animation
-	url = https://github.com/JMG1/FreeCAD_ExplodedAssemblyAnimationWorkbench.git
+	url = https://github.com/JMG1/ExplodedAssembly.git
