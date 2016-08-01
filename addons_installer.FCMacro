@@ -1,32 +1,32 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#***************************************************************************
-#*                                                                         *
-#*   Copyright (c) 2015 Yorik van Havre <yorik@uncreated.net>              *
-#*                                                                         *
-#*   This program is free software; you can redistribute it and/or modify  *
-#*   it under the terms of the GNU Lesser General Public License (LGPL)    *
-#*   as published by the Free Software Foundation; either version 2 of     *
-#*   the License, or (at your option) any later version.                   *
-#*   for detail see the LICENCE text file.                                 *
-#*                                                                         *
-#*   This program is distributed in the hope that it will be useful,       *
-#*   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
-#*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
-#*   GNU Library General Public License for more details.                  *
-#*                                                                         *
-#*   You should have received a copy of the GNU Library General Public     *
-#*   License along with this program; if not, write to the Free Software   *
-#*   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  *
-#*   USA                                                                   *
-#*                                                                         *
-#***************************************************************************
+# ***************************************************************************
+# *                                                                         *
+# *   Copyright (c) 2015 Yorik van Havre <yorik@uncreated.net>              *
+# *                                                                         *
+# *   This program is free software; you can redistribute it and/or modify  *
+# *   it under the terms of the GNU Lesser General Public License (LGPL)    *
+# *   as published by the Free Software Foundation; either version 2 of     *
+# *   the License, or (at your option) any later version.                   *
+# *   for detail see the LICENCE text file.                                 *
+# *                                                                         *
+# *   This program is distributed in the hope that it will be useful,       *
+# *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+# *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+# *   GNU Library General Public License for more details.                  *
+# *                                                                         *
+# *   You should have received a copy of the GNU Library General Public     *
+# *   License along with this program; if not, write to the Free Software   *
+# *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  *
+# *   USA                                                                   *
+# *                                                                         *
+# ***************************************************************************
 
 from __future__ import print_function
 
-__title__="FreeCAD Addons installer Macro"
-__author__ = "Yorik van Havre","Jonathan Wiedemann"
+__title__ = "FreeCAD Addons installer Macro"
+__author__ = "Yorik van Havre", "Jonathan Wiedemann"
 __url__ = "http://www.freecadweb.org"
 
 '''
@@ -44,9 +44,9 @@ installed.
 '''
 
 from PySide import QtCore, QtGui
-import FreeCAD,urllib2,re,os,shutil
+import FreeCAD, urllib2, re, os, shutil
 
-NOGIT = False # for debugging purposes, set this to True to always use http downloads
+NOGIT = False  # for debugging purposes, set this to True to always use http downloads
 
 
 def symlink(source, link_name):
@@ -67,7 +67,6 @@ def symlink(source, link_name):
 
 
 class AddonsInstaller(QtGui.QDialog):
-    
     def __init__(self):
         QtGui.QDialog.__init__(self)
         self.repos = []
@@ -75,21 +74,21 @@ class AddonsInstaller(QtGui.QDialog):
         self.resize(326, 304)
         self.verticalLayout = QtGui.QVBoxLayout(self)
         self.listAddons = QtGui.QListWidget()
-        self.listAddons.setIconSize(QtCore.QSize(16,16))
+        self.listAddons.setIconSize(QtCore.QSize(16, 16))
         self.verticalLayout.addWidget(self.listAddons)
         self.labelDescription = QtGui.QLabel()
         self.labelDescription.setMinimumSize(QtCore.QSize(0, 75))
-        self.labelDescription.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.labelDescription.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.labelDescription.setWordWrap(True)
         self.verticalLayout.addWidget(self.labelDescription)
-        
+
         self.progressBar = QtGui.QProgressBar(self)
-        #self.progressBar.setProperty("value", 24)
+        # self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
-        #self.progressBar.hide()
-        self.progressBar.setRange(0,0)
+        # self.progressBar.hide()
+        self.progressBar.setRange(0, 0)
         self.verticalLayout.addWidget(self.progressBar)
-        
+
         self.horizontalLayout = QtGui.QHBoxLayout()
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
@@ -108,7 +107,7 @@ class AddonsInstaller(QtGui.QDialog):
         self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.retranslateUi()
-        
+
         QtCore.QObject.connect(self.buttonCancel, QtCore.SIGNAL("clicked()"), self.reject)
         QtCore.QObject.connect(self.buttonInstall, QtCore.SIGNAL("clicked()"), self.install)
         QtCore.QObject.connect(self.buttonRemove, QtCore.SIGNAL("clicked()"), self.remove)
@@ -116,16 +115,32 @@ class AddonsInstaller(QtGui.QDialog):
         QtCore.QObject.connect(self.listAddons, QtCore.SIGNAL("currentRowChanged(int)"), self.show)
         QtCore.QMetaObject.connectSlotsByName(self)
         self.update()
-        
+
     def retranslateUi(self):
-        self.setWindowTitle(QtGui.QApplication.translate("AddonsInstaller", "Addons installer", None, QtGui.QApplication.UnicodeUTF8))
-        self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Downloading addons list...", None, QtGui.QApplication.UnicodeUTF8))
-        self.buttonCancel.setText(QtGui.QApplication.translate("AddonsInstaller", "Close", None, QtGui.QApplication.UnicodeUTF8))
-        self.buttonInstall.setText(QtGui.QApplication.translate("AddonsInstaller", "Install / update", None, QtGui.QApplication.UnicodeUTF8))
-        self.buttonRemove.setText(QtGui.QApplication.translate("AddonsInstaller", "Remove", None, QtGui.QApplication.UnicodeUTF8))
-        
+        self.setWindowTitle(
+            QtGui.QApplication.translate("AddonsInstaller", "Addons installer", None, QtGui.QApplication.UnicodeUTF8))
+        self.labelDescription.setText(
+            QtGui.QApplication.translate("AddonsInstaller", "Downloading addons list...", None,
+                                         QtGui.QApplication.UnicodeUTF8))
+        self.buttonCancel.setText(
+            QtGui.QApplication.translate("AddonsInstaller", "Close", None, QtGui.QApplication.UnicodeUTF8))
+        self.buttonInstall.setText(
+            QtGui.QApplication.translate("AddonsInstaller", "Install / update", None, QtGui.QApplication.UnicodeUTF8))
+        self.buttonRemove.setText(
+            QtGui.QApplication.translate("AddonsInstaller", "Remove", None, QtGui.QApplication.UnicodeUTF8))
+
+    def update_repos(self, repos=[]):
+        if not (repos == []):
+            self.repos = repos
+        else:
+            return self.repos
+
     def update(self):
-        self.update_worker = UpdateWorker()
+        self.info_worker = InfoWorker()
+        self.info_worker.addon_repos.connect(self.update_repos)
+        # self.info_worker.start()
+
+        self.update_worker = UpdateWorker(self.info_worker)
         self.update_worker.info_label.connect(self.set_information_label)
         self.update_worker.addon_repo.connect(self.add_addon_repo)
         self.update_worker.progressbar_show.connect(self.show_progress_bar)
@@ -134,15 +149,16 @@ class AddonsInstaller(QtGui.QDialog):
 
     def add_addon_repo(self, addon_repo):
         self.repos.append(addon_repo)
-        if addon_repo[2] == 1 :
-            self.listAddons.addItem(QtGui.QListWidgetItem(QtGui.QIcon.fromTheme("dialog-ok"),str(addon_repo[0]) + str(" (Installed)")))
+        if addon_repo[2] == 1:
+            self.listAddons.addItem(
+                QtGui.QListWidgetItem(QtGui.QIcon.fromTheme("dialog-ok"), str(addon_repo[0]) + str(" (Installed)")))
         else:
-            self.listAddons.addItem("        "+str(addon_repo[0]))
-    
+            self.listAddons.addItem("        " + str(addon_repo[0]))
+
     def set_information_label(self, label):
         self.labelDescription.setText(label)
 
-    def show(self,idx):
+    def show(self, idx):
         if self.repos and idx >= 0:
             self.show_worker = ShowWorker(self.repos, idx)
             self.show_worker.info_label.connect(self.set_information_label)
@@ -150,12 +166,9 @@ class AddonsInstaller(QtGui.QDialog):
             self.show_worker.progressbar_show.connect(self.show_progress_bar)
             self.show_worker.start()
 
-    def update_repos(self, repos):
-        self.repos = repos
-
-    def showlink(self,link):
+    def showlink(self, link):
         "opens a link with the system browser"
-        #print("clicked: ",link)
+        # print("clicked: ",link)
         QtGui.QDesktopServices.openUrl(QtCore.QUrl(link, QtCore.QUrl.TolerantMode))
 
     def install(self):
@@ -170,7 +183,7 @@ class AddonsInstaller(QtGui.QDialog):
             self.progressBar.show()
         else:
             self.progressBar.hide()
-            
+
     def remove(self):
         idx = self.listAddons.currentRow()
         basedir = FreeCAD.ConfigGet("UserAppData")
@@ -178,57 +191,85 @@ class AddonsInstaller(QtGui.QDialog):
         clonedir = basedir + os.sep + "Mod" + os.sep + self.repos[idx][0]
         if os.path.exists(clonedir):
             shutil.rmtree(clonedir)
-            self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Addon successfully removed. Please restart FreeCAD", None, QtGui.QApplication.UnicodeUTF8))
+            self.labelDescription.setText(
+                QtGui.QApplication.translate("AddonsInstaller", "Addon successfully removed. Please restart FreeCAD",
+                                             None, QtGui.QApplication.UnicodeUTF8))
         else:
-            self.labelDescription.setText(QtGui.QApplication.translate("AddonsInstaller", "Unable to remove this addon", None, QtGui.QApplication.UnicodeUTF8))
+            self.labelDescription.setText(
+                QtGui.QApplication.translate("AddonsInstaller", "Unable to remove this addon", None,
+                                             QtGui.QApplication.UnicodeUTF8))
+
 
 class UpdateWorker(QtCore.QThread):
-
     info_label = QtCore.Signal(str)
     addon_repo = QtCore.Signal(object)
     progressbar_show = QtCore.Signal(bool)
-    
-    def __init__(self):
+
+    def __init__(self, infoWorker):
         QtCore.QThread.__init__(self)
-        
+        self.info_worker = infoWorker
+
     def run(self):
         "populates the list of addons"
         self.progressbar_show.emit(True)
         u = urllib2.urlopen("https://github.com/FreeCAD/FreeCAD-addons")
         p = u.read()
         u.close()
-        p = p.replace("\n"," ")
-        p = re.findall("octicon-file-submodule(.*?)message",p)
+        p = p.replace("\n", " ")
+        p = re.findall("octicon-file-submodule(.*?)message", p)
         basedir = FreeCAD.ConfigGet("UserAppData")
         moddir = basedir + os.sep + "Mod"
         repos = []
         for l in p:
-            #name = re.findall("data-skip-pjax=\"true\">(.*?)<",l)[0]
-            name = re.findall("title=\"(.*?) @",l)[0]
+            # name = re.findall("data-skip-pjax=\"true\">(.*?)<",l)[0]
+            name = re.findall("title=\"(.*?) @", l)[0]
             self.info_label.emit(name)
-            #url = re.findall("title=\"(.*?) @",l)[0]
-            url = "https://github.com/" + re.findall("href=\"\/(.*?)\/tree",l)[0]
+            # url = re.findall("title=\"(.*?) @",l)[0]
+            url = "https://github.com/" + re.findall("href=\"\/(.*?)\/tree", l)[0]
             addondir = moddir + os.sep + name
             if not os.path.exists(addondir):
                 state = 0
             else:
                 state = 1
-            repos.append([name,url,state])
-            self.addon_repo.emit([name,url,state])
+            repos.append([name, url, state])
+            self.addon_repo.emit([name, url, state])
         if not repos:
             self.info_label.emit("Unable to download addons list.")
         else:
             self.info_label.emit("Addons list was updated.")
+
         self.progressbar_show.emit(False)
+        self.stop = True
+
+        self.info_worker.repos = repos
+        self.info_worker.start()
+
+
+class InfoWorker(QtCore.QThread):
+    addon_repos = QtCore.Signal(object)
+
+    def __init__(self):
+        QtCore.QThread.__init__(self)
+
+    def run(self):
+        i = 0
+        for repo in self.repos:
+            url = repo[1]
+            u = urllib2.urlopen(url)
+            p = u.read()
+            u.close()
+            desc = re.findall("<meta content=\"(.*?)\" name", p)[3]
+            self.repos[i].append(desc)
+            i += 1
+            self.addon_repos.emit(self.repos)
         self.stop = True
 
 
 class ShowWorker(QtCore.QThread):
-
     info_label = QtCore.Signal(str)
     addon_repos = QtCore.Signal(object)
     progressbar_show = QtCore.Signal(bool)
-    
+
     def __init__(self, repos, idx):
         QtCore.QThread.__init__(self)
         self.repos = repos
@@ -240,28 +281,25 @@ class ShowWorker(QtCore.QThread):
         if len(self.repos[self.idx]) == 4:
             desc = self.repos[self.idx][3]
         else:
-            url = self.repos[self.idx][1]
-            self.info_label.emit("Retrieving info from " + str(url))
-            u = urllib2.urlopen(url)
-            p = u.read()
-            u.close()
-            desc = re.findall("<meta content=\"(.*?)\" name",p)[3]
-            self.repos[self.idx].append(desc)
-            self.addon_repos.emit(self.repos)
-        if self.repos[self.idx][2] == 1 :
-            message = "<strong>This addon is already installed.</strong><br>" + desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
+            desc = "Loading description  ..."
+        if self.repos[self.idx][2] == 1:
+            message = "<strong>This addon is already installed.</strong><br>" + desc + ' <a href="' + \
+                      self.repos[self.idx][
+                          1] + '"><span style="word-wrap: break-word;width:15em;text-decoration: underline; color:#0000ff;">' + \
+                      self.repos[self.idx][1] + '</span></a>'
         else:
-            message = desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
-        self.info_label.emit( message )
+            message = desc + ' <a href="' + self.repos[self.idx][
+                1] + '"><span style="word-wrap: break-word;width:15em;text-decoration: underline; color:#0000ff;">' + \
+                      self.repos[self.idx][1] + '</span></a>'
+        self.info_label.emit(message)
         self.progressbar_show.emit(False)
         self.stop = True
 
 
 class InstallWorker(QtCore.QThread):
-
     info_label = QtCore.Signal(str)
     progressbar_show = QtCore.Signal(bool)
-    
+
     def __init__(self, repos, idx):
         QtCore.QThread.__init__(self)
         self.idx = idx
@@ -276,10 +314,11 @@ class InstallWorker(QtCore.QThread):
             self.info_label.emit("python-git not found.")
             FreeCAD.Console.PrintWarning("python-git not found. Using standard download instead.\n")
             try:
-                import zipfile,StringIO
+                import zipfile, StringIO
             except:
                 self.info_label.emit("no zip support.")
-                FreeCAD.Console.PrintError("your version of python doesn't appear to support ZIP files. Unable to proceed.\n")
+                FreeCAD.Console.PrintError(
+                    "your version of python doesn't appear to support ZIP files. Unable to proceed.\n")
                 return
         if self.idx < 0:
             return
@@ -299,64 +338,69 @@ class InstallWorker(QtCore.QThread):
                 repo = git.Git(clonedir)
                 answer = repo.pull()
             else:
-                answer = self.download(self.repos[self.idx][1],clonedir)
+                answer = self.download(self.repos[self.idx][1], clonedir)
         else:
             if git:
                 self.info_label.emit("Cloning module...")
                 repo = git.Repo.clone_from(self.repos[self.idx][1], clonedir, branch='master')
             else:
                 self.info_label.emit("Downloading module...")
-                self.download(self.repos[self.idx][1],clonedir)
+                self.download(self.repos[self.idx][1], clonedir)
             answer = "Done. Please restart FreeCAD to apply the changes."
             # symlink any macro contained in the module to the macros folder
             macrodir = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Macro").GetString("MacroPath")
             for f in os.listdir(clonedir):
                 if f.lower().endswith(".fcmacro"):
-                    symlink(clonedir+os.sep+f,macrodir+os.sep+f)
-                    FreeCAD.ParamGet('User parameter:Plugins/'+self.repos[self.idx][0]).SetString("destination",clonedir)
+                    symlink(clonedir + os.sep + f, macrodir + os.sep + f)
+                    FreeCAD.ParamGet('User parameter:Plugins/' + self.repos[self.idx][0]).SetString("destination",
+                                                                                                    clonedir)
                     answer += " A macro has been installed and is available the Macros menu: <b>"
                     answer += f + "</b>"
         self.info_label.emit(answer)
         self.progressbar_show.emit(False)
         self.stop = True
 
-    def download(self,giturl,clonedir):
+    def download(self, giturl, clonedir):
         "downloads and unzip from github"
-        import StringIO,zipfile
+        import StringIO, zipfile
         bakdir = None
         if os.path.exists(clonedir):
-            bakdir = clonedir+".bak"
+            bakdir = clonedir + ".bak"
             if os.path.exists(bakdir):
                 shutil.rmtree(bakdir)
-            os.rename(clonedir,bakdir)
+            os.rename(clonedir, bakdir)
         os.makedirs(clonedir)
-        zipurl = giturl+"/archive/master.zip"
+        zipurl = giturl + "/archive/master.zip"
         try:
-            print("Downloading "+zipurl)
+            print("Downloading " + zipurl)
             u = urllib2.urlopen(zipurl)
         except:
-            return "Error: Unable to download "+zipurl
+            return "Error: Unable to download " + zipurl
         zfile = StringIO.StringIO()
         zfile.write(u.read())
         zfile = zipfile.ZipFile(zfile)
-        master = zfile.namelist()[0] # github will put everything in a subfolder
+        master = zfile.namelist()[0]  # github will put everything in a subfolder
         zfile.extractall(clonedir)
         u.close()
         zfile.close()
-        for filename in os.listdir(clonedir+os.sep+master):
-            shutil.move(clonedir+os.sep+master+os.sep+filename, clonedir+os.sep+filename)
-        os.rmdir(clonedir+os.sep+master)
+        for filename in os.listdir(clonedir + os.sep + master):
+            shutil.move(clonedir + os.sep + master + os.sep + filename, clonedir + os.sep + filename)
+        os.rmdir(clonedir + os.sep + master)
         if bakdir:
             shutil.rmtree(bakdir)
-        return "Successfully installed "+zipurl
-        
+        return "Successfully installed " + zipurl
+
+
 # first use dialog
-readWarning = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetBool('readWarning',False)
+readWarning = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetBool('readWarning', False)
 if not readWarning:
-    if QtGui.QMessageBox.warning(None,"FreeCAD",QtGui.QApplication.translate("AddonsInstaller", "The addons that can be installed here are not officially part of FreeCAD, and are not reviewed by the FreeCAD team. Make sure you know what you are installing!", None, QtGui.QApplication.UnicodeUTF8), QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok) != QtGui.QMessageBox.StandardButton.Cancel:
-        FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetBool('readWarning',True)
+    if QtGui.QMessageBox.warning(None, "FreeCAD", QtGui.QApplication.translate("AddonsInstaller",
+                                                                               "The addons that can be installed here are not officially part of FreeCAD, and are not reviewed by the FreeCAD team. Make sure you know what you are installing!",
+                                                                               None, QtGui.QApplication.UnicodeUTF8),
+                                 QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok) != QtGui.QMessageBox.StandardButton.Cancel:
+        FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetBool('readWarning', True)
         readWarning = True
-        
+
 if readWarning:
     dialog = AddonsInstaller()
     dialog.exec_()
