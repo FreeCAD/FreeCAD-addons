@@ -61,3 +61,6 @@
 [submodule "retr3d"]
 	path = retr3d
 	url = https://github.com/Maaphoo/Retr3d.git
+[submodule "flamingo"]
+	path = flamingo
+	url = https://github.com/oddtopus/flamingo.git
