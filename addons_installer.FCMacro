@@ -245,7 +245,7 @@ class ShowWorker(QtCore.QThread):
             u = urllib2.urlopen(url)
             p = u.read()
             u.close()
-            desc = re.findall("<meta content=\"(.*?)\" name",p)[3]
+            desc = re.findall("<meta content=\"(.*?)\" name",p)[4]
             self.repos[self.idx].append(desc)
             self.addon_repos.emit(self.repos)
         if self.repos[self.idx][2] == 1 :
