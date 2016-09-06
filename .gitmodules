@@ -64,3 +64,6 @@
 [submodule "flamingo"]
 	path = flamingo
 	url = https://github.com/oddtopus/flamingo.git
+[submodule "nurbs"]
+	path = nurbs
+	url = https://github.com/microelly2/freecad-nurbs
