@@ -67,3 +67,6 @@
 [submodule "nurbs"]
 	path = nurbs
 	url = https://github.com/microelly2/freecad-nurbs
+[submodule "persistenttoolbars"]
+	path = persistenttoolbars
+	url = https://github.com/triplus/PersistentToolbars.git
