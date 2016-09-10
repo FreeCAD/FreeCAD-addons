@@ -249,9 +249,9 @@ class ShowWorker(QtCore.QThread):
             self.repos[self.idx].append(desc)
             self.addon_repos.emit(self.repos)
         if self.repos[self.idx][2] == 1 :
-            message = "<strong>This addon is already installed.</strong><br>" + desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
+            message = "<strong>This addon is already installed.</strong><br>" + desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="word-wrap: break-word;width:15em;text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
         else:
-            message = desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
+            message = desc + ' - <a href="' + self.repos[self.idx][1] + '"><span style="word-wrap: break-word;width:15em;text-decoration: underline; color:#0000ff;">' + self.repos[self.idx][1] + '</span></a>'
         self.info_label.emit( message )
         self.progressbar_show.emit(False)
         self.stop = True
