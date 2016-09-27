@@ -6,7 +6,7 @@ Since these are not part of the official FreeCAD package and not supported by th
 
 ### Installing
 
-There are three ways to install any of the addons above:
+There are three ways to install any of the addons above (also check this more in-depth [tutorial](http://www.freecadweb.org/wiki/index.php?title=How_to_install_additional_workbenches) on the FreeCAD wiki):
 
 #### 1. Using the installer macro
 
