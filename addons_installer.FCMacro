@@ -125,6 +125,8 @@ class AddonsInstaller(QtGui.QDialog):
         self.buttonRemove.setText(QtGui.QApplication.translate("AddonsInstaller", "Remove", None, QtGui.QApplication.UnicodeUTF8))
         
     def update(self):
+        self.info_worker = InfoWorker()
+        self.info_worker.addon_repos.connect(self.update_repos)
         self.update_worker = UpdateWorker()
         self.update_worker.info_label.connect(self.set_information_label)
         self.update_worker.addon_repo.connect(self.add_addon_repo)
@@ -222,6 +224,24 @@ class UpdateWorker(QtCore.QThread):
         self.progressbar_show.emit(False)
         self.stop = True
 
+class InfoWorker(QtCore.QThread):
+    addon_repos = QtCore.Signal(object)
+
+    def __init__(self):
+        QtCore.QThread.__init__(self)
+
+    def run(self):
+        i = 0
+        for repo in self.repos:
+            url = repo[1]
+            u = urllib2.urlopen(url)
+            p = u.read()
+            u.close()
+            desc = re.findall("<meta content=\"(.*?)\" name", p)[3]
+            self.repos[i].append(desc)
+            i += 1
+            self.addon_repos.emit(self.repos)
+        self.stop = True
 
 class ShowWorker(QtCore.QThread):
 
