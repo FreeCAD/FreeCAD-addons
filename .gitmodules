@@ -73,3 +73,12 @@
 [submodule "reconstruction"]
 	path = reconstruction
 	url = https://github.com/microelly2/reconstruction.git
+[submodule "PieMenu"]
+	path = PieMenu
+	url = https://github.com/triplus/PieMenu.git
+[submodule "Launcher"]
+	path = Launcher
+	url = https://github.com/triplus/Launcher.git
+[submodule "TabBar"]
+	path = TabBar
+	url = https://github.com/triplus/TabBar.git
