@@ -450,6 +450,7 @@ class ShowMacroWorker(QtCore.QThread):
             except ImportError:
                 from html.parser import HTMLParser
             try:
+                code = code.decode("utf8")
                 code = HTMLParser().unescape(code)
                 code = code.encode("utf8")
             except:
