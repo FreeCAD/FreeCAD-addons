@@ -453,6 +453,7 @@ class ShowMacroWorker(QtCore.QThread):
                 code = code.decode("utf8")
                 code = HTMLParser().unescape(code)
                 code = code.encode("utf8")
+                code = code.replace("\xc2\xa0", " ")
             except:
                 FreeCAD.Console.PrintWarning("Unable to clean macro code: "+mac+"\n")
             self.update_macro.emit(self.idx,self.macros[self.idx]+[desc,code,url])
