@@ -424,6 +424,7 @@ class ShowMacroWorker(QtCore.QThread):
         else:
             mac = self.macros[self.idx][0].replace(" ","_")
             mac = mac.replace("&","%26")
+            mac = mac.replace("+","%2B")
             url = "http://www.freecadweb.org/wiki/index.php?title=Macro_"+mac
             self.info_label.emit("Retrieving info from " + str(url))
             u = urllib2.urlopen(url)
