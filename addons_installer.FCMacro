@@ -48,7 +48,7 @@ import FreeCAD,urllib2,re,os,shutil
 
 NOGIT = False # for debugging purposes, set this to True to always use http downloads
 
-MACROS_BLACKLIST = ["BOLTS","WorkFeatures","how to install"]
+MACROS_BLACKLIST = ["BOLTS","WorkFeatures","how to install","PartsLibrary"]
 
 def symlink(source, link_name):
     if os.path.exists(link_name):
