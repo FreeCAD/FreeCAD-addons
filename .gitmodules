@@ -85,3 +85,6 @@
 [submodule "IconThemes"]
 	path = IconThemes
 	url = https://github.com/triplus/IconThemes.git
+[submodule "Cfd"]
+	path = Cfd
+	url = https://github.com/qingfengxia/Cfd.git
