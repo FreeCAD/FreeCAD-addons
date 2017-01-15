@@ -225,9 +225,17 @@ class AddonsInstaller(QtGui.QDialog):
 
     def show_progress_bar(self, state):
         if state == True:
+            self.listWorkbenches.setEnabled(False)
+            self.listMacros.setEnabled(False)
+            self.buttonInstall.setEnabled(False)
+            self.buttonRemove.setEnabled(False)
             self.progressBar.show()
         else:
             self.progressBar.hide()
+            self.listWorkbenches.setEnabled(True)
+            self.listMacros.setEnabled(True)
+            self.buttonInstall.setEnabled(True)
+            self.buttonRemove.setEnabled(True)
 
     def remove(self):
         if self.tabWidget.currentIndex() == 0:
