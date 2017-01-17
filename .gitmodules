@@ -94,3 +94,6 @@
 [submodule "dxf-library"]
 	path = dxf-library
 	url = https://github.com/yorikvanhavre/Draft-dxf-importer.git
+[submodule "NavigationIndicator"]
+	path = NavigationIndicator
+	url = https://github.com/triplus/NavigationIndicator
