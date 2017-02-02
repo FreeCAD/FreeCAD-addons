@@ -6,6 +6,8 @@ Since these are not part of the official FreeCAD package and not supported by th
 
 ### Installing
 
+*Starting from FreeCAD v. 0.17.9940 the addons installer is included in FreeCAD, and can be accessed form the Tools menu, so there is no need to install anything anymore. The instructions below are only needed for older versions.*
+
 There are three ways to install any of the addons above (also check this more in-depth [tutorial](http://www.freecadweb.org/wiki/index.php?title=How_to_install_additional_workbenches) on the FreeCAD wiki):
 
 #### 1. Using the installer macro
