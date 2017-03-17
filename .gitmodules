@@ -97,3 +97,6 @@
 [submodule "NavigationIndicator"]
 	path = NavigationIndicator
 	url = https://github.com/triplus/NavigationIndicator
+[submodule "Part-o-magic"]
+	path = Part-o-magic
+	url = https://github.com/DeepSOIC/Part-o-magic.git
