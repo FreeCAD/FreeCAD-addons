@@ -38,7 +38,7 @@
 	path = animation
 	url = https://github.com/microelly2/Animation.git
 [submodule "fcgear"]
-	path = fcgear
+	path = FCGear
 	url = https://github.com/looooo/FCGear.git
 [submodule "cura_engine"]
 	path = cura_engine
