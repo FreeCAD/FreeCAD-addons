@@ -100,3 +100,6 @@
 [submodule "Part-o-magic"]
 	path = Part-o-magic
 	url = https://github.com/DeepSOIC/Part-o-magic.git
+[submodule "CADExchanger"]
+	path = CADExchanger
+	url = https://github.com/yorikvanhavre/CADExchanger.git
