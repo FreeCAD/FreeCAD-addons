@@ -103,3 +103,6 @@
 [submodule "CADExchanger"]
 	path = CADExchanger
 	url = https://github.com/yorikvanhavre/CADExchanger.git
+[submodule "WebTools"]
+	path = WebTools
+	url = https://github.com/yorikvanhavre/WebTools.git
