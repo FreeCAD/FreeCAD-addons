@@ -109,3 +109,6 @@
 [submodule "ShortCuts"]
 	path = ShortCuts
 	url = https://github.com/triplus/ShortCuts.git
+[submodule "pyrate"]
+	path = pyrate
+	url = https://github.com/mess42/pyrate.git
