@@ -115,3 +115,6 @@
 [submodule "GDT"]
 	path = GDT
 	url = https://github.com/juanvanyo/FreeCAD-GDT.git
+[submodule "Reinforcement"]
+	path = Reinforcement
+	url = https://github.com/amrit3701/FreeCAD-Reinforcement
