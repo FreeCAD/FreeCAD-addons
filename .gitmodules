@@ -118,3 +118,6 @@
 [submodule "Reinforcement"]
 	path = Reinforcement
 	url = https://github.com/amrit3701/FreeCAD-Reinforcement
+[submodule "DesignSPHysics"]
+	path = DesignSPHysics
+	url = https://github.com/ndrs92/DesignSPHysics.git
