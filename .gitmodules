@@ -121,3 +121,6 @@
 [submodule "DesignSPHysics"]
 	path = DesignSPHysics
 	url = https://github.com/ndrs92/DesignSPHysics.git
+[submodule "InventorLoader"]
+	path = InventorLoader
+	url = https://github.com/jmplonka/InventorLoader.git
