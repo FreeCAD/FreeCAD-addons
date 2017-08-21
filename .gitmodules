@@ -124,3 +124,6 @@
 [submodule "InventorLoader"]
 	path = InventorLoader
 	url = https://github.com/jmplonka/InventorLoader.git
+[submodule "Silk"]
+	path = Silk
+	url = https://github.com/edwardvmills/Silk.git
