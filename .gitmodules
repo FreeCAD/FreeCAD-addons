@@ -127,3 +127,6 @@
 [submodule "Silk"]
 	path = Silk
 	url = https://github.com/edwardvmills/Silk.git
+[submodule "CfdOF"]
+	path = CfdOF
+	url = https://github.com/jaheyns/CfdOF.git
