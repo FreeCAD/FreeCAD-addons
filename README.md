@@ -146,6 +146,14 @@ Retr3d uses python and FreeCAD to 3D model printable parts for the construction 
 #### sheetmetal
 FreeCAD SheetMetal Workbench
 Details: http://theseger.com/projects/2015/06/sheet-metal-addon-for-freecad/
+
+#### Silk
+NURBS Surface modeling tools focused on low degree and seam continuity 
+
+Details: https://edwardvmills.github.io/Silk/
+
+![Silk_Demo_02](https://github.com/edwardvmills/Silk/blob/master/Resources/Demo_files/Silk_Demo_02.png?raw=true)
+
 #### symbols-library
 FreeCAD Symbols Library  
 This repository contains a library of SVG symbols to be used in FreeCAD. Although they consist of simple SVG files, so they can also be imported inside the 3D document, they are primarily made for use on Drawing pages.
