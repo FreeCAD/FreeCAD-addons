@@ -22,9 +22,6 @@
 [submodule "timber"]
 	path = timber
 	url = https://github.com/wood-galaxy/FreeCAD-Timber.git
-[submodule "bolts"]
-	path = bolts
-	url = https://github.com/jreinhardt/BOLTS.git
 [submodule "cadquery_module"]
 	path = cadquery_module
 	url = https://github.com/jmwright/cadquery-freecad-module.git
@@ -133,3 +130,6 @@
 [submodule "kicadStepUpMod"]
 	path = kicadStepUpMod
 	url = https://github.com/easyw/kicadStepUpMod.git
+[submodule "BOLTSFC"]
+	path = BOLTSFC
+	url = https://github.com/berndhahnebach/BOLTSFC.git
