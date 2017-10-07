@@ -133,3 +133,6 @@
 [submodule "BOLTSFC"]
 	path = BOLTSFC
 	url = https://github.com/berndhahnebach/BOLTSFC.git
+[submodule "Manipulator"]
+	path = Manipulator
+	url = https://github.com/easyw/Manipulator.git
