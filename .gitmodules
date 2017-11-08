@@ -136,3 +136,6 @@
 [submodule "Manipulator"]
 	path = Manipulator
 	url = https://github.com/easyw/Manipulator.git
+[submodule "frame"]
+	path = frame
+	url = https://github.com/looooo/freecad_frame.git
