@@ -5,7 +5,7 @@ This repository is a collection of useful additional workbenches and modules for
 Since these are not part of the official FreeCAD package and not supported by the FreeCAD team, you should read the information provided on each of the addons page above before installing any of them, to make sure you know what you are installing. Also, bug reports and feature requests should be made directly on each addon page.
 
 ### Current add-ons
-For a description of each Addon please see [FreeCAD-Addon-Details](https://github.com/FreeCAD/FreeCAD-Addons/FreeCAD-Addon-Details.md). It is also possible to click on each linked Addon repository to read their README files.  
+For a description of each Addon please see [FreeCAD-Addon-Details](https://github.com/FreeCAD/FreeCAD-addons/blob/master/FreeCAD-Addon-Details.md). It is also possible to click on each linked Addon repository to read their README files.  
 
 ### Installing
 
