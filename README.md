@@ -5,13 +5,14 @@ This repository is a collection of useful additional workbenches and modules for
 Since these are not part of the official FreeCAD package and not supported by the FreeCAD team, you should read the information provided on each of the addons page above before installing any of them, to make sure you know what you are installing. Also, bug reports and feature requests should be made directly on each addon page.
 
 ### Current add-ons
-For a description of each Addon please see [FreeCAD-Addon-Details](https://github.com/FreeCAD/FreeCAD-Addons/FreeCAD-Addon-Details.md). It is also possible to click on each linked Addon repository to read their README files.  
+For a description of each Addon please see [FreeCAD-Addon-Details](https://github.com/FreeCAD/FreeCAD-addons/blob/master/FreeCAD-Addon-Details.md). It is also possible to click on each linked Addon repository to read their README files.  
 
 ### Installing
 
-*Starting from FreeCAD v. 0.17.9940 the addons installer is included in FreeCAD, and can be accessed form the Tools menu, so there is no need to install anything anymore. The instructions below are only needed for older versions.*
+#### Important Note
+***Starting from FreeCAD v. 0.17.9940 the addons installer is included in FreeCAD, and can be accessed form the Tools menu, so there is no need to install anything anymore. The instructions below are only needed for older versions.***
 
-There are three ways to install any of the addons above (also check this more in-depth [tutorial](http://www.freecadweb.org/wiki/index.php?title=How_to_install_additional_workbenches) on the FreeCAD wiki):
+Aside from the above mentioned Addon installer, there are three other ways to install any of the FreeCAD addons (+ check this more in-depth [tutorial](http://www.freecadweb.org/wiki/How_to_install_additional_workbenches) on the FreeCAD wiki):
 
 #### 1. Using the installer macro
 
