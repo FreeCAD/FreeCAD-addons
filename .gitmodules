@@ -139,3 +139,6 @@
 [submodule "frame"]
 	path = frame
 	url = https://github.com/looooo/freecad_frame.git
+[submodule "Render"]
+	path = Render
+	url = https://github.com/FreeCAD/FreeCAD-render.git
