@@ -46,6 +46,8 @@ installed.
 from PySide import QtCore, QtGui
 import FreeCAD,urllib2,re,os,shutil
 
+import ssl # for ssl certificates when downloading addons from git
+
 NOGIT = False # for debugging purposes, set this to True to always use http downloads
 
 MACROS_BLACKLIST = ["BOLTS","WorkFeatures","how to install","PartsLibrary"]
@@ -294,7 +296,8 @@ class UpdateWorker(QtCore.QThread):
     def run(self):
         "populates the list of addons"
         self.progressbar_show.emit(True)
-        u = urllib2.urlopen("https://github.com/FreeCAD/FreeCAD-addons")
+        ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+        u = urllib2.urlopen("https://github.com/FreeCAD/FreeCAD-addons", context=ctx)
         p = u.read()
         u.close()
         p = p.replace("\n"," ")
@@ -333,7 +336,8 @@ class InfoWorker(QtCore.QThread):
         i = 0
         for repo in self.repos:
             url = repo[1]
-            u = urllib2.urlopen(url)
+            ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+            u = urllib2.urlopen(url, context=ctx)
             p = u.read()
             u.close()
             desc = re.findall("<meta content=\"(.*?)\" name", p)[3]
@@ -357,7 +361,8 @@ class MacroWorker(QtCore.QThread):
         self.info_label.emit("Downloading list of macros...")
         self.progressbar_show.emit(True)
         macropath = FreeCAD.ParamGet('User parameter:BaseApp/Preferences/Macro').GetString("MacroPath",os.path.join(FreeCAD.ConfigGet("UserAppData"),"Macro"))
-        u = urllib2.urlopen("http://www.freecadweb.org/wiki/index.php?title=Macros_recipes")
+        ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+        u = urllib2.urlopen("http://www.freecadweb.org/wiki/index.php?title=Macros_recipes", context=ctx)
         p = u.read()
         u.close()
         macros = re.findall("title=\"(Macro.*?)\"",p)
@@ -397,7 +402,8 @@ class ShowWorker(QtCore.QThread):
         else:
             url = self.repos[self.idx][1]
             self.info_label.emit(QtGui.QApplication.translate("AddonsInstaller", "Retrieving info from ", None, QtGui.QApplication.UnicodeUTF8) + str(url))
-            u = urllib2.urlopen(url)
+            ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+            u = urllib2.urlopen(url, context=ctx)
             p = u.read()
             u.close()
             desc = re.findall("<meta content=\"(.*?)\" name",p)[4]
@@ -435,7 +441,8 @@ class ShowMacroWorker(QtCore.QThread):
             mac = mac.replace("+","%2B")
             url = "http://www.freecadweb.org/wiki/index.php?title=Macro_"+mac
             self.info_label.emit("Retrieving info from " + str(url))
-            u = urllib2.urlopen(url)
+            ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+            u = urllib2.urlopen(url, context=ctx)
             p = u.read()
             u.close()
             code = re.findall("<pre>(.*?)<\/pre>",p.replace("\n","--endl--"))
