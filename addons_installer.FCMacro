@@ -67,6 +67,90 @@ def symlink(source, link_name):
                 raise ctypes.WinError()
 
 
+class ProxyPanel(QtGui.QWidget):
+
+    def __init__(self):
+        QtGui.QWidget.__init__(self)
+
+        # Create primary UI objects
+        buttonGroup = QtGui.QButtonGroup()
+        self.noProxy = QtGui.QRadioButton()
+        self.systemProxy = QtGui.QRadioButton()
+        self.userProxy = QtGui.QRadioButton()
+
+        buttonGroup.addButton(self.noProxy)
+        buttonGroup.addButton(self.systemProxy)
+        buttonGroup.addButton(self.userProxy)
+
+        self.proxyUrlEdit = QtGui.QLineEdit()
+
+        # Initialize button group and text field
+        proxyUrl = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyUrl', '')
+        self.proxyUrlEdit.setText(proxyUrl)
+
+        proxyType = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyType', 'none')
+        if proxyType == 'system':
+            self.systemProxy.setChecked(True)
+            self.proxyUrlEdit.setEnabled(False)
+        elif proxyType == 'user':
+            self.userProxy.setChecked(True)
+            self.proxyUrlEdit.setEnabled(True)
+        else:
+            self.noProxy.setChecked(True)
+            self.proxyUrlEdit.setEnabled(False)
+
+        # Assemble the proxy page UI
+        self.formLayout = QtGui.QFormLayout()   # TODO: Probably FormLayout is not appropriate here
+        self.formLayout.addRow('x', self.proxyUrlEdit)
+        self.formWidget = QtGui.QWidget()
+        self.formWidget.setLayout(self.formLayout)
+
+        self.buttonLayout = QtGui.QHBoxLayout()
+        self.buttonLayout.addSpacerItem(QtGui.QSpacerItem(1,1, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed))
+        self.buttonApply = QtGui.QPushButton()
+        self.buttonLayout.addWidget(self.buttonApply)
+        self.buttonWidget = QtGui.QWidget()
+        self.buttonWidget.setLayout(self.buttonLayout)
+
+        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout.addWidget(self.noProxy)
+        self.mainLayout.addWidget(self.systemProxy)
+        self.mainLayout.addWidget(self.userProxy)
+        self.mainLayout.addWidget(self.formWidget)
+        self.mainLayout.addWidget(self.buttonWidget)
+        self.setLayout(self.mainLayout)
+
+        self.retranslateUi()
+
+        self.noProxy.toggled.connect(self.toggleSystemProxy)
+        self.systemProxy.toggled.connect(self.toggleSystemProxy)
+        self.userProxy.toggled.connect(self.toggleSystemProxy)
+        self.buttonApply.clicked.connect(self.applySettings)
+
+    def toggleSystemProxy(self, checkState):
+        if checkState:
+            if self.userProxy.isChecked():
+                self.proxyUrlEdit.setEnabled(True)
+            else:
+                self.proxyUrlEdit.setEnabled(False)
+
+    def applySettings(self):
+        if self.userProxy.isChecked():
+            FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetString('proxyType', 'user')
+        elif self.noProxy.isChecked():
+            FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetString('proxyType', 'none')
+        elif self.systemProxy.isChecked():
+            FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetString('proxyType', 'system')
+        FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetString('proxyUrl', self.proxyUrlEdit.text())
+
+    def retranslateUi(self):
+        self.noProxy.setText(QtGui.QApplication.translate("AddonsInstaller", "No proxy", None, QtGui.QApplication.UnicodeUTF8))
+        self.systemProxy.setText(QtGui.QApplication.translate("AddonsInstaller", "Use system proxy", None, QtGui.QApplication.UnicodeUTF8))
+        self.userProxy.setText(QtGui.QApplication.translate("AddonsInstaller", "User defined proxy:", None, QtGui.QApplication.UnicodeUTF8))
+        self.formLayout.labelForField(self.proxyUrlEdit).setText("&Proxy URL:")
+        self.buttonApply.setText(QtGui.QApplication.translate("AddonsInstaller", "Apply", None, QtGui.QApplication.UnicodeUTF8))
+
+
 class AddonsInstaller(QtGui.QDialog):
 
     def __init__(self):
@@ -84,6 +168,10 @@ class AddonsInstaller(QtGui.QDialog):
         self.listMacros = QtGui.QListWidget()
         self.listMacros.setIconSize(QtCore.QSize(16,16))
         self.tabWidget.addTab(self.listMacros,"")
+
+        self.proxyPanel = ProxyPanel()
+        self.tabWidget.addTab(self.proxyPanel, "")
+
         self.labelDescription = QtGui.QLabel()
         self.labelDescription.setMinimumSize(QtCore.QSize(0, 75))
         self.labelDescription.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
@@ -134,6 +222,7 @@ class AddonsInstaller(QtGui.QDialog):
         self.buttonRemove.setText(QtGui.QApplication.translate("AddonsInstaller", "Remove", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.listWorkbenches), QtGui.QApplication.translate("AddonsInstaller", "Workbenches", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.listMacros), QtGui.QApplication.translate("AddonsInstaller", "Macros", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.proxyPanel), QtGui.QApplication.translate("AddonsInstaller", "Proxy", None, QtGui.QApplication.UnicodeUTF8))
 
     def update(self):
         self.listWorkbenches.clear()
@@ -294,6 +383,20 @@ class UpdateWorker(QtCore.QThread):
     def run(self):
         "populates the list of addons"
         self.progressbar_show.emit(True)
+
+        proxyType = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyType', 'none')
+        if proxyType != 'none':
+            if proxyType == 'system':
+                FreeCAD.Console.PrintMessage("Using system proxy settings\n")
+                proxy = urllib2.ProxyHandler() # <--empty argument will use system-wide proxy from Windows network settings
+            elif proxyType == 'user':
+                proxyUrl = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyUrl', '')
+                FreeCAD.Console.PrintMessage("Using proxy {}\n".format(proxyUrl))
+                proxy = urllib2.ProxyHandler({'http' : proxyUrl, 'https' : proxyUrl})
+
+            proxy_opener = urllib2.build_opener(proxy)
+            urllib2.install_opener(proxy_opener)
+
         u = urllib2.urlopen("https://github.com/FreeCAD/FreeCAD-addons")
         p = u.read()
         u.close()
