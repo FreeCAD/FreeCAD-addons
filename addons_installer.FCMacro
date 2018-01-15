@@ -69,6 +69,9 @@ def symlink(source, link_name):
 
 class ProxyPanel(QtGui.QWidget):
 
+    # Emit this signal when the user clicks the "Save & Close" button
+    saveAndClose = QtCore.Signal()
+
     def __init__(self):
         QtGui.QWidget.__init__(self)
 
@@ -100,13 +103,15 @@ class ProxyPanel(QtGui.QWidget):
             self.proxyUrlEdit.setEnabled(False)
 
         # Assemble the proxy page UI
-        self.formLayout = QtGui.QFormLayout()   # TODO: Probably FormLayout is not appropriate here
-        self.formLayout.addRow('x', self.proxyUrlEdit)
-        self.formWidget = QtGui.QWidget()
-        self.formWidget.setLayout(self.formLayout)
+        self.urlEditLayout = QtGui.QHBoxLayout()
+        self.urlEditLabel = QtGui.QLabel()
+        self.urlEditLayout.addWidget(self.urlEditLabel)
+        self.urlEditLayout.addWidget(self.proxyUrlEdit)
+        self.urlEditWidget = QtGui.QWidget()
+        self.urlEditWidget.setLayout(self.urlEditLayout)
 
         self.buttonLayout = QtGui.QHBoxLayout()
-        self.buttonLayout.addSpacerItem(QtGui.QSpacerItem(1,1, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed))
+        self.buttonLayout.addSpacerItem(QtGui.QSpacerItem(1, 1, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed))
         self.buttonApply = QtGui.QPushButton()
         self.buttonLayout.addWidget(self.buttonApply)
         self.buttonWidget = QtGui.QWidget()
@@ -116,8 +121,9 @@ class ProxyPanel(QtGui.QWidget):
         self.mainLayout.addWidget(self.noProxy)
         self.mainLayout.addWidget(self.systemProxy)
         self.mainLayout.addWidget(self.userProxy)
-        self.mainLayout.addWidget(self.formWidget)
+        self.mainLayout.addWidget(self.urlEditWidget)
         self.mainLayout.addWidget(self.buttonWidget)
+        self.mainLayout.addSpacerItem(QtGui.QSpacerItem(1, 1, QtGui.QSizePolicy.Fixed,  QtGui.QSizePolicy.Expanding))
         self.setLayout(self.mainLayout)
 
         self.retranslateUi()
@@ -142,13 +148,14 @@ class ProxyPanel(QtGui.QWidget):
         elif self.systemProxy.isChecked():
             FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetString('proxyType', 'system')
         FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').SetString('proxyUrl', self.proxyUrlEdit.text())
+        self.saveAndClose.emit()
 
     def retranslateUi(self):
         self.noProxy.setText(QtGui.QApplication.translate("AddonsInstaller", "No proxy", None, QtGui.QApplication.UnicodeUTF8))
         self.systemProxy.setText(QtGui.QApplication.translate("AddonsInstaller", "Use system proxy", None, QtGui.QApplication.UnicodeUTF8))
         self.userProxy.setText(QtGui.QApplication.translate("AddonsInstaller", "User defined proxy:", None, QtGui.QApplication.UnicodeUTF8))
-        self.formLayout.labelForField(self.proxyUrlEdit).setText("&Proxy URL:")
-        self.buttonApply.setText(QtGui.QApplication.translate("AddonsInstaller", "Apply", None, QtGui.QApplication.UnicodeUTF8))
+        self.urlEditLabel.setText(QtGui.QApplication.translate("AddonsInstaller", "Proxy URL:", None, QtGui.QApplication.UnicodeUTF8))
+        self.buttonApply.setText(QtGui.QApplication.translate("AddonsInstaller", "Save && Close", None, QtGui.QApplication.UnicodeUTF8))
 
 
 class AddonsInstaller(QtGui.QDialog):
@@ -204,6 +211,7 @@ class AddonsInstaller(QtGui.QDialog):
 
         self.retranslateUi()
 
+        self.proxyPanel.saveAndClose.connect(self.reject)
         QtCore.QObject.connect(self.buttonCancel, QtCore.SIGNAL("clicked()"), self.reject)
         QtCore.QObject.connect(self.buttonInstall, QtCore.SIGNAL("clicked()"), self.install)
         QtCore.QObject.connect(self.buttonRemove, QtCore.SIGNAL("clicked()"), self.remove)
@@ -384,11 +392,12 @@ class UpdateWorker(QtCore.QThread):
         "populates the list of addons"
         self.progressbar_show.emit(True)
 
+        # Configure proxy
         proxyType = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyType', 'none')
         if proxyType != 'none':
             if proxyType == 'system':
                 FreeCAD.Console.PrintMessage("Using system proxy settings\n")
-                proxy = urllib2.ProxyHandler() # <--empty argument will use system-wide proxy from Windows network settings
+                proxy = urllib2.ProxyHandler() # empty argument will use system-wide proxy from OS network settings
             elif proxyType == 'user':
                 proxyUrl = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyUrl', '')
                 FreeCAD.Console.PrintMessage("Using proxy {}\n".format(proxyUrl))
