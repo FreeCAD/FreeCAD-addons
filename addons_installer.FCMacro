@@ -44,7 +44,7 @@ installed.
 '''
 
 from PySide import QtCore, QtGui
-import FreeCAD,urllib2,re,os,shutil
+import FreeCAD,urllib2,re,os,shutil,sys
 
 import ssl # for ssl certificates when downloading addons from git
 
