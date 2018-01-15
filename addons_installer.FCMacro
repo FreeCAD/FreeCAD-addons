@@ -74,7 +74,7 @@ def openUrl(url):
         return urllib2.urlopen(url)
     else:
         ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-        return urllib2.urlopen(url)
+        return urllib2.urlopen(url, context=ctx)
 
 class AddonsInstaller(QtGui.QDialog):
 
