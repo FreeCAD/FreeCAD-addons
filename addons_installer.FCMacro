@@ -403,17 +403,18 @@ class UpdateWorker(QtCore.QThread):
 
         # Configure proxy
         proxyType = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyType', 'none')
-        if proxyType != 'none':
-            if proxyType == 'system':
-                FreeCAD.Console.PrintMessage("Using system proxy settings\n")
-                proxy = urllib2.ProxyHandler() # empty argument will use system-wide proxy from OS network settings
-            elif proxyType == 'user':
-                proxyUrl = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyUrl', '')
-                FreeCAD.Console.PrintMessage("Using proxy {}\n".format(proxyUrl))
-                proxy = urllib2.ProxyHandler({'http' : proxyUrl, 'https' : proxyUrl})
+        if proxyType == 'system':
+            FreeCAD.Console.PrintMessage("Using system proxy settings\n")
+            proxy = urllib2.ProxyHandler()      # empty argument should use system-wide proxy from OS network settings
+        elif proxyType == 'user':
+            proxyUrl = FreeCAD.ParamGet('User parameter:Plugins/addonsRepository').GetString('proxyUrl', '')
+            FreeCAD.Console.PrintMessage("Using proxy {}\n".format(proxyUrl))
+            proxy = urllib2.ProxyHandler({'http' : proxyUrl, 'https' : proxyUrl})
+        else:
+            proxy = urllib2.ProxyHandler({})    # Default: No proxy
 
-            proxy_opener = urllib2.build_opener(proxy)
-            urllib2.install_opener(proxy_opener)
+        proxy_opener = urllib2.build_opener(proxy)
+        urllib2.install_opener(proxy_opener)
 
         u = openUrl("https://github.com/FreeCAD/FreeCAD-addons")
         p = u.read()
