@@ -292,3 +292,11 @@ A Timber module for FreeCAD
 
 #### [workfeature](https://github.com/Rentlau/WorkFeature/)
 Tool utility to create Points (mid points, center of circle, center of object(s)...), Axes (from 2 points, Normal of a plane...), Planes (from 3 points, from one axis and a point...) and many other useful features to facilitate the creation of your project. This utility is up next in the combo view with "Work Features" label.
+
+---
+
+#### [yaml-workspace](https://github.com/Mambix/FreeCAD-yaml-workspace/)
+This tool allows you to create YAML configuration files for easy importing of files. If your import files change often and you use FreeCAD to check how parts fit together this makes it much easier and faster to check designs.
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/PO6Uz16cdP8/0.jpg)](http://www.youtube.com/watch?v=PO6Uz16cdP8 "YAML Workspace")  
+

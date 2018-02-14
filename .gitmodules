@@ -142,6 +142,10 @@
 [submodule "Render"]
 	path = Render
 	url = https://github.com/FreeCAD/FreeCAD-render.git
+[submodule "yaml-workspace"]
+	path = yaml-workspace
+	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
+	branch = master
 [submodule "Autoload"]
 	path = Autoload
 	url = https://github.com/triplus/Autoload
