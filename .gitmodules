@@ -151,3 +151,6 @@
 [submodule "SelectorToolbar"]
 	path = SelectorToolbar
 	url = https://github.com/triplus/SelectorToolbar
+[submodule "ToolbarStyle"]
+	path = ToolbarStyle
+	url = https://github.com/triplus/ToolbarStyle
