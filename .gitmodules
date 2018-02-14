@@ -146,3 +146,12 @@
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
 	branch = master
+[submodule "Autoload"]
+	path = Autoload
+	url = https://github.com/triplus/Autoload
+[submodule "CommandPanel"]
+	path = CommandPanel
+	url = https://github.com/triplus/CommandPanel
+[submodule "SelectorToolbar"]
+	path = SelectorToolbar
+	url = https://github.com/triplus/SelectorToolbar
