@@ -142,3 +142,12 @@
 [submodule "Render"]
 	path = Render
 	url = https://github.com/FreeCAD/FreeCAD-render.git
+[submodule "Autoload"]
+	path = Autoload
+	url = https://github.com/triplus/Autoload
+[submodule "CommandPanel"]
+	path = CommandPanel
+	url = https://github.com/triplus/CommandPanel
+[submodule "SelectorToolbar"]
+	path = SelectorToolbar
+	url = https://github.com/triplus/SelectorToolbar
