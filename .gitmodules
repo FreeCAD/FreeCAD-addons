@@ -158,3 +158,6 @@
 [submodule "ToolbarStyle"]
 	path = ToolbarStyle
 	url = https://github.com/triplus/ToolbarStyle
+[submodule "BIM"]
+	path = BIM
+	url = https://github.com/yorikvanhavre/BIM_Workbench.git
