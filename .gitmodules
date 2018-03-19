@@ -8,7 +8,7 @@
 	path = pluginloader
 	url = https://github.com/microelly2/freecad-pluginloader.git
 [submodule "workfeature"]
-	path = workfeature
+	path = workfeature-macro
 	url = https://github.com/Rentlau/WorkFeature.git
 [submodule "fasteners"]
 	path = fasteners
