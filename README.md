@@ -10,9 +10,27 @@ For a description of each Addon please see [FreeCAD-Addon-Details](https://githu
 ### Installing
 
 #### Important Note
-***Starting from FreeCAD v. 0.17.9940 the addons installer is included in FreeCAD, and can be accessed form the Tools menu, so there is no need to install anything anymore. The instructions below are only needed for older versions.***
+***Starting from FreeCAD v. 0.17.9940 the addons installer is included in FreeCAD, and can be accessed from the Tools menu, so there is no need to install macros to do this. For older versions of FC please see the Deprecated Installation Methods section***
 
-Aside from the above mentioned Addon installer, there are three other ways to install any of the FreeCAD addons (+ check this more in-depth [tutorial](http://www.freecadweb.org/wiki/How_to_install_additional_workbenches) on the FreeCAD wiki):
+#### 1. Builtin Addon Manager
+
+With version 0.17 FreeCAD now has a built-in Addon Manager that will install 3rd party workbenches and macros. To access it via ***Tools -> Addon Manager*** as per the screenshot:
+
+![freecad-0.17-addon_manager-screenshot](https://user-images.githubusercontent.com/4140247/37867768-2eb7db20-2f73-11e8-83fb-8868995ba49d.png)
+
+
+#### 2. Manual install
+
+Each of these addons can be downloaded by clicking the **Download ZIP** button found on top of each addon page, or using **Git**. Most of the addons must either be placed in your user's FreeCAD/Mod folder, or in the Macros folder. Refer to the instructions on each addon page for complete instructions. 
+
+**Note**: Your user's FreeCAD folder location is obtained by typing in FreeCAD's python console: `FreeCAD.ConfigGet("UserAppData")`while the Macros folder location is indicated in the dialog opened from menu *Macro -> Macros...*
+
+### Adding your workbench to the collection
+
+Have you made an interesting workbench or module that we are not aware of? Tell us on the [FreeCAD forum](http://forum.freecadweb.org) so we can add it here!
+
+### Deprecated Installation Methods
+Before FreeCAD v. 0.17.9940 the methods below were utilized to automate the installation of workbenches and macros. This sections is being kept for historical purposes.
 
 #### 1. Using the installer macro
 
@@ -29,12 +47,4 @@ The installer macro can be launched from inside FreeCAD, and will download and i
 
 The plugin loader is a much more elaborate way to install and manage additional content for freecad. Install it with the method above, or following the instructions on the [pluginloader page](https://github.com/microelly2/freecad-pluginloader).
 
-#### 3. Manual install
 
-Each of these addons can be downloaded by clicking the **Download ZIP** button found on top of each addon page, or using **Git**. Most of the addons must either be placed in your user's FreeCAD/Mod folder, or in the Macros folder. Refer to the instructions on each addon page for complete instructions. 
-
-**Note**: Your user's FreeCAD folder location is obtained by typing in FreeCAD's python console: `FreeCAD.ConfigGet("UserAppData")`while the Macros folder location is indicated in the dialog opened from menu *Macro -> Macros...*
-
-### Adding your workbench to the collection
-
-Have you made an interesting workbench or module that we are not aware of? Tell us on the [FreeCAD forum](http://forum.freecadweb.org) so we can add it here!
