@@ -9,7 +9,7 @@
 	url = https://github.com/microelly2/freecad-pluginloader.git
 [submodule "workfeature"]
 	path = workfeature
-	url = https://github.com/Rentlau/WorkFeature.git
+	url = https://github.com/Rentlau/WorkFeature-WB.git
 [submodule "fasteners"]
 	path = fasteners
 	url = https://github.com/shaise/FreeCAD_FastenersWB.git
@@ -155,3 +155,12 @@
 [submodule "SelectorToolbar"]
 	path = SelectorToolbar
 	url = https://github.com/triplus/SelectorToolbar
+[submodule "ToolbarStyle"]
+	path = ToolbarStyle
+	url = https://github.com/triplus/ToolbarStyle
+[submodule "BIM"]
+	path = BIM
+	url = https://github.com/yorikvanhavre/BIM_Workbench.git
+[submodule "workfeature-macro"]
+	path = workfeature-macro
+	url = https://github.com/Rentlau/WorkFeature.git
