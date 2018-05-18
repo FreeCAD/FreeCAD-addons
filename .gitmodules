@@ -164,3 +164,6 @@
 [submodule "workfeature-macro"]
 	path = workfeature-macro
 	url = https://github.com/Rentlau/WorkFeature.git
+[submodule "SlopedPlanes"]
+	path = SlopedPlanes
+	url = https://github.com/caceres/SlopedPlanesMacro.git
