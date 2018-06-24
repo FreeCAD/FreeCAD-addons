@@ -16,9 +16,6 @@
 [submodule "sheetmetal"]
 	path = sheetmetal
 	url = https://github.com/shaise/FreeCAD_SheetMetal.git
-[submodule "lattice"]
-	path = lattice
-	url = https://github.com/DeepSOIC/Lattice.git
 [submodule "timber"]
 	path = timber
 	url = https://github.com/wood-galaxy/FreeCAD-Timber.git
