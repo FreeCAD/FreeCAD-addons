@@ -49,9 +49,9 @@
 [submodule "lattice2"]
 	path = lattice2
 	url = https://github.com/DeepSOIC/Lattice2.git
-[submodule "exploded_animation"]
-	path = exploded_animation
-	url = https://github.com/JMG1/FreeCAD_ExplodedAssemblyAnimationWorkbench.git
+[submodule "exploded_assembly"]
+	path = exploded_assembly
+	url = https://github.com/JMG1/FreeCAD_ExplodedAssembly.git
 [submodule "retr3d"]
 	path = retr3d
 	url = https://github.com/Maaphoo/Retr3d.git
@@ -97,9 +97,6 @@
 [submodule "CADExchanger"]
 	path = CADExchanger
 	url = https://github.com/yorikvanhavre/CADExchanger.git
-[submodule "WebTools"]
-	path = WebTools
-	url = https://github.com/yorikvanhavre/WebTools.git
 [submodule "ShortCuts"]
 	path = ShortCuts
 	url = https://github.com/triplus/ShortCuts.git
