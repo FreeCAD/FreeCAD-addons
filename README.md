@@ -30,8 +30,10 @@ Each of these addons can be downloaded by clicking the **Download ZIP** button f
 Have you made an interesting workbench or module that we are not aware of? Tell us on the [FreeCAD forum](http://forum.freecadweb.org) so we can add it here!
 
 ### Deprecated Installation Methods
-Before FreeCAD v. 0.17.9940 the methods below were utilized to automate the installation of workbenches and macros. This sections is being kept for historical purposes.
-
+<details>
+  <summary>Before FreeCAD v. 0.17.9940 the methods below were utilized to automate the installation of workbenches and macros. This sections is being kept for historical purposes.
+</summary>
+  
 #### 1. Using the installer macro
 
 The installer macro can be launched from inside FreeCAD, and will download and install any of the addons above automatically. To install the installer macro:
@@ -46,5 +48,4 @@ The installer macro can be launched from inside FreeCAD, and will download and i
 #### 2. Using the "pluginloader" addon
 
 The plugin loader is a much more elaborate way to install and manage additional content for freecad. Install it with the method above, or following the instructions on the [pluginloader page](https://github.com/microelly2/freecad-pluginloader).
-
-
+</details>
