@@ -7,13 +7,16 @@ Below for you convenience, you may find descriptions for each FreeCAD Addon/Work
 
 #### [BOLTSFC](https://github.com/berndhahnebach/BOLTSFC)
 BOLTS is an Open Library for Technical Specifications.
+Note: BOLTSFC is a fork of the currently unmaintained [BOLTS](https://github.com/jreinhardt/BOLTS.git)
 
+<details>
+  <summary>Details...</summary>
 ![BOLTS Screenshot](http://www.bolts-library.org/en/static/images/freecad-bearing.png "Logo BOLTS screenshot")
 
 
 This repository contains all the tools and data that are required to build the different distributions and the website. You only need to get the content of this repository if you want to contribute content to BOLTSFC or want to develop the tools that are used to manage it.
 
-Note: BOLTSFC is a fork of the currently unmaintained [BOLTS](https://github.com/jreinhardt/BOLTS.git)
+</details>
 
 ---
 
