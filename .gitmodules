@@ -164,3 +164,6 @@
 [submodule "SlopedPlanes"]
 	path = SlopedPlanes
 	url = https://github.com/caceres/SlopedPlanesMacro.git
+[submodule "Defeaturing"]
+	path = Defeaturing
+	url = https://github.com/easyw/Defeaturing_WB.git
