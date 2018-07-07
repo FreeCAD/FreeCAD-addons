@@ -167,3 +167,6 @@
 [submodule "Defeaturing"]
 	path = Defeaturing
 	url = https://github.com/easyw/Defeaturing_WB.git
+[submodule "AirPlaneDesign"]
+	path = AirPlaneDesign
+	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
