@@ -167,3 +167,6 @@
 [submodule "AirPlaneDesign"]
 	path = AirPlaneDesign
 	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
+[submodule "ExplodedAssembly"]
+	path = ExplodedAssembly
+	url = https://github.com/JMG1/ExplodedAssembly.git
