@@ -170,3 +170,6 @@
 [submodule "Lithophane"]
 	path = Lithophane
 	url = https://github.com/furti/FreeCAD-Lithophane
+[submodule "ExplodedAssembly"]
+	path = ExplodedAssembly
+	url = https://github.com/JMG1/ExplodedAssembly.git
