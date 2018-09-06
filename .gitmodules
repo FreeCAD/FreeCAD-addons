@@ -167,3 +167,6 @@
 [submodule "AirPlaneDesign"]
 	path = AirPlaneDesign
 	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
+[submodule "Lithophane"]
+	path = Lithophane
+	url = https://github.com/furti/FreeCAD-Lithophane
