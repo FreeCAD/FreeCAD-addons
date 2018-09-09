@@ -173,3 +173,6 @@
 [submodule "ExplodedAssembly"]
 	path = ExplodedAssembly
 	url = https://github.com/JMG1/ExplodedAssembly.git
+[submodule "A2plus"]
+	path = A2plus
+	url = https://github.com/kbwbe/A2plus
