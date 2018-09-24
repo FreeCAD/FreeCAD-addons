@@ -176,3 +176,6 @@
 [submodule "A2plus"]
 	path = A2plus
 	url = https://github.com/kbwbe/A2plus
+[submodule "DynamicData"]
+	path = DynamicData
+	url = https://github.com/mwganson/DynamicData
