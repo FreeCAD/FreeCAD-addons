@@ -69,6 +69,14 @@ This is a python workbench, with a collection of tools for Nurbs curves and surf
 
 ---
 
+#### [DynamicData](https://github.com/mwganson/DynamicData/)
+Create container object to hold custom properties.
+<details>
+  <summary>Details...</summary>
+<img src="https://github.com/mwganson/DynamicData/blob/master/Resources/icons/DynamicDataLogo.png">With this workbench you can create custom FeaturePython objects to serve as containers for custom properties. These custom properties can then be used in much the same way as cells in a spreadsheet. Users can refer to a custom property in a sketcher constraint (or from anywhere the Expression Engine can be accessed) the same way one might refer to a cell in a spreadsheet. Take note that FCStd files containing these DynamicData dd objects can be shared with other users who do not have the DynamicData workbench installed on there systems and yet will still remain fully functional. (But without the workbench installed those other users will not be able to add/remove properties unless it is done via scripting.)
+</details>
+
+---
 #### [FCGear](https://github.com/looooo/FCGear/)
 
 <details>
