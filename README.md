@@ -10,7 +10,7 @@ For a description of each Addon please see [FreeCAD-Addon-Details](https://githu
 ### Installing
 
 #### Important Note
-***Starting from FreeCAD v. 0.17.9940 the addons installer is included in FreeCAD, and can be accessed from the Tools menu, so there is no need to install macros to do this. For older versions of FC please see the Deprecated Installation Methods section***
+***Starting from FreeCAD v0.17.9940 the Addon Manager was finally implemented in to FreeCAD. It can be accessed from the dropdown Tools -> 'Addon Manager' menu. For earlier versions (≤v0.16), please see the [Deprecated Installation Methods](#deprecated-installation-methods) section***.
 
 #### 1. Builtin Addon Manager
 
