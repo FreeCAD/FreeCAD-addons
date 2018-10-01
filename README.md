@@ -29,6 +29,13 @@ Each of these addons can be downloaded by clicking the **Download ZIP** button f
 
 Have you made an interesting workbench or module that we are not aware of? Tell us on the [FreeCAD forum](http://forum.freecadweb.org) so we can add it here!
 
+To submit your workbench to the repository you must also need the following tasks to be completed:
+1. Announce your Workbench on the FreeCAD Forums
+2. Create a PR and add your Workbench to the [FreeCAD-Addon_Details](https://github.com/FreeCAD/FreeCAD-addons/blob/master/FreeCAD-Addon-Details.md) page.
+3. Create a dedicated page for your workbench on the FreeCAD wiki and add it to https://freecadweb.org/wiki/External_workbenches
+4. Create an entry on https://www.freecadweb.org/wiki/Template:DevWorkbenches
+5. Tag (AKA 'label) your Github repo with the following: `freecad`, `addon`, and `workbench`  
+
 ### Deprecated Installation Methods
 <details>
   <summary>Before FreeCAD v. 0.17.9940 the methods below were utilized to automate the installation of workbenches and macros. This sections is being kept for historical purposes.
