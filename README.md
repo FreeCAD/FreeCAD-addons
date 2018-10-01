@@ -34,7 +34,7 @@ To submit your workbench to the repository you must also need the following task
 2. Create a PR and add your Workbench to the [FreeCAD-Addon_Details](https://github.com/FreeCAD/FreeCAD-addons/blob/master/FreeCAD-Addon-Details.md) page.
 3. Create a dedicated page for your workbench on the FreeCAD wiki and add it to https://freecadweb.org/wiki/External_workbenches
 4. Create an entry on https://www.freecadweb.org/wiki/Template:DevWorkbenches
-5. Tag (AKA 'label) your Github repo with the following: `freecad`, `addon`, and `workbench`  
+5. Tag (AKA 'label) your Github repo with the following: `freecad`, `addons`, and `workbench`  
 
 ### Deprecated Installation Methods
 <details>
