@@ -167,6 +167,15 @@
 [submodule "AirPlaneDesign"]
 	path = AirPlaneDesign
 	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
+[submodule "Lithophane"]
+	path = Lithophane
+	url = https://github.com/furti/FreeCAD-Lithophane
 [submodule "ExplodedAssembly"]
 	path = ExplodedAssembly
 	url = https://github.com/JMG1/ExplodedAssembly.git
+[submodule "A2plus"]
+	path = A2plus
+	url = https://github.com/kbwbe/A2plus
+[submodule "DynamicData"]
+	path = DynamicData
+	url = https://github.com/mwganson/DynamicData
