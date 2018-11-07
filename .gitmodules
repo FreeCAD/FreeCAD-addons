@@ -179,3 +179,6 @@
 [submodule "DynamicData"]
 	path = DynamicData
 	url = https://github.com/mwganson/DynamicData
+[submodule "ArchTextures"]
+	path = ArchTextures
+	url = https://github.com/furti/FreeCAD-ArchTextures
