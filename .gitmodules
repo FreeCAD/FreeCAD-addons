@@ -182,3 +182,6 @@
 [submodule "ArchTextures"]
 	path = ArchTextures
 	url = https://github.com/furti/FreeCAD-ArchTextures
+[submodule "Glass"]
+	path = Glass
+	url = https://github.com/triplus/Glass.git
