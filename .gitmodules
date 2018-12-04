@@ -111,7 +111,7 @@
 	url = https://github.com/amrit3701/FreeCAD-Reinforcement
 [submodule "DesignSPHysics"]
 	path = DesignSPHysics
-	url = https://github.com/ndrs92/DesignSPHysics.git
+	url = https://github.com/DualSPHysics/DesignSPHysics.git
 [submodule "InventorLoader"]
 	path = InventorLoader
 	url = https://github.com/jmplonka/InventorLoader.git
