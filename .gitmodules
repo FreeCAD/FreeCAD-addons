@@ -83,7 +83,7 @@
 	path = Curves
 	url = https://github.com/tomate44/CurvesWB.git
 [submodule "dxf-library"]
-	path = dxf-library
+	path = dxf_library
 	url = https://github.com/yorikvanhavre/Draft-dxf-importer.git
 [submodule "NavigationIndicator"]
 	path = NavigationIndicator
