@@ -77,6 +77,20 @@ Create container object to hold custom properties.
 </details>
 
 ---
+
+#### [ElectroMagnetic](https://github.com/ediloren/EM-Workbench-for-FreeCAD/edit/master/README.md)
+ElectroMagnetic Workbench for [FastFieldSolvers](https://www.fastfieldsolvers.com) free tools
+<details>
+  <summary>Details...</summary>
+This project is dedicated to building an ElectroMagnetic workbench for [FreeCAD](https://www.freecadweb.org). FreeCAD is used as pre-processor interfacing to the open source electromagnetic field solvers [FastHenry](https://www.fastfieldsolvers.com/fasthenry2.htm) and [FasterCap](https://www.fastfieldsolvers.com/fastercap.htm).
+
+At present, the workbench supports:
+
+- [FastHenry](https://www.fastfieldsolvers.com/fasthenry2.htm) inductance solver: ongoing development including GUI support
+- [FasterCap](https://www.fastfieldsolvers.com/fastercap.htm) capacitance solver: ongoing development, today at the stage of Python macro only, for creating an input file
+</details>
+
+---
 #### [FCGear](https://github.com/looooo/FCGear/)
 
 <details>

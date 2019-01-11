@@ -185,3 +185,6 @@
 [submodule "SlopedPlanesMacro"]
 	path = SlopedPlanesMacro
 	url = https://github.com/luzpaz/SlopedPlanesMacro.git
+[submodule "EM"]
+	path = EM
+	url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
