@@ -185,3 +185,6 @@
 [submodule "SlopedPlanesMacro"]
 	path = SlopedPlanesMacro
 	url = https://github.com/luzpaz/SlopedPlanesMacro.git
+[submodule "Reporting"]
+	path = Reporting
+	url = https://github.com/furti/FreeCAD-Reporting
