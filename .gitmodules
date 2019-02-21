@@ -188,3 +188,6 @@
 [submodule "Reporting"]
 	path = Reporting
 	url = https://github.com/furti/FreeCAD-Reporting
+[submodule "EM"]
+	path = EM
+	url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
