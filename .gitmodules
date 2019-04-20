@@ -191,3 +191,6 @@
 [submodule "EM"]
 	path = EM
 	url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
+[submodule "Plot"]
+	path = Plot
+	url = https://github.com/FreeCAD/freecad.plot
