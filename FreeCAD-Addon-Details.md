@@ -117,6 +117,16 @@ Launcher widget for FreeCAD
 
 ---
 
+#### [LCInterlocking](https://github.com/execuc/LCInterlocking)
+Interlocking module for FreeCAD
+
+<details>
+  <summary>Details...</summary>
+  This module is used to create interlocking cut parts from 3D to 2D SVG. It was created for laser cutting but can work with CNC router.
+</details>
+
+---
+
 #### [NavigationIndicator](https://github.com/triplus/NavigationIndicator/)
 Navigation indicator for FreeCAD
 
