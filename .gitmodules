@@ -194,3 +194,6 @@
 [submodule "Plot"]
 	path = Plot
 	url = https://github.com/FreeCAD/freecad.plot
+[submodule "LCInterlocking"]
+	path = LCInterlocking
+	url = https://github.com/execuc/LCInterlocking
