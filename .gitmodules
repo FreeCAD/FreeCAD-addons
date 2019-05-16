@@ -197,3 +197,6 @@
 [submodule "LCInterlocking"]
 	path = LCInterlocking
 	url = https://github.com/execuc/LCInterlocking
+[submodule "Ship"]
+	path = Ship
+	url = https://github.com/FreeCAD/freecad.ship
