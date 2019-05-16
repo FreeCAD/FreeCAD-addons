@@ -126,7 +126,7 @@
 	url = https://github.com/easyw/kicadStepUpMod.git
 [submodule "BOLTSFC"]
 	path = BOLTSFC
-	url = https://github.com/berndhahnebach/BOLTSFC.git
+	url = https://github.com/boltsparts/BOLTSFC.git
 [submodule "Manipulator"]
 	path = Manipulator
 	url = https://github.com/easyw/Manipulator.git
