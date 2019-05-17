@@ -200,3 +200,6 @@
 [submodule "Ship"]
 	path = Ship
 	url = https://github.com/FreeCAD/freecad.ship
+[submodule "slic3r-tools"]
+	path = slic3r-tools
+	url = https://github.com/limikael/freecad-slic3r-tools
