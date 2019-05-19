@@ -195,12 +195,11 @@ Website: https://edwardvmills.github.io/Silk/
 Lets you quickly export .stl files and run Slic3r for 3D printing
 
 <details>
-  <summary>
-    This module lets you quickly export all visible parts in the current document, and open the
-    resulting .stl file in Slic3r. You can also set up a default print profile, and directly get
-    information about the resources that would be used to print it, as well as quickly generate the
-    .gcode file.
-  </summary>
+  <summary>Details...</summary>
+  This module lets you quickly export all visible parts in the current document, and open the
+  resulting .stl file in Slic3r. You can also set up a default print profile, and directly get
+  information about the resources that would be used to print it, as well as quickly generate the
+  .gcode file.
 </details>
 
 ---
