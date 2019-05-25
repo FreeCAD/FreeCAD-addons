@@ -203,3 +203,6 @@
 [submodule "slic3r-tools"]
 	path = slic3r-tools
 	url = https://github.com/limikael/freecad-slic3r-tools
+[submodule "dodo"]
+	path = dodo
+	url = https://github.com/oddtopus/dodo
