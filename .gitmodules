@@ -206,3 +206,6 @@
 [submodule "dodo"]
 	path = dodo
 	url = https://github.com/oddtopus/dodo
+[submodule "3D_Printing_Tools"]
+	path = 3D_Printing_Tools
+	url = https://github.com/mark1791/3D_Printing_Tools
