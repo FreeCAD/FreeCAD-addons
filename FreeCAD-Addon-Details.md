@@ -61,6 +61,18 @@ This is a python workbench, with a collection of tools for Nurbs curves and surf
 
 ---
 
+#### [Dodo](https://github.com/oddtopus/dodo/)
+Workbench to create frames, piping and similar. This is the Freecad >=v0.18 Py3/Qt5 successor to the Flamingo Workbench.  
+<details>
+<summary>Details...</summary>
+This workbench is the continuation and redesign of the Flamingo WB for FC versions based on python >=3.6 and Qt5. While still dealing with dedicated structures to draw frames and piping, it features new drawing aids such as a pie-menu and fancy pop-up dialogs for components quick insertion.  
+The commands are redesigned to be more ergonomic and allow a better workflow.
+
+![screenshot1](https://www.freecadweb.org/wiki/images/8/85/FlamingoBlob.png)
+</details>
+
+---
+
 #### [DesignSPHysics](https://github.com/ndrs92/DesignSPHysics/)
 
 <details>
@@ -77,6 +89,7 @@ Create container object to hold custom properties.
 </details>
 
 ---
+
 #### [FCGear](https://github.com/looooo/FCGear/)
 
 <details>
