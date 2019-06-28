@@ -212,3 +212,6 @@
 [submodule "BIMBots"]
 	path = BIMBots
 	url = https://github.com/opensourceBIM/BIMbots-FreeCAD
+[submodule "Geomatics"]
+	path = Geomatics
+	url = https://github.com/HakanSeven12/FreeCAD-Geomatics-Workbench.git
