@@ -495,3 +495,13 @@ If your import files change often and you use FreeCAD to check how parts fit tog
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/PO6Uz16cdP8/0.jpg)](http://www.youtube.com/watch?v=PO6Uz16cdP8 "YAML Workspace")  
 </details>
+
+---
+
+#### [curved-shapes-workspace](https://github.com/chbergmann/CurvedShapesWorkbench/)
+FreeCAD Workbench for creating 3D shapes from 2D curves.
+
+<details>
+  <summary>Details...</summary>
+See https://github.com/chbergmann/CurvedShapesWorkbench/blob/master/README.md
+</details>
