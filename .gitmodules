@@ -215,3 +215,6 @@
 [submodule "Geomatics"]
 	path = Geomatics
 	url = https://github.com/HakanSeven12/FreeCAD-Geomatics-Workbench.git
+[submodule "CurvedShapes"]
+	path = CurvedShapes
+	url = https://github.com/chbergmann/CurvedShapesWorkbench.git
