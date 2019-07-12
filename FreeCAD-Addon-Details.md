@@ -140,6 +140,16 @@ Interlocking module for FreeCAD
 
 ---
 
+#### [MOOC](https://framagit.org/freecad-france/mooc-workbench)
+MOOC workbench for FreeCAD
+
+<details>
+  <summary>Details...</summary>
+  MOOC Workbench is an external workbench with which you can follow interactive tutorial and make evaluation of your work directly in FreeCAD interface. 
+</details>
+
+---
+
 #### [NavigationIndicator](https://github.com/triplus/NavigationIndicator/)
 Navigation indicator for FreeCAD
 
