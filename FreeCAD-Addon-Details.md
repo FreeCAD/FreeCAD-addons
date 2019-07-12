@@ -145,7 +145,7 @@ MOOC workbench for FreeCAD
 
 <details>
   <summary>Details...</summary>
-  MOOC Workbench is an external workbench with which you can follow interactive tutorial and make evaluation of your work directly in FreeCAD interface. 
+  The MOOC Workbench is an external workbench with which you can follow interactive tutorial and make evaluation of your work directly within the FreeCAD interface. 
 </details>
 
 ---
