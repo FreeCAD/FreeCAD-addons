@@ -218,3 +218,6 @@
 [submodule "CurvedShapes"]
 	path = CurvedShapes
 	url = https://github.com/chbergmann/CurvedShapesWorkbench.git
+[submodule "MOOC"]
+	path = MOOC
+	url = https://framagit.org/freecad-france/mooc-workbench
