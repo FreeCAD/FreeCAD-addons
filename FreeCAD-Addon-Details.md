@@ -236,6 +236,15 @@ TabBar widget for FreeCAD
 
 ---
 
+#### [ThreadProfile](https://github.com/mwganson/ThreadProfile/)
+Easily create parametric 2d thread profile object compatible in Part and Part Design workbenches
+<details>
+  <summary>Details...</summary>
+<img src="https://github.com/mwganson/ThreadProfile/blob/master/Resources/icons/ThreadProfileLogo.png">With this workbench you can  create a parametric 2d thread profile object (based on Draft BSpline) that can be swept along a helix to generate either metric or ANSI inch threads, both internal and external.  You specify the desired pitch, minor diameter, whether external or internal, and thread count (height of thread in terms of number of threads), create the helix right in the workbench, then sweep either in Part or Part Design workbench.  If you do not know the minor diameter, there is a command to open a link to an online calculator in your default browser in the workbench.
+</details>
+
+---
+
 #### [WebTools](https://github.com/yorikvanhavre/WebTools/)
 WebTools workbench for FreeCAD
 
