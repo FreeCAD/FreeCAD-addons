@@ -73,6 +73,9 @@
 [submodule "TabBar"]
 	path = TabBar
 	url = https://github.com/triplus/TabBar.git
+[submodule "ThreadProfile"]
+	path = ThreadProfile
+	url = https://github.com/mwganson/ThreadProfile.git
 [submodule "IconThemes"]
 	path = IconThemes
 	url = https://github.com/triplus/IconThemes.git
