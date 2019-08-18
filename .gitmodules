@@ -16,9 +16,6 @@
 [submodule "sheetmetal"]
 	path = sheetmetal
 	url = https://github.com/shaise/FreeCAD_SheetMetal.git
-[submodule "lattice"]
-	path = lattice
-	url = https://github.com/DeepSOIC/Lattice.git
 [submodule "timber"]
 	path = timber
 	url = https://github.com/wood-galaxy/FreeCAD-Timber.git
@@ -52,9 +49,6 @@
 [submodule "lattice2"]
 	path = lattice2
 	url = https://github.com/DeepSOIC/Lattice2.git
-[submodule "exploded_animation"]
-	path = exploded_animation
-	url = https://github.com/JMG1/FreeCAD_ExplodedAssemblyAnimationWorkbench.git
 [submodule "retr3d"]
 	path = retr3d
 	url = https://github.com/Maaphoo/Retr3d.git
@@ -79,6 +73,9 @@
 [submodule "TabBar"]
 	path = TabBar
 	url = https://github.com/triplus/TabBar.git
+[submodule "ThreadProfile"]
+	path = ThreadProfile
+	url = https://github.com/mwganson/ThreadProfile.git
 [submodule "IconThemes"]
 	path = IconThemes
 	url = https://github.com/triplus/IconThemes.git
@@ -89,7 +86,7 @@
 	path = Curves
 	url = https://github.com/tomate44/CurvesWB.git
 [submodule "dxf-library"]
-	path = dxf-library
+	path = dxf_library
 	url = https://github.com/yorikvanhavre/Draft-dxf-importer.git
 [submodule "NavigationIndicator"]
 	path = NavigationIndicator
@@ -117,7 +114,7 @@
 	url = https://github.com/amrit3701/FreeCAD-Reinforcement
 [submodule "DesignSPHysics"]
 	path = DesignSPHysics
-	url = https://github.com/ndrs92/DesignSPHysics.git
+	url = https://github.com/DualSPHysics/DesignSPHysics.git
 [submodule "InventorLoader"]
 	path = InventorLoader
 	url = https://github.com/jmplonka/InventorLoader.git
@@ -132,7 +129,7 @@
 	url = https://github.com/easyw/kicadStepUpMod.git
 [submodule "BOLTSFC"]
 	path = BOLTSFC
-	url = https://github.com/berndhahnebach/BOLTSFC.git
+	url = https://github.com/boltsparts/BOLTSFC.git
 [submodule "Manipulator"]
 	path = Manipulator
 	url = https://github.com/easyw/Manipulator.git
@@ -164,3 +161,66 @@
 [submodule "workfeature-macro"]
 	path = workfeature-macro
 	url = https://github.com/Rentlau/WorkFeature.git
+[submodule "Defeaturing"]
+	path = Defeaturing
+	url = https://github.com/easyw/Defeaturing_WB.git
+[submodule "AirPlaneDesign"]
+	path = AirPlaneDesign
+	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
+[submodule "Lithophane"]
+	path = Lithophane
+	url = https://github.com/furti/FreeCAD-Lithophane
+[submodule "ExplodedAssembly"]
+	path = ExplodedAssembly
+	url = https://github.com/JMG1/ExplodedAssembly.git
+[submodule "A2plus"]
+	path = A2plus
+	url = https://github.com/kbwbe/A2plus
+[submodule "DynamicData"]
+	path = DynamicData
+	url = https://github.com/mwganson/DynamicData
+[submodule "ArchTextures"]
+	path = ArchTextures
+	url = https://github.com/furti/FreeCAD-ArchTextures
+[submodule "Glass"]
+	path = Glass
+	url = https://github.com/triplus/Glass.git
+[submodule "SlopedPlanesMacro"]
+	path = SlopedPlanesMacro
+	url = https://github.com/luzpaz/SlopedPlanesMacro.git
+[submodule "Reporting"]
+	path = Reporting
+	url = https://github.com/furti/FreeCAD-Reporting
+[submodule "EM"]
+	path = EM
+	url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
+[submodule "Plot"]
+	path = Plot
+	url = https://github.com/FreeCAD/freecad.plot
+[submodule "LCInterlocking"]
+	path = LCInterlocking
+	url = https://github.com/execuc/LCInterlocking
+[submodule "Ship"]
+	path = Ship
+	url = https://github.com/FreeCAD/freecad.ship
+[submodule "slic3r-tools"]
+	path = slic3r-tools
+	url = https://github.com/limikael/freecad-slic3r-tools
+[submodule "dodo"]
+	path = dodo
+	url = https://github.com/oddtopus/dodo
+[submodule "3D_Printing_Tools"]
+	path = 3D_Printing_Tools
+	url = https://github.com/mark1791/3D_Printing_Tools
+[submodule "BIMBots"]
+	path = BIMBots
+	url = https://github.com/opensourceBIM/BIMbots-FreeCAD
+[submodule "Geomatics"]
+	path = Geomatics
+	url = https://github.com/HakanSeven12/FreeCAD-Geomatics-Workbench.git
+[submodule "CurvedShapes"]
+	path = CurvedShapes
+	url = https://github.com/chbergmann/CurvedShapesWorkbench.git
+[submodule "MOOC"]
+	path = MOOC
+	url = https://github.com/wood-galaxy/mooc-workbench.git
