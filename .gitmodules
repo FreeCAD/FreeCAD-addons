@@ -224,3 +224,6 @@
 [submodule "MOOC"]
 	path = MOOC
 	url = https://github.com/wood-galaxy/mooc-workbench.git
+[submodule "yaml-workbench"]
+	path = yaml-workbench
+	url = git@github.com:Mambix/FreeCAD-yaml-workbench.git
