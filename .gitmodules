@@ -224,3 +224,6 @@
 [submodule "MOOC"]
 	path = MOOC
 	url = https://github.com/wood-galaxy/mooc-workbench.git
+[submodule "BCFPlugin"]
+	path = BCFPlugin
+	url = https://github.com/podestplatz/BCF-Plugin-FreeCAD
