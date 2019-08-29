@@ -7,7 +7,8 @@ Since these are not part of the official FreeCAD package and not supported by th
 **Note**: The commit number indicated in the github tree above is not considered by the Addons Manager. What is installed or updated is always the latest *master* branch of every addon
 
 ### Current add-ons
-For a description of each Addon please see [FreeCAD-Addon-Details](https://github.com/FreeCAD/FreeCAD-addons/blob/master/FreeCAD-Addon-Details.md). It is also possible to click on each linked Addon repository to read their README files.  
+For a description of each Addon please open FreeCAD use the dropdown menu `Tools > Addon manager` to scroll between all available Addons. 
+You can also click on each individually linked Addons in this repository to read their README files.    
 
 ### Installing
 
