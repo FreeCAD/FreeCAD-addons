@@ -227,3 +227,6 @@
 [submodule "BCFPlugin"]
 	path = BCFPlugin
 	url = https://github.com/podestplatz/BCF-Plugin-FreeCAD
+[submodule "MeshRemodel"]
+	path = MeshRemodel
+	url = https://github.com/mwganson/MeshRemodel
