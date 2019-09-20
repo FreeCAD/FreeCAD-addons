@@ -39,6 +39,10 @@ To submit your workbench to the repository you must also need the following task
 4. Create an entry on https://www.freecadweb.org/wiki/Template:DevWorkbenches
 5. Tag (AKA 'label) your Github repo with the following: `freecad`, `addons`, and `workbench`  
 
+### Translating External Workbenches
+
+For wider usage of external workbenches, we recommend that workbench developers integrate the ability to [translate their workbench(s)](https://www.freecadweb.org/wiki/Translating_an_external_workbench). FreeCAD uses a 3rd party crowdsources translation service called [Crowdin](https://crowdin.com/project/freecad). There are some [automated scripts](https://www.freecadweb.org/wiki/Crowdin_Scripts) that we use to push and pull translations from Crowdin via their API. Developers are invited to help improve these scripts so as to include their own workbenches in the process. Further discussion on [this forum thread](https://forum.freecadweb.org/viewtopic.php?f=10&t=36413). 
+
 ### Deprecated Installation Methods
 <details>
   <summary>Before FreeCAD v. 0.17.9940 the methods below were utilized to automate the installation of workbenches and macros. This sections is being kept for historical purposes.
