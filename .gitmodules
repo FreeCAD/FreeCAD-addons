@@ -230,6 +230,3 @@
 [submodule "MeshRemodel"]
 	path = MeshRemodel
 	url = https://github.com/mwganson/MeshRemodel
-[submodule "A4"]
-	path = A4
-	url = https://github.com/Zolko-123/FreeCAD_Assembly4
