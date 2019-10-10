@@ -36,8 +36,8 @@ assignees: ''
 - [ ] Edit the FreeCAD [External Workbenches][FC-ExternalWB-Wiki] wiki page
 
 ### Housekeeping
-- [ ] Fixed typos in the code using [`codespell`][Codespell]. We recommend running it `codespell -q 3`
-- [ ] We recommendation linting python code with PEP8 
+- [ ] Fixed typos in the code using [`codespell`][Codespell]. We recommend running: `codespell -q 3`
+- [ ] We recommend linting python code with PEP8. See [coding conventions][Code-conventions] 
 
 ### Github Related
 - [ ] Does your repository use [Release tags][Github-Tags] ?
@@ -51,6 +51,7 @@ assignees: ''
 [Changelog]: https://keepachangelog.com/en/1.0.0/
 [Add-Icons-to-Master]: https://github.com/FreeCAD/FreeCAD/commit/bd985feef323468380a2e5dd88fb3b7046849826
 [FC-ExternalWB-Wiki]: https://www.freecadweb.org/wiki/External_workbenches
+[Coding-conventions]: https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Fem/coding_conventions.md#python-and-c
 [Codespell]: https://github.com/codespell-project/codespell
 [Github-Topics]: https://help.github.com/en/articles/classifying-your-repository-with-topics
 [Github-Tags]: https://help.github.com/en/articles/creating-releases
