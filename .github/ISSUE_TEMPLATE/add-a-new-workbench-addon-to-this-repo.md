@@ -11,11 +11,12 @@ assignees: ''
 - This Addon/workbench runs on:  
   - [ ] Most up to date stable release
   - [ ] Most up to date development release
+  - [ ] Python 3 compatible
+  - [ ] Qt5 compatible
 - [ ] Is this backward compatible with any previous version of FC? If so, please mention in the README.md
 - [ ] Does this use 3rd party dependencies?  
   - [ ] numpy
   - [ ] scipy
-  - [ ] vtk 
   - Please specify if there are any other dependencies below and in the README.md
 
 ### README.md
@@ -31,7 +32,8 @@ assignees: ''
 - [ ] Your Addon has an SVG based Logo?
 - [ ] Once your Addon/Workbench is accepted, you'll open a PR for FreeCAD master in order to add said Logo in to the FreeCAD Addon Manager dialog? ([Example][Add-Icons-to-Master]), see directions below:   
   1. Copy the SVG to `FreeCAD/src/Mod/AddonManager/Resources/Icons` (Note the formatting of the file name is important).
-  2. Edit the `FreeCAD/src/Mod/AddonManager/Resources/AddonManager.qrc` and alphabetically place the path (in the previous step) to the icon of your workbench in the list. 
+  2. Edit the `FreeCAD/src/Mod/AddonManager/Resources/AddonManager.qrc` and alphabetically place the path (in the previous step) to the icon of your workbench in the list.  
+- [ ] Edit the FreeCAD [External Workbenches][FC-ExternalWB-Wiki] wiki page
 
 ### Housekeeping
 - [ ] Fixed typos in the code using [`codespell`][Codespell]. We recommend running it `codespell -q 3`
@@ -48,6 +50,7 @@ assignees: ''
 [FreeCAD-Thread]: https://forum.freecadweb.org/viewforum.php?f=8
 [Changelog]: https://keepachangelog.com/en/1.0.0/
 [Add-Icons-to-Master]: https://github.com/FreeCAD/FreeCAD/commit/bd985feef323468380a2e5dd88fb3b7046849826
+[FC-ExternalWB-Wiki]: https://www.freecadweb.org/wiki/External_workbenches
 [Codespell]: https://github.com/codespell-project/codespell
 [Github-Topics]: https://help.github.com/en/articles/classifying-your-repository-with-topics
 [Github-Tags]: https://help.github.com/en/articles/creating-releases
