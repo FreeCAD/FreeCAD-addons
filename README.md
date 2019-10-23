@@ -2,7 +2,7 @@
 
 This repository is a **collection of useful additional workbenches and modules for FreeCAD** made by community members, gathered here for your convenience.
 
-**Important Note:**  
+**Important Notes:**  
 1. Since **these Addons are not part of the official FreeCAD package and not supported by the FreeCAD team**, although this list is curated and maintained by the FreeCAD team, you should **read the information provided on each of the addons page before installing any of them, to make sure you know what you are installing**. 
 
 2. **Bug reports and feature requests should be made directly on each addon page.** Any reports opened in this repository should be related directly to the Addon Manager itself.
@@ -39,15 +39,16 @@ Have you made an interesting workbench or module that we are not aware of? Tell 
 
 To submit your workbench to the repository you must also need the following tasks to be completed:
 1. Announce your Workbench on the FreeCAD Forums
-2. Create a PR and add your Workbench to the [FreeCAD-Addon_Details](https://github.com/FreeCAD/FreeCAD-addons/blob/master/FreeCAD-Addon-Details.md) page.
-3. Create a dedicated page for your workbench on the FreeCAD wiki (don't forget to add `[[Category:Addons]]` to it) + add it to https://freecadweb.org/wiki/External_workbenches
-4. Create an entry on https://www.freecadweb.org/wiki/Template:DevWorkbenches
-5. Tag (AKA 'label) your Github repo with the following: `freecad`, `addons`, and `workbench`  
-6. Make sure you have a simple SVG logo of your workbench (no larger than 10kb) that can be used to represent it in the Addon Manager dialog. The PR to FreeCAD master must include the:  
+2. Create a dedicated page for your workbench on the FreeCAD wiki (don't forget to add `[[Category:Addons]]` to it) + add it to https://freecadweb.org/wiki/External_workbenches
+3. Create an entry on https://www.freecadweb.org/wiki/Template:DevWorkbenches
+4. Tag (AKA 'label) your Github repo with the following: `freecad`, `addons`, and `workbench`  
+5. Make sure you have a simple SVG logo of your workbench (no larger than 10kb) that can be used to represent it in the Addon Manager dialog. The PR to FreeCAD master must include the:  
 
-    6a. logo which needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/icons`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/icons) in the following format: **`<WorkbenchName>_workbench_icon.svg`**.  
+    5a. logo which needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/icons`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/icons) in the following format: **`<WorkbenchName>_workbench_icon.svg`**.  
 
-    6b. path to said above icon needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/AddonManager.qrc`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/AddonManager.qrc)
+    5b. path to said above icon needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/AddonManager.qrc`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/AddonManager.qrc)
+6. Please structure the README.md file in a way that makes it easy to understand while reading from the Addon Manager dialog. Example: [SheetMetal Workbench](https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md)  
+   **Note the use of:** screenshots, screencasts, mentioning of Licence, Changelog etc... 
 
 ### Translating External Workbenches
 
