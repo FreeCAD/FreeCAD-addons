@@ -1,4 +1,4 @@
-# add-ons repository for FreeCAD
+# FreeCAD Addons Repository ![AddonManager-Logo][AddonManager]
 
 This repository is a collection of useful additional workbenches and modules for FreeCAD made by community members, gathered here for your convenience.
 
