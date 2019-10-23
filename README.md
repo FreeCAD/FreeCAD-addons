@@ -1,10 +1,15 @@
 # FreeCAD Addons Repository ![AddonManager-Logo][AddonManager]
 
-This repository is a collection of useful additional workbenches and modules for FreeCAD made by community members, gathered here for your convenience.
+This repository is a **collection of useful additional workbenches and modules for FreeCAD** made by community members, gathered here for your convenience.
 
-Since these are not part of the official FreeCAD package and not supported by the FreeCAD team, although this list is curated and maintained by the FreeCAD team, you should read the information provided on each of the addons page above before installing any of them, to make sure you know what you are installing. Also, bug reports and feature requests should be made directly on each addon page.
+**Important Note:**  
+1. Since **these Addons are not part of the official FreeCAD package and not supported by the FreeCAD team**, although this list is curated and maintained by the FreeCAD team, you should **read the information provided on each of the addons page before installing any of them, to make sure you know what you are installing**. 
 
-**Note**: The commit number indicated in the github tree above is not considered by the Addons Manager. What is installed or updated is always the latest *master* branch of every addon
+2. **Bug reports and feature requests should be made directly on each addon page.** Any reports opened in this repository should be related directly to the Addon Manager itself.
+
+3. The commit number indicated in the github tree above is not considered by the Addons Manager. **What is installed or updated is always the latest *master* branch of every addon**.
+
+[AddonManager]: icons/AddonManager.svg
 
 ### Current add-ons
 For a description of each Addon please open FreeCAD use the dropdown menu `Tools > Addon manager` to scroll between all available Addons. 
