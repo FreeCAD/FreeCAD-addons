@@ -38,10 +38,19 @@ To submit your workbench to the repository you must also need the following task
 3. Create a dedicated page for your workbench on the FreeCAD wiki (don't forget to add `[[Category:Addons]]` to it) + add it to https://freecadweb.org/wiki/External_workbenches
 4. Create an entry on https://www.freecadweb.org/wiki/Template:DevWorkbenches
 5. Tag (AKA 'label) your Github repo with the following: `freecad`, `addons`, and `workbench`  
+6. Make sure you have a simple SVG logo of your workbench (no larger than 10kb) that can be used to represent it in the Addon Manager dialog. The PR to FreeCAD master must include the:  
+
+    6a. logo which needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/icons`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/icons) in the following format: **`<WorkbenchName>_workbench_icon.svg`**.  
+
+    6b. path to said above icon needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/AddonManager.qrc`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/AddonManager.qrc)
 
 ### Translating External Workbenches
 
 For wider usage of external workbenches, we recommend that workbench developers integrate the ability to [translate their workbench(s)](https://www.freecadweb.org/wiki/Translating_an_external_workbench). FreeCAD uses a 3rd-party crowdsource translation service called [Crowdin](https://crowdin.com/project/freecad). There are some [automated scripts](https://www.freecadweb.org/wiki/Crowdin_Scripts) that we use to push and pull translations from Crowdin via their API. Developers are invited to help improve these scripts so as to include their own workbenches in the process. Further discussion on [this forum thread](https://forum.freecadweb.org/viewtopic.php?f=10&t=36413). 
+
+### Addon Manager Source Code
+
+Source code for the Addon Manager lives in FreeCAD master [`FreeCAD/src/Mod/AddonManger/`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager).
 
 ### Deprecated Installation Methods
 <details>
