@@ -233,3 +233,6 @@
 [submodule "Assembly4"]
 	path = Assembly4
 	url = https://github.com/Zolko-123/FreeCAD_Assembly4
+[submodule "GDML"]
+	path = GDML
+	url = https://github.com/KeithSloan/GDML
