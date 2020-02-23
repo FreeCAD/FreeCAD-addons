@@ -239,3 +239,6 @@
 [submodule "RemBench"]
 	path = RemBench
 	url = https://github.com/triplus/RemBench
+[submodule "CubeMenu"]
+	path = CubeMenu
+	url = https://github.com/triplus/CubeMenu
