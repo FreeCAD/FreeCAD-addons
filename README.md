@@ -1,6 +1,6 @@
 # FreeCAD Addons Repository ![AddonManager-Logo][AddonManager]
 
-This repository is a **collection of useful additional workbenches and modules for FreeCAD** made by community members, gathered here for your convenience.
+This repository is a collection of useful additional workbenches and modules for FreeCAD made by its community members, conveniently available for seamless integration in to the application itself.
 
 **Important Notes:**  
 1. Since **these Addons are not part of the official FreeCAD package and not supported by the FreeCAD team**, although this list is curated and maintained by the FreeCAD team, you should **read the information provided on each of the addons page before installing any of them, to make sure you know what you are installing**. 
@@ -11,27 +11,33 @@ This repository is a **collection of useful additional workbenches and modules f
 
 [AddonManager]: icons/AddonManager.svg
 
-### Current add-ons
-For a description of each Addon please open FreeCAD use the dropdown menu `Tools > Addon manager` to scroll between all available Addons. 
-You can also click on each individually linked Addons in this repository to read their README files.    
+### Addon Descriptions
+
+For a description of each Addon you can either:
+* within FreeCAD use the Addon Manager to scroll between all available Addon/External Workbenches. 
+* click on each individually linked Addons in this repository to read their README files. 
 
 ### Installing
 
-#### Important Note
-***Starting from FreeCAD v0.17.9940 the Addon Manager was finally implemented in to FreeCAD. It can be accessed from the dropdown Tools -> 'Addon Manager' menu. For earlier versions (≤v0.16), please see the [Deprecated Installation Methods](#deprecated-installation-methods) section***.
+***Important Note: As of FreeCAD v0.17.9940 the Addon Manager was finally implemented in to FreeCAD. It can be accessed from within the Tools → 'Addon Manager' dropdown menu. For earlier versions (≤v0.16), please see the [Deprecated Installation Methods](#deprecated-installation-methods) section***.
 
 #### 1. Builtin Addon Manager
 
-With version 0.17 FreeCAD now has a built-in Addon Manager that will install 3rd party workbenches and macros. To access it via ***Tools -> Addon Manager*** as per the screenshot:
+The recommended way is using the built-in Addon Manager that installs 3rd party workbenches, addons, and macros. Access it via ***Tools → Addon Manager***:
 
 ![freecad-0.17-addon_manager-screenshot](https://user-images.githubusercontent.com/4140247/37867768-2eb7db20-2f73-11e8-83fb-8868995ba49d.png)
 
 
 #### 2. Manual install
 
-Each of these addons can be downloaded by clicking the **Download ZIP** button found on top of each addon page, or using **Git**. Most of the addons must either be placed in your user's FreeCAD/Mod folder, or in the Macros folder. Refer to the instructions on each addon page for complete instructions. 
+For any reason the first option is not available, then manual installation is always possible. Github provides users to '[Clone or download](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)' each of the addons listed in this repository. They can be downloaded by:
+* navigating to the specific addon repository 
+* clicking the green 'Clone or download' → Download ZIP' buttons found in the top right of each addon page  
+OR
+* Using `git clone <github repository URL>`  
+Most of the addons must either be placed in your user's `FreeCAD/Mod` folder, or in the Macros folder. Refer to the instructions on each addon page. 
 
-**Note**: Your user's FreeCAD folder location is obtained by typing in FreeCAD's python console: `FreeCAD.ConfigGet("UserAppData")`while the Macros folder location is indicated in the dialog opened from menu *Macro -> Macros...*
+**Note**: Your user's FreeCAD folder location is obtained by typing in FreeCAD's python console: `FreeCAD.ConfigGet("UserAppData")`while the Macros folder location is indicated in the dialog opened from *Macro -> Macros...* dropdown menu.
 
 ### Adding your workbench to the collection
 
