@@ -242,3 +242,6 @@
 [submodule "CubeMenu"]
 	path = CubeMenu
 	url = https://github.com/triplus/CubeMenu
+[submodule "ModernUI"]
+	path = ModernUI
+	url = https://github.com/HakanSeven12/Modern-UI.git
