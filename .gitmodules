@@ -245,3 +245,6 @@
 [submodule "ModernUI"]
 	path = ModernUI
 	url = https://github.com/HakanSeven12/Modern-UI.git
+[submodule "OSE3dPrinter"]
+	path = OSE3dPrinter
+	url = https://github.com/gbroques/ose-3d-printer-workbench/
