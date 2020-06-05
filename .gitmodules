@@ -248,3 +248,6 @@
 [submodule "OSE3dPrinter"]
 	path = OSE3dPrinter
 	url = https://github.com/gbroques/ose-3d-printer-workbench/
+[submodule "ImportNURBS"]
+	path = ImportNURBS
+	url = https://github.com/KeithSloan/ImportNURBS.git
