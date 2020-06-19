@@ -251,3 +251,9 @@
 [submodule "ImportNURBS"]
 	path = ImportNURBS
 	url = https://github.com/KeithSloan/ImportNURBS.git
+[submodule "trails"]
+	path = trails
+	url = https://github.com/joelgraff/freecad.trails
+[submodule "pivy_trackers"]
+	path = pivy_trackers
+	url = https://github.com/joelgraff/pivy_trackers
