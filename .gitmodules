@@ -123,7 +123,7 @@
 	url = https://github.com/edwardvmills/Silk.git
 [submodule "CfdOF"]
 	path = CfdOF
-	url = https://gitlab.com/opensimproject/cfdof.git
+	url = https://github.com/jaheyns/CfdOF.git
 [submodule "kicadStepUpMod"]
 	path = kicadStepUpMod
 	url = https://github.com/easyw/kicadStepUpMod.git
