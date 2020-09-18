@@ -1,0 +1,22 @@
+{
+    "obsolete" : {
+        "name": "Obsolete",
+        "Mod": [
+            "assembly2",
+            "drawing_dimensioning",
+            "cura_engine"
+        ]
+    },
+    "py2only" : {
+        "name": "Python 2 Only",
+        "Mod": [
+            "geodata",
+            "GDT",
+            "timber",
+            "flamingo",
+            "reconstruction",
+            "animation"
+        ]
+    }
+
+}
