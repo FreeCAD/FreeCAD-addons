@@ -7,6 +7,16 @@
             "cura_engine"
         ]
     },
+    "blacklisted" : {
+        "name": "Blacklist",
+        "Macro": [
+            "BOLTS",
+            "WorkFeatures",
+            "how to install",
+            "PartsLibrary",
+            "FCGear"
+        ]
+    },
     "py2only" : {
         "name": "Python 2 Only",
         "Mod": [
@@ -18,5 +28,4 @@
             "animation"
         ]
     }
-
 }
