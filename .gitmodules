@@ -40,9 +40,6 @@
 [submodule "pcb"]
 	path = pcb
 	url = https://github.com/marmni/FreeCAD-PCB.git
-[submodule "geodata"]
-	path = geodata
-	url = https://github.com/microelly2/geodata.git
 [submodule "kerkythea"]
 	path = kerkythea
 	url = https://github.com/marmni/FreeCAD-Kerkythea.git
