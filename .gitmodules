@@ -257,3 +257,6 @@
 [submodule "Mechatronic"]
 	path = Mechatronic
 	url = https://github.com/davidmubernal/Mechatronic
+[submodule "3dfindit"]
+	path = 3dfindit
+	url = https://github.com/cadenasgmbh/3dfindit-freecad-integration
