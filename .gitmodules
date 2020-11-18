@@ -1,5 +1,5 @@
-[submodule "3dfindit"]
-	path = 3dfindit
+[submodule "3DFindIT"]
+	path = 3DFindIT
 	url = https://github.com/cadenasgmbh/3dfindit-freecad-integration
 [submodule "3D_Printing_Tools"]
 	path = 3D_Printing_Tools
