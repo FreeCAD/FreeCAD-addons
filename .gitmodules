@@ -1,6 +1,9 @@
 [submodule "3D_Printing_Tools"]
 	path = 3D_Printing_Tools
 	url = https://github.com/mark1791/3D_Printing_Tools
+[submodule "3DfindIT"]
+	path = 3DfindIT
+	url = https://github.com/cadenasgmbh/3dfindit-freecad-integration
 [submodule "A2plus"]
 	path = A2plus
 	url = https://github.com/kbwbe/A2plus
@@ -256,6 +259,3 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
-[submodule "3DfindIT"]
-	path = 3DfindIT
-	url = https://github.com/cadenasgmbh/3dfindit-freecad-integration
