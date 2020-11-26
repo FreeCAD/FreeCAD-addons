@@ -259,3 +259,6 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
+[submodule "ose-piping"]
+	path = ose-piping
+	url = https://github.com/rkrenzler/ose-piping-workbench
