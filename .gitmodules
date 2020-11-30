@@ -163,6 +163,9 @@
 [submodule "nurbs"]
 	path = nurbs
 	url = https://github.com/microelly2/freecad-nurbs
+[submodule "ose-piping"]
+	path = ose-piping
+	url = https://github.com/rkrenzler/ose-piping-workbench
 [submodule "OSE3dPrinter"]
 	path = OSE3dPrinter
 	url = https://github.com/gbroques/ose-3d-printer-workbench/
@@ -259,6 +262,3 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
-[submodule "ose-piping"]
-	path = ose-piping
-	url = https://github.com/rkrenzler/ose-piping-workbench
