@@ -190,6 +190,9 @@
 [submodule "pluginloader"]
 	path = pluginloader
 	url = https://github.com/microelly2/freecad-pluginloader.git
+[submodule "POV-Ray-Rendering"]
+	path = POV-Ray-Rendering
+	url = https://github.com/TheRaytracers/freecad-povray-render
 [submodule "pyrate"]
 	path = pyrate
 	url = https://github.com/mess42/pyrate.git
