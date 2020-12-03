@@ -145,9 +145,6 @@
 [submodule "Manipulator"]
 	path = Manipulator
 	url = https://github.com/easyw/Manipulator.git
-[submodule "Mechatronic"]
-	path = Mechatronic
-	url = https://github.com/davidmubernal/Mechatronic
 [submodule "MeshRemodel"]
 	path = MeshRemodel
 	url = https://github.com/mwganson/MeshRemodel
