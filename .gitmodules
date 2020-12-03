@@ -142,6 +142,9 @@
 [submodule "Lithophane"]
 	path = Lithophane
 	url = https://github.com/furti/FreeCAD-Lithophane
+[submodule "MakerWorkbench"]
+	path = MakerWorkbench
+	url = https://github.com/URJCMakerGroup/MakerWorkbench.git
 [submodule "Manipulator"]
 	path = Manipulator
 	url = https://github.com/easyw/Manipulator.git
