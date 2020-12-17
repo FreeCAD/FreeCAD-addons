@@ -142,12 +142,12 @@
 [submodule "Lithophane"]
 	path = Lithophane
 	url = https://github.com/furti/FreeCAD-Lithophane
+[submodule "MakerWorkbench"]
+	path = MakerWorkbench
+	url = https://github.com/URJCMakerGroup/MakerWorkbench.git
 [submodule "Manipulator"]
 	path = Manipulator
 	url = https://github.com/easyw/Manipulator.git
-[submodule "Mechatronic"]
-	path = Mechatronic
-	url = https://github.com/davidmubernal/Mechatronic
 [submodule "MeshRemodel"]
 	path = MeshRemodel
 	url = https://github.com/mwganson/MeshRemodel
@@ -163,6 +163,9 @@
 [submodule "nurbs"]
 	path = nurbs
 	url = https://github.com/microelly2/freecad-nurbs
+[submodule "ose-piping"]
+	path = ose-piping
+	url = https://github.com/rkrenzler/ose-piping-workbench
 [submodule "OSE3dPrinter"]
 	path = OSE3dPrinter
 	url = https://github.com/gbroques/ose-3d-printer-workbench/
@@ -187,6 +190,9 @@
 [submodule "pluginloader"]
 	path = pluginloader
 	url = https://github.com/microelly2/freecad-pluginloader.git
+[submodule "POV-Ray-Rendering"]
+	path = POV-Ray-Rendering
+	url = https://github.com/TheRaytracers/freecad-povray-render
 [submodule "pyrate"]
 	path = pyrate
 	url = https://github.com/mess42/pyrate.git
