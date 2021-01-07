@@ -136,7 +136,7 @@
 [submodule "LCInterlocking"]
 	path = LCInterlocking
 	url = https://github.com/execuc/LCInterlocking
-[submodule "library"]
+[submodule "parts_library"]
 	path = parts_library
 	url = https://github.com/FreeCAD/FreeCAD-library.git
 [submodule "Lithophane"]
