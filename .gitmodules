@@ -235,6 +235,9 @@
 [submodule "SlopedPlanesMacro"]
 	path = SlopedPlanesMacro
 	url = https://github.com/luzpaz/SlopedPlanesMacro.git
+[submodule "SteelColumn"]
+	path = SteelColumn
+	url = https://github.com/ebrahimraeyat/momen
 [submodule "symbols_library"]
 	path = symbols_library
 	url = https://github.com/FreeCAD/FreeCAD-symbols.git
@@ -265,9 +268,3 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
-[submodule "ose-piping"]
-	path = ose-piping
-	url = https://github.com/rkrenzler/ose-piping-workbench
-[submodule "SteelColumn"]
-	path = SteelColumn
-	url = https://github.com/ebrahimraeyat/momen
