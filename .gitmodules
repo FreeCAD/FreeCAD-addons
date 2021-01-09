@@ -36,7 +36,7 @@
 	url = https://github.com/yorikvanhavre/BIM_Workbench.git
 [submodule "bimtester"]
 	path = bimtester
-	url = https://gitlab.com/bimtester/bimtesterfc
+	url = https://github.com/bimtester/bimtesterfc
 [submodule "BOLTSFC"]
 	path = BOLTSFC
 	url = https://github.com/boltsparts/BOLTSFC.git
