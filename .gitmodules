@@ -271,3 +271,6 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
+[submodule "Pyramids-and-Polyhedrons"]
+	path = Pyramids-and-Polyhedrons
+	url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons.git
