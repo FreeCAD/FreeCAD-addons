@@ -274,3 +274,6 @@
 [submodule "Pyramids-and-Polyhedrons"]
 	path = Pyramids-and-Polyhedrons
 	url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons.git
+[submodule "Rocket"]
+	path = Rocket
+	url = https://github.com/davesrocketshop/Rocket
