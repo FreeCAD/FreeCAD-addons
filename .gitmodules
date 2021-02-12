@@ -196,6 +196,9 @@
 [submodule "POV-Ray-Rendering"]
 	path = POV-Ray-Rendering
 	url = https://github.com/TheRaytracers/freecad-povray-render
+[submodule "Pyramids-and-Polyhedrons"]
+	path = Pyramids-and-Polyhedrons
+	url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons.git
 [submodule "pyrate"]
 	path = pyrate
 	url = https://github.com/mess42/pyrate.git
@@ -217,6 +220,9 @@
 [submodule "retr3d"]
 	path = retr3d
 	url = https://github.com/Maaphoo/Retr3d.git
+[submodule "Rocket"]
+	path = Rocket
+	url = https://github.com/davesrocketshop/Rocket
 [submodule "SelectorToolbar"]
 	path = SelectorToolbar
 	url = https://github.com/triplus/SelectorToolbar
@@ -271,9 +277,4 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
-[submodule "Pyramids-and-Polyhedrons"]
-	path = Pyramids-and-Polyhedrons
-	url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons.git
-[submodule "Rocket"]
-	path = Rocket
-	url = https://github.com/davesrocketshop/Rocket
+
