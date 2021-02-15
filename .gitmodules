@@ -277,4 +277,12 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
-
+[submodule "ExtMan"]
+	path = ExtMan
+	url = https://github.com/mnesarco/FreeCAD_ExtMan
+[submodule "Marz"]
+	path = Marz
+	url = https://github.com/mnesarco/MarzWorkbench
+[submodule "MnesarcoUtils"]
+	path = MnesarcoUtils
+	url = https://github.com/mnesarco/FreeCAD_Utils
