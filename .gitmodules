@@ -100,6 +100,9 @@
 [submodule "fcgear"]
 	path = FCGear
 	url = https://github.com/looooo/FCGear.git
+[submodule "FEM_FrontISTR"]
+	path = FEM_FrontISTR
+	url = https://github.com/FrontISTR/FEM_FrontISTR.git
 [submodule "flamingo"]
 	path = flamingo
 	url = https://github.com/oddtopus/flamingo.git
