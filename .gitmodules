@@ -166,6 +166,7 @@
 [submodule "MnesarcoUtils"]
 	path = MnesarcoUtils
 	url = https://github.com/mnesarco/FreeCAD_Utils
+	branch = main
 [submodule "ModernUI"]
 	path = ModernUI
 	url = https://github.com/HakanSeven12/Modern-UI.git
