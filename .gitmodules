@@ -179,6 +179,10 @@
 [submodule "nurbs"]
 	path = nurbs
 	url = https://github.com/microelly2/freecad-nurbs
+[submodule "OpticsWorkbench"]
+	path = OpticsWorkbench
+	url = https://github.com/chbergmann/OpticsWorkbench
+	branch = main
 [submodule "ose-piping"]
 	path = ose-piping
 	url = https://github.com/rkrenzler/ose-piping-workbench
