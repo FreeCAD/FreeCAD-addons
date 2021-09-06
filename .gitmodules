@@ -70,6 +70,10 @@
 [submodule "Defeaturing"]
 	path = Defeaturing
 	url = https://github.com/easyw/Defeaturing_WB.git
+[submodule "Design456"]
+	path = Design456
+	url = https://github.com/MariwanJ/Design456
+	branch = main	
 [submodule "DesignSPHysics"]
 	path = DesignSPHysics
 	url = https://github.com/DualSPHysics/DesignSPHysics.git
