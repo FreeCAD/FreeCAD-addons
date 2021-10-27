@@ -242,7 +242,7 @@
 	url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons.git
 [submodule "pyrate"]
 	path = pyrate
-	url = https://github.com/mess42/pyrate.git
+	url = https://salsa.debian.org/mess42/pyrate.git
 [submodule "reconstruction"]
 	path = reconstruction
 	url = https://github.com/microelly2/reconstruction.git
