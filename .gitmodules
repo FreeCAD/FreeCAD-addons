@@ -119,9 +119,6 @@
 [submodule "GDT"]
 	path = GDT
 	url = https://github.com/juanvanyo/FreeCAD-GDT.git
-[submodule "Geomatics"]
-	path = Geomatics
-	url = https://github.com/HakanSeven12/FreeCAD-Geomatics-Workbench.git
 [submodule "Glass"]
 	path = Glass
 	url = https://github.com/triplus/Glass.git
