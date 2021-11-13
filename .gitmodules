@@ -286,6 +286,9 @@
 [submodule "trails"]
 	path = trails
 	url = https://github.com/joelgraff/freecad.trails
+[submodule "VendorParts"]
+	path = VendorParts
+	url = https://github.com/alexneufeld/FreeCAD_vendor_parts.git
 [submodule "WebTools"]
 	path = WebTools
 	url = https://github.com/yorikvanhavre/WebTools.git
@@ -298,3 +301,4 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
+
