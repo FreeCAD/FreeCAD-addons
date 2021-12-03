@@ -119,9 +119,6 @@
 [submodule "GDT"]
 	path = GDT
 	url = https://github.com/juanvanyo/FreeCAD-GDT.git
-[submodule "Geomatics"]
-	path = Geomatics
-	url = https://github.com/HakanSeven12/FreeCAD-Geomatics-Workbench.git
 [submodule "Glass"]
 	path = Glass
 	url = https://github.com/triplus/Glass.git
@@ -283,9 +280,9 @@
 [submodule "ToolbarStyle"]
 	path = ToolbarStyle
 	url = https://github.com/triplus/ToolbarStyle
-[submodule "trails"]
-	path = trails
-	url = https://github.com/joelgraff/freecad.trails
+[submodule "Trails"]
+	path = Trails
+	url = https://github.com/HakanSeven12/Trails.git
 [submodule "WebTools"]
 	path = WebTools
 	url = https://github.com/yorikvanhavre/WebTools.git
