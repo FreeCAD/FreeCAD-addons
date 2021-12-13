@@ -43,18 +43,20 @@ Most of the addons must either be placed in your user's `FreeCAD/Mod` folder, or
 
 Have you made an interesting workbench or module that we are not aware of? Tell us on the [FreeCAD forum](http://forum.freecadweb.org) so we can add it here!
 
-To submit your workbench to the repository you must also need the following tasks to be completed:
+To submit your workbench to the repository
 1. Announce your Workbench on the FreeCAD Forums
 2. Create a dedicated page for your workbench on the FreeCAD wiki (don't forget to add `[[Category:Addons]]` to it) + add it to https://freecadweb.org/wiki/External_workbenches
 3. Create an entry on https://www.freecadweb.org/wiki/Template:DevWorkbenches
-4. Tag (AKA 'label) your Github repo with the following: `freecad`, `addons`, and `workbench`  
-5. Make sure you have a simple SVG logo of your workbench (no larger than 10kb) that can be used to represent it in the Addon Manager dialog. The PR to FreeCAD master must include the:  
+4. Tag (AKA 'label') your Github repo with the following: `freecad`, `addons`, and `workbench`  
+5. Make sure you have a simple SVG logo of your workbench (no larger than 10kb) that can be used to represent it in the Addon Manager dialog. Make a Pull Request to the main [FreeCAD repository](https://github.com/FreeCAD/FreeCAD) including:  
 
-    5a. logo which needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/icons`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/icons) in the following format: **`<WorkbenchName>_workbench_icon.svg`**.  
+    5a. the logo which needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/icons`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/icons) in the following format: **`<WorkbenchName>_workbench_icon.svg`**.  
 
-    5b. path to said above icon needs to be added to [`FreeCAD/src/Mod/AddonManger/Resources/AddonManager.qrc`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/AddonManager.qrc)
+    5b. the path to the icon should be added to [`FreeCAD/src/Mod/AddonManger/Resources/AddonManager.qrc`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager/Resources/AddonManager.qrc)
 6. Please structure the README.md file in a way that makes it easy to understand while reading from the Addon Manager dialog. Example: [SheetMetal Workbench](https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md)  
    **Note the use of:** screenshots, screencasts, mentioning of Licence, Changelog etc... 
+7. Ensure that your Addon includes a `package.xml` [metadata file](https://wiki.freecadweb.org/Package_Metadata).
+8. Submit a Pull Request to this repository adding your Addon to the `.gitmodules` file.
 
 ### Translating External Workbenches
 
