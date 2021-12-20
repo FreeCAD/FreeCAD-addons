@@ -28,6 +28,10 @@
 [submodule "BCFPlugin"]
 	path = BCFPlugin
 	url = https://github.com/podestplatz/BCF-Plugin-FreeCAD
+[submodule "Beltrami"]
+	path = Beltrami
+	url = https://github.com/Simturb/Beltrami
+	branch = main
 [submodule "BIMBots"]
 	path = BIMBots
 	url = https://github.com/opensourceBIM/BIMbots-FreeCAD
