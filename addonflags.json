@@ -7,6 +7,38 @@
             "cura_engine"
         ]
     },
+    "deprecated" : [
+        {
+            "name":"assembly2",
+            "kind":"mod",
+            "as_of":"0.19",
+            "notes":"Replaced by A2plus, assembly3, and assembly4"
+        },
+        {
+            "name":"Autoload",
+            "kind":"mod",
+            "as_of":"0.20",
+            "notes":"Feature merged into FreeCAD"
+        },
+        {
+            "name":"cura_engine",
+            "kind":"mod",
+            "as_of":"0.19",
+            "notes":""
+        },
+        {
+            "name":"drawing_dimensioning",
+            "kind":"mod",
+            "as_of":"0.19",
+            "notes":""
+        },
+        {
+            "name":"ExtMan",
+            "kind":"mod",
+            "as_of":"0.20",
+            "notes":"Built-in Addon Manager adopted new layout and features"
+        }
+    ],
     "blacklisted" : {
         "name": "Blacklist",
         "Macro": [
