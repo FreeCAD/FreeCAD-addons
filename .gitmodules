@@ -117,6 +117,9 @@
 [submodule "frame"]
 	path = frame
 	url = https://github.com/looooo/freecad_frame.git
+[submodule "feedsandspeeds"]
+	path = feedsandspeeds
+	url = https://github.com/dubstar-04/FeedsAndSpeeds.git
 [submodule "GDML"]
 	path = GDML
 	url = https://github.com/KeithSloan/GDML
