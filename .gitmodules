@@ -108,6 +108,9 @@
 [submodule "fcgear"]
 	path = FCGear
 	url = https://github.com/looooo/FCGear.git
+[submodule "FeedsAndSpeeds"]
+	path = FeedsAndSpeeds
+	url = https://github.com/dubstar-04/FeedsAndSpeeds.git
 [submodule "FEM_FrontISTR"]
 	path = FEM_FrontISTR
 	url = https://github.com/FrontISTR/FEM_FrontISTR.git
@@ -299,4 +302,3 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
-
