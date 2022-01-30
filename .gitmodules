@@ -28,6 +28,10 @@
 [submodule "BCFPlugin"]
 	path = BCFPlugin
 	url = https://github.com/podestplatz/BCF-Plugin-FreeCAD
+[submodule "Behave-Dark-Colors"]
+	path = Behave-Dark-Colors
+	url = https://github.com/Chrismettal/FreeCAD-Behave-Dark-Preference-Pack
+	branch = main
 [submodule "Beltrami"]
 	path = Beltrami
 	url = https://github.com/Simturb/Beltrami
