@@ -252,6 +252,10 @@
 [submodule "Rocket"]
 	path = Rocket
 	url = https://github.com/davesrocketshop/Rocket
+[submodule "SearchBar"]
+	path = SearchBar
+	url = https://github.com/SuzanneSoy/SearchBar
+	branch = main
 [submodule "SelectorToolbar"]
 	path = SelectorToolbar
 	url = https://github.com/triplus/SelectorToolbar
