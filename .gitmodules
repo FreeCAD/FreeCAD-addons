@@ -310,3 +310,6 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
+[submodule "Help"]
+	path = Help
+	url = https://github.com/yorikvanhavre/FreeCAD-Help
