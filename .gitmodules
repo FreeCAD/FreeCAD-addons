@@ -100,6 +100,10 @@
 [submodule "EM"]
 	path = EM
 	url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
+[submodule "Estimate"]
+	path = Estimate
+	url = https://github.com/erroronline1/estimateWB
+	branch = master
 [submodule "ExplodedAssembly"]
 	path = ExplodedAssembly
 	url = https://github.com/JMG1/ExplodedAssembly.git
@@ -314,6 +318,3 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
-[submodule "Estimate"]
-	path = Estimate
-	url = https://github.com/erroronline1/estimateWB
