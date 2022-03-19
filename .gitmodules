@@ -314,3 +314,6 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
+[submodule "Estimate"]
+	path = Estimate
+	url = https://github.com/erroronline1/estimateWB
