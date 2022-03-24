@@ -322,3 +322,6 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
+[submodule "offline-documentation"]
+	path = offline-documentation
+	url = https://github.com/FreeCAD/FreeCAD-documentation
