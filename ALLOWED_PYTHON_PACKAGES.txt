@@ -12,6 +12,8 @@
 aiofiles
 autobahn
 beautifulsoup4
+blinker
+docutils
 ezdxf
 gmsh
 gmsh-dev
@@ -19,6 +21,7 @@ lxml
 markdown
 matplotlib
 msgpack
+nine
 numpy
 ocp
 olefile
