@@ -13,6 +13,7 @@ aiofiles
 autobahn
 beautifulsoup4
 blinker
+capytaine
 docutils
 ezdxf
 gmsh
