@@ -13,6 +13,10 @@
 [submodule "animation"]
 	path = animation
 	url = https://github.com/microelly2/Animation.git
+[submodule "AnimationFreeCAD"]
+	path = AnimationFreeCAD
+	url = https://github.com/QuentinTournier40/AnimationFreeCAD
+	branch = main
 [submodule "ArchTextures"]
 	path = ArchTextures
 	url = https://github.com/furti/FreeCAD-ArchTextures
