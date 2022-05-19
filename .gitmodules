@@ -241,6 +241,10 @@
 [submodule "POV-Ray-Rendering"]
 	path = POV-Ray-Rendering
 	url = https://github.com/TheRaytracers/freecad-povray-render
+[submodule "ProDarkThemePreferencePack"]
+	path = ProDarkThemePreferencePack
+	url = https://github.com/turn211/ProDarkThemePreferencePack
+	branch = main
 [submodule "Pyramids-and-Polyhedrons"]
 	path = Pyramids-and-Polyhedrons
 	url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons.git
