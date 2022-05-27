@@ -122,8 +122,8 @@
 	path = fasteners
 	url = https://github.com/shaise/FreeCAD_FastenersWB.git
 [submodule "fcgear"]
-	path = FCGear
-	url = https://github.com/looooo/FCGear.git
+	path = freecad.gears
+	url = https://github.com/looooo/freecad.gears
 [submodule "FeedsAndSpeeds"]
 	path = FeedsAndSpeeds
 	url = https://github.com/dubstar-04/FeedsAndSpeeds.git
