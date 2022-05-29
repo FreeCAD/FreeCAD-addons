@@ -200,7 +200,7 @@
 	url = https://github.com/HakanSeven12/Modern-UI.git
 [submodule "MOOC"]
 	path = MOOC
-	url = https://github.com/wood-galaxy/mooc-workbench.git
+	url = https://github.com/j-wiedemann/mooc-workbench
 [submodule "NavigationIndicator"]
 	path = NavigationIndicator
 	url = https://github.com/triplus/NavigationIndicator
