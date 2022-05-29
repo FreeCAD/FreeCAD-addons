@@ -124,6 +124,7 @@
 [submodule "fcgear"]
 	path = freecad.gears
 	url = https://github.com/looooo/freecad.gears
+	branch = develop
 [submodule "FeedsAndSpeeds"]
 	path = FeedsAndSpeeds
 	url = https://github.com/dubstar-04/FeedsAndSpeeds.git
