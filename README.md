@@ -52,7 +52,7 @@ To submit your workbench to the repository
 6. Please structure the README.md file in a way that makes it easy to understand while reading from the Addon Manager dialog. Example: [SheetMetal Workbench](https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md)  
    **Note the use of:** screenshots, screencasts, mentioning of Licence, Changelog etc... 
 7. Ensure that your Addon includes a `package.xml` [metadata file](https://wiki.freecadweb.org/Package_Metadata), and that that file includes an icon, repository url, and readme url. The readme url should be a direct link to the HTML-rendered README.md file (e.g. https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md)
-8. Submit a Pull Request to this repository adding your Addon to the `.gitmodules` file.
+8. Submit a Pull Request to this repository adding your Addon to the `.gitmodules` file. Supported git hosts are GitHub, Gitlab, Framagit, and salsa.debian.org.
 
 ### Translating External Workbenches
 
