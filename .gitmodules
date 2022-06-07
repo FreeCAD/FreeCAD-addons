@@ -147,7 +147,7 @@
 	url = https://github.com/triplus/Glass.git
 [submodule "Help"]
 	path = Help
-	url = https://github.com/yorikvanhavre/FreeCAD-Help
+	url = https://github.com/FreeCAD/FreeCAD-Help
 	branch = main
 [submodule "IconThemes"]
 	path = IconThemes
