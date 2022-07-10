@@ -96,6 +96,10 @@
 [submodule "dodo"]
 	path = dodo
 	url = https://github.com/oddtopus/dodo
+[submodule "Dracula"]
+	path = Dracula
+	url = https://github.com/dracula/freecad
+	branch = master
 [submodule "drawing_dimensioning"]
 	path = drawing_dimensioning
 	url = https://github.com/hamish2014/FreeCAD_drawing_dimensioning.git
