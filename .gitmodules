@@ -122,6 +122,10 @@
 [submodule "ExtMan"]
 	path = ExtMan
 	url = https://github.com/mnesarco/FreeCAD_ExtMan
+[submodule "ExtremeProDark"]
+	path = ExtremeProDark
+	url = https://github.com/MisterMakerNL/ExtremeProDark
+	branch = main
 [submodule "fasteners"]
 	path = fasteners
 	url = https://github.com/shaise/FreeCAD_FastenersWB.git
