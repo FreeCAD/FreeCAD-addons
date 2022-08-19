@@ -35,6 +35,7 @@ py-slvs
 pycollada
 pygit2
 pynastran
+pyqt-node-editor
 qtrangeslider
 requests
 rhino3dm
