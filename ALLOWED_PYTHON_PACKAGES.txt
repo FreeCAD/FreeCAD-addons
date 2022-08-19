@@ -23,6 +23,7 @@ markdown
 matplotlib
 msgpack
 nine
+nodeeditor
 numpy
 ocp
 olefile
@@ -35,8 +36,8 @@ py-slvs
 pycollada
 pygit2
 pynastran
-pyqt-node-editor
 qtrangeslider
+qtpy
 requests
 rhino3dm
 scikit-image
