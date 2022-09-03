@@ -320,6 +320,9 @@
 [submodule "timber"]
 	path = timber
 	url = https://github.com/wood-galaxy/FreeCAD-Timber.git
+[submodule "toSketch"]
+	path = toSketch
+	url = https://github.com/KeithSloan/toSketch.git
 [submodule "ToolbarStyle"]
 	path = ToolbarStyle
 	url = https://github.com/triplus/ToolbarStyle
