@@ -10,6 +10,9 @@
 [submodule "AirPlaneDesign"]
 	path = AirPlaneDesign
 	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
+[submodule "Alternate_OpenSCAD"]
+	path = Alternate_OpenSCAD
+	url = https://github.com/KeithSloan/OpenSCAD_Alt_Import.git
 [submodule "animation"]
 	path = animation
 	url = https://github.com/microelly2/Animation.git
