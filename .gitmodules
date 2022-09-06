@@ -323,6 +323,7 @@
 [submodule "toSketch"]
 	path = toSketch
 	url = https://github.com/KeithSloan/toSketch.git
+	branch = main
 [submodule "ToolbarStyle"]
 	path = ToolbarStyle
 	url = https://github.com/triplus/ToolbarStyle
