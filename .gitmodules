@@ -141,6 +141,9 @@
 [submodule "FEM_FrontISTR"]
 	path = FEM_FrontISTR
 	url = https://github.com/FrontISTR/FEM_FrontISTR.git
+[submodule "FEMbyGEN"]
+	path = FEMbyGEN
+	url = https://github.com/Serince/FEMbyGEN.git
 [submodule "flamingo"]
 	path = flamingo
 	url = https://github.com/oddtopus/flamingo.git
