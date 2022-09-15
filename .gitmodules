@@ -150,6 +150,7 @@
 [submodule "GDML"]
 	path = GDML
 	url = https://github.com/KeithSloan/GDML
+	branch = Main
 [submodule "GDT"]
 	path = GDT
 	url = https://github.com/juanvanyo/FreeCAD-GDT.git
