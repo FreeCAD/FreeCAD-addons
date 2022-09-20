@@ -16,6 +16,7 @@ blinker
 capytaine
 docutils
 ezdxf
+geomdl
 gmsh
 gmsh-dev
 lxml
