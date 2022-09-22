@@ -222,6 +222,9 @@
 [submodule "nurbs"]
 	path = nurbs
 	url = https://github.com/microelly2/freecad-nurbs
+[submodule "offline-documentation"]
+	path = offline-documentation
+	url = https://github.com/FreeCAD/FreeCAD-documentation
 [submodule "OpticsWorkbench"]
 	path = OpticsWorkbench
 	url = https://github.com/chbergmann/OpticsWorkbench
@@ -349,6 +352,3 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
-[submodule "offline-documentation"]
-	path = offline-documentation
-	url = https://github.com/FreeCAD/FreeCAD-documentation
