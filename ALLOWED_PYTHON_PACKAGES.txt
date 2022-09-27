@@ -36,6 +36,7 @@ ply
 py-slvs
 pycollada
 pygit2
+pyoptools
 pynastran
 qtrangeslider
 qtpy
