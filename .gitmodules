@@ -129,6 +129,10 @@
 	path = ExtremeProDark
 	url = https://github.com/MisterMakerNL/ExtremeProDark
 	branch = main
+[submodule "ExtremeProLight"]
+	path = ExtremeProLight
+	url = https://github.com/MisterMakerNL/ExtremeProLight
+	branch = main
 [submodule "fasteners"]
 	path = fasteners
 	url = https://github.com/shaise/FreeCAD_FastenersWB.git
