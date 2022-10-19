@@ -38,6 +38,7 @@ pycollada
 pygit2
 pyoptools
 pynastran
+python-ifcopenshell
 qtrangeslider
 qtpy
 requests
