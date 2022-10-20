@@ -19,6 +19,7 @@ ezdxf
 geomdl
 gmsh
 gmsh-dev
+ifcopenshell
 lxml
 markdown
 matplotlib
