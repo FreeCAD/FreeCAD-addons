@@ -14,6 +14,7 @@ autobahn
 beautifulsoup4
 blinker
 capytaine
+comtypes
 docutils
 ezdxf
 geomdl
@@ -36,6 +37,7 @@ pillow
 ply
 py-slvs
 pycollada
+pydocx
 pygit2
 pyoptools
 pynastran
