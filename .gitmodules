@@ -273,6 +273,9 @@
 [submodule "pyrate"]
 	path = pyrate
 	url = https://salsa.debian.org/mess42/pyrate.git
+[submodule "QuickMeasure"]
+	path = QuickMeasure
+	url = https://github.com/DanMiel/QuickMeasure	
 [submodule "reconstruction"]
 	path = reconstruction
 	url = https://github.com/microelly2/reconstruction.git
