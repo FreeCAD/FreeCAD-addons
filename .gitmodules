@@ -226,6 +226,7 @@
 [submodule "Nodes"]
 	path = Nodes
 	url = https://github.com/j8sr0230/Nodes
+	branch = main
 [submodule "nurbs"]
 	path = nurbs
 	url = https://github.com/microelly2/freecad-nurbs
