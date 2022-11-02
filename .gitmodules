@@ -223,6 +223,9 @@
 [submodule "NavigationIndicator"]
 	path = NavigationIndicator
 	url = https://github.com/triplus/NavigationIndicator
+[submodule "Nodes"]
+	path = Nodes
+	url = https://github.com/j8sr0230/Nodes
 [submodule "nurbs"]
 	path = nurbs
 	url = https://github.com/microelly2/freecad-nurbs
