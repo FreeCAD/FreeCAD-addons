@@ -17,6 +17,7 @@ blinker
 capytaine
 comtypes
 docutils
+etabs_api
 ezdxf
 geomdl
 gmsh
