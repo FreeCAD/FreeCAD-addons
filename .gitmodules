@@ -56,9 +56,10 @@
 [submodule "bimtester"]
 	path = bimtester
 	url = https://github.com/bimtester/bimtesterfc
-[submodule "BOLTSFC"]
-	path = BOLTSFC
-	url = https://github.com/boltsparts/BOLTSFC.git
+[submodule "boltsfc"]
+	path = boltsfc
+	url = https://github.com/boltsparts/boltsfc.git
+	branch = main
 [submodule "CADExchanger"]
 	path = CADExchanger
 	url = https://github.com/yorikvanhavre/CADExchanger.git
