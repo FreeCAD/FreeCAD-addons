@@ -59,7 +59,7 @@ For wider usage of external workbenches, we recommend that workbench developers 
 
 ### Addon Manager Source Code
 
-Source code for the Addon Manager lives in FreeCAD master [`FreeCAD/src/Mod/AddonManger/`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager).
+Source code for the Addon Manager lives in FreeCAD master [`FreeCAD/src/Mod/AddonManager/`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager).
 
 ### Deprecated Installation Methods
 <details>
