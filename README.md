@@ -46,7 +46,6 @@ Have you made an interesting workbench or module that we are not aware of? Tell 
 To submit your workbench to the repository
 1. Announce your Workbench on the FreeCAD Forums
 2. Create a dedicated page for your workbench on the FreeCAD wiki (don't forget to add `[[Category:Addons]]` to it) + add it to https://freecadweb.org/wiki/External_workbenches
-3. Create an entry on https://www.freecadweb.org/wiki/Template:DevWorkbenches
 4. Tag (AKA 'label') your Github repo with the following: `freecad`, `addons`, and `workbench`  
 5. Make sure you have a simple SVG logo of your workbench (no larger than 10kb) that can be used to represent it in the Addon Manager dialog.
 6. Please structure the README.md file in a way that makes it easy to understand while reading from the Addon Manager dialog. Example: [SheetMetal Workbench](https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md)  
