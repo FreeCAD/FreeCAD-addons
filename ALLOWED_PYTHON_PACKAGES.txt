@@ -22,6 +22,7 @@ ezdxf
 geomdl
 gmsh
 gmsh-dev
+hausdorff
 ifcopenshell
 lxml
 markdown
@@ -29,6 +30,7 @@ matplotlib
 msgpack
 nine
 nodeeditor
+numba
 numpy
 ocp
 olefile
