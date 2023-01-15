@@ -10,6 +10,7 @@
 
 # Allow these packages to be installed:
 aiofiles
+asyncua
 autobahn
 awkward
 beautifulsoup4
