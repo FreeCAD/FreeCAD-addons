@@ -140,6 +140,7 @@
 [submodule "Fcmcua"]
 	path = Fcmcua
 	url = https://github.com/heissgetraenk/fcmcua
+	branch = main
 [submodule "freecad.gears"]
 	path = freecad.gears
 	url = https://github.com/looooo/freecad.gears
