@@ -137,6 +137,9 @@
 [submodule "fasteners"]
 	path = fasteners
 	url = https://github.com/shaise/FreeCAD_FastenersWB.git
+[submodule "Fcmcua"]
+	path = Fcmcua
+	url = https://github.com/heissgetraenk/fcmcua
 [submodule "freecad.gears"]
 	path = freecad.gears
 	url = https://github.com/looooo/freecad.gears
