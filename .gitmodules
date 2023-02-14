@@ -227,7 +227,7 @@
 	url = https://github.com/j-wiedemann/mooc-workbench
 [submodule "Movie"]
 	path = Movie
-	url = https://github.com/Francisco-Rosa/FreeCAD-Movie	
+	url = https://github.com/Francisco-Rosa/FreeCAD-Movie
 [submodule "NavigationIndicator"]
 	path = NavigationIndicator
 	url = https://github.com/triplus/NavigationIndicator
