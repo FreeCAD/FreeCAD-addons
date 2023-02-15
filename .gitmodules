@@ -354,6 +354,10 @@
 	path = toSketch
 	url = https://github.com/KeithSloan/toSketch.git
 	branch = main
+[submodule "taack-plm-freecad"]
+	path = taack-plm-freecad
+	url = https://github.com/Taack/taack-plm-freecad.git
+	branch = main
 [submodule "ToolbarStyle"]
 	path = ToolbarStyle
 	url = https://github.com/triplus/ToolbarStyle
