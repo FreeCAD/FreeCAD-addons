@@ -231,6 +231,10 @@
 [submodule "NavigationIndicator"]
 	path = NavigationIndicator
 	url = https://github.com/triplus/NavigationIndicator
+[submodule "NikraDAP"]
+	path = NikraDAP
+	url = https://github.com/NikraDAP/FreeCAD-NikraDAP
+	branch = main
 [submodule "Nodes"]
 	path = Nodes
 	url = https://github.com/j8sr0230/Nodes
