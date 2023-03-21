@@ -286,6 +286,10 @@
 [submodule "Pyramids-and-Polyhedrons"]
 	path = Pyramids-and-Polyhedrons
 	url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons.git
+[submodule "pyOpToolsWorkbench"]
+        path = pyOpToolsWorkBench
+        url = https://github.com/cihologramas/freecad-pyoptools
+        branch = master
 [submodule "pyrate"]
 	path = pyrate
 	url = https://salsa.debian.org/mess42/pyrate.git
