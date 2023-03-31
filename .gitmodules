@@ -68,7 +68,7 @@
 	url = https://github.com/jmwright/cadquery-freecad-module.git
 [submodule "CfdOF"]
 	path = CfdOF
-	url = https://gitlab.com/opensimproject/CfdOF
+	url = https://github.com/jaheyns/CfdOF.git
 [submodule "Cfd"]
 	path = Cfd
 	url = https://github.com/qingfengxia/Cfd.git
