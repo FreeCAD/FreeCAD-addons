@@ -39,6 +39,12 @@
             "notes":"Built-in Addon Manager adopted new layout and features"
         },
         {
+            "name":"freecad-slic3r-tools",
+            "kind":"mod",
+            "as_of":"0.20",
+            "notes":"See https://github.com/FreeCAD/FreeCAD-addons/issues/258"
+        },
+        {
             "name":"RemBench",
             "kind":"mod",
             "as_of":"0.20",
