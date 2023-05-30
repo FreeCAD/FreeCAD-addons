@@ -261,6 +261,9 @@
 	path = OpticsWorkbench
 	url = https://github.com/chbergmann/OpticsWorkbench
 	branch = main
+[submodule "OSAFE"]
+	path = OSAFE
+	url = https://github.com/ebrahimraeyat/OSAFE.git
 [submodule "ose-piping"]
 	path = ose-piping
 	url = https://github.com/rkrenzler/ose-piping-workbench
