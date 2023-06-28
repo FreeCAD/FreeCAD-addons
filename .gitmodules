@@ -380,3 +380,6 @@
 [submodule "yaml-workspace"]
 	path = yaml-workspace
 	url = https://github.com/Mambix/FreeCAD-yaml-workspace.git
+[submodule "woodworking"]
+	path = Woodworking
+	url = https://github.com/dprojects/Woodworking.git
