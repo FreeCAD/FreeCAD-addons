@@ -141,6 +141,10 @@
 	path = Fcmcua
 	url = https://github.com/heissgetraenk/fcmcua
 	branch = main
+[submodule "Freecad-Built-in-themes-beta"]
+	path = Freecad-Built-in-themes-beta
+	url = https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta
+	branch = main
 [submodule "freecad.gears"]
 	path = freecad.gears
 	url = https://github.com/looooo/freecad.gears
