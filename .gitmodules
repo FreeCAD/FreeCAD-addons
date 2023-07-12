@@ -144,6 +144,10 @@
 [submodule "freecad.gears"]
 	path = freecad.gears
 	url = https://github.com/looooo/freecad.gears
+[submodule "Freecad-Built-in-themes-beta"]
+	path = Freecad-Built-in-themes-beta
+	url = https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta
+	branch = main
 [submodule "FeedsAndSpeeds"]
 	path = FeedsAndSpeeds
 	url = https://github.com/dubstar-04/FeedsAndSpeeds.git
