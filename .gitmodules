@@ -249,6 +249,10 @@
 [submodule "offline-documentation"]
 	path = offline-documentation
 	url = https://github.com/FreeCAD/FreeCAD-documentation
+[submodule "Ondsel-Lens"]
+	path = Ondsel-Lens
+	url = https://github.com/ondsel-Development/ondsel-lens
+	branch=master
 [submodule "OpticsWorkbench"]
 	path = OpticsWorkbench
 	url = https://github.com/chbergmann/OpticsWorkbench
