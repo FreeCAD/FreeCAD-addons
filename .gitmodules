@@ -47,6 +47,9 @@
 	path = Beltrami
 	url = https://github.com/Simturb/Beltrami
 	branch = main
+[submodule "btl"]
+	path = btl
+	url = https://github.com/knipknap/better-tool-library
 [submodule "BIMBots"]
 	path = BIMBots
 	url = https://github.com/opensourceBIM/BIMbots-FreeCAD
