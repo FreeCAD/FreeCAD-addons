@@ -44,6 +44,7 @@ py-slvs
 pycollada
 pydocx
 pygit2
+pyjwt
 pyoptools
 pynastran
 qtrangeslider
@@ -53,7 +54,7 @@ rhino3dm
 scikit-image
 scipy
 trimesh
-vedo
+tzlocal
 xlrd
 xlutils
 xlwt
