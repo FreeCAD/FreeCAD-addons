@@ -49,7 +49,8 @@
 	branch = main
 [submodule "btl"]
 	path = btl
-	url = https://github.com/knipknap/better-tool-library
+	url = https://github.com/knipknap/better-tool-library.git
+	branch = main
 [submodule "BIMBots"]
 	path = BIMBots
 	url = https://github.com/opensourceBIM/BIMbots-FreeCAD
