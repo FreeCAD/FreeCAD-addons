@@ -64,6 +64,10 @@
 	path = boltsfc
 	url = https://github.com/boltsparts/boltsfc.git
 	branch = main
+[submodule "CadbaseLibrary"]
+        path = CadbaseLibrary
+        url = https://github.com/mnnxp/cadbaselibrary-freecad
+        branch = master
 [submodule "CADExchanger"]
 	path = CADExchanger
 	url = https://github.com/yorikvanhavre/CADExchanger.git
