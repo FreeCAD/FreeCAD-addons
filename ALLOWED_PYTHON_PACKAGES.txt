@@ -52,6 +52,7 @@ qtpy
 requests
 rhino3dm
 scikit-image
+scikit-learn
 scipy
 trimesh
 tzlocal
