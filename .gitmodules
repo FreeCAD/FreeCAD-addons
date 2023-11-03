@@ -378,6 +378,9 @@
 [submodule "ThreadProfile"]
 	path = ThreadProfile
 	url = https://github.com/mwganson/ThreadProfile.git
+[submodule "TitleBlock"]
+	path = TitleBlock
+	url = https://github.com/APEbbers/TitleBlock-WB.git
 [submodule "timber"]
 	path = timber
 	url = https://github.com/wood-galaxy/FreeCAD-Timber.git
