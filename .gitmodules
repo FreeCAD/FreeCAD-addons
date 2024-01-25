@@ -269,7 +269,7 @@
 	url = https://github.com/rkrenzler/ose-piping-workbench
 [submodule "OSE3dPrinter"]
 	path = OSE3dPrinter
-	url = https://github.com/gbroques/ose-3d-printer-workbench/
+	url = https://github.com/gbroques/ose-3d-printer-workbench
 [submodule "Part-o-magic"]
 	path = Part-o-magic
 	url = https://github.com/DeepSOIC/Part-o-magic.git
