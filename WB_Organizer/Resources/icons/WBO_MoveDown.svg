@@ -1,0 +1,13 @@
+<svg id="svg6431" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" height="64" width="64" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs id="defs6433">
+  <linearGradient id="linearGradient4698" y2="6.4991" gradientUnits="userSpaceOnUse" x2="31.995" y1="31.115" x1="31.994">
+   <stop id="stop4694" stop-color="#fff" offset="0"/>
+   <stop id="stop4696" stop-color="#fff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g id="g4695" transform="matrix(-1 0 0 -1 64 63.743)">
+  <path id="rect4272" d="m54 30-22-25-22 25h16v29h12v-29z" stroke="#000" stroke-width="2" fill="#729fcf"/>
+  <path id="path4210" opacity=".4" d="m32 8 17.6 20h-13.6v29h-8v-29h-13.6z" stroke="#fff" stroke-width="2" fill="none"/>
+  <path id="path4690" opacity=".4" d="m31.995 6.4991-19.809 22 14.778 0.46875c0 2.7922 10.031 2.9103 10.031 0.0625l14.806-0.02894z" fill="url(#linearGradient4698)"/>
+ </g>
+</svg>

@@ -1,0 +1,51 @@
+Instructions how to define Groups.
+==================================
+
+In this short text we explain how you can create and define your own groups.
+There are some ERRORS that can easily happen. So please read this text to the
+end to avoid these errors.
+
+
+1. Click the button [Open config-file] right right of the button you just have pushed.
+--> this opens the config-file in the same way this file has been opened.
+
+
+2. Read the config-file and try to understand how it's built.
+
+
+3. If you have understood how it's working edit your file. You can now easily rearrange or delete existing groups or create new ones.
+
+Be aware, that a workbench may appear in various groups.
+
+The easiest way to create a new group is by copying and pasting an existing group. Paste it to the place where you want the new group to appear in your list! Then give it a name and edit the workbenches inside the group. You might want to copy the 'All' group and just erase the workbenches, you do not want to have inside your new group.
+
+You also can rearrange workbenches within a group. They will appear in the order of this file.
+
+We suggest to put not more than about 10 Workbenches into a group if you want to show the workbenches as tabs.
+
+
+4. Save your file from inside the editor. You even might want to save a copy of your file for backup.
+
+
+5. Test your file by clicking the [test config-file] button!
+
+
+6. Changes will take place after a new startup of FreeCAD
+
+
+ERRORS you can make:
+-) The very first predefined group is called "In Dropdown". You can add Workbenches here. They will appear directly in the groups dropdown list. This might be useful for 
+workbenches like 'Spreadsheet' that are useful in multiple groups.
+You may also leave this group empty. BUT DO NOT RENAME THIS GROUP!!
+
+-) You can create your own groups within this config-file and arrange them in
+any order you like. This will be the order of your groups in the dropdown-list.
+
+-) At the bottom of your file, you'll find groups like 'All', 'New', 'Lost', 'disabled'
+DO NOT RENAME THESE GROUPS.
+You may reorder the Workbenches in these groups, but do not rename them!
+
+-) Be aware of the ',' after each line EXEPT THE LAST LINE in a group!!
+When you copy and paste a last line of any group, do not forget to add the ','!!
+When you copy and paste a group into the last line, do not forget to remove the ','!!
+

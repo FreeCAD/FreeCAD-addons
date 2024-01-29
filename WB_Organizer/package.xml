@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+
+  <name>1A Workbench Organizer</name>
+
+  <description>A workbench organizer widget for FreeCAD.
+Allows you to group your long list of workbenches into smaller meaningful groups.
+Allows you to rename some workbenches for better understanding or translation.
+Allows to show the workbench selector as tabbar.</description>
+
+  <version>2024.1.29</version>
+
+  <date>2024-01-29</date>
+
+  <maintainer email="19696982+Palmstroemen@users.noreply.github.com">Palmstroemen</maintainer>
+
+  <license file="License/lgpl-2.1.txt">LGPLv2.1</license>
+
+  <pythonmin>3.6.0</pythonmin>
+
+  <url type="website">https://github.com/Palmstroemen/WB_Organizer/wiki</url>
+
+  <url branch="main" type="repository">https://github.com/Palmstroemen/WB_Organizer.git</url>
+
+  <url type="bugtracker">https://github.com/Palmstroemen/WB_Organizer/issues</url>
+
+  <url type="readme">https://github.com/Palmstroemen/WB_Organizer.git/raw/main/README.md</url>
+
+  <url type="documentation">https://github.com/Palmstroemen/WB_Organizer/wiki</url>
+
+  <url type="discussion">https://forum.freecad.org/viewtopic.php?t=84740</url>
+
+  <icon>Resources/icons/WBO_icon.svg</icon>
+
+  <content>
+    <workbench>
+      <freecadmin>0.20.0</freecadmin>
+      <tag>"Workbench"</tag>
+      <tag>"Organizer"</tag>
+      <tag>"Groups"</tag>
+      <tag>"Workbench groups"</tag>
+      <icon>Resources/icons/WBO_icon.svg</icon>
+      <classname>WBO</classname>
+      <subdirectory>./</subdirectory>
+    </workbench>
+  </content>
+
+</package>

@@ -1,0 +1,132 @@
+{
+    "WBO In Groups Dropdown": [
+        "SpreadsheetWorkbench",
+        ""
+    ],
+    "Construct parts": [
+        "DraftWorkbench",
+        "PartWorkbench",
+        "PartDesignWorkbench",
+        "InventorWorkbench",
+        "SMWorkbench",
+        "SurfaceWorkbench",
+        "Silk",
+        "Design456",
+        ""
+    ],
+    "Analyze": [
+        "ReverseEngineeringWorkbench",
+        "MeshWorkbench",
+        "FemWorkbench",
+        "InspectionWorkbench",
+        "CfdOFWorkbench",
+        ""
+    ],
+    "Assemble multiple parts": [
+        "SpreadsheetWorkbench",
+        "A2plusWorkbench",
+        "Assembly3Workbench",
+        "Assembly4Workbench",
+        "FastenersWorkbench",
+        "Lattice2Workbench",
+        "GearWorkbench",
+        "MakerWorkbench",
+        "FrameWorkbench",
+        "dodo",
+        "estimateWB",
+        ""
+    ],
+    "Postproduction": [
+        "SpreadsheetWorkbench",
+        "TechDrawWorkbench",
+        "PovRayRendering",
+        "ExplodedAssembly",
+        ""
+    ],
+    "Architecture": [
+        "SpreadsheetWorkbench",
+        "SketcherWorkbench",
+        "DraftWorkbench",
+        "ArchWorkbench",
+        "CADENAS3DfinditWorkbench",
+        ""
+    ],
+    "3D Print": [
+        "SpreadsheetWorkbench",
+        "SketcherWorkbench",
+        "PartDesignWorkbench",
+        "InventorWorkbench",
+        "PathWorkbench",
+        "PointsWorkbench",
+        "ReverseEngineeringWorkbench",
+        ""
+    ],
+    "Special Tools": [
+        "PointsWorkbench",
+        "ManipulatorWB",
+        "NodesWorkbench",
+        "OpenSCADWorkbench",
+        ""
+    ],
+    "WBO All": [
+        "AnimationFreeCAD",
+        "ArchWorkbench",
+        "DraftWorkbench",
+        "FemWorkbench",
+        "InspectionWorkbench",
+        "MeshWorkbench",
+        "OpenSCADWorkbench",
+        "PartWorkbench",
+        "PartDesignWorkbench",
+        "PathWorkbench",
+        "PointsWorkbench",
+        "ReverseEngineeringWorkbench",
+        "SketcherWorkbench",
+        "SpreadsheetWorkbench",
+        "RobotWorkbench",
+        "StartWorkbench",
+        "SurfaceWorkbench",
+        "TechDrawWorkbench",
+        "TestWorkbench",
+        "WebWorkbench",
+        "A2plusWorkbench",
+        "Assembly4Workbench",
+        "DynamicDataWorkbench",
+        "FastenersWorkbench",
+        "InventorWorkbench",
+        "Lattice2Workbench",
+        "MakerWorkbench",
+        "ManipulatorWB",
+        "NodesWorkbench",
+        "PovRayRendering",
+        "SMWorkbench",
+        "Silk",
+        "NoneWorkbench",
+        "CfdOFWorkbench",
+        "dodo",
+        "ExplodedAssembly",
+        "WebToolsWorkbench",
+        "WorkFeatureWorkbench",
+        "GearWorkbench",
+        "FrameWorkbench",
+        "estimateWB",
+        "Assembly3Workbench",
+        "CADENAS3DfinditWorkbench",
+        ""
+    ],
+    "WBO New": [""],
+    "WBO Lost": [
+        "WebToolsWorkbench",
+        "WorkFeatureWorkbench",
+        "GearWorkbench",
+        "FrameWorkbench",
+        "estimateWB",
+        "Assembly3Workbench",
+        "CADENAS3DfinditWorkbench",
+        ""
+    ],
+    "WBO Disabled": [
+        "CfdOFWorkbench",
+        ""
+    ]
+}
