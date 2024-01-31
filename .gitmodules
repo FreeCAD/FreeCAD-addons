@@ -279,9 +279,6 @@
 [submodule "persistenttoolbars"]
 	path = persistenttoolbars
 	url = https://github.com/triplus/PersistentToolbars.git
-[submodule "PieMenu"]
-	path = PieMenu
-	url = https://github.com/mdkus/PieMenu.git
 [submodule "pivy_trackers"]
 	path = pivy_trackers
 	url = https://github.com/joelgraff/pivy_trackers
@@ -406,3 +403,6 @@
 [submodule "woodworking"]
 	path = Woodworking
 	url = https://github.com/dprojects/Woodworking.git
+[submodule "PieMenu"]
+	path = PieMenu
+	url = https://github.com/Grubuntu/PieMenu.git
