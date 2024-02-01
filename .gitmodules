@@ -406,3 +406,6 @@
 [submodule "PieMenu"]
 	path = PieMenu
 	url = https://github.com/Grubuntu/PieMenu.git
+[submodule "osh-autodoc-workbench"]
+	path = osh-autodoc-workbench
+	url = https://codeberg.org/osh-autodoc/osh-autodoc-workbench.git
