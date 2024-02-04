@@ -269,7 +269,7 @@
 	url = https://github.com/rkrenzler/ose-piping-workbench
 [submodule "OSE3dPrinter"]
 	path = OSE3dPrinter
-	url = https://github.com/gbroques/ose-3d-printer-workbench/
+	url = https://github.com/gbroques/ose-3d-printer-workbench
 [submodule "Part-o-magic"]
 	path = Part-o-magic
 	url = https://github.com/DeepSOIC/Part-o-magic.git
@@ -279,9 +279,6 @@
 [submodule "persistenttoolbars"]
 	path = persistenttoolbars
 	url = https://github.com/triplus/PersistentToolbars.git
-[submodule "PieMenu"]
-	path = PieMenu
-	url = https://github.com/mdkus/PieMenu.git
 [submodule "pivy_trackers"]
 	path = pivy_trackers
 	url = https://github.com/joelgraff/pivy_trackers
@@ -406,3 +403,10 @@
 [submodule "woodworking"]
 	path = Woodworking
 	url = https://github.com/dprojects/Woodworking.git
+[submodule "PieMenu"]
+	path = PieMenu
+	url = https://github.com/Grubuntu/PieMenu.git
+[submodule "osh-autodoc-workbench"]
+	path = osh-autodoc-workbench
+	url = https://codeberg.org/osh-autodoc/osh-autodoc-workbench.git
+	branch = main
