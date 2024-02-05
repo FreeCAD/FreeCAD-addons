@@ -391,6 +391,9 @@
 [submodule "WebTools"]
 	path = WebTools
 	url = https://github.com/yorikvanhavre/WebTools.git
+[submodule "WB_Organizer"]
+	path = Workbench-Organizer
+	url = https://github.com/Palmstroemen/WB_Organizer
 [submodule "workfeature-macro"]
 	path = workfeature-macro
 	url = https://github.com/Rentlau/WorkFeature.git
