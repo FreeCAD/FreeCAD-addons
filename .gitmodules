@@ -413,3 +413,7 @@
 	path = osh-autodoc-workbench
 	url = https://codeberg.org/osh-autodoc/osh-autodoc-workbench.git
 	branch = main
+[submodule "BillOfMaterials"]
+	path = BillOfMaterials
+	url = https://github.com/APEbbers/BillOfMaterials-WB.git
+        branch = main 
