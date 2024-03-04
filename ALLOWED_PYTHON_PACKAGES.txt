@@ -54,6 +54,7 @@ rhino3dm
 scikit-image
 scikit-learn
 scipy
+streamdeck
 trimesh
 tzlocal
 xlrd
