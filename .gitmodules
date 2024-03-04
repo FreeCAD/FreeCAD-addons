@@ -181,7 +181,7 @@
 	path = Freecad-Built-in-themes-beta
 	url = https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta
 	branch = main
-[submodule "FreeCAD Stream Deck Addon"]
+[submodule "freecad_streamdeck_addon"]
 	path = freecad_streamdeck_addon
 	url = https://github.com/Giraut/freecad_streamdeck_addon
 	branch = main
