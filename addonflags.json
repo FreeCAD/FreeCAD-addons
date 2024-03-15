@@ -45,6 +45,18 @@
             "notes":"See https://github.com/FreeCAD/FreeCAD-addons/issues/258"
         },
         {
+            "name":"geodata",
+            "kind":"mod",
+            "as_of":"0.20",
+            "notes":"See https://github.com/microelly2/geodata/issues/21"
+        },
+        {
+            "name":"reconstruction",
+            "kind":"mod",
+            "as_of":"0.20",
+            "notes":"See https://github.com/microelly2/reconstruction/issues/2"
+        },
+        {
             "name":"RemBench",
             "kind":"mod",
             "as_of":"0.20",
@@ -65,12 +77,14 @@
     "py2only" : {
         "name": "Python 2 Only",
         "Mod": [
-            "geodata",
             "GDT",
-            "timber",
+            "Retr3d",
+            "animation",
             "flamingo",
+            "geodata",
+            "nurbs",
             "reconstruction",
-            "animation"
+            "timber"
         ]
     }
 }
