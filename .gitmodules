@@ -217,6 +217,10 @@
 	path = Glass
 	url = https://github.com/triplus/Glass
         branch = master
+[submodule "Gridfinity"]
+	path = Gridfinity
+	url = https://github.com/Stu142/FreeCAD-Gridfinity-Workbench
+        branch = master
 [submodule "Help"]
 	path = Help
 	url = https://github.com/FreeCAD/FreeCAD-Help
