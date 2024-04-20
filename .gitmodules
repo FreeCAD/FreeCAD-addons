@@ -325,6 +325,10 @@
 	path = OpenDark
 	url = https://github.com/obelisk79/OpenDark
 	branch = main
+[submodule "OpenTheme"]
+	path = OpenTheme
+	url = https://github.com/obelisk79/OpenTheme
+	branch = main
 [submodule "OpticsWorkbench"]
 	path = OpticsWorkbench
 	url = https://github.com/chbergmann/OpticsWorkbench
