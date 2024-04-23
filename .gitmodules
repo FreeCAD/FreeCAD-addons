@@ -209,10 +209,6 @@
 	path = GDML
 	url = https://github.com/KeithSloan/GDML
 	branch = Main
-[submodule "GDT"]
-	path = GDT
-	url = https://github.com/juanvanyo/FreeCAD-GDT
-        branch = master
 [submodule "Glass"]
 	path = Glass
 	url = https://github.com/triplus/Glass
