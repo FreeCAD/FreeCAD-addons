@@ -525,3 +525,6 @@
 	path = BillOfMaterials
 	url = https://github.com/APEbbers/BillOfMaterials-WB
         branch = main 
+[submodule "GDT"]
+	path = GDT
+	url = https://github.com/5axes/FreeCAD-GDT.git
