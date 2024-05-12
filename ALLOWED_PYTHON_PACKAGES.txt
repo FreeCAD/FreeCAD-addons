@@ -43,6 +43,7 @@ rhino3dm
 scikit-image
 scipy
 trimesh
+vedo
 xlrd
 xlutils
 xlwt
