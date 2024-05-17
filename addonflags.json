@@ -21,6 +21,12 @@
             "notes":"Feature merged into FreeCAD"
         },
         {
+            "name":"BIM",
+            "kind":"mod",
+            "as_of":"0.22",
+            "notes":"Feature merged into FreeCAD"
+        },
+        {
             "name":"cura_engine",
             "kind":"mod",
             "as_of":"0.19",
