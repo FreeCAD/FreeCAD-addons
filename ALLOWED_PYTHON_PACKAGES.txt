@@ -16,8 +16,10 @@ awkward
 beautifulsoup4
 blinker
 capytaine
+certify
 comtypes
 docutils
+dotenv
 etabs_api
 ezdxf
 geomdl
