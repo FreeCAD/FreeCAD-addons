@@ -320,7 +320,7 @@
 [submodule "offline-documentation"]
 	path = offline-documentation
 	url = https://github.com/FreeCAD/FreeCAD-documentation
-        branch = master
+        branch = main
 [submodule "Ondsel-Lens"]
 	path = Ondsel-Lens
 	url = https://github.com/ondsel-Development/ondsel-lens
@@ -368,10 +368,6 @@
 [submodule "Plot"]
 	path = Plot
 	url = https://github.com/FreeCAD/freecad.plot
-        branch = master
-[submodule "pluginloader"]
-	path = pluginloader
-	url = https://github.com/microelly2/freecad-pluginloader
         branch = master
 [submodule "POV-Ray-Rendering"]
 	path = POV-Ray-Rendering
@@ -496,7 +492,7 @@
 [submodule "Trails"]
 	path = Trails
 	url = https://github.com/HakanSeven12/Trails
-        branch = master
+        branch = main
 [submodule "WebTools"]
 	path = WebTools
 	url = https://github.com/yorikvanhavre/WebTools
