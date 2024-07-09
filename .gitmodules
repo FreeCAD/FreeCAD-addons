@@ -325,10 +325,6 @@
 	path = Ondsel-Lens
 	url = https://github.com/ondsel-Development/ondsel-lens
 	branch=master
-[submodule "OpenDark"]
-	path = OpenDark
-	url = https://github.com/obelisk79/OpenDark
-	branch = main
 [submodule "OpenTheme"]
 	path = OpenTheme
 	url = https://github.com/obelisk79/OpenTheme
