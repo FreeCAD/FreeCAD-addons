@@ -525,3 +525,7 @@
 	path = BillOfMaterials
 	url = https://github.com/APEbbers/BillOfMaterials-WB
         branch = main 
+[submodule "freecad.optics_design_workbench"]
+	path = freecad.optics_design_workbench
+	url = https://github.com/zaphB/freecad.optics_design_workbench
+  branch = main 
