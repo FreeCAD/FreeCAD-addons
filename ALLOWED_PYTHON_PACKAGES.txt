@@ -46,6 +46,7 @@ py-slvs
 pycollada
 pydocx
 pygit2
+pyg4ometry
 pyjwt
 pyoptools
 pynastran
@@ -59,6 +60,7 @@ scipy
 streamdeck
 trimesh
 tzlocal
+vedo
 xlrd
 xlutils
 xlwt
