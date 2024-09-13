@@ -347,8 +347,8 @@
         branch = main
 [submodule "Ondsel-Lens"]
 	path = Ondsel-Lens
-	url = https://github.com/ondsel-Development/Ondsel-Lens-Addon
-    branch=main
+	url = https://github.com/Ondsel-Development/Ondsel-Lens-Addon
+	branch = main
 [submodule "OpenTheme"]
 	path = OpenTheme
 	url = https://github.com/obelisk79/OpenTheme
