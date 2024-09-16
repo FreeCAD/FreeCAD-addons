@@ -89,6 +89,10 @@
 	path = cadquery_module
 	url = https://github.com/jmwright/cadquery-freecad-module
         branch = master
+[submodule "CamScripts"]
+	path = CamScripts
+	url = https://github.com/spanner888/CamScripts
+	branch = main
 [submodule "CfdOF"]
 	path = CfdOF
 	url = https://github.com/jaheyns/CfdOF
