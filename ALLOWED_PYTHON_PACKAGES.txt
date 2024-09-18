@@ -42,6 +42,7 @@ openpyxl
 pandas
 pillow
 ply
+protobuf
 py-slvs
 pycollada
 pydocx
