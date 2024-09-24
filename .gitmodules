@@ -209,6 +209,10 @@
 	path = frame
 	url = https://github.com/looooo/freecad_frame
         branch = master
+[submodule "FreeGrid"]
+	path = FreeGrid
+	url = https://github.com/instancezero/in3dca-freegrid.git
+	branch = main
 [submodule "GDML"]
 	path = GDML
 	url = https://github.com/KeithSloan/GDML
