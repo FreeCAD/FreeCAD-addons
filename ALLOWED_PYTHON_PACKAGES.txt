@@ -49,6 +49,8 @@ pydocx
 pygit2
 pyg4ometry
 pyjwt
+PyOpenGL
+pyopenxr
 pyoptools
 pynastran
 qtrangeslider
