@@ -185,6 +185,10 @@
 	path = Freecad-Built-in-themes-beta
 	url = https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta
 	branch = main
+[submodule "FreeCAD-Ribbon"]
+	path = FreeCAD-Ribbon
+	url = https://github.com/APEbbers/FreeCAD-Ribbon
+	branch = main
 [submodule "FreeCAD-themes"]
 	path = FreeCAD-themes
 	url = https://github.com/FreeCAD/FreeCAD-themes
