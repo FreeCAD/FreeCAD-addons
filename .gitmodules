@@ -533,3 +533,6 @@
 	path = BillOfMaterials
 	url = https://github.com/APEbbers/BillOfMaterials-WB
         branch = main 
+[submodule "FrameForge"]
+	path = FrameForge
+	url = https://github.com/lukh/frameforge
