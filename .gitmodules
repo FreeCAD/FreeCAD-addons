@@ -216,7 +216,7 @@
 [submodule "FrameForge"]
 	path = FrameForge
 	url = https://github.com/lukh/frameforge
-		branch = master
+	branch = main
 [submodule "FreeGrid"]
 	path = FreeGrid
 	url = https://github.com/instancezero/in3dca-freegrid.git
