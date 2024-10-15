@@ -9,6 +9,10 @@
 [submodule "A2plus"]
 	path = A2plus
 	url = https://github.com/kbwbe/A2plus
+[submodule "addFC"]
+	path = addFC
+	url = https://github.com/GS90/addFC
+	branch = main
 [submodule "AirPlaneDesign"]
 	path = AirPlaneDesign
 	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
