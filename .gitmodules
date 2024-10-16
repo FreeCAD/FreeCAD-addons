@@ -177,6 +177,10 @@
 	path = Fcmcua
 	url = https://github.com/heissgetraenk/fcmcua
 	branch = main
+[submodule "FreeCAD-Beginner-Assistant"]
+	path = FreeCAD-Beginner-Assistant
+	url = https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant
+	branch = main
 [submodule "freecad.gears"]
 	path = freecad.gears
 	url = https://github.com/looooo/freecad.gears
