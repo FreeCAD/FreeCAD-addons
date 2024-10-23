@@ -1,555 +1,555 @@
 [submodule "3D_Printing_Tools"]
-	path = 3D_Printing_Tools
-	url = https://github.com/mark1791/3D_Printing_Tools
-        branch = master
+    path = 3D_Printing_Tools
+    url = https://github.com/mark1791/3D_Printing_Tools
+    branch = master
 [submodule "3DfindIT"]
-	path = 3DfindIT
-	url = https://github.com/cadenasgmbh/3dfindit-freecad-integration
-        branch = master
+    path = 3DfindIT
+    url = https://github.com/cadenasgmbh/3dfindit-freecad-integration
+    branch = master
 [submodule "A2plus"]
-	path = A2plus
-	url = https://github.com/kbwbe/A2plus
+    path = A2plus
+    url = https://github.com/kbwbe/A2plus
 [submodule "addFC"]
-	path = addFC
-	url = https://github.com/GS90/addFC
-	branch = main
+    path = addFC
+    url = https://github.com/GS90/addFC
+    branch = main
 [submodule "AirPlaneDesign"]
-	path = AirPlaneDesign
-	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
-        branch = master
+    path = AirPlaneDesign
+    url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
+    branch = master
 [submodule "Alternate_OpenSCAD"]
-	path = Alternate_OpenSCAD
-	url = https://github.com/KeithSloan/OpenSCAD_Alt_Import
-        branch = master
+    path = Alternate_OpenSCAD
+    url = https://github.com/KeithSloan/OpenSCAD_Alt_Import
+    branch = master
 [submodule "animation"]
-	path = animation
-	url = https://github.com/microelly2/Animation
-        branch = master
+    path = animation
+    url = https://github.com/microelly2/Animation
+    branch = master
 [submodule "AnimationFreeCAD"]
-	path = AnimationFreeCAD
-	url = https://github.com/QuentinTournier40/AnimationFreeCAD
-	branch = main
+    path = AnimationFreeCAD
+    url = https://github.com/QuentinTournier40/AnimationFreeCAD
+    branch = main
 [submodule "ArchTextures"]
-	path = ArchTextures
-	url = https://github.com/furti/FreeCAD-ArchTextures
-        branch = master
+    path = ArchTextures
+    url = https://github.com/furti/FreeCAD-ArchTextures
+    branch = master
 [submodule "assembly2"]
-	path = assembly2
-	url = https://github.com/hamish2014/FreeCAD_assembly2
-        branch = master
+    path = assembly2
+    url = https://github.com/hamish2014/FreeCAD_assembly2
+    branch = master
 [submodule "Assembly3"]
-	path = Assembly3
-	url = https://github.com/realthunder/FreeCAD_assembly3
-	branch = master
+    path = Assembly3
+    url = https://github.com/realthunder/FreeCAD_assembly3
+    branch = master
 [submodule "Assembly4"]
-	path = Assembly4
-	url = https://github.com/Zolko-123/FreeCAD_Assembly4
-        branch = master
+    path = Assembly4
+    url = https://github.com/Zolko-123/FreeCAD_Assembly4
+    branch = master
 [submodule "Autoload"]
-	path = Autoload
-	url = https://github.com/triplus/Autoload
-        branch = master
+    path = Autoload
+    url = https://github.com/triplus/Autoload
+    branch = master
 [submodule "BCFPlugin"]
-	path = BCFPlugin
-	url = https://github.com/podestplatz/BCF-Plugin-FreeCAD
-        branch = master
+    path = BCFPlugin
+    url = https://github.com/podestplatz/BCF-Plugin-FreeCAD
+    branch = master
 [submodule "Behave-Dark-Colors"]
-	path = Behave-Dark-Colors
-	url = https://github.com/Chrismettal/FreeCAD-Behave-Dark-Preference-Pack
-	branch = main
+    path = Behave-Dark-Colors
+    url = https://github.com/Chrismettal/FreeCAD-Behave-Dark-Preference-Pack
+    branch = main
 [submodule "Beltrami"]
-	path = Beltrami
-	url = https://github.com/Simturb/Beltrami
-	branch = main
-[submodule "btl"]
-	path = btl
-	url = https://github.com/knipknap/better-tool-library
-	branch = main
-[submodule "BIMBots"]
-	path = BIMBots
-	url = https://github.com/opensourceBIM/BIMbots-FreeCAD
-        branch = master
-[submodule "BIM"]
-	path = BIM
-	url = https://github.com/yorikvanhavre/BIM_Workbench
-        branch = master
-[submodule "bimtester"]
-	path = bimtester
-	url = https://github.com/bimtester/bimtesterfc
-        branch = master
-[submodule "boltsfc"]
-	path = boltsfc
-	url = https://github.com/boltsparts/boltsfc
-	branch = main
-[submodule "CadbaseLibrary"]
-        path = CadbaseLibrary
-        url = https://github.com/mnnxp/cadbaselibrary-freecad
-        branch = master
-[submodule "CADExchanger"]
-	path = CADExchanger
-	url = https://github.com/yorikvanhavre/CADExchanger
-        branch = master
-[submodule "cadquery_module"]
-	path = cadquery_module
-	url = https://github.com/jmwright/cadquery-freecad-module
-        branch = master
-[submodule "CamScripts"]
-	path = CamScripts
-	url = https://github.com/spanner888/CamScripts
-	branch = main
-[submodule "CfdOF"]
-	path = CfdOF
-	url = https://github.com/jaheyns/CfdOF
-        branch = master
-[submodule "Cfd"]
-	path = Cfd
-	url = https://github.com/qingfengxia/Cfd
-        branch = master
-[submodule "CommandPanel"]
-	path = CommandPanel
-	url = https://github.com/triplus/CommandPanel
-        branch = master
-[submodule "CubeMenu"]
-	path = CubeMenu
-	url = https://github.com/triplus/CubeMenu
-        branch = master
-[submodule "cura_engine"]
-	path = cura_engine
-	url = https://github.com/cblt2l/FreeCAD-CuraEngine-Plugin
-        branch = master
-[submodule "CurvedShapes"]
-	path = CurvedShapes
-	url = https://github.com/chbergmann/CurvedShapesWorkbench
-        branch = master
-[submodule "Curves"]
-	path = Curves
-	url = https://github.com/tomate44/CurvesWB
-        branch = master
-[submodule "Defeaturing"]
-	path = Defeaturing
-	url = https://github.com/easyw/Defeaturing_WB
-        branch = master
-[submodule "Design456"]
-	path = Design456
-	url = https://github.com/MariwanJ/Design456
-	branch = main	
-[submodule "DesignSPHysics"]
-	path = DesignSPHysics
-	url = https://github.com/DualSPHysics/DesignSPHysics
-        branch = master
-[submodule "dodo"]
-	path = dodo
-	url = https://github.com/oddtopus/dodo
-        branch = master
-[submodule "Dracula"]
-	path = Dracula
-	url = https://github.com/dracula/freecad
-	branch = master
-[submodule "drawing_dimensioning"]
-	path = drawing_dimensioning
-	url = https://github.com/hamish2014/FreeCAD_drawing_dimensioning
-        branch = master
-[submodule "dxf-library"]
-	path = dxf_library
-	url = https://github.com/yorikvanhavre/Draft-dxf-importer
-        branch = master
-[submodule "DynamicData"]
-	path = DynamicData
-	url = https://github.com/mwganson/DynamicData
-        branch = master
-[submodule "EM"]
-	path = EM
-	url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
-        branch = master
-[submodule "Estimate"]
-	path = Estimate
-	url = https://github.com/erroronline1/estimateWB
-	branch = master
-[submodule "ExplodedAssembly"]
-	path = ExplodedAssembly
-	url = https://github.com/JMG1/ExplodedAssembly
-        branch = master
-[submodule "ExtMan"]
-	path = ExtMan
-	url = https://github.com/mnesarco/FreeCAD_ExtMan
-        branch = master
-[submodule "fasteners"]
-	path = fasteners
-	url = https://github.com/shaise/FreeCAD_FastenersWB
-        branch = master
-[submodule "Fcmcua"]
-	path = Fcmcua
-	url = https://github.com/heissgetraenk/fcmcua
-	branch = main
-[submodule "FreeCAD-Beginner-Assistant"]
-	path = FreeCAD-Beginner-Assistant
-	url = https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant
-	branch = main
-[submodule "freecad.gears"]
-	path = freecad.gears
-	url = https://github.com/looooo/freecad.gears
-        branch = master
-[submodule "Freecad-Built-in-themes-beta"]
-	path = Freecad-Built-in-themes-beta
-	url = https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta
-	branch = main
-[submodule "FreeCAD-Ribbon"]
-	path = FreeCAD-Ribbon
-	url = https://github.com/APEbbers/FreeCAD-Ribbon
-	branch = main
-[submodule "FreeCAD-themes"]
-	path = FreeCAD-themes
-	url = https://github.com/FreeCAD/FreeCAD-themes
-	branch = main
-[submodule "freecad_streamdeck_addon"]
-	path = freecad_streamdeck_addon
-	url = https://github.com/Giraut/freecad_streamdeck_addon
-	branch = main
-[submodule "FeedsAndSpeeds"]
-	path = FeedsAndSpeeds
-	url = https://github.com/dubstar-04/FeedsAndSpeeds
-        branch = master
-[submodule "FEM_FrontISTR"]
-	path = FEM_FrontISTR
-	url = https://github.com/FrontISTR/FEM_FrontISTR
-        branch = master
-[submodule "FEMbyGEN"]
-	path = FEMbyGEN
-	url = https://github.com/Serince/FEMbyGEN
-        branch = master
-[submodule "flamingo"]
-	path = flamingo
-	url = https://github.com/oddtopus/flamingo
-        branch = master
-[submodule "frame"]
-	path = frame
-	url = https://github.com/looooo/freecad_frame
-        branch = master
-[submodule "FrameForge"]
-	path = FrameForge
-	url = https://github.com/lukh/frameforge
-	branch = main
-[submodule "FreeGrid"]
-	path = FreeGrid
-	url = https://github.com/instancezero/in3dca-freegrid.git
-	branch = main
-[submodule "GDML"]
-	path = GDML
-	url = https://github.com/KeithSloan/GDML
-	branch = Main
-[submodule "GDT"]
-	path = GDT
-	url = https://github.com/juanvanyo/FreeCAD-GDT
-        branch = master
-[submodule "Glass"]
-	path = Glass
-	url = https://github.com/triplus/Glass
-        branch = master
-[submodule "Gridfinity"]
-	path = Gridfinity
-	url = https://github.com/Stu142/FreeCAD-Gridfinity-Workbench
-        branch = master
-[submodule "Help"]
-	path = Help
-	url = https://github.com/FreeCAD/FreeCAD-Help
-	branch = main
-[submodule "IconThemes"]
-	path = IconThemes
-	url = https://github.com/triplus/IconThemes
-        branch = master
-[submodule "ImportNURBS"]
-	path = ImportNURBS
-	url = https://github.com/KeithSloan/ImportNURBS
-        branch = master
-[submodule "InventorLoader"]
-	path = InventorLoader
-	url = https://github.com/jmplonka/InventorLoader
-        branch = master
-[submodule "kerkythea"]
-	path = kerkythea
-	url = https://github.com/marmni/FreeCAD-Kerkythea
-        branch = master
-[submodule "kicadStepUpMod"]
-	path = kicadStepUpMod
-	url = https://github.com/easyw/kicadStepUpMod
-        branch = master
-[submodule "lattice2"]
-	path = lattice2
-	url = https://github.com/DeepSOIC/Lattice2
-        branch = master
-[submodule "Launcher"]
-	path = Launcher
-	url = https://github.com/triplus/Launcher
-        branch = master
-[submodule "LCInterlocking"]
-	path = LCInterlocking
-	url = https://github.com/execuc/LCInterlocking
-        branch = master
-[submodule "parts_library"]
-	path = parts_library
-	url = https://github.com/FreeCAD/FreeCAD-library
-        branch = master
-[submodule "Lithophane"]
-	path = Lithophane
-	url = https://github.com/furti/FreeCAD-Lithophane
-        branch = master
-[submodule "MakerWorkbench"]
-	path = MakerWorkbench
-	url = https://github.com/URJCMakerGroup/MakerWorkbench
-        branch = master
-[submodule "Manipulator"]
-	path = Manipulator
-	url = https://github.com/easyw/Manipulator
-        branch = master
-[submodule "Marz"]
-	path = Marz
-	url = https://github.com/mnesarco/MarzWorkbench
-        branch = master
-[submodule "MeshRemodel"]
-	path = MeshRemodel
-	url = https://github.com/mwganson/MeshRemodel
-        branch = master
-[submodule "MnesarcoUtils"]
-	path = MnesarcoUtils
-	url = https://github.com/mnesarco/FreeCAD_Utils
-	branch = main
-[submodule "ModernUI"]
-	path = ModernUI
-	url = https://github.com/HakanSeven12/Modern-UI
-        branch = master
-[submodule "MOOC"]
-	path = MOOC
-	url = https://github.com/j-wiedemann/mooc-workbench
-        branch = master
-[submodule "Movie"]
-	path = Movie
-	url = https://github.com/Francisco-Rosa/FreeCAD-Movie
-        branch = master
-[submodule "NavigationIndicator"]
-	path = NavigationIndicator
-	url = https://github.com/triplus/NavigationIndicator
-        branch = master
-[submodule "NikraDAP"]
-	path = NikraDAP
-	url = https://github.com/NikraDAP/FreeCAD-NikraDAP
-	branch = main
-[submodule "Nodes"]
-	path = Nodes
-	url = https://github.com/j8sr0230/Nodes
-	branch = main
-[submodule "nurbs"]
-	path = nurbs
-	url = https://github.com/microelly2/freecad-nurbs
-        branch = master
-[submodule "offline-documentation"]
-	path = offline-documentation
-	url = https://github.com/FreeCAD/FreeCAD-documentation
-        branch = main
-[submodule "Ondsel-Lens"]
-	path = Ondsel-Lens
-	url = https://github.com/Ondsel-Development/Ondsel-Lens-Addon
-	branch = main
-[submodule "OpenTheme"]
-	path = OpenTheme
-	url = https://github.com/obelisk79/OpenTheme
-	branch = main
-[submodule "OpticsWorkbench"]
-	path = OpticsWorkbench
-	url = https://github.com/chbergmann/OpticsWorkbench
-	branch = main
-[submodule "OSAFE"]
-	path = OSAFE
-	url = https://github.com/ebrahimraeyat/OSAFE
-        branch = master
-[submodule "ose-piping"]
-	path = ose-piping
-	url = https://github.com/rkrenzler/ose-piping-workbench
-        branch = master
-[submodule "OSE3dPrinter"]
-	path = OSE3dPrinter
-	url = https://github.com/gbroques/ose-3d-printer-workbench
-        branch = master
-[submodule "Part-o-magic"]
-	path = Part-o-magic
-	url = https://github.com/DeepSOIC/Part-o-magic
-        branch = master
-[submodule "pcb"]
-	path = pcb
-	url = https://github.com/marmni/FreeCAD-PCB
-        branch = master
-[submodule "persistenttoolbars"]
-	path = persistenttoolbars
-	url = https://github.com/triplus/PersistentToolbars
-        branch = master
-[submodule "pivy_trackers"]
-	path = pivy_trackers
-	url = https://github.com/joelgraff/pivy_trackers
-        branch = master
-[submodule "Plot"]
-	path = Plot
-	url = https://github.com/FreeCAD/freecad.plot
-        branch = master
-[submodule "POV-Ray-Rendering"]
-	path = POV-Ray-Rendering
-	url = https://github.com/TheRaytracers/freecad-povray-render
-        branch = master
-[submodule "ProDarkThemePreferencePack"]
-	path = ProDarkThemePreferencePack
-	url = https://github.com/turn211/ProDarkThemePreferencePack
-	branch = main
-[submodule "Pyramids-and-Polyhedrons"]
-	path = Pyramids-and-Polyhedrons
-	url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons
-        branch = master
-[submodule "pyOpToolsWorkbench"]
-        path = pyOpToolsWorkBench
-        url = https://github.com/cihologramas/freecad-pyoptools
-        branch = master
-[submodule "pyrate"]
-	path = pyrate
-	url = https://salsa.debian.org/mess42/pyrate
-        branch = master
-[submodule "QuickMeasure"]
-	path = QuickMeasure
-	url = https://github.com/DanMiel/QuickMeasure
-	branch = main
-[submodule "reconstruction"]
-	path = reconstruction
-	url = https://github.com/microelly2/reconstruction
-        branch = master
-[submodule "Reinforcement"]
-	path = Reinforcement
-	url = https://github.com/amrit3701/FreeCAD-Reinforcement
-        branch = master
-[submodule "RemBench"]
-	path = RemBench
-	url = https://github.com/triplus/RemBench
-        branch = master
-[submodule "Render"]
-	path = Render
-	url = https://github.com/FreeCAD/FreeCAD-render
-        branch = master
-[submodule "Reporting"]
-	path = Reporting
-	url = https://github.com/furti/FreeCAD-Reporting
-        branch = master
-[submodule "retr3d"]
-	path = retr3d
-	url = https://github.com/Maaphoo/Retr3d
-        branch = master
-[submodule "Rocket"]
-	path = Rocket
-	url = https://github.com/davesrocketshop/Rocket
-        branch = master
-[submodule "SearchBar"]
-	path = SearchBar
-	url = https://github.com/SuzanneSoy/SearchBar
-	branch = main
-[submodule "SelectorToolbar"]
-	path = SelectorToolbar
-	url = https://github.com/triplus/SelectorToolbar
-        branch = master
-[submodule "sheetmetal"]
-	path = sheetmetal
-	url = https://github.com/shaise/FreeCAD_SheetMetal
-        branch = master
-[submodule "Ship"]
-	path = Ship
-	url = https://github.com/FreeCAD/freecad.ship
-        branch = master
-[submodule "ShortCuts"]
-	path = ShortCuts
-	url = https://github.com/triplus/ShortCuts
-        branch = master
-[submodule "Silk"]
-	path = Silk
-	url = https://github.com/edwardvmills/Silk
-        branch = master
-[submodule "slic3r-tools"]
-	path = slic3r-tools
-	url = https://github.com/limikael/freecad-slic3r-tools
-        branch = master
-[submodule "SlopedPlanesMacro"]
-	path = SlopedPlanesMacro
-	url = https://github.com/luzpaz/SlopedPlanesMacro
-        branch = master
-[submodule "SteelColumn"]
-	path = SteelColumn
-	url = https://github.com/ebrahimraeyat/momen
-        branch = master
-[submodule "symbols_library"]
-	path = symbols_library
-	url = https://github.com/FreeCAD/FreeCAD-symbols
-        branch = master
-[submodule "TabBar"]
-	path = TabBar
-	url = https://github.com/triplus/TabBar
-        branch = master
-[submodule "ThreadProfile"]
-	path = ThreadProfile
-	url = https://github.com/mwganson/ThreadProfile
-        branch = master
-[submodule "TitleBlock"]
-	path = TitleBlock
-	url = https://github.com/APEbbers/TitleBlock-WB
-        branch = main 
-[submodule "timber"]
-	path = timber
-	url = https://github.com/wood-galaxy/FreeCAD-Timber
-        branch = master
-[submodule "toSketch"]
-	path = toSketch
-	url = https://github.com/KeithSloan/toSketch
-	branch = main
-[submodule "taack-plm-freecad"]
-	path = taack-plm-freecad
-	url = https://github.com/Taack/taack-plm-freecad
-	branch = main
-[submodule "ToolbarStyle"]
-	path = ToolbarStyle
-	url = https://github.com/triplus/ToolbarStyle
-        branch = master
-[submodule "Trails"]
-	path = Trails
-	url = https://github.com/HakanSeven12/Trails
-        branch = main
-[submodule "WebTools"]
-	path = WebTools
-	url = https://github.com/yorikvanhavre/WebTools
-        branch = master
-[submodule "WB_Organizer"]
-	path = Workbench-Organizer
-	url = https://github.com/Palmstroemen/WB_Organizer
-        branch = main
-[submodule "workfeature-macro"]
-	path = workfeature-macro
-	url = https://github.com/Rentlau/WorkFeature
-        branch = master
-[submodule "workfeature"]
-	path = workfeature
-	url = https://github.com/Rentlau/WorkFeature-WB
-        branch = master
-[submodule "yaml-workspace"]
-	path = yaml-workspace
-	url = https://github.com/Mambix/FreeCAD-yaml-workspace
-        branch = master
-[submodule "woodworking"]
-	path = Woodworking
-	url = https://github.com/dprojects/Woodworking
-        branch = master
-[submodule "PieMenu"]
-	path = PieMenu
-	url = https://github.com/Grubuntu/PieMenu
-        branch = master
-[submodule "osh-autodoc-workbench"]
-	path = osh-autodoc-workbench
-	url = https://codeberg.org/osh-autodoc/osh-autodoc-workbench
-	branch = main
+    path = Beltrami
+    url = https://github.com/Simturb/Beltrami
+    branch = main
 [submodule "BillOfMaterials"]
-	path = BillOfMaterials
-	url = https://github.com/APEbbers/BillOfMaterials-WB
-        branch = main 
+    path = BillOfMaterials
+    url = https://github.com/APEbbers/BillOfMaterials-WB
+    branch = main
+[submodule "btl"]
+    path = btl
+    url = https://github.com/knipknap/better-tool-library
+    branch = main
+[submodule "BIMBots"]
+    path = BIMBots
+    url = https://github.com/opensourceBIM/BIMbots-FreeCAD
+    branch = master
+[submodule "BIM"]
+    path = BIM
+    url = https://github.com/yorikvanhavre/BIM_Workbench
+    branch = master
+[submodule "bimtester"]
+    path = bimtester
+    url = https://github.com/bimtester/bimtesterfc
+    branch = master
+[submodule "boltsfc"]
+    path = boltsfc
+    url = https://github.com/boltsparts/boltsfc
+    branch = main
+[submodule "CadbaseLibrary"]
+    path = CadbaseLibrary
+    url = https://github.com/mnnxp/cadbaselibrary-freecad
+    branch = master
+[submodule "CADExchanger"]
+    path = CADExchanger
+    url = https://github.com/yorikvanhavre/CADExchanger
+    branch = master
+[submodule "cadquery_module"]
+    path = cadquery_module
+    url = https://github.com/jmwright/cadquery-freecad-module
+    branch = master
+[submodule "CamScripts"]
+    path = CamScripts
+    url = https://github.com/spanner888/CamScripts
+    branch = main
+[submodule "CfdOF"]
+    path = CfdOF
+    url = https://github.com/jaheyns/CfdOF
+    branch = master
+[submodule "Cfd"]
+    path = Cfd
+    url = https://github.com/qingfengxia/Cfd
+    branch = master
+[submodule "CommandPanel"]
+    path = CommandPanel
+    url = https://github.com/triplus/CommandPanel
+    branch = master
+[submodule "CubeMenu"]
+    path = CubeMenu
+    url = https://github.com/triplus/CubeMenu
+    branch = master
+[submodule "cura_engine"]
+    path = cura_engine
+    url = https://github.com/cblt2l/FreeCAD-CuraEngine-Plugin
+    branch = master
+[submodule "CurvedShapes"]
+    path = CurvedShapes
+    url = https://github.com/chbergmann/CurvedShapesWorkbench
+    branch = master
+[submodule "Curves"]
+    path = Curves
+    url = https://github.com/tomate44/CurvesWB
+    branch = master
+[submodule "Defeaturing"]
+    path = Defeaturing
+    url = https://github.com/easyw/Defeaturing_WB
+    branch = master
+[submodule "Design456"]
+    path = Design456
+    url = https://github.com/MariwanJ/Design456
+    branch = main    
+[submodule "DesignSPHysics"]
+    path = DesignSPHysics
+    url = https://github.com/DualSPHysics/DesignSPHysics
+    branch = master
+[submodule "dodo"]
+    path = dodo
+    url = https://github.com/oddtopus/dodo
+    branch = master
+[submodule "Dracula"]
+    path = Dracula
+    url = https://github.com/dracula/freecad
+    branch = master
+[submodule "drawing_dimensioning"]
+    path = drawing_dimensioning
+    url = https://github.com/hamish2014/FreeCAD_drawing_dimensioning
+    branch = master
+[submodule "dxf-library"]
+    path = dxf_library
+    url = https://github.com/yorikvanhavre/Draft-dxf-importer
+    branch = master
+[submodule "DynamicData"]
+    path = DynamicData
+    url = https://github.com/mwganson/DynamicData
+    branch = master
+[submodule "EM"]
+    path = EM
+    url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
+    branch = master
+[submodule "Estimate"]
+    path = Estimate
+    url = https://github.com/erroronline1/estimateWB
+    branch = master
+[submodule "ExplodedAssembly"]
+    path = ExplodedAssembly
+    url = https://github.com/JMG1/ExplodedAssembly
+    branch = master
+[submodule "ExtMan"]
+    path = ExtMan
+    url = https://github.com/mnesarco/FreeCAD_ExtMan
+    branch = master
+[submodule "fasteners"]
+    path = fasteners
+    url = https://github.com/shaise/FreeCAD_FastenersWB
+    branch = master
+[submodule "Fcmcua"]
+    path = Fcmcua
+    url = https://github.com/heissgetraenk/fcmcua
+    branch = main
+[submodule "FreeCAD-Beginner-Assistant"]
+    path = FreeCAD-Beginner-Assistant
+    url = https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant
+    branch = main
+[submodule "freecad.gears"]
+    path = freecad.gears
+    url = https://github.com/looooo/freecad.gears
+    branch = master
+[submodule "Freecad-Built-in-themes-beta"]
+    path = Freecad-Built-in-themes-beta
+    url = https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta
+    branch = main
 [submodule "freecad.optics_design_workbench"]
-	path = freecad.optics_design_workbench
-	url = https://github.com/zaphB/freecad.optics_design_workbench
-	branch = master
+    path = freecad.optics_design_workbench
+    url = https://github.com/zaphB/freecad.optics_design_workbench
+    branch = master
+[submodule "FreeCAD-Ribbon"]
+    path = FreeCAD-Ribbon
+    url = https://github.com/APEbbers/FreeCAD-Ribbon
+    branch = main
+[submodule "FreeCAD-themes"]
+    path = FreeCAD-themes
+    url = https://github.com/FreeCAD/FreeCAD-themes
+    branch = main
+[submodule "freecad_streamdeck_addon"]
+    path = freecad_streamdeck_addon
+    url = https://github.com/Giraut/freecad_streamdeck_addon
+    branch = main
+[submodule "FeedsAndSpeeds"]
+    path = FeedsAndSpeeds
+    url = https://github.com/dubstar-04/FeedsAndSpeeds
+    branch = master
+[submodule "FEM_FrontISTR"]
+    path = FEM_FrontISTR
+    url = https://github.com/FrontISTR/FEM_FrontISTR
+    branch = master
+[submodule "FEMbyGEN"]
+    path = FEMbyGEN
+    url = https://github.com/Serince/FEMbyGEN
+    branch = master
+[submodule "flamingo"]
+    path = flamingo
+    url = https://github.com/oddtopus/flamingo
+    branch = master
+[submodule "frame"]
+    path = frame
+    url = https://github.com/looooo/freecad_frame
+    branch = master
+[submodule "FrameForge"]
+    path = FrameForge
+    url = https://github.com/lukh/frameforge
+    branch = main
+[submodule "FreeGrid"]
+    path = FreeGrid
+    url = https://github.com/instancezero/in3dca-freegrid.git
+    branch = main
+[submodule "GDML"]
+    path = GDML
+    url = https://github.com/KeithSloan/GDML
+    branch = Main
+[submodule "GDT"]
+    path = GDT
+    url = https://github.com/juanvanyo/FreeCAD-GDT
+    branch = master
+[submodule "Glass"]
+    path = Glass
+    url = https://github.com/triplus/Glass
+    branch = master
+[submodule "Gridfinity"]
+    path = Gridfinity
+    url = https://github.com/Stu142/FreeCAD-Gridfinity-Workbench
+    branch = master
+[submodule "Help"]
+    path = Help
+    url = https://github.com/FreeCAD/FreeCAD-Help
+    branch = main
+[submodule "IconThemes"]
+    path = IconThemes
+    url = https://github.com/triplus/IconThemes
+    branch = master
+[submodule "ImportNURBS"]
+    path = ImportNURBS
+    url = https://github.com/KeithSloan/ImportNURBS
+    branch = master
+[submodule "InventorLoader"]
+    path = InventorLoader
+    url = https://github.com/jmplonka/InventorLoader
+    branch = master
+[submodule "kerkythea"]
+    path = kerkythea
+    url = https://github.com/marmni/FreeCAD-Kerkythea
+    branch = master
+[submodule "kicadStepUpMod"]
+    path = kicadStepUpMod
+    url = https://github.com/easyw/kicadStepUpMod
+    branch = master
+[submodule "lattice2"]
+    path = lattice2
+    url = https://github.com/DeepSOIC/Lattice2
+    branch = master
+[submodule "Launcher"]
+    path = Launcher
+    url = https://github.com/triplus/Launcher
+    branch = master
+[submodule "LCInterlocking"]
+    path = LCInterlocking
+    url = https://github.com/execuc/LCInterlocking
+    branch = master
+[submodule "parts_library"]
+    path = parts_library
+    url = https://github.com/FreeCAD/FreeCAD-library
+    branch = master
+[submodule "Lithophane"]
+    path = Lithophane
+    url = https://github.com/furti/FreeCAD-Lithophane
+    branch = master
+[submodule "MakerWorkbench"]
+    path = MakerWorkbench
+    url = https://github.com/URJCMakerGroup/MakerWorkbench
+    branch = master
+[submodule "Manipulator"]
+    path = Manipulator
+    url = https://github.com/easyw/Manipulator
+    branch = master
+[submodule "Marz"]
+    path = Marz
+    url = https://github.com/mnesarco/MarzWorkbench
+    branch = master
+[submodule "MeshRemodel"]
+    path = MeshRemodel
+    url = https://github.com/mwganson/MeshRemodel
+    branch = master
+[submodule "MnesarcoUtils"]
+    path = MnesarcoUtils
+    url = https://github.com/mnesarco/FreeCAD_Utils
+    branch = main
+[submodule "ModernUI"]
+    path = ModernUI
+    url = https://github.com/HakanSeven12/Modern-UI
+    branch = master
+[submodule "MOOC"]
+    path = MOOC
+    url = https://github.com/j-wiedemann/mooc-workbench
+    branch = master
+[submodule "Movie"]
+    path = Movie
+    url = https://github.com/Francisco-Rosa/FreeCAD-Movie
+    branch = master
+[submodule "NavigationIndicator"]
+    path = NavigationIndicator
+    url = https://github.com/triplus/NavigationIndicator
+    branch = master
+[submodule "NikraDAP"]
+    path = NikraDAP
+    url = https://github.com/NikraDAP/FreeCAD-NikraDAP
+    branch = main
+[submodule "Nodes"]
+    path = Nodes
+    url = https://github.com/j8sr0230/Nodes
+    branch = main
+[submodule "nurbs"]
+    path = nurbs
+    url = https://github.com/microelly2/freecad-nurbs
+    branch = master
+[submodule "offline-documentation"]
+    path = offline-documentation
+    url = https://github.com/FreeCAD/FreeCAD-documentation
+    branch = main
+[submodule "Ondsel-Lens"]
+    path = Ondsel-Lens
+    url = https://github.com/Ondsel-Development/Ondsel-Lens-Addon
+    branch = main
+[submodule "OpenTheme"]
+    path = OpenTheme
+    url = https://github.com/obelisk79/OpenTheme
+    branch = main
+[submodule "OpticsWorkbench"]
+    path = OpticsWorkbench
+    url = https://github.com/chbergmann/OpticsWorkbench
+    branch = main
+[submodule "OSAFE"]
+    path = OSAFE
+    url = https://github.com/ebrahimraeyat/OSAFE
+    branch = master
+[submodule "ose-piping"]
+    path = ose-piping
+    url = https://github.com/rkrenzler/ose-piping-workbench
+    branch = master
+[submodule "OSE3dPrinter"]
+    path = OSE3dPrinter
+    url = https://github.com/gbroques/ose-3d-printer-workbench
+    branch = master
+[submodule "osh-autodoc-workbench"]
+    path = osh-autodoc-workbench
+    url = https://codeberg.org/osh-autodoc/osh-autodoc-workbench
+    branch = main
+[submodule "Part-o-magic"]
+    path = Part-o-magic
+    url = https://github.com/DeepSOIC/Part-o-magic
+    branch = master
+[submodule "pcb"]
+    path = pcb
+    url = https://github.com/marmni/FreeCAD-PCB
+    branch = master
+[submodule "persistenttoolbars"]
+    path = persistenttoolbars
+    url = https://github.com/triplus/PersistentToolbars
+    branch = master
+[submodule "PieMenu"]
+    path = PieMenu
+    url = https://github.com/Grubuntu/PieMenu
+    branch = master
+[submodule "pivy_trackers"]
+    path = pivy_trackers
+    url = https://github.com/joelgraff/pivy_trackers
+    branch = master
+[submodule "Plot"]
+    path = Plot
+    url = https://github.com/FreeCAD/freecad.plot
+    branch = master
+[submodule "POV-Ray-Rendering"]
+    path = POV-Ray-Rendering
+    url = https://github.com/TheRaytracers/freecad-povray-render
+    branch = master
+[submodule "ProDarkThemePreferencePack"]
+    path = ProDarkThemePreferencePack
+    url = https://github.com/turn211/ProDarkThemePreferencePack
+    branch = main
+[submodule "Pyramids-and-Polyhedrons"]
+    path = Pyramids-and-Polyhedrons
+    url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons
+    branch = master
+[submodule "pyOpToolsWorkbench"]
+    path = pyOpToolsWorkBench
+    url = https://github.com/cihologramas/freecad-pyoptools
+    branch = master
+[submodule "pyrate"]
+    path = pyrate
+    url = https://salsa.debian.org/mess42/pyrate
+    branch = master
+[submodule "QuickMeasure"]
+    path = QuickMeasure
+    url = https://github.com/DanMiel/QuickMeasure
+    branch = main
+[submodule "reconstruction"]
+    path = reconstruction
+    url = https://github.com/microelly2/reconstruction
+    branch = master
+[submodule "Reinforcement"]
+    path = Reinforcement
+    url = https://github.com/amrit3701/FreeCAD-Reinforcement
+    branch = master
+[submodule "RemBench"]
+    path = RemBench
+    url = https://github.com/triplus/RemBench
+    branch = master
+[submodule "Render"]
+    path = Render
+    url = https://github.com/FreeCAD/FreeCAD-render
+    branch = master
+[submodule "Reporting"]
+    path = Reporting
+    url = https://github.com/furti/FreeCAD-Reporting
+    branch = master
+[submodule "retr3d"]
+    path = retr3d
+    url = https://github.com/Maaphoo/Retr3d
+    branch = master
+[submodule "Rocket"]
+    path = Rocket
+    url = https://github.com/davesrocketshop/Rocket
+    branch = master
+[submodule "SearchBar"]
+    path = SearchBar
+    url = https://github.com/SuzanneSoy/SearchBar
+    branch = main
+[submodule "SelectorToolbar"]
+    path = SelectorToolbar
+    url = https://github.com/triplus/SelectorToolbar
+    branch = master
+[submodule "sheetmetal"]
+    path = sheetmetal
+    url = https://github.com/shaise/FreeCAD_SheetMetal
+    branch = master
+[submodule "Ship"]
+    path = Ship
+    url = https://github.com/FreeCAD/freecad.ship
+    branch = master
+[submodule "ShortCuts"]
+    path = ShortCuts
+    url = https://github.com/triplus/ShortCuts
+    branch = master
+[submodule "Silk"]
+    path = Silk
+    url = https://github.com/edwardvmills/Silk
+    branch = master
+[submodule "slic3r-tools"]
+    path = slic3r-tools
+    url = https://github.com/limikael/freecad-slic3r-tools
+    branch = master
+[submodule "SlopedPlanesMacro"]
+    path = SlopedPlanesMacro
+    url = https://github.com/luzpaz/SlopedPlanesMacro
+    branch = master
+[submodule "SteelColumn"]
+    path = SteelColumn
+    url = https://github.com/ebrahimraeyat/momen
+    branch = master
+[submodule "symbols_library"]
+    path = symbols_library
+    url = https://github.com/FreeCAD/FreeCAD-symbols
+    branch = master
+[submodule "TabBar"]
+    path = TabBar
+    url = https://github.com/triplus/TabBar
+    branch = master
+[submodule "ThreadProfile"]
+    path = ThreadProfile
+    url = https://github.com/mwganson/ThreadProfile
+    branch = master
+[submodule "TitleBlock"]
+    path = TitleBlock
+    url = https://github.com/APEbbers/TitleBlock-WB
+    branch = main 
+[submodule "timber"]
+    path = timber
+    url = https://github.com/wood-galaxy/FreeCAD-Timber
+    branch = master
+[submodule "toSketch"]
+    path = toSketch
+    url = https://github.com/KeithSloan/toSketch
+    branch = main
+[submodule "taack-plm-freecad"]
+    path = taack-plm-freecad
+    url = https://github.com/Taack/taack-plm-freecad
+    branch = main
+[submodule "ToolbarStyle"]
+    path = ToolbarStyle
+    url = https://github.com/triplus/ToolbarStyle
+    branch = master
+[submodule "Trails"]
+    path = Trails
+    url = https://github.com/HakanSeven12/Trails
+    branch = main
+[submodule "WebTools"]
+    path = WebTools
+    url = https://github.com/yorikvanhavre/WebTools
+    branch = master
+[submodule "WB_Organizer"]
+    path = Workbench-Organizer
+    url = https://github.com/Palmstroemen/WB_Organizer
+    branch = main
+[submodule "woodworking"]
+    path = Woodworking
+    url = https://github.com/dprojects/Woodworking
+    branch = master
+[submodule "workfeature-macro"]
+    path = workfeature-macro
+    url = https://github.com/Rentlau/WorkFeature
+    branch = master
+[submodule "workfeature"]
+    path = workfeature
+    url = https://github.com/Rentlau/WorkFeature-WB
+    branch = master
+[submodule "yaml-workspace"]
+    path = yaml-workspace
+    url = https://github.com/Mambix/FreeCAD-yaml-workspace
+    branch = master
