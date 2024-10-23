@@ -11,6 +11,7 @@
 # Allow these packages to be installed:
 aiofiles
 asyncua
+atomicwrites
 autobahn
 awkward
 beautifulsoup4
