@@ -43,11 +43,15 @@ openpyxl
 pandas
 pillow
 ply
+protobuf
 py-slvs
 pycollada
 pydocx
 pygit2
+pyg4ometry
 pyjwt
+PyOpenGL
+pyopenxr
 pyoptools
 pynastran
 qtrangeslider
@@ -60,6 +64,7 @@ scipy
 streamdeck
 trimesh
 tzlocal
+vedo
 xlrd
 xlutils
 xlwt

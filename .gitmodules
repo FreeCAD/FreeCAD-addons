@@ -9,6 +9,10 @@
 [submodule "A2plus"]
 	path = A2plus
 	url = https://github.com/kbwbe/A2plus
+[submodule "addFC"]
+	path = addFC
+	url = https://github.com/GS90/addFC
+	branch = main
 [submodule "AirPlaneDesign"]
 	path = AirPlaneDesign
 	url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
@@ -89,6 +93,10 @@
 	path = cadquery_module
 	url = https://github.com/jmwright/cadquery-freecad-module
         branch = master
+[submodule "CamScripts"]
+	path = CamScripts
+	url = https://github.com/spanner888/CamScripts
+	branch = main
 [submodule "CfdOF"]
 	path = CfdOF
 	url = https://github.com/jaheyns/CfdOF
@@ -173,6 +181,10 @@
 	path = Fcmcua
 	url = https://github.com/heissgetraenk/fcmcua
 	branch = main
+[submodule "FreeCAD-Beginner-Assistant"]
+	path = FreeCAD-Beginner-Assistant
+	url = https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant
+	branch = main
 [submodule "freecad.gears"]
 	path = freecad.gears
 	url = https://github.com/looooo/freecad.gears
@@ -180,6 +192,10 @@
 [submodule "Freecad-Built-in-themes-beta"]
 	path = Freecad-Built-in-themes-beta
 	url = https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta
+	branch = main
+[submodule "FreeCAD-Ribbon"]
+	path = FreeCAD-Ribbon
+	url = https://github.com/APEbbers/FreeCAD-Ribbon
 	branch = main
 [submodule "FreeCAD-themes"]
 	path = FreeCAD-themes
@@ -209,6 +225,14 @@
 	path = frame
 	url = https://github.com/looooo/freecad_frame
         branch = master
+[submodule "FrameForge"]
+	path = FrameForge
+	url = https://github.com/lukh/frameforge
+	branch = main
+[submodule "FreeGrid"]
+	path = FreeGrid
+	url = https://github.com/instancezero/in3dca-freegrid.git
+	branch = main
 [submodule "GDML"]
 	path = GDML
 	url = https://github.com/KeithSloan/GDML
@@ -323,8 +347,8 @@
         branch = main
 [submodule "Ondsel-Lens"]
 	path = Ondsel-Lens
-	url = https://github.com/ondsel-Development/ondsel-lens
-	branch=master
+	url = https://github.com/Ondsel-Development/Ondsel-Lens-Addon
+	branch = main
 [submodule "OpenTheme"]
 	path = OpenTheme
 	url = https://github.com/obelisk79/OpenTheme

@@ -52,6 +52,7 @@ To submit your workbench to the repository
    **Note the use of:** screenshots, screencasts, mentioning of Licence, Changelog etc... 
 7. Ensure that your Addon includes a `package.xml` [metadata file](https://wiki.freecadweb.org/Package_Metadata), and that that file includes an icon, repository url, and readme url. The readme url should be a direct link to the HTML-rendered README.md file (e.g. https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md)
 8. Submit a Pull Request to this repository adding your Addon to the `.gitmodules` file. Supported git hosts are [GitHub](https://github.com/), [Gitlab](https://about.gitlab.com/), [Framagit](https://framagit.org/public/projects), [salsa.debian.org](https://salsa.debian.org/public), and [Codeberg](https://codeberg.org/).
+9. Create a new ticket, linked to the PR, following [this template](https://github.com/FreeCAD/FreeCAD-addons/issues/new?assignees=&labels=New+WB%2FAddon+%3Apackage%3A&projects=&template=add-a-new-workbench-addon-to-this-repo.md&title=%5BNew+Addon%2FWorkbench%5D)
 
 ### Translating External Workbenches
 
