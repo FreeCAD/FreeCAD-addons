@@ -213,6 +213,10 @@
     path = FreeCAD-themes
     url = https://github.com/FreeCAD/FreeCAD-themes
     branch = main
+[submodule "freecad-xr-workbench"]
+    path = freecad-xr-workbench
+    url = https://github.com/kwahoo2/freecad-xr-workbench
+    branch = main
 [submodule "freecad_streamdeck_addon"]
     path = freecad_streamdeck_addon
     url = https://github.com/Giraut/freecad_streamdeck_addon
