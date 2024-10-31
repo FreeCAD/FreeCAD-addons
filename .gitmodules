@@ -493,6 +493,10 @@
     path = SteelColumn
     url = https://github.com/ebrahimraeyat/momen
     branch = master
+[submodule "STEMFIE"]
+    path = STEMFIE
+    url = https://github.com/bilbaomakers/StemfieWB
+    branch = main
 [submodule "symbols_library"]
     path = symbols_library
     url = https://github.com/FreeCAD/FreeCAD-symbols
