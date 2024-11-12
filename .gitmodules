@@ -185,6 +185,10 @@
     path = Fcmcua
     url = https://github.com/heissgetraenk/fcmcua
     branch = main
+[submodule "FoamCut"]
+    path = FoamCut
+    url = https://github.com/Shkolik/Foamcut
+    branch = main
 [submodule "FreeCAD-Beginner-Assistant"]
     path = FreeCAD-Beginner-Assistant
     url = https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant
