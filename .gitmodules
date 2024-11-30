@@ -467,7 +467,7 @@
     branch = master
 [submodule "SearchBar"]
     path = SearchBar
-	url = https://github.com/APEbbers/SearchBar
+    url = https://github.com/APEbbers/SearchBar
     branch = main
 [submodule "SelectorToolbar"]
     path = SelectorToolbar
