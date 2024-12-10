@@ -68,4 +68,5 @@ vedo
 xlrd
 xlutils
 xlwt
+pypresence
 PyYAML
