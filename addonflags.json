@@ -33,6 +33,12 @@
             "notes":"Service cancelled - see https://github.com/opensourceBIM/BIMbots-FreeCAD/issues/2"
         },
         {
+            "name":"CommandPanel",
+            "kind":"mod",
+            "as_of":"1.0",
+            "notes":"Unmaintained and causing issues - see https://github.com/FreeCAD/FreeCAD-addons/issues/339"
+        },
+        {
             "name":"cura_engine",
             "kind":"mod",
             "as_of":"0.19",
