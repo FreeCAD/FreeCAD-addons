@@ -201,6 +201,10 @@
     path = FreecadDiscordPresence
     url = https://github.com/TzurSoffer/FreecadDiscordPresence
     branch = main
+[submodule "FreeCAD-Documentation-html"]
+    path = FreeCAD-Documentation-html
+    url = https://github.com/Reqrefusion/FreeCAD-Documentation-html
+    branch = main
 [submodule "Freecad-Built-in-themes-beta"]
     path = Freecad-Built-in-themes-beta
     url = https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta
