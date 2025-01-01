@@ -469,6 +469,10 @@
     path = retr3d
     url = https://github.com/Maaphoo/Retr3d
     branch = master
+[submodule "Road"]
+    path = Road
+    url = https://github.com/HakanSeven12/Road
+    branch = main
 [submodule "Rocket"]
     path = Rocket
     url = https://github.com/davesrocketshop/Rocket
@@ -545,10 +549,6 @@
     path = ToolbarStyle
     url = https://github.com/triplus/ToolbarStyle
     branch = master
-[submodule "Trails"]
-    path = Trails
-    url = https://github.com/HakanSeven12/Trails
-    branch = main
 [submodule "WebTools"]
     path = WebTools
     url = https://github.com/yorikvanhavre/WebTools
