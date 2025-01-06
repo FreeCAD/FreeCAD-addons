@@ -641,3 +641,7 @@
     path = yaml-workspace
     url = https://github.com/Mambix/FreeCAD-yaml-workspace
     branch = master
+[submodule "TurningAddon"]
+	path = TurningAddon
+	url = https://github.com/dubstar-04/TurningAddon
+    branch = master
