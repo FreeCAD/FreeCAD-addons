@@ -156,7 +156,7 @@
 [submodule "Design456"]
     path = Design456
     url = https://github.com/MariwanJ/Design456
-    branch = main    
+    branch = main
 [submodule "DesignSPHysics"]
     path = DesignSPHysics
     url = https://github.com/DualSPHysics/DesignSPHysics
@@ -592,7 +592,7 @@
 [submodule "TitleBlock"]
     path = TitleBlock
     url = https://github.com/APEbbers/TitleBlock-WB
-    branch = main 
+    branch = main
 [submodule "timber"]
     path = timber
     url = https://github.com/wood-galaxy/FreeCAD-Timber
@@ -642,6 +642,6 @@
     url = https://github.com/Mambix/FreeCAD-yaml-workspace
     branch = master
 [submodule "TurningAddon"]
-	path = TurningAddon
-	url = https://github.com/dubstar-04/TurningAddon
+    path = TurningAddon
+    url = https://github.com/dubstar-04/TurningAddon
     branch = master
