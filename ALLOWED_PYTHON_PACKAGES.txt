@@ -28,6 +28,7 @@ gmsh
 gmsh-dev
 hausdorff
 ifcopenshell
+liblathe
 lxml
 markdown
 matplotlib
