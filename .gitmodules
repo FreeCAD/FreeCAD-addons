@@ -437,6 +437,10 @@
     path = pyrate
     url = https://salsa.debian.org/mess42/pyrate
     branch = master
+[submodule "quetzal"]
+    path = quetzal
+    url = https://github.com/EdgarJRobles/quetzal
+    branch = BIM_profiles
 [submodule "QuickMeasure"]
     path = QuickMeasure
     url = https://github.com/DanMiel/QuickMeasure
