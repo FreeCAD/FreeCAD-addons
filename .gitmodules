@@ -440,7 +440,7 @@
 [submodule "quetzal"]
     path = quetzal
     url = https://github.com/EdgarJRobles/quetzal
-    branch = BIM_profiles
+    branch = master
 [submodule "QuickMeasure"]
     path = QuickMeasure
     url = https://github.com/DanMiel/QuickMeasure
