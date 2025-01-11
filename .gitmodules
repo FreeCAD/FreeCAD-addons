@@ -437,6 +437,10 @@
     path = pyrate
     url = https://salsa.debian.org/mess42/pyrate
     branch = master
+[submodule "Quetzal"]
+	path = Quetzal
+	url = https://github.com/EdgarJRobles/quetzal
+	branch = master
 [submodule "QuickMeasure"]
     path = QuickMeasure
     url = https://github.com/DanMiel/QuickMeasure
@@ -569,3 +573,4 @@
     path = yaml-workspace
     url = https://github.com/Mambix/FreeCAD-yaml-workspace
     branch = master
+    
