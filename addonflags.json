@@ -45,6 +45,12 @@
             "notes":""
         },
         {
+            "name":"dodo",
+            "kind":"mod",
+            "as_of":"1.0",
+            "notes":"Unmaintained and replaced by Quetzel workbench"
+        },
+        {
             "name":"drawing_dimensioning",
             "kind":"mod",
             "as_of":"0.19",
