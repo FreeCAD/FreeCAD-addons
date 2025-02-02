@@ -185,6 +185,10 @@
     path = Fcmcua
     url = https://github.com/heissgetraenk/fcmcua
     branch = main
+[submodule "fcVM"]
+	path = fcVM
+	url = https://github.com/HarryvL/fcVM-workbench
+	branch = main
 [submodule "FoamCut"]
     path = FoamCut
     url = https://github.com/Shkolik/Foamcut
