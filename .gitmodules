@@ -161,6 +161,10 @@
     path = DynamicData
     url = https://github.com/mwganson/DynamicData
     branch = master
+[submodule "EasyProfileFrame"]
+    path = EasyProfileFrame
+    url = https://github.com/ovo-Tim/EasyProfileFrame
+    branch = main
 [submodule "EM"]
     path = EM
     url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
