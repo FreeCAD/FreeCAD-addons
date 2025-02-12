@@ -557,6 +557,10 @@
     path = ToolbarStyle
     url = https://github.com/triplus/ToolbarStyle
     branch = master
+[submodule "freecad-wakatime"]
+    path = freecad-wakatime
+    url = https://github.com/Pegoku/freecad-wakatime
+    branch = main
 [submodule "WebTools"]
     path = WebTools
     url = https://github.com/yorikvanhavre/WebTools
@@ -581,4 +585,3 @@
     path = yaml-workspace
     url = https://github.com/Mambix/FreeCAD-yaml-workspace
     branch = master
-    
