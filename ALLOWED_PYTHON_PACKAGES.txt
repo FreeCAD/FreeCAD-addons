@@ -45,6 +45,7 @@ openpyxl
 pandas
 pillow
 ply
+posthog
 protobuf
 pycollada
 pydocx
@@ -67,6 +68,7 @@ scikit-image
 scikit-learn
 scikit-sparse
 scipy
+sentry_sdk
 shapely
 streamdeck
 trimesh
