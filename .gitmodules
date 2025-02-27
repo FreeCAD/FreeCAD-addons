@@ -85,6 +85,10 @@
     path = boltsfc
     url = https://github.com/boltsparts/boltsfc
     branch = main
+[submodule "Cables"]
+    path = Cables
+    url = https://github.com/sargo-devel/Cables
+    branch = master
 [submodule "CadbaseLibrary"]
     path = CadbaseLibrary
     url = https://github.com/mnnxp/cadbaselibrary-freecad
