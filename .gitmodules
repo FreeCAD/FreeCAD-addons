@@ -541,6 +541,10 @@
     path = TabBar
     url = https://github.com/triplus/TabBar
     branch = master
+[submodule "Telemetry"]
+    path = Telemetry
+    url = https://github.com/FreeCAD/FreeCAD-Telemetry
+    branch = main
 [submodule "ThreadProfile"]
     path = ThreadProfile
     url = https://github.com/mwganson/ThreadProfile
