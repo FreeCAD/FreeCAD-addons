@@ -9,16 +9,22 @@
 # specified, and no wildcards are supported.
 
 # Allow these packages to be installed:
+PyOpenGL
+PyYAML
 aiofiles
 asyncua
 atomicwrites
 autobahn
 awkward
+backoff
 beautifulsoup4
 blinker
 capytaine
+certifi
 certify
+charset-normalizer
 comtypes
+distro
 docutils
 dotenv
 etabs_api
@@ -27,11 +33,13 @@ geomdl
 gmsh
 gmsh-dev
 hausdorff
+idna
 ifcopenshell
 lxml
 markdown
 matplotlib
 meshio
+monotonic
 msgpack
 networkx
 nine
@@ -47,19 +55,18 @@ pillow
 ply
 posthog
 protobuf
+py-slvs
 pycollada
 pydocx
 pyg4ometry
 pygit2
 pyjwt
 pynastran
-PyOpenGL
 pyopenxr
 pyoptools
 pypresence
-py-slvs
+python-dateutil
 pyvista
-PyYAML
 qtpy
 qtrangeslider
 requests
@@ -70,9 +77,11 @@ scikit-sparse
 scipy
 sentry_sdk
 shapely
+six
 streamdeck
 trimesh
 tzlocal
+urllib3
 vedo
 wakatime-cli
 xlrd
