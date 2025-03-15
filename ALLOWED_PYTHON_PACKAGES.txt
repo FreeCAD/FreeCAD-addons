@@ -75,7 +75,7 @@ scikit-image
 scikit-learn
 scikit-sparse
 scipy
-sentry_sdk
+sentry-sdk
 shapely
 six
 streamdeck
