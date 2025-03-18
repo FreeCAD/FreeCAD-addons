@@ -65,6 +65,7 @@ pyopenxr
 pyoptools
 pypresence
 python-dateutil
+python-docx
 python-dotenv
 pyvista
 qtpy
