@@ -385,6 +385,10 @@
     path = Ondsel-Lens
     url = https://github.com/Ondsel-Development/Ondsel-Lens-Addon
     branch = main
+[submodule "OpenStudio"]
+    path = OpenStudioWorkBench
+    url = https://github.com/KeithSloan/OpenStudioWorkBench
+    branch = main
 [submodule "OpenTheme"]
     path = OpenTheme
     url = https://github.com/obelisk79/OpenTheme
