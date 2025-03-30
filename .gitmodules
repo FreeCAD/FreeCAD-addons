@@ -389,6 +389,10 @@
     path = OpenTheme
     url = https://github.com/obelisk79/OpenTheme
     branch = main
+[submodule "OpenDesign"]
+    path = OpenStudioWorkBench
+    url = https://github.com/KeithSloan/OpenStudioWorkBench
+    branch = main
 [submodule "OpticsWorkbench"]
     path = OpticsWorkbench
     url = https://github.com/chbergmann/OpticsWorkbench
