@@ -81,12 +81,10 @@ shapely
 six
 streamdeck
 trimesh
-triangle
 tzlocal
 urllib3
 vedo
 wakatime-cli
-xgbxml
 xlrd
 xlutils
 xlwt
