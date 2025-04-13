@@ -113,6 +113,10 @@
     path = Cfd
     url = https://github.com/qingfengxia/Cfd
     branch = master
+[submodule "Channels"]
+    path = Channels
+    url = https://github.com/mnesarco/Channels
+    branch = main
 [submodule "CommandPanel"]
     path = CommandPanel
     url = https://github.com/triplus/CommandPanel
@@ -536,6 +540,10 @@
 [submodule "STEMFIE"]
     path = STEMFIE
     url = https://github.com/bilbaomakers/StemfieWB
+    branch = main
+[submodule "SvgWorkbench"]
+    path = SvgWorkbench
+    url = https://github.com/mnesarco/SvgWorkbench
     branch = main
 [submodule "symbols_library"]
     path = symbols_library
