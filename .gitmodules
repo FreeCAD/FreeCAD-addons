@@ -609,3 +609,7 @@
     path = yaml-workspace
     url = https://github.com/Mambix/FreeCAD-yaml-workspace
     branch = master
+[submodule "StructureTools"]
+    path = StructureTools
+    url = https://github.com/maykowsm/StructureTools
+    branch = main
