@@ -1005,9 +1005,17 @@
   "Rocket": [
     {
       "repository": "https://github.com/davesrocketshop/Rocket",
+      "git_ref": "v3.3.0",
+      "branch_display_name": "Pre-1.0 Compatible",
+      "freecad_max": "0.21",
+      "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/tags/v3.3.0.zip"
+    }
+    {
+      "repository": "https://github.com/davesrocketshop/Rocket",
       "git_ref": "master",
       "branch_display_name": "master",
-      "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/heads/master.zip"
+      "freecad_min": "1.0",
+      "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/heads/main.zip"
     }
   ],
   "SearchBar": [
