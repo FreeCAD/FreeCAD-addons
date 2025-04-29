@@ -541,6 +541,10 @@
     path = STEMFIE
     url = https://github.com/bilbaomakers/StemfieWB
     branch = main
+[submodule "StructureTools"]
+    path = StructureTools
+    url = https://github.com/maykowsm/StructureTools
+    branch = main
 [submodule "SvgWorkbench"]
     path = SvgWorkbench
     url = https://github.com/mnesarco/SvgWorkbench
