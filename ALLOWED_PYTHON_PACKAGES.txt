@@ -85,6 +85,7 @@ triangle
 tzlocal
 urllib3
 vedo
+vermin
 wakatime-cli
 xgbxml
 xlrd
