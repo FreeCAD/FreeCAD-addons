@@ -1,0 +1,1237 @@
+{  
+  "$schema": "https://raw.githubusercontent.com/FreeCAD/AddonManager/refs/heads/main/AddonCatalog.schema.json",
+  "_meta": {
+    "description": "This file defines the addon catalog for FreeCAD Addon Manager. Each key is an addon ID; each value is a list of entries and (optionally) their FreeCAD compatibility information",
+    "schema_version": "2020-12"
+  },
+  "3D_Printing_Tools": [
+    {
+      "repository": "https://github.com/mark1791/3D_Printing_Tools",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/mark1791/3D_Printing_Tools/archive/refs/heads/master.zip"
+    }
+  ],
+  "3DfindIT": [
+    {
+      "repository": "https://github.com/cadenasgmbh/3dfindit-freecad-integration",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/cadenasgmbh/3dfindit-freecad-integration/archive/refs/heads/master.zip"
+    }
+  ],
+  "A2plus": [
+    {
+      "repository": "https://github.com/kbwbe/A2plus",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/kbwbe/A2plus/archive/refs/heads/master.zip"
+    }
+  ],
+  "addFC": [
+    {
+      "repository": "https://github.com/GS90/addFC",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/GS90/addFC/archive/refs/heads/main.zip"
+    }
+  ],
+  "AirPlaneDesign": [
+    {
+      "repository": "https://github.com/FredsFactory/FreeCAD_AirPlaneDesign",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/FredsFactory/FreeCAD_AirPlaneDesign/archive/refs/heads/master.zip"
+    }
+  ],
+  "Alternate_OpenSCAD": [
+    {
+      "repository": "https://github.com/KeithSloan/OpenSCAD_Alt_Import",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/KeithSloan/OpenSCAD_Alt_Import/archive/refs/heads/master.zip"
+    }
+  ],
+  "animation": [
+    {
+      "repository": "https://github.com/microelly2/Animation",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/microelly2/Animation/archive/refs/heads/master.zip"
+    }
+  ],
+  "AnimationFreeCAD": [
+    {
+      "repository": "https://github.com/QuentinTournier40/AnimationFreeCAD",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/QuentinTournier40/AnimationFreeCAD/archive/refs/heads/main.zip"
+    }
+  ],
+  "ArchTextures": [
+    {
+      "repository": "https://github.com/furti/FreeCAD-ArchTextures",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/furti/FreeCAD-ArchTextures/archive/refs/heads/master.zip"
+    }
+  ],
+  "assembly2": [
+    {
+      "repository": "https://github.com/hamish2014/FreeCAD_assembly2",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/hamish2014/FreeCAD_assembly2/archive/refs/heads/master.zip"
+    }
+  ],
+  "Assembly3": [
+    {
+      "repository": "https://github.com/realthunder/FreeCAD_assembly3",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/realthunder/FreeCAD_assembly3/archive/refs/heads/master.zip"
+    }
+  ],
+  "Assembly4": [
+    {
+      "repository": "https://github.com/Zolko-123/FreeCAD_Assembly4",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Zolko-123/FreeCAD_Assembly4/archive/refs/heads/master.zip"
+    }
+  ],
+  "Autoload": [
+    {
+      "repository": "https://github.com/triplus/Autoload",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/Autoload/archive/refs/heads/master.zip"
+    }
+  ],
+  "BCFPlugin": [
+    {
+      "repository": "https://github.com/podestplatz/BCF-Plugin-FreeCAD",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/podestplatz/BCF-Plugin-FreeCAD/archive/refs/heads/master.zip"
+    }
+  ],
+  "Behave-Dark-Colors": [
+    {
+      "repository": "https://github.com/Chrismettal/FreeCAD-Behave-Dark-Preference-Pack",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Chrismettal/FreeCAD-Behave-Dark-Preference-Pack/archive/refs/heads/main.zip"
+    }
+  ],
+  "Beltrami": [
+    {
+      "repository": "https://github.com/Simturb/Beltrami",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Simturb/Beltrami/archive/refs/heads/main.zip"
+    }
+  ],
+  "BillOfMaterials": [
+    {
+      "repository": "https://github.com/APEbbers/BillOfMaterials-WB",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/APEbbers/BillOfMaterials-WB/archive/refs/heads/main.zip"
+    }
+  ],
+  "btl": [
+    {
+      "repository": "https://github.com/knipknap/better-tool-library",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/knipknap/better-tool-library/archive/refs/heads/main.zip"
+    }
+  ],
+  "BIMBots": [
+    {
+      "repository": "https://github.com/opensourceBIM/BIMbots-FreeCAD",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/opensourceBIM/BIMbots-FreeCAD/archive/refs/heads/master.zip"
+    }
+  ],
+  "BIM": [
+    {
+      "repository": "https://github.com/yorikvanhavre/BIM_Workbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/yorikvanhavre/BIM_Workbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "bimtester": [
+    {
+      "repository": "https://github.com/bimtester/bimtesterfc",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/bimtester/bimtesterfc/archive/refs/heads/master.zip"
+    }
+  ],
+  "boltsfc": [
+    {
+      "repository": "https://github.com/boltsparts/boltsfc",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/boltsparts/boltsfc/archive/refs/heads/main.zip"
+    }
+  ],
+  "Cables": [
+    {
+      "repository": "https://github.com/sargo-devel/Cables",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/sargo-devel/Cables/archive/refs/heads/master.zip"
+    }
+  ],
+  "CadbaseLibrary": [
+    {
+      "repository": "https://github.com/mnnxp/cadbaselibrary-freecad",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/mnnxp/cadbaselibrary-freecad/archive/refs/heads/master.zip"
+    }
+  ],
+  "CADExchanger": [
+    {
+      "repository": "https://github.com/yorikvanhavre/CADExchanger",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/yorikvanhavre/CADExchanger/archive/refs/heads/master.zip"
+    }
+  ],
+  "cadquery_module": [
+    {
+      "repository": "https://github.com/jmwright/cadquery-freecad-module",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/jmwright/cadquery-freecad-module/archive/refs/heads/master.zip"
+    }
+  ],
+  "CamScripts": [
+    {
+      "repository": "https://github.com/spanner888/CamScripts",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/spanner888/CamScripts/archive/refs/heads/main.zip"
+    }
+  ],
+  "CfdOF": [
+    {
+      "repository": "https://github.com/jaheyns/CfdOF",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/jaheyns/CfdOF/archive/refs/heads/master.zip"
+    }
+  ],
+  "Cfd": [
+    {
+      "repository": "https://github.com/qingfengxia/Cfd",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/qingfengxia/Cfd/archive/refs/heads/master.zip"
+    }
+  ],
+  "Channels": [
+    {
+      "repository": "https://github.com/mnesarco/Channels",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/mnesarco/Channels/archive/refs/heads/main.zip"
+    }
+  ],
+  "CommandPanel": [
+    {
+      "repository": "https://github.com/triplus/CommandPanel",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/CommandPanel/archive/refs/heads/master.zip"
+    }
+  ],
+  "CubeMenu": [
+    {
+      "repository": "https://github.com/triplus/CubeMenu",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/CubeMenu/archive/refs/heads/master.zip"
+    }
+  ],
+  "cura_engine": [
+    {
+      "repository": "https://github.com/cblt2l/FreeCAD-CuraEngine-Plugin",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/cblt2l/FreeCAD-CuraEngine-Plugin/archive/refs/heads/master.zip"
+    }
+  ],
+  "CurvedShapes": [
+    {
+      "repository": "https://github.com/chbergmann/CurvedShapesWorkbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/chbergmann/CurvedShapesWorkbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "Curves": [
+    {
+      "repository": "https://github.com/tomate44/CurvesWB",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/tomate44/CurvesWB/archive/refs/heads/master.zip"
+    }
+  ],
+  "Defeaturing": [
+    {
+      "repository": "https://github.com/easyw/Defeaturing_WB",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/easyw/Defeaturing_WB/archive/refs/heads/master.zip"
+    }
+  ],
+  "Design456": [
+    {
+      "repository": "https://github.com/MariwanJ/Design456",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/MariwanJ/Design456/archive/refs/heads/main.zip"
+    }
+  ],
+  "DesignSPHysics": [
+    {
+      "repository": "https://github.com/DualSPHysics/DesignSPHysics",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/DualSPHysics/DesignSPHysics/archive/refs/heads/master.zip"
+    }
+  ],
+  "dodo": [
+    {
+      "repository": "https://github.com/oddtopus/dodo",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/oddtopus/dodo/archive/refs/heads/master.zip"
+    }
+  ],
+  "Dracula": [
+    {
+      "repository": "https://github.com/dracula/freecad",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/dracula/freecad/archive/refs/heads/master.zip"
+    }
+  ],
+  "drawing_dimensioning": [
+    {
+      "repository": "https://github.com/hamish2014/FreeCAD_drawing_dimensioning",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/hamish2014/FreeCAD_drawing_dimensioning/archive/refs/heads/master.zip"
+    }
+  ],
+  "dxf-library": [
+    {
+      "repository": "https://github.com/yorikvanhavre/Draft-dxf-importer",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/yorikvanhavre/Draft-dxf-importer/archive/refs/heads/master.zip"
+    }
+  ],
+  "DynamicData": [
+    {
+      "repository": "https://github.com/mwganson/DynamicData",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/mwganson/DynamicData/archive/refs/heads/master.zip"
+    }
+  ],
+  "EasyProfileFrame": [
+    {
+      "repository": "https://github.com/ovo-Tim/EasyProfileFrame",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/ovo-Tim/EasyProfileFrame/archive/refs/heads/main.zip"
+    }
+  ],
+  "EM": [
+    {
+      "repository": "https://github.com/ediloren/EM-Workbench-for-FreeCAD",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/ediloren/EM-Workbench-for-FreeCAD/archive/refs/heads/master.zip"
+    }
+  ],
+  "Estimate": [
+    {
+      "repository": "https://github.com/erroronline1/estimateWB",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/erroronline1/estimateWB/archive/refs/heads/master.zip"
+    }
+  ],
+  "ExplodedAssembly": [
+    {
+      "repository": "https://github.com/JMG1/ExplodedAssembly",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/JMG1/ExplodedAssembly/archive/refs/heads/master.zip"
+    }
+  ],
+  "ExtMan": [
+    {
+      "repository": "https://github.com/mnesarco/FreeCAD_ExtMan",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/mnesarco/FreeCAD_ExtMan/archive/refs/heads/master.zip"
+    }
+  ],
+  "fasteners": [
+    {
+      "repository": "https://github.com/shaise/FreeCAD_FastenersWB",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/shaise/FreeCAD_FastenersWB/archive/refs/heads/master.zip"
+    }
+  ],
+  "Fcmcua": [
+    {
+      "repository": "https://github.com/heissgetraenk/fcmcua",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/heissgetraenk/fcmcua/archive/refs/heads/main.zip"
+    }
+  ],
+  "fcVM": [
+    {
+      "repository": "https://github.com/HarryvL/fcVM-workbench",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/HarryvL/fcVM-workbench/archive/refs/heads/main.zip"
+    }
+  ],
+  "FoamCut": [
+    {
+      "repository": "https://github.com/Shkolik/Foamcut",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Shkolik/Foamcut/archive/refs/heads/main.zip"
+    }
+  ],
+  "FreeCAD-Beginner-Assistant": [
+    {
+      "repository": "https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/archive/refs/heads/main.zip"
+    }
+  ],
+  "freecad.gears": [
+    {
+      "repository": "https://github.com/looooo/freecad.gears",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/looooo/freecad.gears/archive/refs/heads/master.zip"
+    }
+  ],
+  "FreecadDiscordPresence": [
+    {
+      "repository": "https://github.com/TzurSoffer/FreecadDiscordPresence",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/TzurSoffer/FreecadDiscordPresence/archive/refs/heads/main.zip"
+    }
+  ],
+  "FreeCAD-Documentation-html": [
+    {
+      "repository": "https://github.com/Reqrefusion/FreeCAD-Documentation-html",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Reqrefusion/FreeCAD-Documentation-html/archive/refs/heads/main.zip"
+    }
+  ],
+  "Freecad-Built-in-themes-beta": [
+    {
+      "repository": "https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta/archive/refs/heads/main.zip"
+    }
+  ],
+  "freecad.optics_design_workbench": [
+    {
+      "repository": "https://github.com/zaphB/freecad.optics_design_workbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/zaphB/freecad.optics_design_workbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "FreeCAD-Ribbon": [
+    {
+      "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/APEbbers/FreeCAD-Ribbon/archive/refs/heads/main.zip"
+    }
+  ],
+  "FreeCAD-themes": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-themes",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/FreeCAD/FreeCAD-themes/archive/refs/heads/main.zip"
+    }
+  ],
+  "freecad-xr-workbench": [
+    {
+      "repository": "https://github.com/kwahoo2/freecad-xr-workbench",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/kwahoo2/freecad-xr-workbench/archive/refs/heads/main.zip"
+    }
+  ],
+  "freecad_streamdeck_addon": [
+    {
+      "repository": "https://github.com/Giraut/freecad_streamdeck_addon",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Giraut/freecad_streamdeck_addon/archive/refs/heads/main.zip"
+    }
+  ],
+  "FeedsAndSpeeds": [
+    {
+      "repository": "https://github.com/dubstar-04/FeedsAndSpeeds",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/dubstar-04/FeedsAndSpeeds/archive/refs/heads/master.zip"
+    }
+  ],
+  "FEM_FrontISTR": [
+    {
+      "repository": "https://github.com/FrontISTR/FEM_FrontISTR",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/FrontISTR/FEM_FrontISTR/archive/refs/heads/master.zip"
+    }
+  ],
+  "FEMbyGEN": [
+    {
+      "repository": "https://github.com/Serince/FEMbyGEN",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Serince/FEMbyGEN/archive/refs/heads/master.zip"
+    }
+  ],
+  "flamingo": [
+    {
+      "repository": "https://github.com/oddtopus/flamingo",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/oddtopus/flamingo/archive/refs/heads/master.zip"
+    }
+  ],
+  "frame": [
+    {
+      "repository": "https://github.com/looooo/freecad_frame",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/looooo/freecad_frame/archive/refs/heads/master.zip"
+    }
+  ],
+  "FrameForge": [
+    {
+      "repository": "https://github.com/lukh/frameforge",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/lukh/frameforge/archive/refs/heads/main.zip"
+    }
+  ],
+  "FreeGrid": [
+    {
+      "repository": "https://github.com/instancezero/in3dca-freegrid.git",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/instancezero/in3dca-freegrid.git/archive/refs/heads/main.zip"
+    }
+  ],
+  "GDML": [
+    {
+      "repository": "https://github.com/KeithSloan/GDML",
+      "git_ref": "Main",
+      "branch_display_name": "Main",
+      "zip_url": "https://github.com/KeithSloan/GDML/archive/refs/heads/Main.zip"
+    }
+  ],
+  "GDT": [
+    {
+      "repository": "https://github.com/juanvanyo/FreeCAD-GDT",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/juanvanyo/FreeCAD-GDT/archive/refs/heads/master.zip"
+    }
+  ],
+  "Glass": [
+    {
+      "repository": "https://github.com/triplus/Glass",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/Glass/archive/refs/heads/master.zip"
+    }
+  ],
+  "Gridfinity": [
+    {
+      "repository": "https://github.com/Stu142/FreeCAD-Gridfinity-Workbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Stu142/FreeCAD-Gridfinity-Workbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "Help": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-Help",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/FreeCAD/FreeCAD-Help/archive/refs/heads/main.zip"
+    }
+  ],
+  "IconThemes": [
+    {
+      "repository": "https://github.com/triplus/IconThemes",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/IconThemes/archive/refs/heads/master.zip"
+    }
+  ],
+  "ImportNURBS": [
+    {
+      "repository": "https://github.com/KeithSloan/ImportNURBS",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/KeithSloan/ImportNURBS/archive/refs/heads/master.zip"
+    }
+  ],
+  "InventorLoader": [
+    {
+      "repository": "https://github.com/jmplonka/InventorLoader",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/jmplonka/InventorLoader/archive/refs/heads/master.zip"
+    }
+  ],
+  "kerkythea": [
+    {
+      "repository": "https://github.com/marmni/FreeCAD-Kerkythea",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/marmni/FreeCAD-Kerkythea/archive/refs/heads/master.zip"
+    }
+  ],
+  "kicadStepUpMod": [
+    {
+      "repository": "https://github.com/easyw/kicadStepUpMod",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/easyw/kicadStepUpMod/archive/refs/heads/master.zip"
+    }
+  ],
+  "lattice2": [
+    {
+      "repository": "https://github.com/DeepSOIC/Lattice2",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/DeepSOIC/Lattice2/archive/refs/heads/master.zip"
+    }
+  ],
+  "Launcher": [
+    {
+      "repository": "https://github.com/triplus/Launcher",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/Launcher/archive/refs/heads/master.zip"
+    }
+  ],
+  "LCInterlocking": [
+    {
+      "repository": "https://github.com/execuc/LCInterlocking",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/execuc/LCInterlocking/archive/refs/heads/master.zip"
+    }
+  ],
+  "parts_library": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-library",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/FreeCAD/FreeCAD-library/archive/refs/heads/master.zip"
+    }
+  ],
+  "Lithophane": [
+    {
+      "repository": "https://github.com/furti/FreeCAD-Lithophane",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/furti/FreeCAD-Lithophane/archive/refs/heads/master.zip"
+    }
+  ],
+  "MakerWorkbench": [
+    {
+      "repository": "https://github.com/URJCMakerGroup/MakerWorkbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/URJCMakerGroup/MakerWorkbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "Manipulator": [
+    {
+      "repository": "https://github.com/easyw/Manipulator",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/easyw/Manipulator/archive/refs/heads/master.zip"
+    }
+  ],
+  "Marz": [
+    {
+      "repository": "https://github.com/mnesarco/MarzWorkbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/mnesarco/MarzWorkbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "MeshRemodel": [
+    {
+      "repository": "https://github.com/mwganson/MeshRemodel",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/mwganson/MeshRemodel/archive/refs/heads/master.zip"
+    }
+  ],
+  "MnesarcoUtils": [
+    {
+      "repository": "https://github.com/mnesarco/FreeCAD_Utils",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/mnesarco/FreeCAD_Utils/archive/refs/heads/main.zip"
+    }
+  ],
+  "ModernUI": [
+    {
+      "repository": "https://github.com/HakanSeven12/Modern-UI",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/HakanSeven12/Modern-UI/archive/refs/heads/master.zip"
+    }
+  ],
+  "MOOC": [
+    {
+      "repository": "https://github.com/j-wiedemann/mooc-workbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/j-wiedemann/mooc-workbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "Movie": [
+    {
+      "repository": "https://github.com/Francisco-Rosa/FreeCAD-Movie",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Francisco-Rosa/FreeCAD-Movie/archive/refs/heads/master.zip"
+    }
+  ],
+  "NavigationIndicator": [
+    {
+      "repository": "https://github.com/triplus/NavigationIndicator",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/NavigationIndicator/archive/refs/heads/master.zip"
+    }
+  ],
+  "NikraDAP": [
+    {
+      "repository": "https://github.com/NikraDAP/FreeCAD-NikraDAP",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/NikraDAP/FreeCAD-NikraDAP/archive/refs/heads/main.zip"
+    }
+  ],
+  "Nodes": [
+    {
+      "repository": "https://github.com/j8sr0230/Nodes",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/j8sr0230/Nodes/archive/refs/heads/main.zip"
+    }
+  ],
+  "nurbs": [
+    {
+      "repository": "https://github.com/microelly2/freecad-nurbs",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/microelly2/freecad-nurbs/archive/refs/heads/master.zip"
+    }
+  ],
+  "offline-documentation": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-documentation",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/FreeCAD/FreeCAD-documentation/archive/refs/heads/main.zip"
+    }
+  ],
+  "Ondsel-Lens": [
+    {
+      "repository": "https://github.com/Ondsel-Development/Ondsel-Lens-Addon",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Ondsel-Development/Ondsel-Lens-Addon/archive/refs/heads/main.zip"
+    }
+  ],
+  "OpenTheme": [
+    {
+      "repository": "https://github.com/obelisk79/OpenTheme",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/obelisk79/OpenTheme/archive/refs/heads/main.zip"
+    }
+  ],
+  "OpenDesign": [
+    {
+      "repository": "https://github.com/KeithSloan/OpenStudioWorkBench",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/KeithSloan/OpenStudioWorkBench/archive/refs/heads/main.zip"
+    }
+  ],
+  "OpticsWorkbench": [
+    {
+      "repository": "https://github.com/chbergmann/OpticsWorkbench",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/chbergmann/OpticsWorkbench/archive/refs/heads/main.zip"
+    }
+  ],
+  "OSAFE": [
+    {
+      "repository": "https://github.com/ebrahimraeyat/OSAFE",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/ebrahimraeyat/OSAFE/archive/refs/heads/master.zip"
+    }
+  ],
+  "ose-piping": [
+    {
+      "repository": "https://github.com/rkrenzler/ose-piping-workbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/rkrenzler/ose-piping-workbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "OSE3dPrinter": [
+    {
+      "repository": "https://github.com/gbroques/ose-3d-printer-workbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/gbroques/ose-3d-printer-workbench/archive/refs/heads/master.zip"
+    }
+  ],
+  "osh-autodoc-workbench": [
+    {
+      "repository": "https://codeberg.org/osh-autodoc/osh-autodoc-workbench",
+      "git_ref": "main",
+      "branch_display_name": "main"
+    }
+  ],
+  "Part-o-magic": [
+    {
+      "repository": "https://github.com/DeepSOIC/Part-o-magic",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/DeepSOIC/Part-o-magic/archive/refs/heads/master.zip"
+    }
+  ],
+  "pcb": [
+    {
+      "repository": "https://github.com/marmni/FreeCAD-PCB",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/marmni/FreeCAD-PCB/archive/refs/heads/master.zip"
+    }
+  ],
+  "persistenttoolbars": [
+    {
+      "repository": "https://github.com/triplus/PersistentToolbars",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/PersistentToolbars/archive/refs/heads/master.zip"
+    }
+  ],
+  "PieMenu": [
+    {
+      "repository": "https://github.com/Grubuntu/PieMenu",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Grubuntu/PieMenu/archive/refs/heads/master.zip"
+    }
+  ],
+  "pivy_trackers": [
+    {
+      "repository": "https://github.com/joelgraff/pivy_trackers",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/joelgraff/pivy_trackers/archive/refs/heads/master.zip"
+    }
+  ],
+  "Plot": [
+    {
+      "repository": "https://github.com/FreeCAD/freecad.plot",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/FreeCAD/freecad.plot/archive/refs/heads/master.zip"
+    }
+  ],
+  "POV-Ray-Rendering": [
+    {
+      "repository": "https://github.com/TheRaytracers/freecad-povray-render",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/TheRaytracers/freecad-povray-render/archive/refs/heads/master.zip"
+    }
+  ],
+  "ProDarkThemePreferencePack": [
+    {
+      "repository": "https://github.com/turn211/ProDarkThemePreferencePack",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/turn211/ProDarkThemePreferencePack/archive/refs/heads/main.zip"
+    }
+  ],
+  "Pyramids-and-Polyhedrons": [
+    {
+      "repository": "https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons/archive/refs/heads/master.zip"
+    }
+  ],
+  "pyOpToolsWorkbench": [
+    {
+      "repository": "https://github.com/cihologramas/freecad-pyoptools",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/cihologramas/freecad-pyoptools/archive/refs/heads/master.zip"
+    }
+  ],
+  "pyrate": [
+    {
+      "repository": "https://salsa.debian.org/mess42/pyrate",
+      "git_ref": "master",
+      "branch_display_name": "master"
+    }
+  ],
+  "Quetzal": [
+    {
+      "repository": "https://github.com/EdgarJRobles/quetzal",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/EdgarJRobles/quetzal/archive/refs/heads/master.zip"
+    }
+  ],
+  "QuickMeasure": [
+    {
+      "repository": "https://github.com/DanMiel/QuickMeasure",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/DanMiel/QuickMeasure/archive/refs/heads/main.zip"
+    }
+  ],
+  "reconstruction": [
+    {
+      "repository": "https://github.com/microelly2/reconstruction",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/microelly2/reconstruction/archive/refs/heads/master.zip"
+    }
+  ],
+  "Reinforcement": [
+    {
+      "repository": "https://github.com/amrit3701/FreeCAD-Reinforcement",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/amrit3701/FreeCAD-Reinforcement/archive/refs/heads/master.zip"
+    }
+  ],
+  "RemBench": [
+    {
+      "repository": "https://github.com/triplus/RemBench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/RemBench/archive/refs/heads/master.zip"
+    }
+  ],
+  "Render": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-render",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/FreeCAD/FreeCAD-render/archive/refs/heads/master.zip"
+    }
+  ],
+  "Reporting": [
+    {
+      "repository": "https://github.com/furti/FreeCAD-Reporting",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/furti/FreeCAD-Reporting/archive/refs/heads/master.zip"
+    }
+  ],
+  "retr3d": [
+    {
+      "repository": "https://github.com/Maaphoo/Retr3d",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Maaphoo/Retr3d/archive/refs/heads/master.zip"
+    }
+  ],
+  "Road": [
+    {
+      "repository": "https://github.com/HakanSeven12/Road",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/HakanSeven12/Road/archive/refs/heads/main.zip"
+    }
+  ],
+  "Rocket": [
+    {
+      "repository": "https://github.com/davesrocketshop/Rocket",
+      "git_ref": "v3.3.0",
+      "branch_display_name": "Pre-1.0 Compatible",
+      "freecad_max": "0.21",
+      "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/tags/v3.3.0.zip"
+    }
+    {
+      "repository": "https://github.com/davesrocketshop/Rocket",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "freecad_min": "1.0",
+      "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/heads/master.zip"
+    }
+  ],
+  "SearchBar": [
+    {
+      "repository": "https://github.com/APEbbers/SearchBar",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/APEbbers/SearchBar/archive/refs/heads/main.zip"
+    }
+  ],
+  "SelectorToolbar": [
+    {
+      "repository": "https://github.com/triplus/SelectorToolbar",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/SelectorToolbar/archive/refs/heads/master.zip"
+    }
+  ],
+  "sheetmetal": [
+    {
+      "repository": "https://github.com/shaise/FreeCAD_SheetMetal",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/shaise/FreeCAD_SheetMetal/archive/refs/heads/master.zip"
+    }
+  ],
+  "Ship": [
+    {
+      "repository": "https://github.com/FreeCAD/freecad.ship",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/FreeCAD/freecad.ship/archive/refs/heads/master.zip"
+    }
+  ],
+  "ShortCuts": [
+    {
+      "repository": "https://github.com/triplus/ShortCuts",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/ShortCuts/archive/refs/heads/master.zip"
+    }
+  ],
+  "Silk": [
+    {
+      "repository": "https://github.com/edwardvmills/Silk",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/edwardvmills/Silk/archive/refs/heads/master.zip"
+    }
+  ],
+  "slic3r-tools": [
+    {
+      "repository": "https://github.com/limikael/freecad-slic3r-tools",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/limikael/freecad-slic3r-tools/archive/refs/heads/master.zip"
+    }
+  ],
+  "SlopedPlanesMacro": [
+    {
+      "repository": "https://github.com/luzpaz/SlopedPlanesMacro",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/luzpaz/SlopedPlanesMacro/archive/refs/heads/master.zip"
+    }
+  ],
+  "SteelColumn": [
+    {
+      "repository": "https://github.com/ebrahimraeyat/momen",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/ebrahimraeyat/momen/archive/refs/heads/master.zip"
+    }
+  ],
+  "STEMFIE": [
+    {
+      "repository": "https://github.com/bilbaomakers/StemfieWB",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/bilbaomakers/StemfieWB/archive/refs/heads/main.zip"
+    }
+  ],
+  "SvgWorkbench": [
+    {
+      "repository": "https://github.com/mnesarco/SvgWorkbench",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/mnesarco/SvgWorkbench/archive/refs/heads/main.zip"
+    }
+  ],
+  "symbols_library": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-symbols",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/FreeCAD/FreeCAD-symbols/archive/refs/heads/master.zip"
+    }
+  ],
+  "TabBar": [
+    {
+      "repository": "https://github.com/triplus/TabBar",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/TabBar/archive/refs/heads/master.zip"
+    }
+  ],
+  "Telemetry": [
+    {
+      "repository": "https://github.com/FreeCAD/FreeCAD-Telemetry",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/FreeCAD/FreeCAD-Telemetry/archive/refs/heads/main.zip"
+    }
+  ],
+  "ThreadProfile": [
+    {
+      "repository": "https://github.com/mwganson/ThreadProfile",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/mwganson/ThreadProfile/archive/refs/heads/master.zip"
+    }
+  ],
+  "TitleBlock": [
+    {
+      "repository": "https://github.com/APEbbers/TitleBlock-WB",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/APEbbers/TitleBlock-WB/archive/refs/heads/main.zip"
+    }
+  ],
+  "timber": [
+    {
+      "repository": "https://github.com/wood-galaxy/FreeCAD-Timber",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/wood-galaxy/FreeCAD-Timber/archive/refs/heads/master.zip"
+    }
+  ],
+  "toSketch": [
+    {
+      "repository": "https://github.com/KeithSloan/toSketch",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/KeithSloan/toSketch/archive/refs/heads/main.zip"
+    }
+  ],
+  "taack-plm-freecad": [
+    {
+      "repository": "https://github.com/Taack/taack-plm-freecad",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Taack/taack-plm-freecad/archive/refs/heads/main.zip"
+    }
+  ],
+  "ToolbarStyle": [
+    {
+      "repository": "https://github.com/triplus/ToolbarStyle",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/triplus/ToolbarStyle/archive/refs/heads/master.zip"
+    }
+  ],
+  "freecad-wakatime": [
+    {
+      "repository": "https://github.com/Pegoku/freecad-wakatime",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Pegoku/freecad-wakatime/archive/refs/heads/main.zip"
+    }
+  ],
+  "WebTools": [
+    {
+      "repository": "https://github.com/yorikvanhavre/WebTools",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/yorikvanhavre/WebTools/archive/refs/heads/master.zip"
+    }
+  ],
+  "WB_Organizer": [
+    {
+      "repository": "https://github.com/Palmstroemen/WB_Organizer",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Palmstroemen/WB_Organizer/archive/refs/heads/main.zip"
+    }
+  ],
+  "woodworking": [
+    {
+      "repository": "https://github.com/dprojects/Woodworking",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/dprojects/Woodworking/archive/refs/heads/master.zip"
+    }
+  ],
+  "workfeature-macro": [
+    {
+      "repository": "https://github.com/Rentlau/WorkFeature",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Rentlau/WorkFeature/archive/refs/heads/master.zip"
+    }
+  ],
+  "workfeature": [
+    {
+      "repository": "https://github.com/Rentlau/WorkFeature-WB",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Rentlau/WorkFeature-WB/archive/refs/heads/master.zip"
+    }
+  ],
+  "yaml-workspace": [
+    {
+      "repository": "https://github.com/Mambix/FreeCAD-yaml-workspace",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workspace/archive/refs/heads/master.zip"
+    }
+  ]
+}
