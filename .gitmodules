@@ -13,6 +13,10 @@
     path = addFC
     url = https://github.com/GS90/addFC
     branch = main
+[submodule "AddonManager"]
+    path = AddonManager
+    url = https://github.com/FreeCAD/AddonManager
+    branch = main
 [submodule "AirPlaneDesign"]
     path = AirPlaneDesign
     url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
