@@ -36,6 +36,15 @@
       "zip_url": "https://github.com/GS90/addFC/archive/refs/heads/main.zip"
     }
   ],
+  "AddonManager": [
+    {
+      "repository": "https://github.com/FreeCAD/AddonManager",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/FreeCAD/AddonManager/archive/refs/heads/main.zip",
+      "freecad_min": "0.20.1"
+    }
+  ],
   "AirPlaneDesign": [
     {
       "repository": "https://github.com/FredsFactory/FreeCAD_AirPlaneDesign",
