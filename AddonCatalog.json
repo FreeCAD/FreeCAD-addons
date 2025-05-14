@@ -1009,7 +1009,7 @@
       "branch_display_name": "Pre-1.0 Compatible",
       "freecad_max": "0.21",
       "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/tags/v3.3.0.zip"
-    }
+    },
     {
       "repository": "https://github.com/davesrocketshop/Rocket",
       "git_ref": "master",
