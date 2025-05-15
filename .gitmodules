@@ -273,6 +273,10 @@
     path = FreeGrid
     url = https://github.com/instancezero/in3dca-freegrid.git
     branch = main
+[submodule "FusedFilamentDesign"]
+    path = FusedFilamentDesign
+    url = https://github.com/rahix/FusedFilamentDesign
+    branch = release
 [submodule "GDML"]
     path = GDML
     url = https://github.com/KeithSloan/GDML

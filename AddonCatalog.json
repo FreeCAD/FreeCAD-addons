@@ -556,6 +556,14 @@
       "zip_url": "https://github.com/instancezero/in3dca-freegrid.git/archive/refs/heads/main.zip"
     }
   ],
+  "FusedFilamentDesign": [
+    {
+      "repository": "https://github.com/rahix/FusedFilamentDesign.git",
+      "git_ref": "release",
+      "branch_display_name": "release",
+      "zip_url": "https://github.com/rahix/FusedFilamentDesign/archive/refs/heads/release.zip"
+    }
+  ],
   "GDML": [
     {
       "repository": "https://github.com/KeithSloan/GDML",
