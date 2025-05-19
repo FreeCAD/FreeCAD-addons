@@ -601,6 +601,10 @@
     path = freecad-wakatime
     url = https://github.com/Pegoku/freecad-wakatime
     branch = main
+[submodule "Vars"]
+    path = Vars
+    url = https://github.com/mnesarco/Vars
+    branch = main
 [submodule "WebTools"]
     path = WebTools
     url = https://github.com/yorikvanhavre/WebTools
