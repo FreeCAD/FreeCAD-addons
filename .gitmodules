@@ -125,6 +125,10 @@
     path = CommandPanel
     url = https://github.com/triplus/CommandPanel
     branch = master
+[submodule "Color-Palette-Theme"]
+    branch = main
+	path = Color-Palette-Theme
+	url = https://github.com/altangarts/FreeCAD-Themes-ColorPalette
 [submodule "CubeMenu"]
     path = CubeMenu
     url = https://github.com/triplus/CubeMenu

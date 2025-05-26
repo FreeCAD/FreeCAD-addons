@@ -1,4 +1,4 @@
-{  
+{
   "$schema": "https://raw.githubusercontent.com/FreeCAD/AddonManager/refs/heads/main/AddonCatalog.schema.json",
   "_meta": {
     "description": "This file defines the addon catalog for FreeCAD Addon Manager. Each key is an addon ID; each value is a list of entries and (optionally) their FreeCAD compatibility information",
@@ -262,6 +262,12 @@
       "zip_url": "https://github.com/triplus/CommandPanel/archive/refs/heads/master.zip"
     }
   ],
+    "Color-Palette-Theme" : [{
+        "branch_display_name" : "main" ,
+        "repository" : "https://github.com/altangarts/FreeCAD-Themes-ColorPalette" ,
+        "zip_url" : "https://github.com/altangarts/FreeCAD-Themes-ColorPalette/archive/refs/heads/main.zip" ,
+        "git_ref" : "main"
+    }],
   "CubeMenu": [
     {
       "repository": "https://github.com/triplus/CubeMenu",
