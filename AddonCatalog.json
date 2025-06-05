@@ -564,6 +564,14 @@
       "zip_url": "https://github.com/lukh/frameforge/archive/refs/heads/main.zip"
     }
   ],
+  "free2ki": [
+    {
+      "repository": "https://github.com/30350n/free2ki",
+      "git_ref": "freecad-addons",
+      "branch_display_name": "freecad-addons",
+      "zip_url": "https://github.com/30350n/free2ki/archive/refs/heads/freecad-addons.zip"
+    }
+  ],
   "FreeGrid": [
     {
       "repository": "https://github.com/instancezero/in3dca-freegrid.git",
