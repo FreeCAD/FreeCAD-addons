@@ -214,8 +214,8 @@
     url = https://github.com/Shkolik/Foamcut
     branch = main
 [submodule "free2ki"]
-	path = free2ki
-	url = https://github.com/30350n/free2ki
+    path = free2ki
+    url = https://github.com/30350n/free2ki
     branch = freecad-addons
 [submodule "FreeCAD-Beginner-Assistant"]
     path = FreeCAD-Beginner-Assistant
