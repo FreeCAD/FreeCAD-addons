@@ -93,6 +93,14 @@
       "zip_url": "https://github.com/hamish2014/FreeCAD_assembly2/archive/refs/heads/master.zip"
     }
   ],
+  "Assembly2MuJoCo": [
+    {
+      "repository": "https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo",
+      "git_ref": "v0.2.0",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo/archive/refs/tags/v0.2.0.zip"
+    }
+  ],
   "Assembly3": [
     {
       "repository": "https://github.com/realthunder/FreeCAD_assembly3",
@@ -262,12 +270,14 @@
       "zip_url": "https://github.com/triplus/CommandPanel/archive/refs/heads/master.zip"
     }
   ],
-    "Color-Palette-Theme" : [{
-        "branch_display_name" : "main" ,
-        "repository" : "https://github.com/altangarts/FreeCAD-Themes-ColorPalette" ,
-        "zip_url" : "https://github.com/altangarts/FreeCAD-Themes-ColorPalette/archive/refs/heads/main.zip" ,
-        "git_ref" : "main"
-    }],
+  "Color-Palette-Theme": [
+    {
+      "branch_display_name": "main",
+      "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
+      "zip_url": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette/archive/refs/heads/main.zip",
+      "git_ref": "main"
+    }
+  ],
   "CubeMenu": [
     {
       "repository": "https://github.com/triplus/CubeMenu",
