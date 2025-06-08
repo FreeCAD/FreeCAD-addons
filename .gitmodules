@@ -41,6 +41,10 @@
     path = assembly2
     url = https://github.com/hamish2014/FreeCAD_assembly2
     branch = master
+[submodule "Assembly2MuJoCo"]
+	path = Assembly2MuJoCo
+	url = https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo
+    branch = main
 [submodule "Assembly3"]
     path = Assembly3
     url = https://github.com/realthunder/FreeCAD_assembly3
