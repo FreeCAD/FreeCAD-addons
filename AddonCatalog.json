@@ -96,9 +96,9 @@
   "Assembly2MuJoCo": [
     {
       "repository": "https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo",
-      "git_ref": "v0.2.0",
+      "git_ref": "main",
       "branch_display_name": "main",
-      "zip_url": "https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo/archive/refs/tags/v0.2.0.zip"
+      "zip_url": "https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo/archive/refs/heads/main.zip"
     }
   ],
   "Assembly3": [
