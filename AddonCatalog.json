@@ -111,12 +111,11 @@
   ],
   "Assembly4": [
     {
-      "repository": "https://github.com/oursland/FreeCAD_Assembly4",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/oursland/FreeCAD_Assembly4/archive/refs/heads/master.zip",
-      "freecad_max": "0.21.99",
-      "note": "Backup mirror of original Zolko-123 repository, no longer available on GitHub"
+      "repository": "https://github.com/leoheck/FreeCAD_Assembly4",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/leoheck/FreeCAD_Assembly4/archive/refs/heads/main.zip",
+      "note": "Backup mirror of the original Zolko-123 repository, which is no longer available on GitHub."
     }
   ],
   "Autoload": [
