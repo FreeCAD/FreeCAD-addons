@@ -52,7 +52,7 @@
 [submodule "Assembly4"]
     path = Assembly4
     url = https://github.com/leoheck/FreeCAD_Assembly4
-    branch = master
+    branch = main
 [submodule "Autoload"]
     path = Autoload
     url = https://github.com/triplus/Autoload
