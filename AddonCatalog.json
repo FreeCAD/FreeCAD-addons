@@ -111,11 +111,19 @@
   ],
   "Assembly4": [
     {
-      "repository": "https://github.com/leoheck/FreeCAD_Assembly4",
+      "repository": "https://codeberg.org/Zolko/Assembly4",
       "git_ref": "main",
       "branch_display_name": "main",
-      "zip_url": "https://github.com/leoheck/FreeCAD_Assembly4/archive/refs/heads/main.zip",
-      "note": "Backup mirror of the original Zolko-123 repository, which is no longer available on GitHub."
+      "zip_url": "https://codeberg.org/Zolko/Assembly4/archive/main.zip",
+      "note": "This is the original repository of Zolko's Assembly4."
+    }
+  "Assembly4.1": [
+    {
+      "repository": "https://github.com/leoheck/FreeCAD_Assembly4.1",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/leoheck/FreeCAD_Assembly4.1/archive/refs/heads/main.zip",
+      "note": "Community-friendly fork of the original Zolko's Assembly4 repository."
     }
   ],
   "Autoload": [
