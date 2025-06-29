@@ -21,7 +21,9 @@ How to submit your addon to this collection.
     your repository to improve searchability.
 
 -   Ensure your README is readable in the addon manager UI  
-    as  some things don't renders the same as in the browser.
+    as  some things don't render the same as in the browser. In
+    particular, the Addon Manager does not support HTML tags
+    in the markdown.
 
     Example : [SheetMetal Workbench]
 

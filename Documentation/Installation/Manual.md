@@ -1,7 +1,7 @@
 
 # Manual Installation
 
-For any reason the first option is not available, then manual installation is always possible. Github provides users to '[Clone or download](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)' each of the addons listed in this repository. They can be downloaded by:
+If for any reason the first option is not available, then manual installation is always possible. GitHub allows users to '[Clone or download](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)' each of the addons listed in this repository. They can be downloaded by:
 * navigating to the specific addon repository 
 * clicking the green 'Clone or download' → Download ZIP' buttons found in the top right of each addon page  
 OR

@@ -1,7 +1,7 @@
 
 # Installer Macro
 
-The installer macro is automatically downloads  
+The installer macro automatically downloads  
 & installs  addons when launched inside FreeCAD.
 
 <br/>
