@@ -51,7 +51,11 @@
     branch = master
 [submodule "Assembly4"]
     path = Assembly4
-    url = https://github.com/leoheck/FreeCAD_Assembly4
+    url = https://codeberg.org/Zolko/Assembly4
+    branch = main
+[submodule "Assembly4.1"]
+    path = Assembly4.1
+    url = https://github.com/leoheck/FreeCAD_Assembly4.1
     branch = main
 [submodule "Autoload"]
     path = Autoload
