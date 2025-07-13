@@ -503,6 +503,14 @@
       "zip_url": "https://github.com/zaphB/freecad.optics_design_workbench/archive/refs/heads/master.zip"
     }
   ],
+  "FreeCAD-Parametric-Hatch-Generator": [
+    {
+        "repository": "https://github.com/chopinregis/FreeCAD-Parametric-Hatch-Generator",
+        "git-ref": "main",
+        "branch_display_name": "main",
+        "zip_url": "https://github.com/chopinregis/FreeCAD-Parametric-Hatch-Generator/archive/refs/heads/main.zip"
+    }
+  ],
   "FreeCAD-Ribbon": [
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
