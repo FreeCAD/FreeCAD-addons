@@ -117,6 +117,7 @@
       "zip_url": "https://codeberg.org/Zolko/Assembly4/archive/main.zip",
       "note": "This is the original repository of Zolko's Assembly4."
     }
+  ],
   "Assembly4.1": [
     {
       "repository": "https://github.com/leoheck/FreeCAD_Assembly4.1",
