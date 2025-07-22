@@ -26,6 +26,7 @@ charset-normalizer
 comtypes
 distro
 docutils
+eppy
 etabs-api
 ezdxf
 geomdl
