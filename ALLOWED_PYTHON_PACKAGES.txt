@@ -94,6 +94,7 @@ six
 streamdeck
 trimesh
 triangle
+typing-extensions
 tzlocal
 urllib3
 vedo
