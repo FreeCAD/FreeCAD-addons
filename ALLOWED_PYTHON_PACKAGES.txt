@@ -50,6 +50,7 @@ ocp
 olefile
 openexr
 openpyxl
+openstudio
 pandas
 pillow
 ply
