@@ -14,7 +14,6 @@ are made available via FreeCAD's addon manager.
 
 </div>
 
-<br/>
 
 ## Topics
 
@@ -22,25 +21,18 @@ are made available via FreeCAD's addon manager.
 
 -   [Addon Manager Source]
 
-<br/>
 
 ## Disclaimer
 
-The linked addons are not part of the FreeCAD itself.
+* The linked addons are not part of the FreeCAD itself.
 
-They are not supported by the FreeCAD team directly.
+* They are not supported by the FreeCAD team directly.
 
-While this list is curated & maintained, you should read the  
-information provided by each addon before installing them.
-
-<br/>
+* While this list is curated & maintained, you should read the information provided by each addon before installing them.
 
 ## Reports & Requests
 
-Bug reports and feature requests for addons  
-should their respective repositories, not here.
-
-<br/>
+Bug reports and feature requests for addons should their respective repositories, not here.
 
 <!----------------------------------------------------------------------------->
 
