@@ -417,7 +417,7 @@
     path = OpenTheme
     url = https://github.com/obelisk79/OpenTheme
     branch = main
-[submodule "OpenDesign"]
+[submodule "OpenStudiWorkBench"]
     path = OpenStudioWorkBench
     url = https://github.com/KeithSloan/OpenStudioWorkBench
     branch = main
