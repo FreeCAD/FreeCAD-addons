@@ -850,7 +850,7 @@
       "zip_url": "https://github.com/obelisk79/OpenTheme/archive/refs/heads/main.zip"
     }
   ],
-  "OpenDesign": [
+  "OpenStudioWorkBench": [
     {
       "repository": "https://github.com/KeithSloan/OpenStudioWorkBench",
       "git_ref": "main",
