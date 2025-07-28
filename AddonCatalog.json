@@ -850,14 +850,6 @@
       "zip_url": "https://github.com/obelisk79/OpenTheme/archive/refs/heads/main.zip"
     }
   ],
-  "OpenDesign": [
-    {
-      "repository": "https://github.com/KeithSloan/OpenStudioWorkBench",
-      "git_ref": "main",
-      "branch_display_name": "main",
-      "zip_url": "https://github.com/KeithSloan/OpenStudioWorkBench/archive/refs/heads/main.zip"
-    }
-  ],
   "OpticsWorkbench": [
     {
       "repository": "https://github.com/chbergmann/OpticsWorkbench",
