@@ -46,6 +46,11 @@ gmsh-dev
 hausdorff
 idna
 ifcopenshell
+ladybug-core
+ladybug-comfort
+ladybug-display
+ladybug-geometry
+ladybug-radiance
 lxml
 markdown
 matplotlib
@@ -76,6 +81,7 @@ pynastran
 pyopenxr
 pyoptools
 pypresence
+pysolar
 python-dateutil
 python-docx
 python-dotenv
