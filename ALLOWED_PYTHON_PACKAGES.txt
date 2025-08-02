@@ -46,6 +46,7 @@ gmsh-dev
 hausdorff
 idna
 ifcopenshell
+liblathe
 lxml
 markdown
 matplotlib
