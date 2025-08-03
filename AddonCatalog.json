@@ -315,9 +315,9 @@
   "Curves": [
     {
       "repository": "https://github.com/tomate44/CurvesWB",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/tomate44/CurvesWB/archive/refs/heads/master.zip"
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/tomate44/CurvesWB/archive/refs/heads/main.zip"
     }
   ],
   "Defeaturing": [

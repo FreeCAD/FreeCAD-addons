@@ -152,7 +152,7 @@
 [submodule "Curves"]
     path = Curves
     url = https://github.com/tomate44/CurvesWB
-    branch = master
+    branch = main
 [submodule "Defeaturing"]
     path = Defeaturing
     url = https://github.com/easyw/Defeaturing_WB
