@@ -1,0 +1,92 @@
+
+name : '📦 𝗣𝘆𝘁𝗵𝗼𝗻 𝗣𝗮𝗰𝗸𝗮𝗴𝗲'
+
+description : 'Add or remove a Python package.'
+title : '[ ± ] Python Package'
+
+assignees : []
+labels : [ '📦 𝗣𝗮𝗰𝗸𝗮𝗴𝗲' ]
+
+body:
+
+    - 
+        type : markdown
+        
+        attributes:
+            value : '<!-- Spacer -->'
+
+    - 
+        type : markdown
+        
+        attributes:
+            value : |
+                #### 📑 𝗨𝘀𝗮𝗴𝗲
+                Use this form to request the addition and / or  
+                removal of one or more Python packages.
+
+    - 
+        type : markdown
+        
+        attributes:
+            value : '<!-- Spacer -->'
+
+    - 
+        type : markdown
+        
+        attributes:
+            value : |
+                #### 💡 𝗡𝗼𝘁𝗲
+                *Note that we will update your issue*  
+                *with links to the related resources.*
+
+    -
+        type : input
+        id : Additions
+
+        attributes :
+
+            description : 'List of [PyPI](https://pypi.org/) package handles to be added.'
+            placeholder : 'package-a,package-b,..'
+            label : '＋ 𝗔𝗱𝗱𝗶𝘁𝗶𝗼𝗻𝘀'
+
+        validations:
+            required : false
+
+    - 
+        type : markdown
+        
+        attributes:
+            value : '<!-- Spacer -->'
+
+    -
+        type : input
+        id : Removals
+
+        attributes :
+
+            description : 'List of [PyPI](https://pypi.org/) package handles to be removed.'
+            placeholder : 'package-a,package-b,..'
+            label : '－ 𝗥𝗲𝗺𝗼𝘃𝗮𝗹𝘀'
+
+        validations:
+            required : false
+
+    - 
+        type : markdown
+        
+        attributes:
+            value : '<!-- Spacer -->'
+
+    -
+        type : textarea
+        id : Reason
+
+        attributes :
+
+            description : 'Describe why you are requesting this change.'
+            placeholder : 'My addon xyz needs this package to do ..'
+            render : txt
+            label : '📑 𝗥𝗲𝗮𝘀𝗼𝗻'
+
+        validations:
+            required : true
