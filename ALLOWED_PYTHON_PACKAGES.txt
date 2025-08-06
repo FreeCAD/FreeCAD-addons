@@ -74,3 +74,4 @@ xlutils
 xlwt
 pypresence
 PyYAML
+typing_extensions
