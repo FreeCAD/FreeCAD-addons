@@ -40,8 +40,15 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "main",
-      "branch_display_name": "main",
+      "branch_display_name": "Main",
       "zip_url": "https://github.com/FreeCAD/AddonManager/archive/refs/heads/main.zip",
+      "freecad_min": "0.20.1"
+    },
+    {
+      "repository": "https://github.com/FreeCAD/AddonManager",
+      "git_ref": "dev",
+      "branch_display_name": "Development",
+      "zip_url": "https://github.com/FreeCAD/AddonManager/archive/refs/heads/dev.zip",
       "freecad_min": "0.20.1"
     }
   ],
