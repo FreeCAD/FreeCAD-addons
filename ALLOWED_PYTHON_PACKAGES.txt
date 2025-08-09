@@ -23,6 +23,7 @@
 PyOpenGL
 PyYAML
 aiofiles
+archaea
 asyncua
 atomicwrites
 autobahn
@@ -38,6 +39,7 @@ comtypes
 distro
 docutils
 eppy
+epw
 etabs-api
 ezdxf
 geomdl
@@ -46,6 +48,7 @@ gmsh-dev
 hausdorff
 idna
 ifcopenshell
+ifc2osmd
 ladybug-core
 ladybug-comfort
 ladybug-display
@@ -106,6 +109,7 @@ tzlocal
 urllib3
 vedo
 vermin
+voxcity
 wakatime-cli
 xgbxml
 xlrd
