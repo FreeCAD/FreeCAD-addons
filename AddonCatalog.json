@@ -294,6 +294,14 @@
       "zip_url": "https://github.com/triplus/CommandPanel/archive/refs/heads/master.zip"
     }
   ],
+  "ConstraintDesign": [
+    {
+      "repository": "https://github.com/drwho495/ConstraintDesign",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/drwho495/ConstraintDesign-wb/archive/refs/heads/master.zip"
+    }
+  ],
   "Color-Palette-Theme": [
     {
       "branch_display_name": "main",
