@@ -133,6 +133,10 @@
     path = CommandPanel
     url = https://github.com/triplus/CommandPanel
     branch = master
+[submodule "ConstraintDesign"]
+    path = ConstraintDesign
+    url = https://github.com/drwho495/ConstraintDesign-wb
+    branch = main
 [submodule "Color-Palette-Theme"]
     branch = main
 	path = Color-Palette-Theme
