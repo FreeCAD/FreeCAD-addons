@@ -25,7 +25,7 @@ capytaine==2.3
 certifi==2025.8.3
 cffi==1.17.1
 charset-normalizer==3.4.3
-click==8.1.7
+click==8.1.8
 colorama==0.4.6
 comtypes==1.4.11
 configparser==7.2.0
