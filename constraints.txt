@@ -27,7 +27,7 @@ cffi==1.17.1
 charset-normalizer==3.4.3
 click==8.1.7
 colorama==0.4.6
-comtypes==1.4.11
+comtypes==1.4.12
 configparser==7.2.0
 contourpy==1.3.3
 coverage==7.10.4
