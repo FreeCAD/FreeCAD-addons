@@ -133,7 +133,7 @@ scikit-image==0.25.2
 scikit-learn==1.7.1
 scipy==1.16.1
 scooby==0.10.1
-sentry-sdk==2.35.0
+sentry-sdk==2.35.1
 setuptools==80.9.0
 shapely==2.1.1
 six==1.17.0
