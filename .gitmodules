@@ -85,6 +85,10 @@
     path = boltsfc
     url = https://github.com/boltsparts/boltsfc
     branch = main
+[submodule "Cables"]
+    path = Cables
+    url = https://github.com/sargo-devel/Cables
+    branch = master
 [submodule "CadbaseLibrary"]
     path = CadbaseLibrary
     url = https://github.com/mnnxp/cadbaselibrary-freecad
@@ -161,6 +165,10 @@
     path = DynamicData
     url = https://github.com/mwganson/DynamicData
     branch = master
+[submodule "EasyProfileFrame"]
+    path = EasyProfileFrame
+    url = https://github.com/ovo-Tim/EasyProfileFrame
+    branch = main
 [submodule "EM"]
     path = EM
     url = https://github.com/ediloren/EM-Workbench-for-FreeCAD
@@ -533,6 +541,10 @@
     path = TabBar
     url = https://github.com/triplus/TabBar
     branch = master
+[submodule "Telemetry"]
+    path = Telemetry
+    url = https://github.com/FreeCAD/FreeCAD-Telemetry
+    branch = main
 [submodule "ThreadProfile"]
     path = ThreadProfile
     url = https://github.com/mwganson/ThreadProfile
@@ -557,6 +569,10 @@
     path = ToolbarStyle
     url = https://github.com/triplus/ToolbarStyle
     branch = master
+[submodule "freecad-wakatime"]
+    path = freecad-wakatime
+    url = https://github.com/Pegoku/freecad-wakatime
+    branch = main
 [submodule "WebTools"]
     path = WebTools
     url = https://github.com/yorikvanhavre/WebTools
@@ -581,4 +597,3 @@
     path = yaml-workspace
     url = https://github.com/Mambix/FreeCAD-yaml-workspace
     branch = master
-    
