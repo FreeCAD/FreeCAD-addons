@@ -72,7 +72,6 @@ qtpy
 qtrangeslider
 requests
 rhino3dm
-shapely
 scikit-image
 scikit-learn
 scikit-sparse
