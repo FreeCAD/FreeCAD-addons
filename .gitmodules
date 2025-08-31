@@ -13,6 +13,10 @@
     path = addFC
     url = https://github.com/GS90/addFC
     branch = main
+[submodule "AddonManager"]
+    path = AddonManager
+    url = https://github.com/FreeCAD/AddonManager
+    branch = main
 [submodule "AirPlaneDesign"]
     path = AirPlaneDesign
     url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
@@ -37,14 +41,22 @@
     path = assembly2
     url = https://github.com/hamish2014/FreeCAD_assembly2
     branch = master
+[submodule "Assembly2MuJoCo"]
+    path = Assembly2MuJoCo
+    url = https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo
+    branch = main
 [submodule "Assembly3"]
     path = Assembly3
     url = https://github.com/realthunder/FreeCAD_assembly3
     branch = master
 [submodule "Assembly4"]
     path = Assembly4
-    url = https://github.com/Zolko-123/FreeCAD_Assembly4
-    branch = master
+    url = https://codeberg.org/Zolko/Assembly4
+    branch = main
+[submodule "Assembly4.1"]
+    path = Assembly4.1
+    url = https://github.com/leoheck/FreeCAD_Assembly4.1
+    branch = main
 [submodule "Autoload"]
     path = Autoload
     url = https://github.com/triplus/Autoload
@@ -113,10 +125,18 @@
     path = Cfd
     url = https://github.com/qingfengxia/Cfd
     branch = master
+[submodule "Channels"]
+    path = Channels
+    url = https://github.com/mnesarco/Channels
+    branch = main
 [submodule "CommandPanel"]
     path = CommandPanel
     url = https://github.com/triplus/CommandPanel
     branch = master
+[submodule "Color-Palette-Theme"]
+    branch = main
+	path = Color-Palette-Theme
+	url = https://github.com/altangarts/FreeCAD-Themes-ColorPalette
 [submodule "CubeMenu"]
     path = CubeMenu
     url = https://github.com/triplus/CubeMenu
@@ -132,7 +152,7 @@
 [submodule "Curves"]
     path = Curves
     url = https://github.com/tomate44/CurvesWB
-    branch = master
+    branch = main
 [submodule "Defeaturing"]
     path = Defeaturing
     url = https://github.com/easyw/Defeaturing_WB
@@ -201,6 +221,10 @@
     path = FoamCut
     url = https://github.com/Shkolik/Foamcut
     branch = main
+[submodule "free2ki"]
+    path = free2ki
+    url = https://github.com/30350n/free2ki
+    branch = freecad-addons
 [submodule "FreeCAD-Beginner-Assistant"]
     path = FreeCAD-Beginner-Assistant
     url = https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant
@@ -269,6 +293,10 @@
     path = FreeGrid
     url = https://github.com/instancezero/in3dca-freegrid.git
     branch = main
+[submodule "FusedFilamentDesign"]
+    path = FusedFilamentDesign
+    url = https://github.com/rahix/FusedFilamentDesign
+    branch = release
 [submodule "GDML"]
     path = GDML
     url = https://github.com/KeithSloan/GDML
@@ -389,6 +417,10 @@
     path = OpenTheme
     url = https://github.com/obelisk79/OpenTheme
     branch = main
+[submodule "OpenDesign"]
+    path = OpenStudioWorkBench
+    url = https://github.com/KeithSloan/OpenStudioWorkBench
+    branch = main
 [submodule "OpticsWorkbench"]
     path = OpticsWorkbench
     url = https://github.com/chbergmann/OpticsWorkbench
@@ -493,6 +525,10 @@
     path = Rocket
     url = https://github.com/davesrocketshop/Rocket
     branch = master
+[submodule "SaveAndRestore"]
+    path = SaveAndRestore
+    url = https://github.com/APEbbers/SaveAndRestore
+    branch = main
 [submodule "SearchBar"]
     path = SearchBar
     url = https://github.com/APEbbers/SearchBar
@@ -533,6 +569,14 @@
     path = STEMFIE
     url = https://github.com/bilbaomakers/StemfieWB
     branch = main
+[submodule "StructureTools"]
+    path = StructureTools
+    url = https://github.com/maykowsm/StructureTools
+    branch = main
+[submodule "SvgWorkbench"]
+    path = SvgWorkbench
+    url = https://github.com/mnesarco/SvgWorkbench
+    branch = main
 [submodule "symbols_library"]
     path = symbols_library
     url = https://github.com/FreeCAD/FreeCAD-symbols
@@ -572,6 +616,10 @@
 [submodule "freecad-wakatime"]
     path = freecad-wakatime
     url = https://github.com/Pegoku/freecad-wakatime
+    branch = main
+[submodule "Vars"]
+    path = Vars
+    url = https://github.com/mnesarco/Vars
     branch = main
 [submodule "WebTools"]
     path = WebTools
