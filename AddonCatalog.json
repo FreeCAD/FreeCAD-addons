@@ -296,7 +296,7 @@
   ],
   "ConstraintDesign": [
     {
-      "repository": "https://github.com/drwho495/ConstraintDesign",
+      "repository": "https://github.com/drwho495/ConstraintDesign-wb",
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/drwho495/ConstraintDesign-wb/archive/refs/heads/main.zip"
