@@ -629,6 +629,10 @@
     path = Workbench-Organizer
     url = https://github.com/Palmstroemen/WB_Organizer
     branch = main
+[submodule "Woods"]
+    path = Woods
+    url = https://github.com/davesrocketshop/Woods.git
+    branch = master
 [submodule "woodworking"]
     path = Woodworking
     url = https://github.com/dprojects/Woodworking
@@ -645,6 +649,3 @@
     path = yaml-workspace
     url = https://github.com/Mambix/FreeCAD-yaml-workspace
     branch = master
-[submodule "Woods"]
-	path = Woods
-	url = https://github.com/davesrocketshop/Woods.git
