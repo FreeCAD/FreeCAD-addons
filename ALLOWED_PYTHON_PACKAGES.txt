@@ -1,15 +1,15 @@
 
 #
 #   𝗔𝗹𝗹𝗼𝘄𝗲𝗱 𝗣𝘆𝘁𝗵𝗼𝗻 𝗣𝗮𝗰𝗸𝗮𝗴𝗲𝘀
-#   
-#   List of allowed Python packages that 
+#
+#   List of allowed Python packages that
 #   addons can request to be installed.
 #
 
 #
 #   Request new packages to be added at:
 #   https://github.com/FreeCAD/FreeCAD-addons/issues/new/choose
-#   
+#
 
 #
 #   Read more details about this file at:
@@ -91,7 +91,6 @@ qtpy
 qtrangeslider
 requests
 rhino3dm
-shapely
 scikit-image
 scikit-learn
 scikit-sparse
