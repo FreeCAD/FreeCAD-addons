@@ -597,3 +597,6 @@
     path = yaml-workspace
     url = https://github.com/Mambix/FreeCAD-yaml-workspace
     branch = master
+[submodule "Woods"]
+	path = Woods
+	url = https://github.com/davesrocketshop/Woods.git
