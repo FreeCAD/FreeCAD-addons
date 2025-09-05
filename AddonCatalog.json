@@ -1315,10 +1315,10 @@
   "yaml-workbench": [
     {
       "repository": "https://github.com/Mambix/FreeCAD-yaml-workbench",
-      "git_ref": "v0.1.3",
+      "git_ref": "v0.1.4",
       "branch_display_name": "FreeCAD < v1.0",
       "freecad_max": "0.21.2",
-      "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workbench/archive/refs/tags/v0.1.3.zip"
+      "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workbench/archive/refs/tags/v0.1.4.zip"
     },
     {
       "repository": "https://github.com/Mambix/FreeCAD-yaml-workbench",
