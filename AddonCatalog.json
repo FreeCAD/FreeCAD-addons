@@ -132,13 +132,6 @@
       "branch_display_name": "main",
       "zip_url": "https://github.com/leoheck/FreeCAD_Assembly4.1/archive/refs/heads/main.zip",
       "note": "Community-friendly fork of the original Zolko's Assembly4 repository."
-    },
-    {
-      "repository": "https://github.com/leoheck/FreeCAD_Assembly4.1",
-      "git_ref": "dev",
-      "branch_display_name": "development",
-      "zip_url": "https://github.com/leoheck/FreeCAD_Assembly4.1/archive/refs/heads/dev.zip",
-      "note": "Development branch of the community-friendly fork of the original Zolko's Assembly4 repository."
     }
   ],
   "Autoload": [
