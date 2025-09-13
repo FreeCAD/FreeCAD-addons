@@ -1312,11 +1312,19 @@
       "zip_url": "https://github.com/Rentlau/WorkFeature-WB/archive/refs/heads/master.zip"
     }
   ],
-  "yaml-workspace": [
+  "yaml-workbench": [
+    {
+      "repository": "https://github.com/Mambix/FreeCAD-yaml-workbench",
+      "git_ref": "v0.1.4",
+      "branch_display_name": "FreeCAD < v1.0",
+      "freecad_max": "0.21.2",
+      "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workbench/archive/refs/tags/v0.1.4.zip"
+    },
     {
       "repository": "https://github.com/Mambix/FreeCAD-yaml-workbench",
       "git_ref": "master",
-      "branch_display_name": "master",
+      "branch_display_name": "FreeCAD ≥ v1.0",
+      "freecad_min": "1.0.0",
       "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workbench/archive/refs/heads/master.zip"
     }
   ]

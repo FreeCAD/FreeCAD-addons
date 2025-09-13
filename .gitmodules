@@ -649,7 +649,7 @@
     path = workfeature
     url = https://github.com/Rentlau/WorkFeature-WB
     branch = master
-[submodule "yaml-workspace"]
-    path = yaml-workspace
-    url = https://github.com/Mambix/FreeCAD-yaml-workspace
+[submodule "yaml-workbench"]
+	path = yaml-workbench
+	url = https://github.com/Mambix/FreeCAD-yaml-workbench
     branch = master
