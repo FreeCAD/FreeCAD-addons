@@ -34,6 +34,7 @@ capytaine
 certifi
 charset-normalizer
 comtypes
+defusedxml
 distro
 docutils
 etabs-api
