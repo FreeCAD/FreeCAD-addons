@@ -19,7 +19,7 @@ autobahn==24.4.2
 awkward==2.8.7
 awkward_cpp==48
 backoff==2.2.1
-beautifulsoup4==4.8.0
+beautifulsoup4==4.13.5
 blinker==1.9.0
 capytaine==2.3
 certifi==2025.8.3
