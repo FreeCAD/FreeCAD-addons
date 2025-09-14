@@ -1,4 +1,4 @@
-name: Update constraints files when needed
+name: Update constraints-pyXY.txt on PRs
 
 # When the ALLOWED_PYTHON_PACKAGES.txt file changes, update all of our constraints files on a per-Python-version
 # basis. Right now, if a package is not available for a particular version, that will cause it to fail CI.
@@ -19,7 +19,7 @@ env:
   # These packages will be allowed to compile from source. Native extension compilation is a code-execution
   # vector. Compilers, linkers, and build scripts are invoked; a hostile setup.py/backend can run shell
   # commands freely. Only add packages to this list if absolutely necessary.
-  ALLOW_SDIST_PURE: "pydot3k,tinynumpy"
+  ALLOW_SDIST_PURE: "hausdorff,pydot3k,tinynumpy"
   ALLOW_SDIST_NATIVE: "scikit-sparse"   # Behavior on user systems depends on the system
 
   # Excluded packages: explanations for inclusion in the list...
@@ -57,8 +57,8 @@ jobs:
           LC_ALL=C awk -v maxlen=200 '
             BEGIN { bad=0 }
             function trim(s){ sub(/^[ \t]+/,"",s); sub(/[ \t]+$/,"",s); return s }
-            /^[[:space:]]*$/ { next }
-            /^[[:space:]]*#/ { next }
+            /^[[:space:]]*$/ { next }                  # blank
+            /^[[:space:]]*#/ { next }                   # comment
             {
               raw=$0
               line=trim($0)
@@ -79,12 +79,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # The Addon Manager current supports the following versions of Python - provide a constraints file for each of them
+        # The Addon Manager currently supports the following versions of Python - provide a constraints file for each of them
         py: ['3.8','3.9','3.10','3.11','3.12','3.13']
       fail-fast: false
-      
     steps:
-    
       - name: Exclude OpenEXR and pyoptools on py3.13 (no wheels yet)
         if: ${{ matrix.py == '3.13' }}
         run: echo "EXCLUDE_PACKAGES=${EXCLUDE_PACKAGES},openexr,pyoptools" >> "$GITHUB_ENV"
@@ -156,6 +154,7 @@ jobs:
       
           pip freeze --exclude-editable > "$out_path"
       
+          # Expose both basename (artifact name) and path (artifact file)
           echo "ARTIFACT_NAME=$out_basename" >> "$GITHUB_ENV"
           echo "ARTIFACT_PATH=$out_path" >> "$GITHUB_ENV"
           
@@ -187,7 +186,7 @@ jobs:
           merge-multiple: true
           path: constraints
 
-      - name: Commit constraints if changed
+      - name: Commit all constraints in a single commit (only if changed)
         shell: bash
         env:
           PR_REPO: ${{ github.event.pull_request.head.repo.full_name }}
@@ -202,7 +201,7 @@ jobs:
           fi
           git config user.name  "freecad-constraints-bot"
           git config user.email "freecad-constraints-bot@users.noreply.github.com"
-          git commit -m "Update per-Python-version constraints files via CI"
+          git commit -m "Update constraints based on revised ALLOWED_PYTHON_PACKAGES.txt content"
           repo_url="https://${BOT_PUSH_TOKEN}@github.com/${PR_REPO}.git"
           git push "${repo_url}" "HEAD:${PR_REF}"
 
@@ -215,5 +214,5 @@ jobs:
               owner: context.payload.repository.owner.login,
               repo: context.payload.repository.name,
               issue_number: context.payload.pull_request.number,
-              body: "✅ Regenerated per-version constraints files (`constraints-py38.txt` … `constraints-py313.txt`) and pushed a commit with the changes"
+              body: "🤖 Constraints Bot: regenerated the constraints files and added a commit with the changes"
             })
