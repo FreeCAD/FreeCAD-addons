@@ -227,6 +227,7 @@
       "repository": "https://github.com/mnnxp/cadbaselibrary-freecad",
       "git_ref": "master",
       "branch_display_name": "master",
+      "freecad_min": "0.21",
       "zip_url": "https://github.com/mnnxp/cadbaselibrary-freecad/archive/refs/heads/master.zip"
     }
   ],
