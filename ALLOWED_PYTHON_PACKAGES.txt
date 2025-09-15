@@ -41,7 +41,6 @@ etabs-api
 ezdxf
 geomdl
 gmsh
-hausdorff
 idna
 ladybug-core
 ladybug-comfort
@@ -80,7 +79,6 @@ pyoptools
 pypresence
 pysolar
 python-dateutil
-python-docx
 python-dotenv
 pyvista
 qtpy
