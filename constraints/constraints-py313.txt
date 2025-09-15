@@ -100,7 +100,7 @@ scikit-learn==1.7.2
 scikit-sparse==0.4.16
 scipy==1.16.2
 scooby==0.10.1
-sentry-sdk==2.37.1
+sentry-sdk==2.38.0
 setuptools==80.9.0
 shapely==2.1.1
 six==1.17.0
