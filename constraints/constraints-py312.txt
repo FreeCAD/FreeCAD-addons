@@ -1,6 +1,6 @@
 aiofiles==24.1.0
 aiosqlite==0.21.0
-antlr4-python3-runtime==4.13.2
+antlr4-python3-runtime==4.13.1
 asyncua==1.1.8
 atomicwrites==1.4.0
 autobahn==24.4.2
