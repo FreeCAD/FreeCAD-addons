@@ -112,7 +112,7 @@ scikit-learn==1.7.2
 scikit-sparse==0.4.16
 scipy==1.15.3
 scooby==0.10.1
-sentry-sdk==2.37.1
+sentry-sdk==2.38.0
 shapely==2.1.1
 six==1.17.0
 sortedcontainers==2.4.0
