@@ -94,7 +94,7 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 pytz==2025.2
 pyvista==0.44.2
-PyWavelets==1.6.0
+PyWavelets==1.4.1
 PyYAML==6.0.2
 QtPy==2.4.3
 QtRangeSlider==0.1.5
