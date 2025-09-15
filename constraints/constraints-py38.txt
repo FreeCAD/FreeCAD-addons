@@ -36,7 +36,7 @@ gmsh==4.14.1
 hyperlink==21.0.0
 idna==3.10
 ijson==3.3.0
-imageio==2.35.1
+imageio==2.37.0
 importlib_metadata==8.5.0
 importlib_resources==6.4.5
 joblib==1.4.2
