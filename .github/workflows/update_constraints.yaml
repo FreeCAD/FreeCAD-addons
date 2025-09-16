@@ -8,6 +8,9 @@ name: Update constraints-pyXY.txt on PRs
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
+    paths:
+      - 'ALLOWED_PYTHON_PACAKGES.txt'
+      - 'constraints/*.txt'
 
 permissions:
   contents: write
