@@ -179,7 +179,7 @@
       "repository": "https://github.com/knipknap/better-tool-library",
       "git_ref": "main",
       "branch_display_name": "main",
-      "zip_url": "https://github.com/knipknap/better-tool-library/archive/refs/heads/main.zip"
+      "zip_url": "https://github.com/knipknap/better-tool-library/archive/refs/heads/main.zip",
       "freecad_max": "1.0.99"
     }
   ],
