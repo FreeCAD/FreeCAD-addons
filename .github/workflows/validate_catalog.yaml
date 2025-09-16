@@ -1,0 +1,22 @@
+name: Validate AddonCatalog.json
+
+on:
+  push:
+    paths:
+      - 'AddonCatalog.json'
+  pull_request:
+    paths:
+      - 'AddonCatalog.json'
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Validate AddonCatalog.json
+        uses: dsanders11/json-schema-validate-action@v1.4.0
+        with:
+          schema: https://raw.githubusercontent.com/FreeCAD/AddonManager/dev/AddonCatalog.schema.json
+          files: AddonCatalog.json
+          all-errors: true
