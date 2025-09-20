@@ -1193,6 +1193,14 @@
       "zip_url": "https://github.com/FreeCAD/FreeCAD-Telemetry/archive/refs/heads/main.zip"
     }
   ],
+  "Templater": [
+    {
+      "repository": "https://github.com/FC-FBXL5/Templater",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/FC-FBXL5/Templater/archive/refs/heads/main.zip"
+    }
+  ],
   "ThreadProfile": [
     {
       "repository": "https://github.com/mwganson/ThreadProfile",
