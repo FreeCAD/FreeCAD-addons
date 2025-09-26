@@ -1,86 +1,51 @@
-# FreeCAD Addons Repository ![AddonManager-Logo][AddonManager]
 
-This repository is a collection of useful additional workbenches and modules for FreeCAD made by its community members, conveniently available for seamless integration in to the application itself.
+<div align = center >
 
-**Important Notes:**  
-1. Since **these Addons are not part of the official FreeCAD package and not supported by the FreeCAD team**, although this list is curated and maintained by the FreeCAD team, you should **read the information provided on each of the addons page before installing any of them, to make sure you know what you are installing**. 
+# <img height = '36' src = './icons/AddonManager.svg' /> FreeCAD Addons
 
-2. **Bug reports and feature requests should be made directly on each addon page.** Any reports opened in this repository should be related directly to the Addon Manager itself.
+This repository is a collection of various addons that  
+are made available via FreeCAD's addon manager.
 
-3. The commit number indicated in the github tree above is not considered by the Addons Manager. **What is installed or updated is always the latest *HEAD* of the specified branch of each addon**. If no branch is specified in the .gitmodules file, "master" is assumed.
+<br/>
 
-[AddonManager]: icons/AddonManager.svg
+[![Button Installation]][Installation]  
+[![Button Submission]][Submission]  
+[![Button Localization]][Localization]
 
-### Addon Descriptions
-
-For a description of each Addon you can either:
-* within FreeCAD use the Addon Manager to scroll between all available Addon/External Workbenches. 
-* click on each individually linked Addons in this repository to read their README files. 
-
-### Installing
-
-***Important Note: As of FreeCAD v0.17.9940 the Addon Manager was finally implemented in to FreeCAD. It can be accessed from within the Tools → 'Addon Manager' dropdown menu. For earlier versions (≤v0.16), please see the [Deprecated Installation Methods](#deprecated-installation-methods) section***.
-
-#### 1. Builtin Addon Manager
-
-The recommended way is using the built-in Addon Manager that installs 3rd party workbenches, addons, and macros. Access it via ***Tools → Addon Manager***:
-
-![freecad-0.17-addon_manager-screenshot](https://user-images.githubusercontent.com/4140247/37867768-2eb7db20-2f73-11e8-83fb-8868995ba49d.png)
+</div>
 
 
-#### 2. Manual install
+## Topics
 
-For any reason the first option is not available, then manual installation is always possible. Github provides users to '[Clone or download](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)' each of the addons listed in this repository. They can be downloaded by:
-* navigating to the specific addon repository 
-* clicking the green 'Clone or download' → Download ZIP' buttons found in the top right of each addon page  
-OR
-* Using `git clone <github repository URL>`  
-Most of the addons must either be placed in your user's `FreeCAD/Mod` folder, or in the Macros folder. Refer to the instructions on each addon page. 
+-   [Allowed Python Packages]
 
-**Note**: Your user's FreeCAD folder location is obtained by typing in FreeCAD's python console: `FreeCAD.ConfigGet("UserAppData")`while the Macros folder location is indicated in the dialog opened from *Macro -> Macros...* dropdown menu.
+-   [Addon Manager Source]
 
-### Adding your workbench to the collection
 
-Have you made an interesting workbench or module that we are not aware of? Tell us on the [FreeCAD forum](http://forum.freecadweb.org) so we can add it here!
+## Disclaimer
 
-To submit your workbench to the repository
-1. Announce your Workbench on the FreeCAD Forums
-2. Create a dedicated page for your workbench on the FreeCAD wiki (don't forget to add `[[Category:Addons]]` to it) + add it to https://freecadweb.org/wiki/External_workbenches
-4. Tag (AKA 'label') your Github repo with the following: `freecad`, `addons`, and `workbench`  
-5. Make sure you have a simple SVG logo of your workbench (no larger than 10kb) that can be used to represent it in the Addon Manager dialog.
-6. Please structure the README.md file in a way that makes it easy to understand while reading from the Addon Manager dialog. Example: [SheetMetal Workbench](https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md)  
-   **Note the use of:** screenshots, screencasts, mentioning of Licence, Changelog etc... 
-7. Ensure that your Addon includes a `package.xml` [metadata file](https://wiki.freecadweb.org/Package_Metadata), and that that file includes an icon, repository url, and readme url. The readme url should be a direct link to the HTML-rendered README.md file (e.g. https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md)
-8. Submit a Pull Request to this repository adding your Addon to the appropriate files:
-   1. For compatibility with FreeCAD 1.0 and earlier: add your addon to the `.gitmodules` file in alphabetical order, including the branch name (note that the `git submodule` commands will not do this for you, you will need to edit it manually). Supported git hosts are [GitHub](https://github.com/), [Gitlab](https://about.gitlab.com/), [Framagit](https://framagit.org/public/projects), [salsa.debian.org](https://salsa.debian.org/public), and [Codeberg](https://codeberg.org/).
-   2. For compatibility with FreeCAD 1.1 and later, please add your addon to the [Addon Catalog](https://github.com/FreeCAD/FreeCAD-addons/blob/master/AddonCatalog.json). If you need assistance with creating the catalog entry (which can support multiple branches and/or multiple versions of FreeCAD) reach out in the GitHub issue created in step 10.
-10. Create a new ticket, linked to the PR, following [this template](https://github.com/FreeCAD/FreeCAD-addons/issues/new?assignees=&labels=New+WB%2FAddon+%3Apackage%3A&projects=&template=add-a-new-workbench-addon-to-this-repo.md&title=%5BNew+Addon%2FWorkbench%5D)
+* The linked addons are not part of the FreeCAD itself.
 
-### Translating External Workbenches
+* They are not supported by the FreeCAD team directly.
 
-For wider usage of external workbenches, we recommend that workbench developers integrate the ability to [translate their workbench(es)](https://www.freecadweb.org/wiki/Translating_an_external_workbench). FreeCAD uses a 3rd-party crowdsource translation service called [Crowdin](https://crowdin.com/project/freecad). There are some [automated scripts](https://www.freecadweb.org/wiki/Crowdin_Scripts) that we use to push and pull translations from Crowdin via their API. Developers are invited to help improve these scripts so as to include their own workbenches in the process. Further discussion on [this forum thread](https://forum.freecadweb.org/viewtopic.php?f=10&t=36413). 
+* While this list is curated & maintained, you should read the information provided by each addon before installing them.
 
-### Addon Manager Source Code
+## Reports & Requests
 
-Source code for the Addon Manager lives in FreeCAD master [`FreeCAD/src/Mod/AddonManager/`](https://github.com/FreeCAD/FreeCAD/tree/master/src/Mod/AddonManager).
+Bug reports and feature requests for addons should their respective repositories, not here.
 
-### Deprecated Installation Methods
-<details>
-  <summary>Before FreeCAD v. 0.17.9940 the methods below were utilized to automate the installation of workbenches and macros. This sections is being kept for historical purposes.
-</summary>
-  
-#### 1. Using the installer macro
+<!----------------------------------------------------------------------------->
 
-The installer macro can be launched from inside FreeCAD, and will download and install any of the addons above automatically. To install the installer macro:
+[Button Installation]: https://img.shields.io/badge/Installation-d45558?style=for-the-badge&logoColor=white&logo=actix
+[Button Localization]: https://img.shields.io/badge/Localization-ffaa00?style=for-the-badge&logoColor=white&logo=googletranslate
+[Button Submission]: https://img.shields.io/badge/Submission-3b8ad9?style=for-the-badge&logoColor=white&logo=testcafe
 
-1. Download [addons_installer.FCMacro](https://raw.githubusercontent.com/FreeCAD/FreeCAD-addons/da3cb72c54f94430e9afd8200b48f4f2f6ac7c8c/addons_installer.FCMacro)
-2. Place the downloaded macro in your **FreeCAD Macros folder**. The FreeCAD Macros folder location is indicated in menu **Macros -> Macros -> User macros location**:
-![the execute macro dialog](http://www.freecadweb.org/wiki/images/1/1e/Macro_installer_01.jpg)
-3. Restart FreeCAD. The addons installer will now be listed in menu **Macro -> Macros** and can be launched by selecting it then clicking the **Execute** button:
+[Addon Manager Source]: https://github.com/FreeCAD/AddonManager
 
-![the addons installer](http://www.freecadweb.org/wiki/images/c/c6/Macro_installer_02.jpg)
 
-#### 2. Using the "pluginloader" addon
+[Allowed Python Packages]: ./Documentation/Allowed-Python-Packages.md
+[Installation]: ./Documentation/Installation/README.md
+[Localization]: ./Documentation/Localization.md
+[Submission]: ./Documentation/Submission.md
 
-The plugin loader is a much more elaborate way to install and manage additional content for freecad. Install it with the method above, or following the instructions on the [pluginloader page](https://github.com/microelly2/freecad-pluginloader).
-</details>
+[Logo]: ./icons/AddonManager.svg
