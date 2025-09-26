@@ -1080,6 +1080,12 @@
       "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/heads/master.zip"
     }
   ],
+  "SaveAndRestore": [
+      "repository": "https://github.com/APEbbers/SaveAndRestore",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/APEbbers/SaveAndRestore/archive/refs/heads/main.zip"
+  ],
   "SearchBar": [
     {
       "repository": "https://github.com/APEbbers/SearchBar",
