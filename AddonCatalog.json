@@ -172,6 +172,12 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/APEbbers/BillOfMaterials-WB/archive/refs/heads/main.zip"
+    },
+    {
+      "repository": "https://github.com/APEbbers/BillOfMaterials-WB",
+      "git_ref": "Develop",
+      "branch_display_name": "Develop",
+      "zip_url": "https://github.com/APEbbers/BillOfMaterials-WB/archive/refs/heads/Develop.zip"
     }
   ],
   "btl": [
@@ -526,6 +532,12 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/APEbbers/FreeCAD-Ribbon/archive/refs/heads/main.zip"
+    },
+    {
+      "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
+      "git_ref": "Develop",
+      "branch_display_name": "Develop",
+      "zip_url": "https://github.com/APEbbers/FreeCAD-Ribbon/archive/refs/heads/Develop.zip"
     }
   ],
   "FreeCAD-themes": [
@@ -1080,12 +1092,32 @@
       "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/heads/master.zip"
     }
   ],
+  "SaveAndRestore": [
+    {
+      "repository": "https://github.com/APEbbers/SaveAndRestore",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/APEbbers/SaveAndRestore/archive/refs/heads/main.zip"
+    },
+    {
+      "repository": "https://github.com/APEbbers/SaveAndRestore",
+      "git_ref": "Develop",
+      "branch_display_name": "Develop",
+      "zip_url": "https://github.com/APEbbers/SaveAndRestore/archive/refs/heads/Develop.zip"
+    }
+  ],
   "SearchBar": [
     {
       "repository": "https://github.com/APEbbers/SearchBar",
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/APEbbers/SearchBar/archive/refs/heads/main.zip"
+    },
+    {
+      "repository": "https://github.com/APEbbers/SearchBar",
+      "git_ref": "Develop",
+      "branch_display_name": "Develop",
+      "zip_url": "https://github.com/APEbbers/SearchBar/archive/refs/heads/Develop.zip"
     }
   ],
   "SelectorToolbar": [
