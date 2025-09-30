@@ -122,7 +122,7 @@ txaio==23.1.1
 typing_extensions==4.13.2
 typish==1.9.3
 tzdata==2025.2
-tzlocal==5.2
+tzlocal==5.3.1
 urllib3==2.2.3
 vedo==2025.5.4
 vermin==1.6.0
