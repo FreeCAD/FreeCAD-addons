@@ -114,7 +114,7 @@ soupsieve==2.7
 streamdeck==0.9.6
 sympy==1.13.3
 testtools==2.7.2
-threadpoolctl==3.5.0
+threadpoolctl==3.6.0
 tifffile==2023.7.10
 triangle==20250106
 trimesh==4.8.1
