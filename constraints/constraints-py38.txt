@@ -38,7 +38,7 @@ idna==3.10
 ijson==3.3.0
 imageio==2.35.1
 importlib_metadata==8.5.0
-importlib_resources==6.4.5
+importlib_resources==6.5.2
 joblib==1.4.2
 kiwisolver==1.4.7
 ladybug-comfort==0.18.89
