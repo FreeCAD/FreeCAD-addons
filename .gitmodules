@@ -478,9 +478,9 @@
     url = https://github.com/turn211/ProDarkThemePreferencePack
     branch = main
 [submodule "Pyramids-and-Polyhedrons"]
+    branch = Latest
     path = Pyramids-and-Polyhedrons
-    url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons
-    branch = master
+    url = https://github.com/Addon-Shelter/Polyhedra
 [submodule "pyOpToolsWorkbench"]
     path = pyOpToolsWorkBench
     url = https://github.com/cihologramas/freecad-pyoptools

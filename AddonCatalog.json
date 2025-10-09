@@ -984,10 +984,10 @@
   ],
   "Pyramids-and-Polyhedrons": [
     {
-      "repository": "https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons/archive/refs/heads/master.zip"
+      "branch_display_name": "Latest",
+      "repository": "https://github.com/Addon-Shelter/Polyhedra",
+      "zip_url": "https://github.com/Addon-Shelter/Polyhedra/archive/refs/heads/Latest.zip",
+      "git_ref": "Latest"
     }
   ],
   "pyOpToolsWorkbench": [
