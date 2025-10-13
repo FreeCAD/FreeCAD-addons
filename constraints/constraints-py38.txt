@@ -35,7 +35,7 @@ glfw==2.10.0
 gmsh==4.14.1
 hyperlink==21.0.0
 idna==3.10
-ijson==3.3.0
+ijson==3.4.0.post0
 imageio==2.35.1
 importlib_metadata==8.5.0
 importlib_resources==6.4.5
