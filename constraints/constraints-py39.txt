@@ -100,7 +100,7 @@ QtRangeSlider==0.1.5
 requests==2.32.5
 rhino3dm==8.17.0
 rich==14.2.0
-scikit-image==0.25.2
+scikit-image==0.24.0
 scikit-learn==1.6.1
 scikit-sparse==0.4.16
 scipy==1.13.1
