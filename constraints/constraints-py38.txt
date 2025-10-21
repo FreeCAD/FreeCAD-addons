@@ -18,7 +18,7 @@ click==8.1.7
 comtypes==1.4.12
 configparser==7.1.0
 contourpy==1.1.1
-cpylog==1.5.0
+cpylog==1.6.0
 cryptography==46.0.3
 cycler==0.12.1
 defusedxml==0.7.1

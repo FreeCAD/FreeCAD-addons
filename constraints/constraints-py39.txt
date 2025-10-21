@@ -18,7 +18,7 @@ colorama==0.4.6
 comtypes==1.4.13
 configparser==7.2.0
 contourpy==1.3.0
-cpylog==1.5.0
+cpylog==1.6.0
 cryptography==46.0.3
 cycler==0.12.1
 defusedxml==0.7.1
