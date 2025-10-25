@@ -960,10 +960,18 @@
   ],
   "Plot": [
     {
-      "repository": "https://github.com/FreeCAD/freecad.plot",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/FreeCAD/freecad.plot/archive/refs/heads/master.zip"
+      "repository": "https://github.com/FreeCAD/Plot",
+      "git_ref": "2024.11.26",
+      "branch_display_name": "FreeCAD < 1.0",
+      "freecad_max": "0.21.99",
+      "zip_url": "https://github.com/FreeCAD/Plot/archive/refs/tags/2024.11.26.zip"
+    },
+    {
+      "repository": "https://github.com/FreeCAD/Plot",
+      "git_ref": "Latest",
+      "branch_display_name": "Latest",
+      "freecad_min": "1.0.0",
+      "zip_url": "https://github.com/FreeCAD/Plot/archive/refs/heads/Latest.zip"
     }
   ],
   "POV-Ray-Rendering": [
