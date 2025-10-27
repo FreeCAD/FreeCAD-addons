@@ -467,8 +467,8 @@
     branch = master
 [submodule "Plot"]
     path = Plot
-    url = https://github.com/FreeCAD/freecad.plot
-    branch = master
+    url = https://github.com/FreeCAD/Plot
+    branch = v2024.11.26
 [submodule "POV-Ray-Rendering"]
     path = POV-Ray-Rendering
     url = https://github.com/TheRaytracers/freecad-povray-render
