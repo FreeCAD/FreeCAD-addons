@@ -32,7 +32,7 @@ fonttools==4.57.0
 fsspec==2025.3.0
 geomdl==5.3.1
 glfw==2.10.0
-gmsh==4.14.1
+gmsh==4.15.0
 hyperlink==21.0.0
 idna==3.11
 ijson==3.3.0
@@ -74,7 +74,7 @@ ply==3.11
 pooch==1.8.2
 posthog==4.2.0
 protobuf==5.29.5
-psutil==7.1.1
+psutil==7.1.2
 py-slvs==1.0.6
 pycollada==0.9.2
 pycparser==2.23
@@ -117,7 +117,7 @@ testtools==2.7.2
 threadpoolctl==3.5.0
 tifffile==2023.7.10
 triangle==20250106
-trimesh==4.8.3
+trimesh==4.9.0
 txaio==23.1.1
 typing_extensions==4.13.2
 typish==1.9.3
