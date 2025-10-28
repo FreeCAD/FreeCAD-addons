@@ -3,7 +3,7 @@ aiosqlite==0.20.0
 antlr4-python3-runtime==4.13.1
 asyncua==1.1.5
 atomicwrites==1.4.0
-autobahn==21.3.1
+autobahn==25.10.2
 awkward==2.6.10
 awkward_cpp==40
 backoff==2.2.1
