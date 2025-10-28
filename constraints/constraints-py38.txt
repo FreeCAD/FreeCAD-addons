@@ -30,7 +30,7 @@ etabs_api==1.2
 ezdxf==1.1.4
 fonttools==4.57.0
 fsspec==2025.3.0
-geomdl==5.4.0
+geomdl==5.3.1
 glfw==2.10.0
 gmsh==4.15.0
 hyperlink==21.0.0
