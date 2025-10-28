@@ -9,7 +9,7 @@ awkward_cpp==40
 backoff==2.2.1
 backports.zoneinfo==0.2.1
 beautifulsoup4==4.14.2
-blinker==1.9.0
+blinker==1.8.2
 capytaine==2.3.1
 certifi==2025.10.5
 cffi==1.17.1
