@@ -5,7 +5,7 @@ asyncua==1.1.5
 atomicwrites==1.4.0
 autobahn==21.3.1
 awkward==2.6.10
-awkward_cpp==50
+awkward_cpp==40
 backoff==2.2.1
 backports.zoneinfo==0.2.1
 beautifulsoup4==4.14.2
