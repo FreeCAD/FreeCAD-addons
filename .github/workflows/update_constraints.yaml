@@ -9,7 +9,7 @@ on:
   pull_request_target:
     types: [opened, synchronize, reopened]
     paths:
-      - 'ALLOWED_PYTHON_PACAKGES.txt'
+      - 'ALLOWED_PYTHON_PACKAGES.txt'
       - 'constraints/*.txt'
 
 permissions:
