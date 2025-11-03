@@ -1,0 +1,8 @@
+# Configure Dependabot to scan the constraints.txt file that it will find in the root of this repo
+
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/constraints"
+    schedule:
+      interval: "weekly"

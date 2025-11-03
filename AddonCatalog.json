@@ -43,6 +43,13 @@
       "branch_display_name": "main",
       "zip_url": "https://github.com/FreeCAD/AddonManager/archive/refs/heads/main.zip",
       "freecad_min": "0.20.1"
+    },
+    {
+      "repository": "https://github.com/FreeCAD/AddonManager",
+      "git_ref": "dev",
+      "branch_display_name": "development",
+      "zip_url": "https://github.com/FreeCAD/AddonManager/archive/refs/heads/dev.zip",
+      "freecad_min": "0.20.1"
     }
   ],
   "AirPlaneDesign": [
@@ -165,6 +172,12 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/APEbbers/BillOfMaterials-WB/archive/refs/heads/main.zip"
+    },
+    {
+      "repository": "https://github.com/APEbbers/BillOfMaterials-WB",
+      "git_ref": "Develop",
+      "branch_display_name": "Develop",
+      "zip_url": "https://github.com/APEbbers/BillOfMaterials-WB/archive/refs/heads/Develop.zip"
     }
   ],
   "btl": [
@@ -172,7 +185,8 @@
       "repository": "https://github.com/knipknap/better-tool-library",
       "git_ref": "main",
       "branch_display_name": "main",
-      "zip_url": "https://github.com/knipknap/better-tool-library/archive/refs/heads/main.zip"
+      "zip_url": "https://github.com/knipknap/better-tool-library/archive/refs/heads/main.zip",
+      "freecad_max": "1.0.99"
     }
   ],
   "BIMBots": [
@@ -220,6 +234,7 @@
       "repository": "https://github.com/mnnxp/cadbaselibrary-freecad",
       "git_ref": "master",
       "branch_display_name": "master",
+      "freecad_min": "0.21.0",
       "zip_url": "https://github.com/mnnxp/cadbaselibrary-freecad/archive/refs/heads/master.zip"
     }
   ],
@@ -268,7 +283,7 @@
       "repository": "https://github.com/mnesarco/Channels",
       "git_ref": "main",
       "branch_display_name": "main",
-      "freecad_min": "1.0",
+      "freecad_min": "1.0.0",
       "zip_url": "https://github.com/mnesarco/Channels/archive/refs/heads/main.zip"
     }
   ],
@@ -278,6 +293,14 @@
       "git_ref": "master",
       "branch_display_name": "master",
       "zip_url": "https://github.com/triplus/CommandPanel/archive/refs/heads/master.zip"
+    }
+  ],
+  "ConstraintDesign": [
+    {
+      "repository": "https://github.com/drwho495/ConstraintDesign-wb",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/drwho495/ConstraintDesign-wb/archive/refs/heads/main.zip"
     }
   ],
   "Color-Palette-Theme": [
@@ -510,6 +533,12 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/APEbbers/FreeCAD-Ribbon/archive/refs/heads/main.zip"
+    },
+    {
+      "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
+      "git_ref": "Develop",
+      "branch_display_name": "Develop",
+      "zip_url": "https://github.com/APEbbers/FreeCAD-Ribbon/archive/refs/heads/Develop.zip"
     }
   ],
   "FreeCAD-themes": [
@@ -749,7 +778,7 @@
       "repository": "https://github.com/mnesarco/MarzWorkbench",
       "git_ref": "master",
       "branch_display_name": "master",
-      "freecad_min": "1.0",
+      "freecad_min": "1.0.0",
       "zip_url": "https://github.com/mnesarco/MarzWorkbench/archive/refs/heads/master.zip"
     }
   ],
@@ -766,7 +795,7 @@
       "repository": "https://github.com/mnesarco/FreeCAD_Utils",
       "git_ref": "main",
       "branch_display_name": "main",
-      "freecad_min": "0.21",
+      "freecad_min": "0.21.0",
       "zip_url": "https://github.com/mnesarco/FreeCAD_Utils/archive/refs/heads/main.zip"
     }
   ],
@@ -931,10 +960,18 @@
   ],
   "Plot": [
     {
-      "repository": "https://github.com/FreeCAD/freecad.plot",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/FreeCAD/freecad.plot/archive/refs/heads/master.zip"
+      "repository": "https://github.com/FreeCAD/Plot",
+      "git_ref": "2024.11.26",
+      "branch_display_name": "FreeCAD < 1.0",
+      "freecad_max": "0.21.99",
+      "zip_url": "https://github.com/FreeCAD/Plot/archive/refs/tags/2024.11.26.zip"
+    },
+    {
+      "repository": "https://github.com/FreeCAD/Plot",
+      "git_ref": "Latest",
+      "branch_display_name": "Latest",
+      "freecad_min": "1.0.0",
+      "zip_url": "https://github.com/FreeCAD/Plot/archive/refs/heads/Latest.zip"
     }
   ],
   "POV-Ray-Rendering": [
@@ -955,10 +992,10 @@
   ],
   "Pyramids-and-Polyhedrons": [
     {
-      "repository": "https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons/archive/refs/heads/master.zip"
+      "branch_display_name": "Latest",
+      "repository": "https://github.com/Addon-Shelter/Polyhedra",
+      "zip_url": "https://github.com/Addon-Shelter/Polyhedra/archive/refs/heads/Latest.zip",
+      "git_ref": "Latest"
     }
   ],
   "pyOpToolsWorkbench": [
@@ -1053,15 +1090,29 @@
       "repository": "https://github.com/davesrocketshop/Rocket",
       "git_ref": "v3.3.0",
       "branch_display_name": "Pre-1.0 Compatible",
-      "freecad_max": "0.21",
+      "freecad_max": "0.21.99",
       "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/tags/v3.3.0.zip"
     },
     {
       "repository": "https://github.com/davesrocketshop/Rocket",
       "git_ref": "master",
       "branch_display_name": "master",
-      "freecad_min": "1.0",
+      "freecad_min": "1.0.0",
       "zip_url": "https://github.com/davesrocketshop/Rocket/archive/refs/heads/master.zip"
+    }
+  ],
+  "SaveAndRestore": [
+    {
+      "repository": "https://github.com/APEbbers/SaveAndRestore",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/APEbbers/SaveAndRestore/archive/refs/heads/main.zip"
+    },
+    {
+      "repository": "https://github.com/APEbbers/SaveAndRestore",
+      "git_ref": "Develop",
+      "branch_display_name": "Develop",
+      "zip_url": "https://github.com/APEbbers/SaveAndRestore/archive/refs/heads/Develop.zip"
     }
   ],
   "SearchBar": [
@@ -1070,6 +1121,12 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/APEbbers/SearchBar/archive/refs/heads/main.zip"
+    },
+    {
+      "repository": "https://github.com/APEbbers/SearchBar",
+      "git_ref": "Develop",
+      "branch_display_name": "Develop",
+      "zip_url": "https://github.com/APEbbers/SearchBar/archive/refs/heads/Develop.zip"
     }
   ],
   "SelectorToolbar": [
@@ -1149,7 +1206,7 @@
       "repository": "https://github.com/mnesarco/SvgWorkbench",
       "git_ref": "main",
       "branch_display_name": "main",
-      "freecad_min": "1.0",
+      "freecad_min": "1.0.0",
       "zip_url": "https://github.com/mnesarco/SvgWorkbench/archive/refs/heads/main.zip"
     }
   ],
@@ -1175,6 +1232,14 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/FreeCAD/FreeCAD-Telemetry/archive/refs/heads/main.zip"
+    }
+  ],
+  "Templater": [
+    {
+      "repository": "https://github.com/FC-FBXL5/Templater",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/FC-FBXL5/Templater/archive/refs/heads/main.zip"
     }
   ],
   "ThreadProfile": [
@@ -1238,7 +1303,7 @@
       "repository": "https://github.com/mnesarco/Vars",
       "git_ref": "main",
       "branch_display_name": "main",
-      "freecad_min": "1.0",
+      "freecad_min": "1.0.0",
       "zip_url": "https://github.com/mnesarco/Vars/archive/refs/heads/main.zip"
     }
   ],
@@ -1256,6 +1321,14 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/Palmstroemen/WB_Organizer/archive/refs/heads/main.zip"
+    }
+  ],
+  "Woods": [
+    {
+      "repository": "https://github.com/davesrocketshop/Woods",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/davesrocketshop/Woods/archive/refs/heads/master.zip"
     }
   ],
   "woodworking": [
@@ -1282,12 +1355,20 @@
       "zip_url": "https://github.com/Rentlau/WorkFeature-WB/archive/refs/heads/master.zip"
     }
   ],
-  "yaml-workspace": [
+  "yaml-workbench": [
     {
-      "repository": "https://github.com/Mambix/FreeCAD-yaml-workspace",
+      "repository": "https://github.com/Mambix/FreeCAD-yaml-workbench",
+      "git_ref": "v0.1.4",
+      "branch_display_name": "FreeCAD < v1.0",
+      "freecad_max": "0.21.99",
+      "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workbench/archive/refs/tags/v0.1.4.zip"
+    },
+    {
+      "repository": "https://github.com/Mambix/FreeCAD-yaml-workbench",
       "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workspace/archive/refs/heads/master.zip"
+      "branch_display_name": "FreeCAD ≥ v1.0",
+      "freecad_min": "1.0.0",
+      "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workbench/archive/refs/heads/master.zip"
     }
   ]
 }

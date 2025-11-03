@@ -1,0 +1,221 @@
+name: Update constraints-pyXY.txt on PRs
+
+# When the ALLOWED_PYTHON_PACKAGES.txt file changes, update all of our constraints files on a per-Python-version
+# basis. Right now, if a package is not available for a particular version, that will cause it to fail CI.
+# Eventually this system will need to be modified such that we have ALLOWED_PYTHON_PACKAGES files on a per-version
+# basis as well.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'ALLOWED_PYTHON_PACKAGES.txt'
+      - 'constraints/*.txt'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+
+env:
+  # Explicitly allow-list packages that can be compiled from source and do not require a binary wheel
+  # These packages will be allowed to compile from source. Native extension compilation is a code-execution
+  # vector. Compilers, linkers, and build scripts are invoked; a hostile setup.py/backend can run shell
+  # commands freely. Only add packages to this list if absolutely necessary.
+  ALLOW_SDIST_PURE: "hausdorff,pydot3k,tinynumpy"
+  ALLOW_SDIST_NATIVE: "scikit-sparse"   # Behavior on user systems depends on the system
+
+  # Excluded packages: explanations for inclusion in the list...
+  #
+  # 1) When this CI script was written, the "ocp" package had an error in their wheel's metadata that prevented
+  #    the constraints.txt generation from working properly. Its wheel metadata appears to use a marker that
+  #    compares a "version" field to x86_64, which makes pip's marker evaluator try to parse x86_64 as a version.
+  #    For expediency, just exclude it from consideration.
+  EXCLUDE_PACKAGES: "ocp"   # comma-separated list
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head (fork)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+          submodules: false
+          lfs: false
+
+      - name: Validate ALLOWED_PYTHON_PACKAGES.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+          file="ALLOWED_PYTHON_PACKAGES.txt"
+          test -f "$file" || { echo "::error file=$file::File not found"; exit 1; }
+
+          # AI-assisted awk-script generation:
+          #
+          # Only allow comment lines, whitespace, and lines containing JUST a Python package name (no versions, etc.)
+          # Take some extra precautions like limiting the max line length, etc. to prevent strange malicious PRs.
+          LC_ALL=C awk -v maxlen=200 '
+            BEGIN { bad=0 }
+            function trim(s){ sub(/^[ \t]+/,"",s); sub(/[ \t]+$/,"",s); return s }
+            /^[[:space:]]*$/ { next }                  # blank
+            /^[[:space:]]*#/ { next }                   # comment
+            {
+              raw=$0
+              line=trim($0)
+              if (line ~ /^[A-Za-z0-9]([A-Za-z0-9._-]*[A-Za-z0-9])?$/) {
+                key=tolower(line); seen[key]++
+                if (length(line) > maxlen) {
+                  printf("Line %d too long: %s\n", NR, raw) > "/dev/stderr"; bad=1
+                }
+                next
+              }
+              printf("Invalid line %d: %s\n", NR, raw) > "/dev/stderr"; bad=1
+            }
+            END { for (k in seen) if (seen[k] > 1) { printf("Duplicate package: %s\n", k) > "/dev/stderr"; bad=1 } ; exit bad }
+          ' "$file"
+
+  build:
+    needs: validate
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # The Addon Manager currently supports the following versions of Python - provide a constraints file for each of them
+        py: ['3.8','3.9','3.10','3.11','3.12','3.13']
+      fail-fast: false
+    steps:
+      - name: Exclude OpenEXR and pyoptools on py3.13 (no wheels yet)
+        if: ${{ matrix.py == '3.13' }}
+        run: echo "EXCLUDE_PACKAGES=${EXCLUDE_PACKAGES},openexr,pyoptools" >> "$GITHUB_ENV"
+
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+          submodules: false
+          lfs: false
+
+      - name: Set up Python ${{ matrix.py }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.py }}
+
+      - name: Build venv and freeze
+        shell: bash
+        run: |
+          set -euo pipefail
+      
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install --upgrade pip
+      
+          # Prepare allowlist, native deps, NO_BINARY_ARGS, and prune
+          awk '
+            /^[[:space:]]*$/ { next }
+            /^[[:space:]]*#/ { next }
+            { gsub(/^[[:space:]]+|[[:space:]]+$/,"",$0); print tolower($0) }
+          ' ALLOWED_PYTHON_PACKAGES.txt > .allowed_names
+      
+          IFS=',' read -ra NATIVE <<<"${ALLOW_SDIST_NATIVE:-}"
+          if (( ${#NATIVE[@]} )); then
+            sudo apt-get update
+            sudo apt-get install -y libsuitesparse-dev
+          fi
+      
+          NO_BINARY_ARGS=()
+          for raw in $(echo "${ALLOW_SDIST_PURE},${ALLOW_SDIST_NATIVE}" | tr ',' ' '); do
+            name="$(echo "$raw" | tr 'A-Z' 'a-z' | xargs)"; [[ -z "$name" ]] && continue
+            NO_BINARY_ARGS+=( "--no-binary=$name" )
+          done
+      
+          PRUNED=.allowed_pruned.txt
+          cp .allowed_names "$PRUNED"
+          IFS=',' read -ra EXCL <<<"${EXCLUDE_PACKAGES:-}"
+          for raw in "${EXCL[@]}"; do
+            name="$(echo "$raw" | tr 'A-Z' 'a-z' | xargs)"; [[ -z "$name" ]] && continue
+            grep -Fvx "$name" "$PRUNED" > "$PRUNED.tmp" && mv "$PRUNED.tmp" "$PRUNED"
+          done
+      
+          # Install with wheels-only except for allowlisted sdists
+          pip install \
+            --require-virtualenv \
+            --disable-pip-version-check \
+            --no-cache-dir \
+            --only-binary=:all: \
+            "${NO_BINARY_ARGS[@]}" \
+            --index-url https://pypi.org/simple \
+            -r "$PRUNED"
+      
+          py_tag=$(python -c 'import sys; print(f"py{sys.version_info.major}{sys.version_info.minor}")')
+          mkdir -p constraints
+          out_basename="constraints-${py_tag}.txt"
+          out_path="constraints/${out_basename}"
+      
+          pip freeze --exclude-editable > "$out_path"
+      
+          # Expose both basename (artifact name) and path (artifact file)
+          echo "ARTIFACT_NAME=$out_basename" >> "$GITHUB_ENV"
+          echo "ARTIFACT_PATH=$out_path" >> "$GITHUB_ENV"
+          
+      - name: Upload constraints artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}   # e.g., constraints-py312.txt
+          path: ${{ env.ARTIFACT_PATH }}   # e.g., constraints/constraints-py312.txt
+          if-no-files-found: error
+          retention-days: 7
+
+  commit:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head (fork)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+          submodules: false
+          lfs: false
+
+      - name: Download constraints artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: constraints-py*.txt
+          merge-multiple: true
+          path: constraints
+
+      - name: Commit all constraints in a single commit (only if changed)
+        shell: bash
+        env:
+          PR_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          PR_REF:  ${{ github.event.pull_request.head.ref }}
+          BOT_PUSH_TOKEN: ${{ secrets.BOT_PUSH_TOKEN }}
+        run: |
+          set -euo pipefail
+          git add constraints/*.txt || true
+          if git diff --staged --quiet; then
+            echo "No changes to constraints files; nothing to commit."
+            exit 0
+          fi
+          git config user.name  "freecad-constraints-bot"
+          git config user.email "freecad-constraints-bot@users.noreply.github.com"
+          git commit -m "Update constraints based on revised ALLOWED_PYTHON_PACKAGES.txt content"
+          repo_url="https://${BOT_PUSH_TOKEN}@github.com/${PR_REPO}.git"
+          git push "${repo_url}" "HEAD:${PR_REF}"
+
+      - name: Comment on PR
+        if: ${{ success() }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              issue_number: context.payload.pull_request.number,
+              body: "🤖 Constraints Bot: regenerated the constraints files and added a commit with the changes"
+            })

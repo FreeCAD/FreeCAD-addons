@@ -133,6 +133,10 @@
     path = CommandPanel
     url = https://github.com/triplus/CommandPanel
     branch = master
+[submodule "ConstraintDesign"]
+    path = ConstraintDesign
+    url = https://github.com/drwho495/ConstraintDesign-wb
+    branch = main
 [submodule "Color-Palette-Theme"]
     branch = main
 	path = Color-Palette-Theme
@@ -463,8 +467,8 @@
     branch = master
 [submodule "Plot"]
     path = Plot
-    url = https://github.com/FreeCAD/freecad.plot
-    branch = master
+    url = https://github.com/FreeCAD/Plot
+    branch = v2024.11.26
 [submodule "POV-Ray-Rendering"]
     path = POV-Ray-Rendering
     url = https://github.com/TheRaytracers/freecad-povray-render
@@ -474,9 +478,9 @@
     url = https://github.com/turn211/ProDarkThemePreferencePack
     branch = main
 [submodule "Pyramids-and-Polyhedrons"]
+    branch = Latest
     path = Pyramids-and-Polyhedrons
-    url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons
-    branch = master
+    url = https://github.com/Addon-Shelter/Polyhedra
 [submodule "pyOpToolsWorkbench"]
     path = pyOpToolsWorkBench
     url = https://github.com/cihologramas/freecad-pyoptools
@@ -589,6 +593,10 @@
     path = Telemetry
     url = https://github.com/FreeCAD/FreeCAD-Telemetry
     branch = main
+[submodule "Templater"]
+    path = Templater
+    url = https://github.com/FC-FBXL5/Templater
+    branch = main
 [submodule "ThreadProfile"]
     path = ThreadProfile
     url = https://github.com/mwganson/ThreadProfile
@@ -629,6 +637,10 @@
     path = Workbench-Organizer
     url = https://github.com/Palmstroemen/WB_Organizer
     branch = main
+[submodule "Woods"]
+    path = Woods
+    url = https://github.com/davesrocketshop/Woods.git
+    branch = master
 [submodule "woodworking"]
     path = Woodworking
     url = https://github.com/dprojects/Woodworking
@@ -641,7 +653,7 @@
     path = workfeature
     url = https://github.com/Rentlau/WorkFeature-WB
     branch = master
-[submodule "yaml-workspace"]
-    path = yaml-workspace
-    url = https://github.com/Mambix/FreeCAD-yaml-workspace
+[submodule "yaml-workbench"]
+	path = yaml-workbench
+	url = https://github.com/Mambix/FreeCAD-yaml-workbench
     branch = master
