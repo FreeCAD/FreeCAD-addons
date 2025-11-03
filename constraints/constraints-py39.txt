@@ -48,7 +48,7 @@ ladybug-radiance==0.2.11
 lazy_loader==0.4
 llvmlite==0.43.0
 lxml==6.0.2
-Markdown==3.9
+Markdown==3.10
 markdown-it-py==3.0.0
 matplotlib==3.9.4
 mdurl==0.1.2
