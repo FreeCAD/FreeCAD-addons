@@ -91,7 +91,7 @@ pyparsing==3.1.4
 pypresence==4.3.0
 pysolar==0.13
 python-dateutil==2.9.0.post0
-python-docx==1.2.0
+python-docx==1.1.2
 python-dotenv==1.0.1
 pytz==2025.2
 pyvista==0.44.2
