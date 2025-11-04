@@ -27,7 +27,7 @@ docopt-ng==0.9.0
 docutils==0.22.2
 et_xmlfile==2.0.0
 etabs_api==1.2
-ezdxf==1.4.2
+ezdxf==1.4.3
 fonttools==4.60.1
 fsspec==2025.10.0
 geomdl==5.3.1
