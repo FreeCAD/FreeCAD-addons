@@ -378,10 +378,11 @@
   ],
   "drawing_dimensioning": [
     {
-      "repository": "https://github.com/hamish2014/FreeCAD_drawing_dimensioning",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/hamish2014/FreeCAD_drawing_dimensioning/archive/refs/heads/master.zip"
+      "branch_display_name": "< 0.20",
+      "freecad_max": "0.19.4",
+      "repository": "https://github.com/Addon-Shelter/Drawing-Dimensioning",
+      "git_ref": "v0.19.4",
+      "zip_url": "https://github.com/Addon-Shelter/Drawing-Dimensioning/archive/refs/heads/v0.19.4.zip"
     }
   ],
   "dxf-library": [

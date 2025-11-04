@@ -170,9 +170,9 @@
     url = https://github.com/dracula/freecad
     branch = master
 [submodule "drawing_dimensioning"]
+    branch = v0.19.4
     path = drawing_dimensioning
-    url = https://github.com/hamish2014/FreeCAD_drawing_dimensioning
-    branch = master
+    url = https://github.com/Addon-Shelter/Drawing-Dimensioning
 [submodule "dxf-library"]
     path = dxf_library
     url = https://github.com/yorikvanhavre/Draft-dxf-importer
