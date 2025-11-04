@@ -126,7 +126,7 @@ urllib3==2.5.0
 vedo==2025.5.4
 vermin==1.7.0
 vtk==9.5.2
-xarray==2025.10.1
+xarray==2025.6.1
 xgbxml==0.0.10
 xlrd==2.0.2
 xlutils==2.0.0
