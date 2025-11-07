@@ -1177,6 +1177,15 @@
       "zip_url": "https://github.com/limikael/freecad-slic3r-tools/archive/refs/heads/master.zip"
     }
   ],
+  "Smooth-Toolsync": [
+    {
+      "repository": "https://github.com/loobric/smooth-freecad.git",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/loobric/smooth-freecad/archive/refs/heads/master.zip",
+      "freecad_min": "1.1.0"
+    }
+  ],
   "SlopedPlanesMacro": [
     {
       "repository": "https://github.com/luzpaz/SlopedPlanesMacro",
