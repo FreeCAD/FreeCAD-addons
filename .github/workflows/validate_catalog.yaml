@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: false
+          sparse-checkout: AddonCatalog.json
 
       - name: Validate AddonCatalog.json
         uses: dsanders11/json-schema-validate-action@v1.4.0
