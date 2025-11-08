@@ -15,7 +15,8 @@ jobs:
       - uses: actions/checkout@v5
         with:
           submodules: false
-          sparse-checkout: AddonCatalog.json
+          sparse-checkout: |
+            AddonCatalog.json
 
       - name: Validate AddonCatalog.json
         uses: dsanders11/json-schema-validate-action@v1.4.0
