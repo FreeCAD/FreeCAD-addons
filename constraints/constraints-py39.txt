@@ -56,7 +56,7 @@ meshio==5.3.5
 monotonic==1.6
 mpmath==1.3.0
 msgpack==1.1.2
-networkx==3.5
+networkx==3.2.1
 nine==1.2.0
 nodeeditor==0.9.15
 numba==0.60.0
