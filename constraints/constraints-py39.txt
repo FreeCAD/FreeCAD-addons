@@ -114,7 +114,7 @@ sortedcontainers==2.4.0
 soupsieve==2.8
 streamdeck==0.9.8
 sympy==1.14.0
-testtools==2.8.0
+testtools==2.7.2
 threadpoolctl==3.6.0
 tifffile==2024.8.30
 triangle==20250106
