@@ -105,7 +105,7 @@ rich==14.2.0
 scikit-image==0.25.2
 scikit-learn==1.7.2
 scikit-sparse==0.4.16
-scipy==1.15.3
+scipy==1.16.3
 scooby==0.11.0
 sentry-sdk==2.43.0
 shapely==2.1.2
