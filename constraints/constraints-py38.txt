@@ -61,7 +61,7 @@ networkx==3.1
 nine==1.2.0
 nodeeditor==0.9.15
 numba==0.58.1
-numpy==1.24.4
+numpy==2.3.4
 olefile==0.47
 OpenEXR==3.4.3
 openpyxl==3.1.5
