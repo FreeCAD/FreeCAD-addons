@@ -8,8 +8,10 @@ are made available via FreeCAD's addon manager.
 
 <br/>
 
-[![Button Installation]][Installation]  
-[![Button Submission]][Submission]  
+[![Button Installation]][Installation]
+
+[![Button Submission]][Submission]
+
 [![Button Localization]][Localization]
 
 </div>
@@ -36,9 +38,9 @@ Bug reports and feature requests for addons should their respective repositories
 
 <!----------------------------------------------------------------------------->
 
-[Button Installation]: https://img.shields.io/badge/Installation-d45558?style=for-the-badge&logoColor=white&logo=actix
-[Button Localization]: https://img.shields.io/badge/Localization-ffaa00?style=for-the-badge&logoColor=white&logo=googletranslate
-[Button Submission]: https://img.shields.io/badge/Submission-3b8ad9?style=for-the-badge&logoColor=white&logo=testcafe
+[Button Installation]: https://img.shields.io/badge/Install_An_Addon-d45558?style=for-the-badge&logoColor=white&logo=actix
+[Button Localization]: https://img.shields.io/badge/Help_Localize_Addons-ffaa00?style=for-the-badge&logoColor=white&logo=googletranslate
+[Button Submission]: https://img.shields.io/badge/Submit_Your_Addon-3b8ad9?style=for-the-badge&logoColor=white&logo=testcafe
 
 [Addon Manager Source]: https://github.com/FreeCAD/AddonManager
 
