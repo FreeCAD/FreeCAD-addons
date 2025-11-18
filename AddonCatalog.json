@@ -865,10 +865,10 @@
   ],
   "Ondsel-Lens": [
     {
-      "repository": "https://github.com/Ondsel-Development/Ondsel-Lens-Addon",
+      "repository": "https://github.com/FreeCAD/Ondsel-Lens-Addon",
       "git_ref": "main",
       "branch_display_name": "main",
-      "zip_url": "https://github.com/Ondsel-Development/Ondsel-Lens-Addon/archive/refs/heads/main.zip"
+      "zip_url": "https://github.com/FreeCAD/Ondsel-Lens-Addon/archive/refs/heads/main.zip"
     }
   ],
   "OpenTheme": [
