@@ -39,7 +39,7 @@ ijson==3.3.0
 imageio==2.35.1
 importlib_metadata==8.5.0
 importlib_resources==6.4.5
-joblib==1.4.2
+joblib==1.5.2
 kiwisolver==1.4.7
 ladybug-comfort==0.18.95
 ladybug-core==0.44.28
