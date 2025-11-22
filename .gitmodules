@@ -81,10 +81,6 @@
     path = btl
     url = https://github.com/knipknap/better-tool-library
     branch = main
-[submodule "BIMBots"]
-    path = BIMBots
-    url = https://github.com/opensourceBIM/BIMbots-FreeCAD
-    branch = master
 [submodule "BIM"]
     path = BIM
     url = https://github.com/yorikvanhavre/BIM_Workbench
