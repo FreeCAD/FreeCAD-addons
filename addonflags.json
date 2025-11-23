@@ -4,7 +4,8 @@
         "Mod": [
             "assembly2",
             "drawing_dimensioning",
-            "cura_engine"
+            "cura_engine",
+            "BIMBots"
         ]
     },
     "deprecated" : [
@@ -25,12 +26,6 @@
             "kind":"mod",
             "as_of":"0.22",
             "notes":"Feature merged into FreeCAD"
-        },
-        {
-            "name":"BIMBots",
-            "kind":"mod",
-            "as_of":"0.22",
-            "notes":"Service cancelled - see https://github.com/opensourceBIM/BIMbots-FreeCAD/issues/2"
         },
         {
             "name":"CommandPanel",

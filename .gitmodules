@@ -81,10 +81,6 @@
     path = btl
     url = https://github.com/knipknap/better-tool-library
     branch = main
-[submodule "BIMBots"]
-    path = BIMBots
-    url = https://github.com/opensourceBIM/BIMbots-FreeCAD
-    branch = master
 [submodule "bimtester"]
     path = bimtester
     url = https://github.com/bimtester/bimtesterfc
@@ -411,7 +407,7 @@
     branch = main
 [submodule "Ondsel-Lens"]
     path = Ondsel-Lens
-    url = https://github.com/Ondsel-Development/Ondsel-Lens-Addon
+    url = https://github.com/FreeCAD/Ondsel-Lens-Addon
     branch = main
 [submodule "OpenTheme"]
     path = OpenTheme
@@ -463,8 +459,8 @@
     branch = master
 [submodule "Plot"]
     path = Plot
-    url = https://github.com/FreeCAD/freecad.plot
-    branch = master
+    url = https://github.com/FreeCAD/Plot
+    branch = v2024.11.26
 [submodule "POV-Ray-Rendering"]
     path = POV-Ray-Rendering
     url = https://github.com/TheRaytracers/freecad-povray-render
@@ -474,9 +470,9 @@
     url = https://github.com/turn211/ProDarkThemePreferencePack
     branch = main
 [submodule "Pyramids-and-Polyhedrons"]
+    branch = Latest
     path = Pyramids-and-Polyhedrons
-    url = https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons
-    branch = master
+    url = https://github.com/Addon-Shelter/Polyhedra
 [submodule "pyOpToolsWorkbench"]
     path = pyOpToolsWorkBench
     url = https://github.com/cihologramas/freecad-pyoptools
