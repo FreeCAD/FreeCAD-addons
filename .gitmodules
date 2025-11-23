@@ -81,10 +81,6 @@
     path = btl
     url = https://github.com/knipknap/better-tool-library
     branch = main
-[submodule "BIM"]
-    path = BIM
-    url = https://github.com/yorikvanhavre/BIM_Workbench
-    branch = master
 [submodule "bimtester"]
     path = bimtester
     url = https://github.com/bimtester/bimtesterfc

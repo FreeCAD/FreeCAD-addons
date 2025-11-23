@@ -194,7 +194,8 @@
       "repository": "https://github.com/yorikvanhavre/BIM_Workbench",
       "git_ref": "master",
       "branch_display_name": "master",
-      "zip_url": "https://github.com/yorikvanhavre/BIM_Workbench/archive/refs/heads/master.zip"
+      "zip_url": "https://github.com/yorikvanhavre/BIM_Workbench/archive/refs/heads/master.zip" ,
+      "freecad_max": "0.21.99"
     }
   ],
   "bimtester": [
