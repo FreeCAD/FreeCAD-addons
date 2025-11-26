@@ -78,6 +78,7 @@ pynastran
 pyopenxr
 pyoptools
 pypresence
+pyproj
 pysolar
 python-dateutil
 python-docx
