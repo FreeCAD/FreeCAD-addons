@@ -1372,5 +1372,14 @@
       "freecad_min": "1.0.0",
       "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workbench/archive/refs/heads/master.zip"
     }
+  ],
+  "CAM_Experimental": [
+    {
+      "repository": "https://github.com/boothg599/FreeCAD-CAM-Addons",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/boothg599/FreeCAD-CAM-Addons/archive/refs/heads/main.zip",
+      "freecad_min": "0.21.0"
+    }
   ]
 }
