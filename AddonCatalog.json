@@ -795,7 +795,8 @@
       "repository": "https://github.com/NSUBB/MeshToBody",
       "git_ref": "main",
       "branch_display_name": "main",
-      "zip_url": "https://github.com/NSUBB/MeshToBody/archive/refs/heads/main.zip"
+      "zip_url": "https://github.com/NSUBB/MeshToBody/archive/refs/heads/main.zip",
+      "freecad_min": "1.0.0"
     }
   ],
   "MnesarcoUtils": [
