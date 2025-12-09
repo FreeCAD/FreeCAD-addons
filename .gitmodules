@@ -565,6 +565,10 @@
     path = SlopedPlanesMacro
     url = https://github.com/luzpaz/SlopedPlanesMacro
     branch = master
+[submodule "Solar"]
+    branch = main
+    path = Solar
+    url = https://github.com/Francisco-Rosa/Solar
 [submodule "SteelColumn"]
     path = SteelColumn
     url = https://github.com/ebrahimraeyat/momen
