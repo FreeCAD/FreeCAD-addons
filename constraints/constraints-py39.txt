@@ -28,7 +28,7 @@ docutils==0.22.3
 et_xmlfile==2.0.0
 etabs_api==1.2
 ezdxf==1.4.2
-fonttools==4.60.1
+fonttools==4.60.2
 fsspec==2025.10.0
 geomdl==5.3.1
 glfw==2.10.0
