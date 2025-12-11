@@ -49,7 +49,7 @@ llvmlite==0.46.0
 lxml==6.0.2
 Markdown==3.10
 markdown-it-py==4.0.0
-matplotlib==3.10.7
+matplotlib==3.10.8
 mdurl==0.1.2
 meshio==5.3.5
 monotonic==1.6
@@ -58,7 +58,7 @@ msgpack==1.1.2
 networkx==3.6.1
 nine==1.2.0
 nodeeditor==0.9.15
-numba==0.62.1
+numba==0.63.1
 numpy==1.26.4
 olefile==0.47
 OpenEXR==3.4.4
@@ -103,7 +103,7 @@ requests==2.32.5
 rhino3dm==8.17.0
 rich==14.2.0
 scikit-image==0.25.2
-scikit-learn==1.7.2
+scikit-learn==1.8.0
 scikit-sparse==0.4.16
 scipy==1.16.3
 scooby==0.11.0
@@ -119,7 +119,7 @@ threadpoolctl==3.6.0
 tifffile==2025.10.16
 triangle==20250106
 trimesh==4.10.1
-txaio==25.12.1
+txaio==25.12.2
 typing_extensions==4.15.0
 tzdata==2025.2
 tzlocal==5.3.1

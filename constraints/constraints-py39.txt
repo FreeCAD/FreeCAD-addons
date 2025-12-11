@@ -28,7 +28,7 @@ docutils==0.22.3
 et_xmlfile==2.0.0
 etabs_api==1.2
 ezdxf==1.4.2
-fonttools==4.60.1
+fonttools==4.60.2
 fsspec==2025.10.0
 geomdl==5.3.1
 glfw==2.10.0
@@ -46,7 +46,7 @@ ladybug-display==0.13.3
 ladybug-geometry==1.34.14
 ladybug-radiance==0.2.11
 lazy_loader==0.4
-llvmlite==0.46.0
+llvmlite==0.43.0
 lxml==6.0.2
 Markdown==3.9
 markdown-it-py==3.0.0
