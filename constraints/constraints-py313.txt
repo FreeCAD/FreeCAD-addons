@@ -1,9 +1,9 @@
 aiofiles==25.1.0
 aiosqlite==0.22.0
-antlr4-python3-runtime==4.13.2
+antlr4-python3-runtime==4.13.1
 asyncua==1.1.8
-atomicwrites==1.4.1
-autobahn==25.12.2
+atomicwrites==1.4.0
+autobahn==25.10.2
 awkward==2.8.11
 awkward_cpp==51
 backoff==2.2.1
@@ -13,7 +13,7 @@ capytaine==2.3.1
 certifi==2025.11.12
 cffi==2.0.0
 charset-normalizer==3.4.4
-click==8.3.1
+click==8.1.7
 comtypes==1.4.14
 configparser==7.2.0
 contourpy==1.3.3
@@ -79,7 +79,7 @@ pyg4ometry==1.4.2
 pygit2==1.19.0
 Pygments==2.19.2
 PyJWT==2.10.1
-pyNastran==1.4.1
+pyNastran==1.3.4
 PyOpenGL==3.1.10
 pyOpenSSL==25.3.0
 pyopenxr==1.1.5301

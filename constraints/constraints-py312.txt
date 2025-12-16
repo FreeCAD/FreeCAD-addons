@@ -1,9 +1,9 @@
 aiofiles==25.1.0
 aiosqlite==0.22.0
-antlr4-python3-runtime==4.13.2
+antlr4-python3-runtime==4.13.1
 asyncua==1.1.8
-atomicwrites==1.4.1
-autobahn==25.12.2
+atomicwrites==1.4.0
+autobahn==25.10.2
 awkward==2.8.11
 awkward_cpp==51
 backoff==2.2.1
@@ -13,7 +13,7 @@ capytaine==2.3.1
 certifi==2025.11.12
 cffi==2.0.0
 charset-normalizer==3.4.4
-click==8.3.1
+click==8.1.7
 colorama==0.4.6
 comtypes==1.4.14
 configparser==7.2.0
@@ -59,7 +59,7 @@ networkx==3.6.1
 nine==1.2.0
 nodeeditor==0.9.15
 numba==0.63.1
-numpy==2.3.5
+numpy==1.26.4
 olefile==0.47
 OpenEXR==3.4.4
 openpyxl==3.1.5
