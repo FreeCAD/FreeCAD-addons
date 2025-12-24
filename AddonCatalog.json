@@ -1188,6 +1188,14 @@
       "zip_url": "https://github.com/luzpaz/SlopedPlanesMacro/archive/refs/heads/master.zip"
     }
   ],
+  "Solar": [
+    {
+      "repository": "https://github.com/Francisco-Rosa/Solar",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/Francisco-Rosa/Solar/archive/refs/heads/main.zip"
+    }
+  ],
   "SteelColumn": [
     {
       "repository": "https://github.com/ebrahimraeyat/momen",
