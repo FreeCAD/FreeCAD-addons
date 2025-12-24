@@ -465,6 +465,14 @@
       "zip_url": "https://github.com/HarryvL/fcVM-workbench/archive/refs/heads/main.zip"
     }
   ],
+  "FileExplorerExt": [
+    {
+      "repository": "https://github.com/mnesarco/FileExplorerExt",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/mnesarco/FileExplorerExt/archive/refs/heads/main.zip"
+    }
+  ],
   "FoamCut": [
     {
       "repository": "https://github.com/Shkolik/Foamcut",

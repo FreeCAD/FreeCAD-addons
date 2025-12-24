@@ -156,7 +156,7 @@
 [submodule "Design456"]
     path = Design456
     url = https://github.com/MariwanJ/Design456
-    branch = main    
+    branch = main
 [submodule "DesignSPHysics"]
     path = DesignSPHysics
     url = https://github.com/DualSPHysics/DesignSPHysics
@@ -208,6 +208,10 @@
 [submodule "Fcmcua"]
     path = Fcmcua
     url = https://github.com/heissgetraenk/fcmcua
+    branch = main
+[submodule "FileExplorerExt"]
+    path = FileExplorerExt
+    url = https://github.com/mnesarco/FileExplorerExt
     branch = main
 [submodule "fcVM"]
 	path = fcVM
@@ -596,7 +600,7 @@
 [submodule "TitleBlock"]
     path = TitleBlock
     url = https://github.com/APEbbers/TitleBlock-WB
-    branch = main 
+    branch = main
 [submodule "timber"]
     path = timber
     url = https://github.com/wood-galaxy/FreeCAD-Timber
