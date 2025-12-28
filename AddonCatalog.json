@@ -620,7 +620,7 @@
       "repository": "https://github.com/30350n/free2ki",
       "git_ref": "freecad-addons",
       "branch_display_name": "freecad-addons",
-      "zip_url": "https://github.com/30350n/free2ki/archive/refs/heads/freecad-addons.zip"
+      "zip_url": "https://github.com/30350n/free2ki/releases/latest/download/free2ki.zip"
     }
   ],
   "FreeGrid": [
