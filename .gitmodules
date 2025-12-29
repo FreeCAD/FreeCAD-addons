@@ -537,6 +537,10 @@
     path = SelectorToolbar
     url = https://github.com/triplus/SelectorToolbar
     branch = master
+[submodule "ShapeStrings"]
+    branch = main
+    path = ShapeStrings
+    url = https://github.com/robertmassaioli/shapestrings
 [submodule "sheetmetal"]
     path = sheetmetal
     url = https://github.com/shaise/FreeCAD_SheetMetal
