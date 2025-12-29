@@ -1139,6 +1139,14 @@
       "zip_url": "https://github.com/triplus/SelectorToolbar/archive/refs/heads/master.zip"
     }
   ],
+  "ShapeStrings": [
+    {
+        "branch_display_name": "Main",
+        "repository": "https://github.com/robertmassaioli/shapestrings",
+        "git_ref": "main",
+        "zip_url": "https://github.com/robertmassaioli/shapestrings/archive/refs/heads/main.zip"
+    }
+  ],
   "sheetmetal": [
     {
       "repository": "https://github.com/shaise/FreeCAD_SheetMetal",
