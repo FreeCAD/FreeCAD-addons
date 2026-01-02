@@ -657,3 +657,6 @@
 	path = yaml-workbench
 	url = https://github.com/Mambix/FreeCAD-yaml-workbench
     branch = master
+[submodule "FingerboardMoldPro"]
+	path = FingerboardMoldPro
+	url = https://github.com/alessandroabbasciano-cpu/FingerboardMoldPro.git
