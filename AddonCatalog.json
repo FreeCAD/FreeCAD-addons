@@ -792,6 +792,15 @@
       "zip_url": "https://github.com/mwganson/MeshRemodel/archive/refs/heads/master.zip"
     }
   ],
+  "MeshToBody": [
+    {
+      "repository": "https://github.com/NSUBB/MeshToBody",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/NSUBB/MeshToBody/archive/refs/heads/main.zip",
+      "freecad_min": "1.0.0"
+    }
+  ],
   "MnesarcoUtils": [
     {
       "repository": "https://github.com/mnesarco/FreeCAD_Utils",
