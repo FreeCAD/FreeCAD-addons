@@ -565,6 +565,9 @@
     path = SlopedPlanesMacro
     url = https://github.com/luzpaz/SlopedPlanesMacro
     branch = master
+[submodule "StandardBeams"]
+    path = StandardBeams
+    url = https://github.com/MortenVajhoj/StandardBeams
 [submodule "SteelColumn"]
     path = SteelColumn
     url = https://github.com/ebrahimraeyat/momen

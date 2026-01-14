@@ -1204,6 +1204,14 @@
       "zip_url": "https://github.com/luzpaz/SlopedPlanesMacro/archive/refs/heads/master.zip"
     }
   ],
+  "StandardBeams": [
+    {
+      "repository": "https://github.com/MortenVajhoj/StandardBeams",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/MortenVajhoj/StandardBeams/archive/refs/heads/master.zip"
+    }
+  ],
   "SteelColumn": [
     {
       "repository": "https://github.com/ebrahimraeyat/momen",
