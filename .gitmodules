@@ -6,6 +6,10 @@
     path = 3DfindIT
     url = https://github.com/cadenasgmbh/3dfindit-freecad-integration
     branch = master
+[submodule "3DPrintMultiExportMacro"]
+    path = freecad-macro-3d-print-multi-export
+    url = https://github.com/spkane/freecad-macro-3d-print-multi-export
+    branch = main
 [submodule "A2plus"]
     path = A2plus
     url = https://github.com/kbwbe/A2plus
@@ -148,6 +152,10 @@
 [submodule "Curves"]
     path = Curves
     url = https://github.com/tomate44/CurvesWB
+    branch = main
+[submodule "CutObjectForMagnetsMacro"]
+    path = freecad-macro-cut-for-magnets
+    url = https://github.com/spkane/freecad-macro-cut-for-magnets
     branch = main
 [submodule "Defeaturing"]
     path = Defeaturing
@@ -520,6 +528,10 @@
 [submodule "Road"]
     path = Road
     url = https://github.com/HakanSeven12/Road
+    branch = main
+[submodule "RobustMCPBridge"]
+    path = freecad-addon-robust-mcp-server
+    url = https://github.com/spkane/freecad-addon-robust-mcp-server
     branch = main
 [submodule "Rocket"]
     path = Rocket

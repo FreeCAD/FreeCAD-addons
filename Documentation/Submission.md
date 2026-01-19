@@ -70,7 +70,7 @@ The addon manager always installs the latest *Head* of the specified branch and 
 <!----------------------------------------------------------------------------->
 
 [SheetMetal Workbench]: https://github.com/shaise/FreeCAD_SheetMetal/blob/master/README.md
-[External Workbenches]: https://freecadweb.org/wiki/External_workbenches
+[External Workbenches]: https://wiki.freecad.org/External_workbenches
 [Package Manifest]: https://wiki.freecad.org/Package_Metadata
 [Issue Template]: https://github.com/FreeCAD/FreeCAD-addons/issues/new?template=2-Addon-Addition.md
 [Pull Request]: https://github.com/FreeCAD/FreeCAD-addons

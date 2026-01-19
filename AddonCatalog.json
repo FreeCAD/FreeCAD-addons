@@ -20,6 +20,14 @@
       "zip_url": "https://github.com/cadenasgmbh/3dfindit-freecad-integration/archive/refs/heads/master.zip"
     }
   ],
+  "3DPrintMultiExportMacro": [
+      {
+          "repository": "https://github.com/spkane/freecad-macro-3d-print-multi-export",
+          "git_ref": "main",
+          "branch_display_name": "main",
+          "zip_url": "https://github.com/spkane/freecad-macro-3d-print-multi-export/archive/refs/heads/main.zip"
+      }
+  ],
   "A2plus": [
     {
       "repository": "https://github.com/kbwbe/A2plus",
@@ -335,6 +343,14 @@
       "branch_display_name": "main",
       "zip_url": "https://github.com/tomate44/CurvesWB/archive/refs/heads/main.zip"
     }
+  ],
+  "CutObjectForMagnetsMacro": [
+      {
+          "repository": "https://github.com/spkane/freecad-macro-cut-for-magnets",
+          "git_ref": "main",
+          "branch_display_name": "main",
+          "zip_url": "https://github.com/spkane/freecad-macro-cut-for-magnets/archive/refs/heads/main.zip"
+      }
   ],
   "Defeaturing": [
     {
@@ -1086,6 +1102,14 @@
       "branch_display_name": "main",
       "zip_url": "https://github.com/HakanSeven12/Road/archive/refs/heads/main.zip"
     }
+  ],
+  "RobustMCPBridge": [
+      {
+          "repository": "https://github.com/spkane/freecad-addon-robust-mcp-server",
+          "git_ref": "main",
+          "branch_display_name": "main",
+          "zip_url": "https://github.com/spkane/freecad-addon-robust-mcp-server/archive/refs/heads/main.zip"
+      }
   ],
   "Rocket": [
     {
