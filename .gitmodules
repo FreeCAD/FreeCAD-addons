@@ -625,6 +625,10 @@
     path = ToolbarStyle
     url = https://github.com/triplus/ToolbarStyle
     branch = master
+[submodule "Toup"]
+    path = Toup
+    url = https://gitlab.com/toup.studio/toup
+    branch = master
 [submodule "freecad-wakatime"]
     path = freecad-wakatime
     url = https://github.com/Pegoku/freecad-wakatime
