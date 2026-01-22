@@ -130,9 +130,9 @@
     url = https://github.com/drwho495/ConstraintDesign-wb
     branch = main
 [submodule "Color-Palette-Theme"]
-    branch = main
 	path = Color-Palette-Theme
 	url = https://github.com/altangarts/FreeCAD-Themes-ColorPalette
+    branch = main
 [submodule "CubeMenu"]
     path = CubeMenu
     url = https://github.com/triplus/CubeMenu
@@ -170,9 +170,9 @@
     url = https://github.com/dracula/freecad
     branch = master
 [submodule "drawing_dimensioning"]
-    branch = v0.19.4
     path = drawing_dimensioning
     url = https://github.com/Addon-Shelter/Drawing-Dimensioning
+    branch = v0.19.4
 [submodule "dxf-library"]
     path = dxf_library
     url = https://github.com/yorikvanhavre/Draft-dxf-importer
@@ -474,9 +474,9 @@
     url = https://github.com/turn211/ProDarkThemePreferencePack
     branch = main
 [submodule "Pyramids-and-Polyhedrons"]
-    branch = Latest
     path = Pyramids-and-Polyhedrons
     url = https://github.com/Addon-Shelter/Polyhedra
+    branch = Latest
 [submodule "pyOpToolsWorkbench"]
     path = pyOpToolsWorkBench
     url = https://github.com/cihologramas/freecad-pyoptools
@@ -538,9 +538,9 @@
     url = https://github.com/triplus/SelectorToolbar
     branch = master
 [submodule "ShapeStrings"]
-    branch = main
     path = ShapeStrings
     url = https://github.com/robertmassaioli/shapestrings
+    branch = main
 [submodule "sheetmetal"]
     path = sheetmetal
     url = https://github.com/shaise/FreeCAD_SheetMetal
@@ -565,9 +565,14 @@
     path = SlopedPlanesMacro
     url = https://github.com/luzpaz/SlopedPlanesMacro
     branch = master
+[submodule "Solar"]
+    path = Solar
+    url = https://github.com/Francisco-Rosa/Solar
+    branch = main
 [submodule "StandardBeams"]
     path = StandardBeams
     url = https://github.com/MortenVajhoj/StandardBeams
+    branch = main
 [submodule "SteelColumn"]
     path = SteelColumn
     url = https://github.com/ebrahimraeyat/momen

@@ -1204,12 +1204,20 @@
       "zip_url": "https://github.com/luzpaz/SlopedPlanesMacro/archive/refs/heads/master.zip"
     }
   ],
+  "Solar": [
+    {
+      "branch_display_name": "Main",
+      "repository": "https://github.com/Francisco-Rosa/Solar",
+      "zip_url": "https://github.com/Francisco-Rosa/Solar/archive/refs/heads/main.zip" ,
+      "git_ref": "main"
+    }
+  ],
   "StandardBeams": [
     {
+      "branch_display_name": "Latest",
       "repository": "https://github.com/MortenVajhoj/StandardBeams",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/MortenVajhoj/StandardBeams/archive/refs/heads/master.zip"
+      "zip_url": "https://github.com/MortenVajhoj/StandardBeams/archive/refs/heads/main.zip",
+      "git_ref": "main"
     }
   ],
   "SteelColumn": [
