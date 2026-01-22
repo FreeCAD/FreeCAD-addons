@@ -1212,6 +1212,14 @@
       "git_ref": "main"
     }
   ],
+  "StandardBeams": [
+    {
+      "branch_display_name": "Latest",
+      "repository": "https://github.com/MortenVajhoj/StandardBeams",
+      "zip_url": "https://github.com/MortenVajhoj/StandardBeams/archive/refs/heads/main.zip",
+      "git_ref": "main"
+    }
+  ],
   "SteelColumn": [
     {
       "repository": "https://github.com/ebrahimraeyat/momen",

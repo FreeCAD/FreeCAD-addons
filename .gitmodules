@@ -569,6 +569,10 @@
     path = Solar
     url = https://github.com/Francisco-Rosa/Solar
     branch = main
+[submodule "StandardBeams"]
+    path = StandardBeams
+    url = https://github.com/MortenVajhoj/StandardBeams
+    branch = main
 [submodule "SteelColumn"]
     path = SteelColumn
     url = https://github.com/ebrahimraeyat/momen
