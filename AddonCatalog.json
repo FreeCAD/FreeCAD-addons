@@ -806,7 +806,8 @@
       "repository": "https://github.com/HakanSeven12/Modern-UI",
       "git_ref": "master",
       "branch_display_name": "master",
-      "zip_url": "https://github.com/HakanSeven12/Modern-UI/archive/refs/heads/master.zip"
+      "zip_url": "https://github.com/HakanSeven12/Modern-UI/archive/refs/heads/master.zip",
+      "freecad_max": "1.1.99"
     }
   ],
   "MOOC": [
