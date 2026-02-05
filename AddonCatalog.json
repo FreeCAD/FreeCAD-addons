@@ -1326,6 +1326,14 @@
       "zip_url": "https://github.com/triplus/ToolbarStyle/archive/refs/heads/master.zip"
     }
   ],
+  "Toup": [
+    {
+      "repository": "https://gitlab.com/toup.studio/toup",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://gitlab.com/toup.studio/toup/-/archive/main/toup-main.zip"
+    }
+  ],    
   "freecad-wakatime": [
     {
       "repository": "https://github.com/Pegoku/freecad-wakatime",
