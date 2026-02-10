@@ -16,7 +16,7 @@
 [submodule "AddonManager"]
     path = AddonManager
     url = https://github.com/FreeCAD/AddonManager
-    branch = main
+    branch = Qt5Py38Compatibility
 [submodule "AirPlaneDesign"]
     path = AirPlaneDesign
     url = https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
