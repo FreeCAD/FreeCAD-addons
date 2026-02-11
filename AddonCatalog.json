@@ -336,6 +336,14 @@
       "zip_url": "https://github.com/tomate44/CurvesWB/archive/refs/heads/main.zip"
     }
   ],
+  "DataManager": [
+    {
+      "repository": "https://github.com/royw/freecad_datamanager_workbench",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/royw/freecad_datamanager_workbench/archive/refs/heads/master.zip"
+    }
+  ],
   "Defeaturing": [
     {
       "repository": "https://github.com/easyw/Defeaturing_WB",

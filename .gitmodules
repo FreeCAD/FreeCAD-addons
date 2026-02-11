@@ -665,3 +665,7 @@
 	path = yaml-workbench
 	url = https://github.com/Mambix/FreeCAD-yaml-workbench
     branch = master
+[submodule "datamanager_wb"]
+	path = datamanager_wb
+	url = https://github.com/royw/freecad_datamanager_workbench
+	branch = master
