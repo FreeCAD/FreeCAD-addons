@@ -42,15 +42,23 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/FreeCAD/AddonManager/archive/refs/heads/main.zip",
-      "freecad_min": "0.20.1"
+      "freecad_min": "1.0.0"
     },
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "dev",
       "branch_display_name": "development",
       "zip_url": "https://github.com/FreeCAD/AddonManager/archive/refs/heads/dev.zip",
-      "freecad_min": "0.20.1"
+      "freecad_min": "1.0.0"
     }
+    {
+      "repository": "https://github.com/FreeCAD/AddonManager",
+      "git_ref": "Qt5Py38Compatibility",
+      "branch_display_name": "Qt5/Python 3.8 Compatibility",
+      "zip_url": "https://github.com/FreeCAD/AddonManager/archive/refs/heads/Qt5Py38Compatibility.zip",
+      "freecad_min": "0.20.1",
+      "freecad_max": "1.1.99"
+    },
   ],
   "AirPlaneDesign": [
     {
