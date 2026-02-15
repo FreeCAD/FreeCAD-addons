@@ -373,6 +373,10 @@
     path = MeshRemodel
     url = https://github.com/mwganson/MeshRemodel
     branch = master
+[submodule "MeshToBody"]
+  path = MeshToBody
+  url = https://github.com/NSUBB/MeshToBody.git
+  branch = main
 [submodule "MnesarcoUtils"]
     path = MnesarcoUtils
     url = https://github.com/mnesarco/FreeCAD_Utils
