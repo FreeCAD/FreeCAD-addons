@@ -249,6 +249,10 @@
     path = freecad.optics_design_workbench
     url = https://github.com/zaphB/freecad.optics_design_workbench
     branch = master
+[submodule "FreeCAD-Parametric-Hatch-Macro"]
+    path = FreeCAD-Parametric-Hatch-Macro
+    url = https://github.com/chopinregis/FreeCAD-Parametric-Hatch-Generator
+    branch = main
 [submodule "FreeCAD-Ribbon"]
     path = FreeCAD-Ribbon
     url = https://github.com/APEbbers/FreeCAD-Ribbon
