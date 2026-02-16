@@ -921,6 +921,13 @@
       "branch_display_name": "main"
     }
   ],
+  "panelsstyler": [
+    {
+	  "repository": "https://github.com/bmateev/PanelsStyler",
+	  "git_ref": "main",
+	  "branch_display_name": "main"
+    }
+  ],
   "Part-o-magic": [
     {
       "repository": "https://github.com/DeepSOIC/Part-o-magic",
