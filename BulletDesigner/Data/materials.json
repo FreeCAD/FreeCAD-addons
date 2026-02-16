@@ -1,0 +1,46 @@
+{
+  "materials": [
+    {
+      "name": "Pure Copper",
+      "density": 8.96,
+      "color": [0.72, 0.45, 0.20],
+      "description": "Pure copper, excellent for monolithic bullets"
+    },
+    {
+      "name": "Gilding Metal (95/5)",
+      "density": 8.86,
+      "color": [0.80, 0.50, 0.20],
+      "description": "95% copper, 5% zinc - common bullet jacket material"
+    },
+    {
+      "name": "Brass (70/30)",
+      "density": 8.53,
+      "color": [0.88, 0.78, 0.50],
+      "description": "70% copper, 30% zinc - harder than gilding metal"
+    },
+    {
+      "name": "Lead Core",
+      "density": 11.34,
+      "color": [0.40, 0.40, 0.40],
+      "description": "Pure lead - traditional bullet core material"
+    },
+    {
+      "name": "Copper Alloy",
+      "density": 8.70,
+      "color": [0.70, 0.50, 0.30],
+      "description": "General purpose copper alloy"
+    },
+    {
+      "name": "Lead-Tin Alloy (95/5)",
+      "density": 11.20,
+      "color": [0.45, 0.45, 0.45],
+      "description": "95% lead, 5% tin - common cast bullet alloy"
+    },
+    {
+      "name": "Steel",
+      "density": 7.85,
+      "color": [0.50, 0.50, 0.55],
+      "description": "Steel core for armor-piercing bullets"
+    }
+  ]
+}

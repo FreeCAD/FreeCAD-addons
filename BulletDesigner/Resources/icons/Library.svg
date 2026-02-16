@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bookshelf -->
+  <rect x="8" y="12" width="48" height="40" fill="#8B4513" stroke="#333" stroke-width="2"/>
+  <!-- Shelves -->
+  <line x1="8" y1="24" x2="56" y2="24" stroke="#654321" stroke-width="2"/>
+  <line x1="8" y1="36" x2="56" y2="36" stroke="#654321" stroke-width="2"/>
+  <!-- Books -->
+  <rect x="12" y="14" width="6" height="8" fill="#FF6B6B"/>
+  <rect x="20" y="14" width="6" height="8" fill="#4ECDC4"/>
+  <rect x="28" y="14" width="6" height="8" fill="#FFE66D"/>
+  <rect x="12" y="26" width="6" height="8" fill="#95E1D3"/>
+  <rect x="20" y="26" width="6" height="8" fill="#F38181"/>
+  <rect x="28" y="26" width="6" height="8" fill="#AA96DA"/>
+</svg>
