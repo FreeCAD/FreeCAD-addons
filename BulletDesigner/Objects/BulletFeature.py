@@ -280,6 +280,52 @@ class BulletFeature:
             App.Console.PrintMessage("  Skipping - still initializing\n")
             return
         
+        # Check if bullet is in a Body that's causing errors and remove it
+        # This fixes issues with Bodies created by old code that don't work properly
+        try:
+            doc = obj.Document
+            bodies_to_fix = []
+            for body_obj in doc.Objects:
+                if hasattr(body_obj, 'TypeId') and body_obj.TypeId == 'PartDesign::Body':
+                    # Check if this Body has our bullet as BaseFeature or in Group
+                    needs_fix = False
+                    if hasattr(body_obj, 'BaseFeature') and body_obj.BaseFeature == obj:
+                        needs_fix = True
+                    elif hasattr(body_obj, 'Group') and obj in body_obj.Group:
+                        needs_fix = True
+                    
+                    if needs_fix:
+                        bodies_to_fix.append(body_obj)
+            
+            # Remove bullet from all problematic Bodies
+            for body_obj in bodies_to_fix:
+                try:
+                    # Remove from BaseFeature
+                    if hasattr(body_obj, 'BaseFeature') and body_obj.BaseFeature == obj:
+                        body_obj.BaseFeature = None
+                        App.Console.PrintMessage(f"  Removed bullet from Body '{body_obj.Label}' BaseFeature\n")
+                    
+                    # Remove from Group
+                    if hasattr(body_obj, 'Group') and obj in body_obj.Group:
+                        body_obj.Group = [item for item in body_obj.Group if item != obj]
+                        App.Console.PrintMessage(f"  Removed bullet from Body '{body_obj.Label}' Group\n")
+                    
+                    # If Body is now empty, optionally delete it (but don't force it)
+                    # User can delete manually if they want
+                except Exception as e_body:
+                    App.Console.PrintWarning(f"  Could not remove bullet from Body '{body_obj.Label}': {e_body}\n")
+        except Exception as e:
+            # Non-critical - continue with geometry generation
+            App.Console.PrintWarning(f"  Could not check Bodies: {e}\n")
+        
+        # Note: Automatic Body creation removed due to FreeCAD compatibility issues
+        # Part::FeaturePython objects with custom Proxy may not be recognized as valid BaseFeature
+        # Users should manually create a PartDesign Body and set the bullet as BaseFeature:
+        #   1. Create a new PartDesign Body
+        #   2. Set the bullet object as the Body's BaseFeature property
+        #   3. Set the Body as active
+        # This allows sketch attachment to bullet faces without "make independent copy" dialog
+        
         # Early return if essential properties don't exist yet
         if not hasattr(obj, "Length") or not hasattr(obj, "Diameter"):
             App.Console.PrintMessage("  Skipping - essential properties not set yet\n")
@@ -486,19 +532,27 @@ class BulletFeature:
             # FreeCAD's section view tool requires shapes with identity placement
             bullet_solid.Placement = App.Placement()
             
-            # Set the shape - this is critical for section views
+            # Set the shape - this is critical for section views and face attachment
             obj.Shape = bullet_solid
             
             # CRITICAL: Verify shape before assignment
             if bullet_solid.isNull():
                 raise ValueError("Bullet solid is null")
             
-            # Set the shape
-            obj.Shape = bullet_solid
-            
             # CRITICAL: Force FreeCAD to recognize the shape change
             # This ensures the bounding box is properly calculated and available for section views
+            # Also ensures faces are properly exposed for sketch attachment
             obj.enforceRecompute()
+            
+            # Ensure the shape is properly registered for face selection
+            # This is important for sketch attachment in PartDesign
+            if hasattr(obj, 'Shape') and not obj.Shape.isNull():
+                # Access faces to ensure they're properly computed
+                try:
+                    faces = obj.Shape.Faces
+                    App.Console.PrintMessage(f"  Shape has {len(faces)} faces (available for sketch attachment)\n")
+                except:
+                    pass
             
             # Verify shape was set correctly
             if not hasattr(obj, 'Shape') or obj.Shape.isNull():
@@ -755,6 +809,9 @@ def makeBulletFeature(name="Bullet"):
         App.Console.PrintError("No active document\n")
         return None
     
+    # Create as Part::FeaturePython (not PartDesign::FeaturePython)
+    # PartDesign Bodies use Part objects as BaseFeature, not PartDesign features
+    # The BaseFeature approach allows sketch attachment without "make independent copy" dialog
     obj = doc.addObject("Part::FeaturePython", name)
     
     # Create the feature (this adds all properties)

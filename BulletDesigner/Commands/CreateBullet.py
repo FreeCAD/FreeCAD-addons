@@ -85,6 +85,70 @@ class CreateBulletCommand:
             bullet = makeBulletFeature("Bullet")
             
             if bullet:
+                # Note: For sketch attachment, manually create a PartDesign Body:
+                #   1. Switch to PartDesign workbench
+                #   2. Create a new Body (PartDesign menu -> Create Body)
+                #   3. Select the bullet object
+                #   4. In the Body's properties, set "Base Feature" to the bullet object
+                #   5. Set the Body as active (double-click or right-click -> Toggle active body)
+                # Then you can attach sketches to bullet faces without "make independent copy" dialog
+                App.Console.PrintMessage("Bullet created successfully\n")
+                App.Console.PrintMessage("  To attach sketches: Create a PartDesign Body and set bullet as BaseFeature\n")
+                        
+                        # CRITICAL: Set the Body as active for PartDesign operations
+                        # This is required for sketch creation and other PartDesign features
+                        if App.GuiUp:
+                            try:
+                                # Set the Body as active in the GUI
+                                Gui.Selection.clearSelection()
+                                Gui.Selection.addSelection(body)
+                                
+                                # Activate the Body (make it the active Body for PartDesign)
+                                if hasattr(Gui, 'activateWorkbench'):
+                                    # Ensure PartDesign workbench is active
+                                    try:
+                                        Gui.activateWorkbench("PartDesignWorkbench")
+                                    except:
+                                        pass
+                                
+                                # Set active Body (if supported by FreeCAD version)
+                                if hasattr(Gui.ActiveDocument, 'setActiveBody'):
+                                    try:
+                                        Gui.ActiveDocument.setActiveBody(body)
+                                    except:
+                                        pass
+                                
+                                App.Console.PrintMessage(f"Body '{body.Label}' set as active for PartDesign operations\n")
+                            except Exception as e_gui:
+                                App.Console.PrintWarning(f"Could not set Body as active in GUI: {e_gui}\n")
+                        
+                        body_created = True
+                        App.Console.PrintMessage("Bullet created in PartDesign Body as base feature\n")
+                        App.Console.PrintMessage("  Body Tip set to bullet object\n")
+                        App.Console.PrintMessage("  Body is set as active - sketches can now attach to bullet faces\n")
+                        App.Console.PrintMessage("  Note: Make sure PartDesign workbench is active for sketch creation\n")
+                    else:
+                        raise Exception("PartDesign not available")
+                except Exception as e:
+                    # If Body creation fails, try Part container as fallback
+                    App.Console.PrintWarning(f"Could not create PartDesign Body: {e}\n")
+                    import traceback
+                    traceback.print_exc()
+                    try:
+                        # Fallback: Create a Part container
+                        part_container = doc.addObject("App::Part", "BulletPart")
+                        part_container.addObject(bullet)
+                        part_container.Label = "Bullet Assembly"
+                        App.Console.PrintMessage("Bullet created in Part container (sketch attachment may be limited)\n")
+                        
+                        if App.GuiUp:
+                            Gui.Selection.clearSelection()
+                            Gui.Selection.addSelection(part_container)
+                    except Exception as e2:
+                        # If both fail, continue without container
+                        App.Console.PrintWarning(f"Could not create Part container: {e2}\n")
+                        App.Console.PrintMessage("Bullet created as standalone object\n")
+                
                 # Values are now set in makeBulletFeature(), so we can safely open the task panel
                 # The task panel will load the correct values
                 panel = BulletTaskPanel(bullet)

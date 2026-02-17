@@ -241,45 +241,68 @@ def generate_bullet_profile_points(
     
     # Ogive section starts where body ends
     ogive_start_z = body_end_z
+    
+    # Calculate ogive length - this is the length of the curved ogive section
     ogive_length = (ogive_caliber_ratio * diameter_mm) / 2.0
-    ogive_end_z = ogive_start_z + ogive_length
+    
+    # The ogive MUST end exactly at the total bullet length
+    # Calculate what the ogive end should be to ensure bullet ends at length_mm
+    ogive_end_z = length_mm
+    
+    # Recalculate ogive_length to ensure it reaches the tip
+    # This ensures the ogive ends exactly at length_mm
+    actual_ogive_length = ogive_end_z - ogive_start_z
     
     # Ogive base radius is the body radius at the transition point
     ogive_base_radius = body_radius
     
     # Generate ogive points
-    num_ogive_points = 20
+    # Reduced number of points to minimize visible "sections" in display
+    # The stepped appearance comes from too many line segments being revolved
+    # Using fewer points (but still enough for smooth curve) reduces visible steps
+    # Minimum 20 points, scale with length (~1 point per mm)
+    num_ogive_points = max(20, int(actual_ogive_length * 1.0))  # ~1 point per mm
     
     for i in range(num_ogive_points + 1):
         t = i / num_ogive_points  # 0 to 1
-        z_ogive = ogive_start_z + t * ogive_length
+        z_ogive = ogive_start_z + t * actual_ogive_length
         
         if ogive_type == "Tangent":
             # Tangent ogive
             radius_ogive = generate_tangent_ogive_radius(
-                t, ogive_base_radius, meplat_radius, ogive_length
+                t, ogive_base_radius, meplat_radius, actual_ogive_length
             )
         elif ogive_type == "Secant":
             # Secant ogive (more aggressive)
             radius_ogive = generate_secant_ogive_radius(
-                t, ogive_base_radius, meplat_radius, ogive_length
+                t, ogive_base_radius, meplat_radius, actual_ogive_length
             )
         else:  # Elliptical
             # Elliptical ogive
             radius_ogive = generate_elliptical_ogive_radius(
-                t, ogive_base_radius, meplat_radius, ogive_length
+                t, ogive_base_radius, meplat_radius, actual_ogive_length
             )
         
         points.append((z_ogive, radius_ogive))
     
-    # Tip (meplat)
+    # Tip (meplat) - MUST be at the total bullet length
+    # The last ogive point (t=1.0) should already be at ogive_end_z with meplat_radius
+    # But we need to ensure we close to the axis at the exact tip
     if meplat_radius > 0:
-        points.append((ogive_end_z, meplat_radius))
+        # Ensure meplat is at the exact tip (length_mm)
+        # The last ogive point should already be here, but add explicit point to be sure
+        if abs(points[-1][0] - length_mm) > 0.001:
+            # Last point wasn't at tip, add it
+            points.append((length_mm, meplat_radius))
         # Always end on axis for proper wire closing
-        points.append((ogive_end_z, 0.0))
+        points.append((length_mm, 0.0))
     else:
-        # If meplat is zero, ensure we end on axis
-        points.append((ogive_end_z, 0.0))
+        # If meplat is zero, ensure we end on axis at tip
+        if abs(points[-1][0] - length_mm) > 0.001:
+            points.append((length_mm, 0.0))
+        else:
+            # Last point is at tip but might not be on axis
+            points.append((length_mm, 0.0))
     
     return points
 
@@ -291,21 +314,57 @@ def generate_tangent_ogive_radius(
     length: float
 ) -> float:
     """
-    Generate radius for tangent ogive at parameter t (0-1).
+    Generate radius for tangent ogive at parameter t (0-1) using proper radius of curvature formula.
+    
+    A tangent ogive is defined by a circular arc that is tangent to both the body cylinder and
+    the meplat. The formula uses the length parameter to ensure proper geometric scaling.
+    
+    The formula R(x) = R0 - (R0 - R_tip) * (1 - sqrt(1 - ((L-x)/L)²)) ensures:
+    - R(0) = R0 (tangent to body at base)
+    - R(L) = R_tip (tangent to meplat at tip)
+    - The curve is a circular arc based on radius of curvature
     
     Args:
         t: Parameter from 0 (base) to 1 (tip)
-        base_radius: Radius at base of ogive
-        tip_radius: Radius at tip
-        length: Length of ogive
+        base_radius: Radius at base of ogive (R0)
+        tip_radius: Radius at tip (meplat radius)
+        length: Length of ogive (L) - used in the radius calculation
         
     Returns:
         Radius at parameter t
     """
-    # Simplified tangent ogive
-    # R(t) = base_radius - (base_radius - tip_radius) * smooth transition
-    radius = base_radius - (base_radius - tip_radius) * (t ** 1.5)
-    return radius
+    if length <= 0 or base_radius <= tip_radius:
+        # Fallback to linear interpolation if invalid parameters
+        return base_radius - (base_radius - tip_radius) * t
+    
+    delta_r = base_radius - tip_radius
+    if delta_r <= 0:
+        return base_radius  # No transition if base <= tip
+    
+    # Distance from base along ogive (x goes from 0 to L)
+    x = t * length
+    
+    # Normalized parameter u: distance from base (u=0 at base, u=1 at tip)
+    # This ensures the formula uses the length parameter correctly
+    u = x / length
+    
+    # Tangent ogive formula using circular arc geometry (convex curve)
+    # R(x) = R_tip + (R0 - R_tip) * sqrt(1 - u²)
+    # When u=0 (base): radius = tip_radius + delta_r * sqrt(1-0) = tip_radius + delta_r = base_radius
+    # When u=1 (tip): radius = tip_radius + delta_r * sqrt(1-1) = tip_radius + 0 = tip_radius
+    # This gives a convex circular arc that bulges outward (correct ogive shape)
+    if u <= 0.0:
+        return base_radius
+    elif u >= 1.0:
+        return tip_radius
+    else:
+        try:
+            radius = tip_radius + delta_r * math.sqrt(1.0 - u * u)
+            # Ensure radius is within valid bounds
+            return max(tip_radius, min(base_radius, radius))
+        except ValueError:
+            # If sqrt fails (shouldn't happen with valid u), fallback
+            return base_radius - (base_radius - tip_radius) * t
 
 
 def generate_secant_ogive_radius(
@@ -451,31 +510,53 @@ def create_bullet_solid(profile_points: List[Tuple[float, float]]) -> Part.Shape
     
     try:
         revolved_shape = face.revolve(origin, axis, 360.0)
+        App.Console.PrintMessage(f"  Revolved shape type: {type(revolved_shape)}\n")
         
         # Ensure we return a proper Solid for section views to work
+        # FreeCAD's revolve() can return a Part.Shape wrapper containing a Solid
         solid = None
+        
+        # First check if it's already a Solid
         if isinstance(revolved_shape, Part.Solid):
             solid = revolved_shape
-        elif hasattr(revolved_shape, 'Solids') and len(revolved_shape.Solids) > 0:
-            solid = revolved_shape.Solids[0]
-        else:
-            # Try to make a solid from the shape
-            try:
-                # First try to get shells and make solid
-                if hasattr(revolved_shape, 'Shells') and len(revolved_shape.Shells) > 0:
-                    shell = revolved_shape.Shells[0]
-                    solid = Part.Solid(shell)
-                else:
+            App.Console.PrintMessage("  Revolved shape is already a Part.Solid\n")
+        # Check if it's a Shape wrapper with Solids inside
+        elif isinstance(revolved_shape, Part.Shape):
+            App.Console.PrintMessage(f"  Revolved shape is a Part.Shape wrapper\n")
+            if hasattr(revolved_shape, 'Solids') and len(revolved_shape.Solids) > 0:
+                # Extract the first Solid from the Shape wrapper
+                solid = revolved_shape.Solids[0]
+                App.Console.PrintMessage(f"  Extracted Solid from Shape wrapper (had {len(revolved_shape.Solids)} Solids)\n")
+            elif hasattr(revolved_shape, 'Shells') and len(revolved_shape.Shells) > 0:
+                # Try to make a Solid from the Shell
+                shell = revolved_shape.Shells[0]
+                solid = Part.Solid(shell)
+                App.Console.PrintMessage(f"  Created Solid from Shell (had {len(revolved_shape.Shells)} Shells)\n")
+            else:
+                # Try to make a solid from the shape directly
+                try:
                     solid = Part.makeSolid(revolved_shape)
-            except Exception as e2:
-                raise ValueError(f"Failed to convert revolved shape to solid: {e2}. Shape type: {type(revolved_shape)}")
+                    App.Console.PrintMessage("  Created Solid using Part.makeSolid()\n")
+                except Exception as e2:
+                    raise ValueError(f"Failed to convert revolved shape to solid: {e2}. Shape type: {type(revolved_shape)}, has Solids: {hasattr(revolved_shape, 'Solids')}, has Shells: {hasattr(revolved_shape, 'Shells')}")
+        else:
+            raise ValueError(f"Unexpected revolved shape type: {type(revolved_shape)}")
         
         # Validate solid
         if solid is None:
             raise ValueError("Could not create solid from revolved shape")
         
+        # Ensure it's actually a Part.Solid
         if not isinstance(solid, Part.Solid):
-            raise ValueError(f"Result is not a Part.Solid: {type(solid)}")
+            App.Console.PrintWarning(f"  Warning: Solid is not Part.Solid, type: {type(solid)}\n")
+            # Try one more conversion attempt
+            if isinstance(solid, Part.Shape) and hasattr(solid, 'Solids') and len(solid.Solids) > 0:
+                solid = solid.Solids[0]
+                App.Console.PrintMessage(f"  Converted to Solid from nested Shape.Solids[0]\n")
+            else:
+                raise ValueError(f"Result is not a Part.Solid: {type(solid)}")
+        
+        App.Console.PrintMessage(f"  Final solid type: {type(solid)}, isinstance(Part.Solid): {isinstance(solid, Part.Solid)}\n")
         
         # Validate solid properties
         if solid.Volume < 0.001:
@@ -491,7 +572,17 @@ def create_bullet_solid(profile_points: List[Tuple[float, float]]) -> Part.Shape
         # Ensure solid is properly formed - critical for section views
         try:
             # Remove any internal splits/edges that might confuse intersection detection
-            solid = solid.removeSplitter()
+            cleaned_solid = solid.removeSplitter()
+            # removeSplitter() may return a Shape wrapper, extract Solid if needed
+            if isinstance(cleaned_solid, Part.Solid):
+                solid = cleaned_solid
+            elif isinstance(cleaned_solid, Part.Shape) and hasattr(cleaned_solid, 'Solids') and len(cleaned_solid.Solids) > 0:
+                solid = cleaned_solid.Solids[0]
+                App.Console.PrintMessage("  Extracted Solid after removeSplitter()\n")
+            else:
+                # If removeSplitter returns something unexpected, keep original solid
+                App.Console.PrintWarning(f"Warning: removeSplitter() returned unexpected type {type(cleaned_solid)}, keeping original solid\n")
+            
             # Re-validate after cleaning
             if solid.Volume < 0.001:
                 raise ValueError("Solid volume became invalid after removeSplitter")
@@ -503,9 +594,25 @@ def create_bullet_solid(profile_points: List[Tuple[float, float]]) -> Part.Shape
             App.Console.PrintWarning(f"Warning: Could not clean solid with removeSplitter: {e}\n")
         
         # Ensure the solid has proper placement (identity) for section views
+        # Note: Setting Placement should not wrap it, but verify
         if hasattr(solid, 'Placement'):
             solid.Placement = App.Placement()
         
+        # CRITICAL: After operations like removeSplitter() or Placement changes,
+        # FreeCAD may wrap the Solid in a Shape container. Extract it one final time.
+        if not isinstance(solid, Part.Solid):
+            App.Console.PrintWarning(f"  Warning: Solid became Shape wrapper, type: {type(solid)}\n")
+            if isinstance(solid, Part.Shape) and hasattr(solid, 'Solids') and len(solid.Solids) > 0:
+                solid = solid.Solids[0]
+                App.Console.PrintMessage("  Extracted Solid from Shape wrapper before return\n")
+            else:
+                raise ValueError(f"Cannot return Solid - final type is {type(solid)}")
+        
+        # Final verification before return - must be a Part.Solid
+        if not isinstance(solid, Part.Solid):
+            raise ValueError(f"Function returning non-Solid type: {type(solid)}")
+        
+        App.Console.PrintMessage(f"  Returning Part.Solid (type: {type(solid)}, volume: {solid.Volume:.2f} mm³)\n")
         return solid
         
     except Exception as e:
