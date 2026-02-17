@@ -2,7 +2,7 @@
 
 A comprehensive FreeCAD workbench for parametric bullet and projectile design with ballistic calculations, material database, and export capabilities.
 
-![Bullet Designer Workbench](Resources/screenshots/workbench_overview.png)
+![Bullet Designer Workbench](Resources/screenshots/screenshot.png)
 
 ## Quick Links
 
@@ -52,17 +52,11 @@ See the [User Manual](USER_MANUAL.md#important-constraints) for detailed explana
 
 ## Screenshots
 
-![Task Panel](Resources/screenshots/task_panel.png)
-*Comprehensive parameter editing interface*
+![Bullet Designer](Resources/screenshots/screenshot.png)
+*Bullet Designer workbench and bullet creation*
 
-![Bullet 3D View](Resources/screenshots/bullet_3d_view.png)
-*Parametric bullet with driving bands and boat tail*
-
-![Ballistic Calculator](Resources/screenshots/ballistic_calculator.png)
-*Stability and ballistic coefficient calculations*
-
-![Export Options](Resources/screenshots/export_menu.png)
-*Export to STL or STEP formats*
+![Bullet Designer](Resources/screenshots/screenshot2.png)
+*Parametric bullet design and task panel*
 
 ## Installation
 

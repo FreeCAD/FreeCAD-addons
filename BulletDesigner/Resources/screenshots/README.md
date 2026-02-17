@@ -1,1 +1,8 @@
-# Screenshots Directory\n\nPlace screenshot images here:\n- workbench_overview.png\n- task_panel.png\n- bullet_3d_view.png\n- ballistic_calculator.png\n- export_menu.png
+# Screenshots
+
+Screenshots for the Bullet Designer workbench documentation.
+
+- `screenshot.png` - Workbench and bullet creation
+- `screenshot2.png` - Parametric bullet design and task panel
+
+These are linked from the main [README.md](../../README.md).
