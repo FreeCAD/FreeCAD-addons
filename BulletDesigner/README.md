@@ -34,7 +34,7 @@ A comprehensive FreeCAD workbench for parametric bullet and projectile design wi
 - **Ballistic Calculator**: Standalone calculator dialog for stability analysis
 - **Preferences**: Customizable defaults and units
 
-## ⚠️ Important: Bands Must Fit on Bullet
+##  Important: Bands Must Fit on Bullet
 
 **CRITICAL**: Driving bands must fit within the body length, or **a solid will NOT be generated**.
 
@@ -89,7 +89,7 @@ For detailed step-by-step instructions, see the **[User Manual](USER_MANUAL.md)*
 4. Adjust parameters in the tabs:
    - **Basic**: Diameter, length, weight
    - **Ogive**: Type, caliber ratio, meplat diameter
-   - **Bands**: Number, length, spacing (**⚠️ Ensure bands fit!**)
+   - **Bands**: Number, length, spacing (** Ensure bands fit!**)
    - **Base**: Flat or boat tail configuration
    - **Material**: Material selection and density
 5. Enable "Live Preview" to see changes in real-time
@@ -143,7 +143,7 @@ For detailed step-by-step instructions, see the **[User Manual](USER_MANUAL.md)*
 - **Band Spacing**: Space between bands in mm
 - **Band Diameter**: Usually equals groove diameter
 
-**⚠️ CRITICAL**: Bands must fit within the body length (total length minus ogive and boat tail), or a solid will not be generated. See [Important Constraints](#-important-bands-must-fit-on-bullet) above.
+**CRITICAL**: Bands must fit within the body length (total length minus ogive and boat tail), or a solid will not be generated. See [Important Constraints](#-important-bands-must-fit-on-bullet) above.
 
 ### Base Configuration
 
@@ -277,13 +277,9 @@ For issues, questions, or feature requests, please use the GitHub issue tracker.
 - Export to STL/STEP
 - Basic preferences
 
-## Future Enhancements
+## Possible future Enhancements
 
 - Complete cartridge design module
 - Bullet library browser with presets
-- Advanced trajectory calculations
-- Drag coefficient estimation
-- Technical drawing generation
-- Batch operations and parametric studies
-- Integration with external ballistic software
-- 3D printing preparation tools
+
+
