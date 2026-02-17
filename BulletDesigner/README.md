@@ -2,6 +2,15 @@
 
 A comprehensive FreeCAD workbench for parametric bullet and projectile design with ballistic calculations, material database, and export capabilities.
 
+![Bullet Designer Workbench](Resources/screenshots/workbench_overview.png)
+
+## Quick Links
+
+- **[User Manual](USER_MANUAL.md)** - Complete guide with step-by-step instructions
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+
 ## Features
 
 ### Core Functionality
@@ -25,6 +34,36 @@ A comprehensive FreeCAD workbench for parametric bullet and projectile design wi
 - **Ballistic Calculator**: Standalone calculator dialog for stability analysis
 - **Preferences**: Customizable defaults and units
 
+## ⚠️ Important: Bands Must Fit on Bullet
+
+**CRITICAL**: Driving bands must fit within the body length, or **a solid will NOT be generated**.
+
+The body length is: `Total Length - Ogive Length - Boat Tail Length`
+
+Where Ogive Length = `(Ogive Caliber Ratio × Diameter) / 2`
+
+Total band space needed = `(Number of Bands × Band Length) + ((Number of Bands - 1) × Band Spacing)`
+
+**Rule**: Total Band Space ≤ Body Length
+
+If bands don't fit, reduce bands/band length/spacing, increase total length, or reduce ogive/boat tail length.
+
+See the [User Manual](USER_MANUAL.md#important-constraints) for detailed explanation and examples.
+
+## Screenshots
+
+![Task Panel](Resources/screenshots/task_panel.png)
+*Comprehensive parameter editing interface*
+
+![Bullet 3D View](Resources/screenshots/bullet_3d_view.png)
+*Parametric bullet with driving bands and boat tail*
+
+![Ballistic Calculator](Resources/screenshots/ballistic_calculator.png)
+*Stability and ballistic coefficient calculations*
+
+![Export Options](Resources/screenshots/export_menu.png)
+*Export to STL or STEP formats*
+
 ## Installation
 
 ### Method 1: FreeCAD Addon Manager (Recommended)
@@ -46,6 +85,8 @@ A comprehensive FreeCAD workbench for parametric bullet and projectile design wi
 
 ## Usage
 
+For detailed step-by-step instructions, see the **[User Manual](USER_MANUAL.md)**.
+
 ### Creating a Bullet
 
 1. Switch to the "Bullet Designer" workbench
@@ -54,11 +95,12 @@ A comprehensive FreeCAD workbench for parametric bullet and projectile design wi
 4. Adjust parameters in the tabs:
    - **Basic**: Diameter, length, weight
    - **Ogive**: Type, caliber ratio, meplat diameter
-   - **Bands**: Number, length, spacing
+   - **Bands**: Number, length, spacing (**⚠️ Ensure bands fit!**)
    - **Base**: Flat or boat tail configuration
    - **Material**: Material selection and density
 5. Enable "Live Preview" to see changes in real-time
-6. Click "OK" to create the bullet object
+6. **Verify bands fit** (see warning above)
+7. Click "OK" to create the bullet object
 
 ### Using the Ballistic Calculator
 
@@ -106,6 +148,8 @@ A comprehensive FreeCAD workbench for parametric bullet and projectile design wi
 - **Band Length**: Length of each band in mm
 - **Band Spacing**: Space between bands in mm
 - **Band Diameter**: Usually equals groove diameter
+
+**⚠️ CRITICAL**: Bands must fit within the body length (total length minus ogive and boat tail), or a solid will not be generated. See [Important Constraints](#-important-bands-must-fit-on-bullet) above.
 
 ### Base Configuration
 
@@ -196,12 +240,18 @@ BulletDesigner/
 - Python 3.8 or later
 - PySide2 (included with FreeCAD)
 
+## Documentation
+
+- **[User Manual](USER_MANUAL.md)**: Complete guide with step-by-step instructions, parameter explanations, troubleshooting, and best practices
+- **README.md**: This file - overview and quick reference
+
 ## Limitations and Known Issues
 
 - Cartridge design is not yet implemented (placeholder)
 - Bullet library browser is not yet implemented (placeholder)
 - Advanced analysis features (trajectory, drag coefficient plots) are planned
 - Technical drawing generation is planned
+- **Bands must fit on bullet**: If bands don't fit within body length, solid generation will fail (this is by design to prevent invalid geometry)
 
 ## Contributing
 

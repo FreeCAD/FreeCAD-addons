@@ -1,1 +1,8 @@
 *.pyc
+__pycache__/
+*.FCBak
+*.pyc
+.DS_Store
+*.swp
+*.swo
+*~
