@@ -16,7 +16,7 @@ A comprehensive FreeCAD workbench for parametric bullet and projectile design wi
 ### Core Functionality
 
 - **Parametric Bullet Design**: Create fully parametric bullets with live updates
-- **Multiple Bullet Types**: Support for land-riding, flat-base, boat-tail, and hollow-point designs
+- **Multiple Bullet Types**: Support for land-riding, flat-base, boat-tail, and hollow-point designs ( hole must be added manually)
 - **Driving Bands**: Configurable number, spacing, and dimensions for driving bands
 - **Ogive Profiles**: Three ogive types (tangent, secant, elliptical) with customizable caliber ratios
 - **Ballistic Calculations**: 
