@@ -88,20 +88,20 @@ def calculate_recommended_twist_rate(
     diameter_mm: float,
     length_mm: float,
     weight_grains: float,
-    velocity_fps: float = 2800.0
+    velocity_mps: float = 853.0
 ) -> Tuple[float, str]:
     """
     Calculate recommended barrel twist rate using Greenhill formula.
     
     The Greenhill formula: T = 150 * D^2 / L
     
-    For velocities > 2800 fps, use: T = 150 * D^2 / L * sqrt(V/2800)
+    For velocities > 853 m/s (~2800 fps), use: T = 150 * D^2 / L * sqrt(V/853)
     
     Args:
         diameter_mm: Bullet diameter in millimeters
         length_mm: Bullet length in millimeters
         weight_grains: Bullet weight in grains
-        velocity_fps: Muzzle velocity in feet per second (default 2800)
+        velocity_mps: Muzzle velocity in meters per second (default 853 m/s = ~2800 fps)
         
     Returns:
         Tuple of (twist_rate_inches, formatted_string)
@@ -110,9 +110,12 @@ def calculate_recommended_twist_rate(
     if diameter_mm <= 0 or length_mm <= 0:
         return (0.0, "N/A")
     
-    # Convert to inches
+    # Convert to inches (formula uses imperial units)
     diameter_inches = diameter_mm / 25.4
     length_inches = length_mm / 25.4
+    
+    # Convert velocity to fps for formula (1 m/s = 3.28084 fps)
+    velocity_fps = velocity_mps * 3.28084
     
     # Greenhill formula
     if velocity_fps <= 2800:
@@ -135,9 +138,9 @@ def calculate_stability_factor_miller(
     length_mm: float,
     weight_grains: float,
     twist_rate_inches: float,
-    velocity_fps: float = 2800.0,
-    temperature_f: float = 59.0,
-    pressure_inhg: float = 29.92
+    velocity_mps: float = 853.0,
+    temperature_c: float = 15.0,
+    pressure_hpa: float = 1013.25
 ) -> float:
     """
     Calculate stability factor using Miller's formula.
@@ -151,9 +154,9 @@ def calculate_stability_factor_miller(
         length_mm: Bullet length in millimeters
         weight_grains: Bullet weight in grains
         twist_rate_inches: Barrel twist rate (e.g., 8 for 1:8")
-        velocity_fps: Muzzle velocity in feet per second
-        temperature_f: Temperature in Fahrenheit
-        pressure_inhg: Atmospheric pressure in inches of mercury
+        velocity_mps: Muzzle velocity in meters per second (default ~853 m/s = ~2800 fps)
+        temperature_c: Temperature in Celsius (default 15°C = ~59°F)
+        pressure_hpa: Atmospheric pressure in hectopascals (default 1013.25 hPa = 29.92 inHg)
         
     Returns:
         Stability factor (dimensionless)
@@ -161,39 +164,62 @@ def calculate_stability_factor_miller(
     if diameter_mm <= 0 or length_mm <= 0 or weight_grains <= 0 or twist_rate_inches <= 0:
         return 0.0
     
-    # Convert to inches
+    # Convert to inches (formula uses imperial units)
     diameter_inches = diameter_mm / 25.4
     length_inches = length_mm / 25.4
     
     # Miller's stability formula
     # Sg = 30 * m / (t^2 * d^3 * l * (1 + l^2))
+    # Where:
+    #   m = mass in grains (NOT slugs!)
+    #   t = twist rate in calibers per turn
+    #   d = diameter in inches
+    #   l = length in calibers (length/diameter), NOT inches!
     
-    # Mass in slugs
-    mass_slugs = weight_grains / 7000.0 / 32.174
+    # Mass in grains (Miller formula uses grains directly)
+    mass_grains = weight_grains
     
     # Twist rate in calibers per turn
     twist_calibers = twist_rate_inches / diameter_inches
     
-    # Temperature correction
+    # Length in calibers (critical: Miller uses length/diameter, not absolute length)
+    length_calibers = length_inches / diameter_inches
+    
+    # Convert metric inputs to imperial for corrections
+    # Temperature: Celsius to Fahrenheit
+    temperature_f = (temperature_c * 9.0 / 5.0) + 32.0
+    # Pressure: hPa to inHg (1 hPa = 0.0295299830714 inHg)
+    pressure_inhg = pressure_hpa * 0.0295299830714
+    # Velocity: m/s to fps (for velocity correction)
+    velocity_fps = velocity_mps * 3.28084
+    
+    # Temperature correction (formula uses Rankine: F + 459.67)
+    # Standard reference: 59°F = 518.67°R
     temp_correction = math.sqrt((temperature_f + 459.67) / 518.67)
     
-    # Pressure correction
+    # Pressure correction (standard is 29.92 inHg)
     pressure_correction = math.sqrt(pressure_inhg / 29.92)
     
-    # Length ratio
-    length_ratio = length_inches / diameter_inches
+    # Velocity correction factor: f_v = (v/2800)^(1/3)
+    # Standard reference velocity is 2800 fps
+    if velocity_fps > 0:
+        velocity_correction = math.pow(velocity_fps / 2800.0, 1.0 / 3.0)
+    else:
+        velocity_correction = 1.0
     
-    # Miller's formula
-    stability = (30.0 * mass_slugs) / (
+    # Miller's formula (mass in grains, length in calibers)
+    stability = (30.0 * mass_grains) / (
         (twist_calibers ** 2) * 
         (diameter_inches ** 3) * 
-        length_inches * 
-        (1.0 + length_ratio ** 2)
+        length_calibers * 
+        (1.0 + length_calibers ** 2)
     )
     
-    # Apply atmospheric corrections
-    stability *= temp_correction * pressure_correction
+    # Apply atmospheric and velocity corrections
+    stability *= temp_correction * pressure_correction * velocity_correction
     
+    # Round to 2 decimal places for display
+    # Note: Do not round too early as it can cause threshold issues (e.g., 1.499 -> 1.50)
     return round(stability, 2)
 
 

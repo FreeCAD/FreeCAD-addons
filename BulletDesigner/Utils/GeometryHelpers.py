@@ -71,8 +71,9 @@ def generate_bullet_profile_points(
         meplat_radius = body_radius * 0.5
         meplat_diameter_mm = meplat_radius * 2.0
     
-    # Start from base (Z=0)
+    # Start from base (Z=0) - always start on axis for proper wire closing
     z_pos = 0.0
+    points.append((z_pos, 0.0))
     
     # Base section
     if base_type == "BoatTail" and boat_tail_length_mm > 0:
@@ -85,7 +86,7 @@ def generate_bullet_profile_points(
         z_pos += boat_tail_length_mm
         points.append((z_pos, radius_groove))
     else:
-        # Flat base
+        # Flat base - go from axis to base radius
         points.append((z_pos, radius_groove))
     
     # Body section with driving bands
@@ -274,6 +275,11 @@ def generate_bullet_profile_points(
     # Tip (meplat)
     if meplat_radius > 0:
         points.append((ogive_end_z, meplat_radius))
+        # Always end on axis for proper wire closing
+        points.append((ogive_end_z, 0.0))
+    else:
+        # If meplat is zero, ensure we end on axis
+        points.append((ogive_end_z, 0.0))
     
     return points
 
@@ -385,44 +391,125 @@ def create_bullet_solid(profile_points: List[Tuple[float, float]]) -> Part.Shape
     # Create wire from edges
     wire = Part.Wire(edges)
     
-    # Close the wire if needed
+    # Close the wire if needed - profile should start and end on axis
     if not wire.isClosed():
-        # Add closing edge
-        first_point = App.Vector(profile_points[0][1], 0, profile_points[0][0])
-        last_point = App.Vector(profile_points[-1][1], 0, profile_points[-1][0])
+        # Add closing edge along the axis from tip back to base
+        first_z, first_r = profile_points[0]
+        last_z, last_r = profile_points[-1]
         
-        # Check if we need to close to axis
-        if profile_points[0][1] > 0.001:  # Not on axis
-            closing_edge = Part.makeLine(
-                App.Vector(0, 0, profile_points[0][0]),
-                first_point
+        # Profile should start and end on axis (r=0), but verify
+        if first_r > 0.001 or last_r > 0.001:
+            # If not on axis, add edges to close to axis
+            first_point = App.Vector(first_r, 0, first_z)
+            last_point = App.Vector(last_r, 0, last_z)
+            closing_edges = []
+            
+            # Close to axis at tip if needed
+            if last_r > 0.001:
+                closing_edges.append(Part.makeLine(last_point, App.Vector(0, 0, last_z)))
+            
+            # Close along axis from tip to base
+            closing_edges.append(Part.makeLine(
+                App.Vector(0, 0, last_z),
+                App.Vector(0, 0, first_z)
+            ))
+            
+            # Close to profile at base if needed
+            if first_r > 0.001:
+                closing_edges.append(Part.makeLine(
+                    App.Vector(0, 0, first_z),
+                    first_point
+                ))
+            
+            all_edges = edges + closing_edges
+            wire = Part.Wire(all_edges)
+        else:
+            # Both ends on axis - just need axis edge to close
+            axis_edge = Part.makeLine(
+                App.Vector(0, 0, last_z),
+                App.Vector(0, 0, first_z)
             )
-            edges.insert(0, closing_edge)
-        
-        if profile_points[-1][1] > 0.001:  # Not on axis
-            closing_edge = Part.makeLine(
-                last_point,
-                App.Vector(0, 0, profile_points[-1][0])
-            )
-            edges.append(closing_edge)
-        
-        wire = Part.Wire(edges)
+            all_edges = edges + [axis_edge]
+            wire = Part.Wire(all_edges)
     
-    # Revolve around Z-axis (360 degrees)
+    # Validate wire is closed
+    if not wire.isClosed():
+        raise ValueError("Wire could not be closed - invalid profile")
+    
+    # Create face from wire - required for proper solid creation
+    try:
+        face = Part.Face(wire)
+        # Validate face
+        if face.isNull() or face.Area < 0.001:
+            raise ValueError("Face is null or has zero area")
+    except Exception as e:
+        raise ValueError(f"Failed to create face from wire: {e}. Wire has {len(wire.Edges)} edges, closed={wire.isClosed()}")
+    
+    # Revolve face around Z-axis (360 degrees) to create solid
     axis = App.Vector(0, 0, 1)
     origin = App.Vector(0, 0, 0)
     
     try:
-        solid = wire.revolve(origin, axis, 360.0)
-        return solid
-    except Exception as e:
-        # Fallback: try creating face first
+        revolved_shape = face.revolve(origin, axis, 360.0)
+        
+        # Ensure we return a proper Solid for section views to work
+        solid = None
+        if isinstance(revolved_shape, Part.Solid):
+            solid = revolved_shape
+        elif hasattr(revolved_shape, 'Solids') and len(revolved_shape.Solids) > 0:
+            solid = revolved_shape.Solids[0]
+        else:
+            # Try to make a solid from the shape
+            try:
+                # First try to get shells and make solid
+                if hasattr(revolved_shape, 'Shells') and len(revolved_shape.Shells) > 0:
+                    shell = revolved_shape.Shells[0]
+                    solid = Part.Solid(shell)
+                else:
+                    solid = Part.makeSolid(revolved_shape)
+            except Exception as e2:
+                raise ValueError(f"Failed to convert revolved shape to solid: {e2}. Shape type: {type(revolved_shape)}")
+        
+        # Validate solid
+        if solid is None:
+            raise ValueError("Could not create solid from revolved shape")
+        
+        if not isinstance(solid, Part.Solid):
+            raise ValueError(f"Result is not a Part.Solid: {type(solid)}")
+        
+        # Validate solid properties
+        if solid.Volume < 0.001:
+            raise ValueError(f"Solid has zero or negative volume: {solid.Volume}")
+        
+        # Ensure solid is valid for section views - check bounding box
+        bbox = solid.BoundBox
+        if not bbox.isValid():
+            raise ValueError(f"Solid has invalid bounding box (not valid)")
+        if bbox.XLength < 0.001 or bbox.YLength < 0.001 or bbox.ZLength < 0.001:
+            raise ValueError(f"Solid has invalid bounding box dimensions: X={bbox.XLength}, Y={bbox.YLength}, Z={bbox.ZLength}")
+        
+        # Ensure solid is properly formed - critical for section views
         try:
-            face = Part.Face(wire)
-            solid = face.revolve(origin, axis, 360.0)
-            return solid
-        except Exception as e2:
-            raise ValueError(f"Failed to create bullet solid: {e2}")
+            # Remove any internal splits/edges that might confuse intersection detection
+            solid = solid.removeSplitter()
+            # Re-validate after cleaning
+            if solid.Volume < 0.001:
+                raise ValueError("Solid volume became invalid after removeSplitter")
+            bbox_after = solid.BoundBox
+            if not bbox_after.isValid():
+                raise ValueError("Solid bounding box became invalid after removeSplitter")
+        except Exception as e:
+            # If removeSplitter fails, log but continue - the solid might still be valid
+            App.Console.PrintWarning(f"Warning: Could not clean solid with removeSplitter: {e}\n")
+        
+        # Ensure the solid has proper placement (identity) for section views
+        if hasattr(solid, 'Placement'):
+            solid.Placement = App.Placement()
+        
+        return solid
+        
+    except Exception as e:
+        raise ValueError(f"Failed to create bullet solid from face: {e}")
 
 
 def validate_bullet_parameters(

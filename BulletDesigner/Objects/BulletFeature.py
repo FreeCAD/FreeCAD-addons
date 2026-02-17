@@ -458,8 +458,78 @@ class BulletFeature:
             App.Console.PrintMessage("  Creating bullet solid from profile...\n")
             bullet_solid = create_bullet_solid(profile_points)
             
+            # Validate solid before assigning
+            if not isinstance(bullet_solid, Part.Solid):
+                App.Console.PrintError(f"  ERROR: Created shape is not a Part.Solid: {type(bullet_solid)}\n")
+                raise ValueError("Bullet solid is not a valid Part.Solid")
+            
+            # Validate bounding box
+            bbox = bullet_solid.BoundBox
+            if not bbox.isValid():
+                App.Console.PrintError(f"  ERROR: Solid has invalid bounding box\n")
+                raise ValueError("Bullet solid has invalid bounding box")
+            
+            App.Console.PrintMessage(f"  Solid created: Volume={bullet_solid.Volume:.2f} mm³, "
+                                   f"BBox=({bbox.XLength:.2f}, {bbox.YLength:.2f}, {bbox.ZLength:.2f}) mm\n")
+            
+            # Ensure solid is clean and valid for section views
+            try:
+                # Remove any internal edges/splits that might confuse section view
+                bullet_solid = bullet_solid.removeSplitter()
+                # Re-validate after cleaning
+                if bullet_solid.Volume < 0.001:
+                    raise ValueError("Solid volume became invalid after removeSplitter")
+            except Exception as e:
+                App.Console.PrintWarning(f"  Warning: Could not clean solid: {e}\n")
+            
+            # CRITICAL: Ensure shape has proper placement for section views
+            # FreeCAD's section view tool requires shapes with identity placement
+            bullet_solid.Placement = App.Placement()
+            
+            # Set the shape - this is critical for section views
+            obj.Shape = bullet_solid
+            
+            # CRITICAL: Verify shape before assignment
+            if bullet_solid.isNull():
+                raise ValueError("Bullet solid is null")
+            
             # Set the shape
             obj.Shape = bullet_solid
+            
+            # CRITICAL: Force FreeCAD to recognize the shape change
+            # This ensures the bounding box is properly calculated and available for section views
+            obj.enforceRecompute()
+            
+            # Verify shape was set correctly
+            if not hasattr(obj, 'Shape') or obj.Shape.isNull():
+                raise ValueError("Shape is null after assignment")
+            
+            # Force bounding box calculation by accessing it
+            # This ensures FreeCAD computes and caches it for section views
+            try:
+                bbox_final = obj.Shape.BoundBox
+                # Force validation by accessing properties
+                _ = bbox_final.XLength
+                _ = bbox_final.YLength  
+                _ = bbox_final.ZLength
+                
+                if not bbox_final.isValid():
+                    App.Console.PrintError(f"  ERROR: Shape bounding box invalid after assignment\n")
+                    raise ValueError("Shape bounding box is invalid after assignment")
+                
+                App.Console.PrintMessage(f"  Shape BBox: X=[{bbox_final.XMin:.2f}, {bbox_final.XMax:.2f}], "
+                                         f"Y=[{bbox_final.YMin:.2f}, {bbox_final.YMax:.2f}], "
+                                         f"Z=[{bbox_final.ZMin:.2f}, {bbox_final.ZMax:.2f}] mm\n")
+            except Exception as e:
+                App.Console.PrintError(f"  ERROR accessing shape bounding box: {e}\n")
+                raise ValueError(f"Failed to validate shape bounding box: {e}")
+            
+            # Ensure object placement is identity - section views work better with objects at origin
+            obj.Placement = App.Placement()
+            
+            # Touch the object to ensure FreeCAD knows it changed
+            obj.touch()
+            
             App.Console.PrintMessage("  Bullet shape updated successfully\n")
             
             # Calculate properties

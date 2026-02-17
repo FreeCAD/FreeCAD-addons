@@ -22,6 +22,23 @@ from Utils.Calculations import (
     calculate_recommended_twist_rate
 )
 
+# Units: 0 = Metric (m/s, Celsius, hPa), 1 = Imperial (fps, Fahrenheit, inHg)
+PREF_GROUP = "User parameter:BaseApp/Preferences/Mod/BulletDesigner"
+FPS_TO_MPS = 0.3048
+INHG_TO_HPA = 33.8639
+
+
+def _get_ballistic_units():
+    """Get ballistic calculator units from FreeCAD preferences (0=Metric, 1=Imperial)."""
+    param = App.ParamGet(PREF_GROUP)
+    return param.GetInt("Units", 0)
+
+
+def _set_ballistic_units(metric):
+    """Save ballistic calculator units to FreeCAD preferences."""
+    param = App.ParamGet(PREF_GROUP)
+    param.SetInt("Units", 0 if metric else 1)
+
 
 class BallisticCalculatorDialog(QtWidgets.QDialog):
     """
@@ -40,6 +57,7 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
         self.bullet_obj = bullet_obj
         self.setWindowTitle("Ballistic Calculator")
         self.setMinimumWidth(500)
+        self._metric = (_get_ballistic_units() == 0)
         
         self._create_ui()
         self._load_bullet_data()
@@ -51,6 +69,13 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
         # Input section
         input_group = QtWidgets.QGroupBox("Input Parameters")
         input_layout = QtWidgets.QFormLayout()
+        
+        # Units toggle (follows FreeCAD/BulletDesigner preference)
+        self.units_combo = QtWidgets.QComboBox()
+        self.units_combo.addItems(["Metric (m/s, °C, hPa)", "Imperial (fps, °F, inHg)"])
+        self.units_combo.setCurrentIndex(0 if self._metric else 1)
+        self.units_combo.currentIndexChanged.connect(self._on_units_changed)
+        input_layout.addRow("Units:", self.units_combo)
         
         # Bullet selection
         self.bullet_combo = QtWidgets.QComboBox()
@@ -88,22 +113,16 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
         input_layout.addRow("Barrel Twist:", self.twist_spin)
         
         self.velocity_spin = QtWidgets.QDoubleSpinBox()
-        self.velocity_spin.setRange(100.0, 5000.0)
-        self.velocity_spin.setSuffix(" fps")
-        self.velocity_spin.setValue(2800.0)
+        self._apply_velocity_units(set_default=True)
         input_layout.addRow("Velocity:", self.velocity_spin)
         
         # Atmospheric conditions
         self.temp_spin = QtWidgets.QDoubleSpinBox()
-        self.temp_spin.setRange(-40.0, 120.0)
-        self.temp_spin.setSuffix(" °F")
-        self.temp_spin.setValue(59.0)
+        self._apply_temp_units(set_default=True)
         input_layout.addRow("Temperature:", self.temp_spin)
         
         self.pressure_spin = QtWidgets.QDoubleSpinBox()
-        self.pressure_spin.setRange(20.0, 35.0)
-        self.pressure_spin.setSuffix(" inHg")
-        self.pressure_spin.setValue(29.92)
+        self._apply_pressure_units(set_default=True)
         input_layout.addRow("Pressure:", self.pressure_spin)
         
         input_group.setLayout(input_layout)
@@ -149,6 +168,80 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
         # Connect bullet selection change
         self.bullet_combo.currentIndexChanged.connect(self._on_bullet_selected)
     
+    def _apply_velocity_units(self, set_default=False):
+        """Set velocity spinbox range and suffix; optionally set default value."""
+        if self._metric:
+            self.velocity_spin.setRange(100.0, 1500.0)
+            self.velocity_spin.setSuffix(" m/s")
+            if set_default:
+                self.velocity_spin.setValue(853.0)
+        else:
+            self.velocity_spin.setRange(300.0, 5000.0)
+            self.velocity_spin.setSuffix(" fps")
+            if set_default:
+                self.velocity_spin.setValue(2800.0)
+        self.velocity_spin.setDecimals(1)
+    
+    def _apply_temp_units(self, set_default=False):
+        """Set temperature spinbox range and suffix; optionally set default value."""
+        if self._metric:
+            self.temp_spin.setRange(-40.0, 50.0)
+            self.temp_spin.setSuffix(" °C")
+            if set_default:
+                self.temp_spin.setValue(15.0)
+        else:
+            self.temp_spin.setRange(-40.0, 120.0)
+            self.temp_spin.setSuffix(" °F")
+            if set_default:
+                self.temp_spin.setValue(59.0)
+        self.temp_spin.setDecimals(1)
+    
+    def _apply_pressure_units(self, set_default=False):
+        """Set pressure spinbox range and suffix; optionally set default value."""
+        if self._metric:
+            self.pressure_spin.setRange(800.0, 1200.0)
+            self.pressure_spin.setSuffix(" hPa")
+            if set_default:
+                self.pressure_spin.setValue(1013.25)
+        else:
+            self.pressure_spin.setRange(23.0, 35.0)
+            self.pressure_spin.setSuffix(" inHg")
+            if set_default:
+                self.pressure_spin.setValue(29.92)
+        self.pressure_spin.setDecimals(2)
+    
+    def _on_units_changed(self, index):
+        """Convert current values and switch velocity/temp/pressure to new units."""
+        new_metric = (index == 0)
+        if new_metric == self._metric:
+            return
+        
+        # Read current values in old units
+        vel = self.velocity_spin.value()
+        temp = self.temp_spin.value()
+        press = self.pressure_spin.value()
+        
+        self._metric = new_metric
+        _set_ballistic_units(self._metric)
+        
+        # Convert values
+        if new_metric:
+            vel = vel * FPS_TO_MPS
+            temp = (temp - 32.0) * 5.0 / 9.0
+            press = press * INHG_TO_HPA
+        else:
+            vel = vel / FPS_TO_MPS
+            temp = temp * 9.0 / 5.0 + 32.0
+            press = press / INHG_TO_HPA
+        
+        # Update range/suffix then set converted values
+        self._apply_velocity_units(set_default=False)
+        self._apply_temp_units(set_default=False)
+        self._apply_pressure_units(set_default=False)
+        self.velocity_spin.setValue(vel)
+        self.temp_spin.setValue(temp)
+        self.pressure_spin.setValue(press)
+    
     def _populate_bullet_combo(self):
         """Populate bullet combo box with document objects."""
         self.bullet_combo.addItem("Manual Entry", None)
@@ -187,6 +280,21 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
         # Calculate initial results
         self.calculate()
     
+    def _get_velocity_mps(self):
+        """Return velocity in m/s for calculations."""
+        v = self.velocity_spin.value()
+        return v if self._metric else (v * FPS_TO_MPS)
+    
+    def _get_temperature_c(self):
+        """Return temperature in Celsius for calculations."""
+        t = self.temp_spin.value()
+        return t if self._metric else ((t - 32.0) * 5.0 / 9.0)
+    
+    def _get_pressure_hpa(self):
+        """Return pressure in hPa for calculations."""
+        p = self.pressure_spin.value()
+        return p if self._metric else (p * INHG_TO_HPA)
+    
     def calculate(self):
         """Perform ballistic calculations."""
         try:
@@ -195,15 +303,26 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
             weight = self.weight_spin.value()
             ogive_type = self.ogive_type_combo.currentText()
             twist_rate = self.twist_spin.value()
-            velocity = self.velocity_spin.value()
-            temperature = self.temp_spin.value()
-            pressure = self.pressure_spin.value()
+            velocity = self._get_velocity_mps()
+            temperature = self._get_temperature_c()
+            pressure = self._get_pressure_hpa()
             
             # Calculate stability
+            App.Console.PrintMessage(f"Ballistic Calculator inputs:\n")
+            App.Console.PrintMessage(f"  Diameter: {diameter:.2f} mm\n")
+            App.Console.PrintMessage(f"  Length: {length:.2f} mm\n")
+            App.Console.PrintMessage(f"  Weight: {weight:.2f} grains\n")
+            App.Console.PrintMessage(f"  Twist: {twist_rate:.2f} inches\n")
+            App.Console.PrintMessage(f"  Velocity: {velocity:.2f} m/s\n")
+            App.Console.PrintMessage(f"  Temperature: {temperature:.2f} °C\n")
+            App.Console.PrintMessage(f"  Pressure: {pressure:.2f} hPa\n")
+            
             stability = calculate_stability_factor_miller(
                 diameter, length, weight, twist_rate,
                 velocity, temperature, pressure
             )
+            
+            App.Console.PrintMessage(f"  Calculated stability: {stability:.4f}\n")
             self.stability_label.setText(f"{stability:.2f}")
             
             # Stability status
@@ -216,6 +335,8 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
             else:
                 status = "Unstable"
                 color = "red"
+            
+            App.Console.PrintMessage(f"  Status: {status} (threshold check: {stability:.4f} >= 1.5 = {stability >= 1.5})\n")
             
             self.stability_status_label.setText(status)
             self.stability_status_label.setStyleSheet(f"color: {color}")
