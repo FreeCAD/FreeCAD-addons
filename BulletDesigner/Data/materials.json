@@ -25,6 +25,12 @@
       "description": "Pure lead - traditional bullet core material"
     },
     {
+      "name": "Jacketed Lead Core",
+      "density": 10.8,
+      "color": [0.60, 0.45, 0.30],
+      "description": "Jacketed bullet with lead core - typical FMJ construction (gilding metal jacket + lead core)"
+    },
+    {
       "name": "Copper Alloy",
       "density": 8.70,
       "color": [0.70, 0.50, 0.30],

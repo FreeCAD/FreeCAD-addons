@@ -305,6 +305,7 @@ Built-in materials with densities:
 | **Brass (70/30)** | 8.53 | 70% copper, 30% zinc - harder than gilding metal |
 | **Copper Alloy** | 8.70 | General purpose copper alloy |
 | **Lead Core** | 11.34 | Pure lead - traditional bullet core material |
+| **Jacketed Lead Core** | 10.8 | Jacketed bullet with lead core - typical FMJ construction (gilding metal jacket + lead core) |
 | **Lead-Tin Alloy (95/5)** | 11.20 | 95% lead, 5% tin - common cast bullet alloy |
 | **Steel** | 7.85 | Steel core for armor-piercing bullets |
 
