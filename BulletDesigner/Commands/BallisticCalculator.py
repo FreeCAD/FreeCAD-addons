@@ -21,6 +21,7 @@ from Utils.Calculations import (
     calculate_sectional_density,
     calculate_recommended_twist_rate
 )
+from Utils.MaterialDatabase import get_material_database
 
 # Units: 0 = Metric (m/s, Celsius, hPa), 1 = Imperial (fps, Fahrenheit, inHg)
 PREF_GROUP = "User parameter:BaseApp/Preferences/Mod/BulletDesigner"
@@ -104,6 +105,17 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
         self.ogive_type_combo = QtWidgets.QComboBox()
         self.ogive_type_combo.addItems(["Tangent", "Secant", "Elliptical"])
         input_layout.addRow("Ogive Type:", self.ogive_type_combo)
+        
+        # Material selection (for stability threshold determination)
+        material_db = get_material_database()
+        material_names = material_db.get_material_names()
+        self.material_combo = QtWidgets.QComboBox()
+        self.material_combo.addItems(material_names)
+        # Default to Pure Copper for monolithic bullets
+        copper_idx = self.material_combo.findText("Pure Copper")
+        if copper_idx >= 0:
+            self.material_combo.setCurrentIndex(copper_idx)
+        input_layout.addRow("Material:", self.material_combo)
         
         # Barrel parameters
         self.twist_spin = QtWidgets.QDoubleSpinBox()
@@ -262,7 +274,7 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
         """Load data from bullet object."""
         obj = bullet_obj or self.bullet_obj
         
-        if obj and hasattr(obj, "Diameter"):
+            if obj and hasattr(obj, "Diameter"):
             self.diameter_spin.setValue(obj.Diameter)
             self.length_spin.setValue(obj.Length)
             self.weight_spin.setValue(obj.ActualWeight if obj.ActualWeight > 0 else obj.Weight)
@@ -270,6 +282,12 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
             index = self.ogive_type_combo.findText(obj.OgiveType)
             if index >= 0:
                 self.ogive_type_combo.setCurrentIndex(index)
+            
+            # Set material from bullet object
+            if hasattr(obj, "Material"):
+                material_index = self.material_combo.findText(obj.Material)
+                if material_index >= 0:
+                    self.material_combo.setCurrentIndex(material_index)
             
             # Select this bullet in combo
             for i in range(self.bullet_combo.count()):
@@ -307,7 +325,7 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
             temperature = self._get_temperature_c()
             pressure = self._get_pressure_hpa()
             
-            # Get effective diameter and material density from bullet object if available
+            # Get effective diameter and material density
             effective_diameter = None
             material_density = None
             bullet_obj = self.bullet_obj or (self.bullet_combo.itemData(self.bullet_combo.currentIndex()) if self.bullet_combo.currentIndex() >= 0 else None)
@@ -322,9 +340,14 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
                     # Groove-riding: effective diameter equals nominal diameter
                     effective_diameter = diameter
                 
-                # Get material density
+                # Get material density from bullet object
                 if hasattr(bullet_obj, "Density"):
                     material_density = float(bullet_obj.Density)
+            else:
+                # No bullet object selected - use material from combo box
+                material_db = get_material_database()
+                selected_material = self.material_combo.currentText()
+                material_density = material_db.get_density(selected_material)
             
             # Calculate stability
             App.Console.PrintMessage(f"Ballistic Calculator inputs:\n")
