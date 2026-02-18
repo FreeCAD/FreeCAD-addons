@@ -50,6 +50,36 @@ If bands don't fit, reduce bands/band length/spacing, increase total length, or 
 
 See the [User Manual](USER_MANUAL.md#important-constraints) for detailed explanation and examples.
 
+## Visual Appearance: Sectional Lines on Ogive
+
+You may notice visible sectional lines (segments) on the ogive (nose) section of the bullet. This is **normal and expected** behavior.
+
+### Why Ogive Sectional Lines Appear
+
+The ogive is created by revolving a 2D profile around the Z-axis. The ogive profile consists of line segments connecting points along the curved ogive shape:
+
+- The ogive curve (tangent, secant, or elliptical) is approximated using multiple line segments
+- One of these segments is **always positioned at the middle** of the ogive (at 50% of the ogive length)
+- These segments are necessary to accurately represent the mathematical curves that define the ogive shape
+
+When revolved, these line segments create visible sectional lines on the ogive surface in the 3D view.
+
+### Do Sectional Lines Affect Functionality?
+
+**No, the visible sectional lines do NOT affect:**
+
+- **Sectional views**: Cross-sections and cut views work perfectly - the lines are purely visual
+- **Geometry accuracy**: The solid geometry is mathematically correct and precise
+- **Export quality**: Exported STL and STEP files maintain full geometric accuracy
+- **Measurements**: All dimensions and calculations are accurate
+- **3D printing**: The exported geometry is suitable for manufacturing
+
+The sectional lines are a **visual artifact** of how FreeCAD displays revolved surfaces created from line segments. The underlying solid geometry is continuous and accurate. When you create sectional views or export the bullet, FreeCAD uses the actual solid geometry, not the visual representation with lines.
+
+### Technical Note
+
+The ogive is generated with multiple points (typically 20+ points depending on ogive length), ensuring one point is always at the exact middle (t=0.5) for accurate representation. These points are connected with line segments, which when revolved create the visible sectional lines you see.
+
 ## Screenshots
 
 ![Bullet Designer](Resources/screenshots/screenshot.png)

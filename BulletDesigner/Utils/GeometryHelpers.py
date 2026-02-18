@@ -256,62 +256,48 @@ def generate_bullet_profile_points(
     # Ogive base radius is the body radius at the transition point
     ogive_base_radius = body_radius
     
-    # Generate ogive using B-spline curve with 3 control points:
-    # 1. Start point (base of ogive)
-    # 2. Middle point (midpoint)
-    # 3. End point (tip/meplat)
-    # This creates a smooth curve without visible sections
+    # Generate ogive points
+    # Reduced number of points to minimize visible "sections" in display
+    # The stepped appearance comes from too many line segments being revolved
+    # Using fewer points (but still enough for smooth curve) reduces visible steps
+    # Minimum 20 points, scale with length (~1 point per mm)
+    # IMPORTANT: Ensure one point is exactly at the middle (t=0.5)
+    num_ogive_points = max(20, int(actual_ogive_length * 1.0))  # ~1 point per mm
     
-    # Start point (base of ogive)
-    t_start = 0.0
-    z_start = ogive_start_z
-    if ogive_type == "Tangent":
-        radius_start = generate_tangent_ogive_radius(
-            t_start, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    elif ogive_type == "Secant":
-        radius_start = generate_secant_ogive_radius(
-            t_start, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    else:  # Elliptical
-        radius_start = generate_elliptical_ogive_radius(
-            t_start, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    points.append((z_start, radius_start))
+    # Generate points, ensuring t=0.5 is included
+    t_values = []
+    for i in range(num_ogive_points + 1):
+        t = i / num_ogive_points  # 0 to 1
+        t_values.append(t)
     
-    # Middle point (midpoint of ogive)
-    t_middle = 0.5
-    z_middle = ogive_start_z + 0.5 * actual_ogive_length
-    if ogive_type == "Tangent":
-        radius_middle = generate_tangent_ogive_radius(
-            t_middle, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    elif ogive_type == "Secant":
-        radius_middle = generate_secant_ogive_radius(
-            t_middle, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    else:  # Elliptical
-        radius_middle = generate_elliptical_ogive_radius(
-            t_middle, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    points.append((z_middle, radius_middle))
+    # Ensure t=0.5 is in the list (middle point)
+    if 0.5 not in t_values:
+        # Find closest value and replace it with 0.5
+        closest_idx = min(range(len(t_values)), key=lambda i: abs(t_values[i] - 0.5))
+        t_values[closest_idx] = 0.5
+        # Sort to maintain order
+        t_values.sort()
     
-    # End point (tip of ogive, before meplat)
-    t_end = 1.0
-    z_end = ogive_end_z
-    if ogive_type == "Tangent":
-        radius_end = generate_tangent_ogive_radius(
-            t_end, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    elif ogive_type == "Secant":
-        radius_end = generate_secant_ogive_radius(
-            t_end, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    else:  # Elliptical
-        radius_end = generate_elliptical_ogive_radius(
-            t_end, ogive_base_radius, meplat_radius, actual_ogive_length
-        )
-    points.append((z_end, radius_end))
+    for t in t_values:
+        z_ogive = ogive_start_z + t * actual_ogive_length
+        
+        if ogive_type == "Tangent":
+            # Tangent ogive
+            radius_ogive = generate_tangent_ogive_radius(
+                t, ogive_base_radius, meplat_radius, actual_ogive_length
+            )
+        elif ogive_type == "Secant":
+            # Secant ogive (more aggressive)
+            radius_ogive = generate_secant_ogive_radius(
+                t, ogive_base_radius, meplat_radius, actual_ogive_length
+            )
+        else:  # Elliptical
+            # Elliptical ogive
+            radius_ogive = generate_elliptical_ogive_radius(
+                t, ogive_base_radius, meplat_radius, actual_ogive_length
+            )
+        
+        points.append((z_ogive, radius_ogive))
     
     # Tip (meplat) - MUST be at the total bullet length
     # The last ogive point (t=1.0) should already be at ogive_end_z with meplat_radius
@@ -458,69 +444,22 @@ def create_bullet_solid(profile_points: List[Tuple[float, float]]) -> Part.Shape
     
     profile_points = cleaned_points
     
-    # Find ogive section: 3 consecutive points that form the ogive curve
-    # The ogive is identified as 3 points where the middle point has a radius
-    # between start and end, and Z coordinates are increasing
-    ogive_start_idx = None
-    ogive_end_idx = None
-    
-    # Look for 3-point ogive pattern: start -> middle -> end with decreasing radius
-    for i in range(len(profile_points) - 2):
-        z1, r1 = profile_points[i]
-        z2, r2 = profile_points[i + 1]
-        z3, r3 = profile_points[i + 2]
-        
-        # Check if this could be the ogive: Z increasing, R decreasing
-        if (z2 > z1 and z3 > z2 and  # Z increases
-            r2 < r1 and r3 < r2 and  # R decreases
-            abs((z2 - z1) - (z3 - z2)) < 0.1):  # Roughly equal spacing
-            ogive_start_idx = i
-            ogive_end_idx = i + 2
-            App.Console.PrintMessage(f"  Found ogive section: points {i} to {i+2}\n")
-            break
-    
     # Create wire from points
     edges = []
-    i = 0
-    while i < len(profile_points) - 1:
+    for i in range(len(profile_points) - 1):
         z1, r1 = profile_points[i]
         z2, r2 = profile_points[i + 1]
         
         # Skip if points are identical
         if abs(z1 - z2) < 0.001 and abs(r1 - r2) < 0.001:
-            i += 1
             continue
         
-        # Check if this is the start of the ogive section (3 points)
-        if ogive_start_idx is not None and i == ogive_start_idx:
-            # Create B-spline curve for ogive section
-            ogive_points_3d = []
-            for j in range(ogive_start_idx, ogive_end_idx + 1):
-                z, r = profile_points[j]
-                ogive_points_3d.append(App.Vector(r, 0, z))
-            
-            if len(ogive_points_3d) == 3:
-                try:
-                    # Create B-spline curve interpolating through the 3 control points
-                    ogive_bspline = Part.BSplineCurve()
-                    ogive_bspline.interpolate(ogive_points_3d)
-                    ogive_edge = ogive_bspline.toShape()
-                    edges.append(ogive_edge)
-                    App.Console.PrintMessage(f"  Created B-spline ogive with 3 control points\n")
-                    
-                    # Skip to end of ogive section
-                    i = ogive_end_idx
-                    continue
-                except Exception as e:
-                    App.Console.PrintWarning(f"  Failed to create B-spline ogive, using lines: {e}\n")
-                    # Fall through to create line segments instead
-        
-        # Create line edge for non-ogive sections
+        # Create edge in XZ plane
         point1 = App.Vector(r1, 0, z1)
         point2 = App.Vector(r2, 0, z2)
+        
         edge = Part.makeLine(point1, point2)
         edges.append(edge)
-        i += 1
     
     # Create wire from edges
     wire = Part.Wire(edges)
