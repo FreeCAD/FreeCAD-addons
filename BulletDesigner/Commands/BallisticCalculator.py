@@ -307,36 +307,61 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
             temperature = self._get_temperature_c()
             pressure = self._get_pressure_hpa()
             
+            # Get effective diameter and material density from bullet object if available
+            effective_diameter = None
+            material_density = None
+            bullet_obj = self.bullet_obj or (self.bullet_combo.itemData(self.bullet_combo.currentIndex()) if self.bullet_combo.currentIndex() >= 0 else None)
+            
+            if bullet_obj:
+                # For land-riding bullets, effective diameter is groove diameter (where bands engage)
+                # For groove-riding bullets, effective diameter equals nominal diameter
+                if hasattr(bullet_obj, "LandRiding") and bullet_obj.LandRiding:
+                    # Land-riding: effective diameter is groove diameter (diameter property)
+                    effective_diameter = diameter
+                else:
+                    # Groove-riding: effective diameter equals nominal diameter
+                    effective_diameter = diameter
+                
+                # Get material density
+                if hasattr(bullet_obj, "Density"):
+                    material_density = float(bullet_obj.Density)
+            
             # Calculate stability
             App.Console.PrintMessage(f"Ballistic Calculator inputs:\n")
             App.Console.PrintMessage(f"  Diameter: {diameter:.2f} mm\n")
+            if effective_diameter and abs(effective_diameter - diameter) > 0.01:
+                App.Console.PrintMessage(f"  Effective Diameter: {effective_diameter:.2f} mm (bearing bands)\n")
             App.Console.PrintMessage(f"  Length: {length:.2f} mm\n")
             App.Console.PrintMessage(f"  Weight: {weight:.2f} grains\n")
+            if material_density:
+                App.Console.PrintMessage(f"  Material Density: {material_density:.2f} g/cm³\n")
             App.Console.PrintMessage(f"  Twist: {twist_rate:.2f} inches\n")
             App.Console.PrintMessage(f"  Velocity: {velocity:.2f} m/s\n")
             App.Console.PrintMessage(f"  Temperature: {temperature:.2f} °C\n")
             App.Console.PrintMessage(f"  Pressure: {pressure:.2f} hPa\n")
             
-            stability = calculate_stability_factor_miller(
+            stability, threshold = calculate_stability_factor_miller(
                 diameter, length, weight, twist_rate,
-                velocity, temperature, pressure
+                velocity, temperature, pressure,
+                effective_diameter, material_density
             )
             
             App.Console.PrintMessage(f"  Calculated stability: {stability:.4f}\n")
+            App.Console.PrintMessage(f"  Stability threshold: {threshold:.2f} ({'Monolithic copper/brass' if threshold >= 1.8 else 'Lead-core'})\n")
             self.stability_label.setText(f"{stability:.2f}")
             
-            # Stability status
-            if stability >= 1.5:
+            # Stability status using correct threshold
+            if stability >= threshold:
                 status = "Stable (Good)"
                 color = "green"
-            elif stability >= 1.0:
+            elif stability >= threshold * 0.67:  # ~1.0 for lead-core, ~1.2 for monolithic
                 status = "Marginally Stable"
                 color = "orange"
             else:
                 status = "Unstable"
                 color = "red"
             
-            App.Console.PrintMessage(f"  Status: {status} (threshold check: {stability:.4f} >= 1.5 = {stability >= 1.5})\n")
+            App.Console.PrintMessage(f"  Status: {status} (threshold check: {stability:.4f} >= {threshold:.2f} = {stability >= threshold})\n")
             
             self.stability_status_label.setText(status)
             self.stability_status_label.setStyleSheet(f"color: {color}")
@@ -353,7 +378,8 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
             
             # Calculate recommended twist
             twist_rate, twist_str = calculate_recommended_twist_rate(
-                diameter, length, weight, velocity
+                diameter, length, weight, velocity,
+                effective_diameter, material_density
             )
             self.recommended_twist_label.setText(twist_str)
             

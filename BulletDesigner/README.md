@@ -136,7 +136,7 @@ For detailed step-by-step instructions, see the **[User Manual](USER_MANUAL.md)*
    - Muzzle velocity
    - Atmospheric conditions
 4. Click "Calculate" to see results:
-   - Stability factor (should be > 1.5 for stable flight)
+   - Stability factor (Sg ≥ 1.8 for monolithic copper/brass, Sg ≥ 1.5 for lead-core)
    - Ballistic coefficient
    - Sectional density
    - Recommended twist rate
@@ -190,38 +190,127 @@ For detailed step-by-step instructions, see the **[User Manual](USER_MANUAL.md)*
 
 ## Ballistic Calculations
 
-### Stability Factor
+### Stability Factor (Miller's Formula)
 
-The stability factor (Sg) indicates bullet stability:
-- **Sg > 1.5**: Stable (good)
-- **1.0 < Sg < 1.5**: Marginally stable
+The stability factor (Sg) indicates bullet stability using Miller's formula with modified thresholds for monolithic bullets.
+
+**FORMULA:**
+```
+Sg = (30 × m × (V/2800)^(1/3)) / ((T/d)² × d³ × l × (1 + l²))
+```
+
+**WHERE:**
+- `m` = bullet mass (grains)
+- `V` = muzzle velocity (ft/sec)
+- `T` = twist rate (inches per turn)
+- `d` = effective bullet diameter (inches) - **use bearing band diameter for land-riding bullets**
+- `l` = bullet length in calibers = L/d
+- `L` = bullet length (inches)
+
+**STABILITY THRESHOLDS:**
+- **Monolithic copper/brass bullets**: Sg ≥ 1.8 (stable)
+- **Lead-core bullets**: Sg ≥ 1.5 (stable)
+- **1.0 < Sg < threshold**: Marginally stable
 - **Sg < 1.0**: Unstable
 
-Calculated using Miller's formula with atmospheric corrections.
+**CRITICAL:** Use **effective diameter** (diameter at bearing bands) for land-riding/banded bullets, not nominal diameter. The effective diameter is the groove diameter where the bands engage the rifling.
 
-### Ballistic Coefficient
+**Atmospheric Corrections:**
+- Temperature correction: `√((T_F + 459.67) / 518.67)`
+- Pressure correction: `√(P_inHg / 29.92)`
+- Velocity correction: `(V_fps / 2800)^(1/3)`
+
+**Sources:** Litz, Applied Ballistics; Courtney & Courtney (2012)
+
+### Ballistic Coefficient (G1)
 
 Estimated G1 ballistic coefficient based on:
-- Sectional density
-- Ogive type (form factor)
-- Bullet length ratio
+- Sectional density: `SD = Weight (lbs) / Diameter² (inches)`
+- Form factor (based on ogive type):
+  - Tangent: 0.85
+  - Secant: 0.80
+  - Elliptical: 0.75
+- Length corrections for long bullets (>4:1 ratio)
+- Meplat and boat tail corrections
+
+**Formula:** `BC = SD / Form_Factor`
+
+### Sectional Density
+
+**Formula:** `SD = Weight (lbs) / Diameter² (inches)`
+
+Where:
+- Weight in pounds = `Weight (grains) / 7000`
+- Diameter in inches = `Diameter (mm) / 25.4`
+
+Sectional density is a dimensionless number indicating the bullet's ability to retain velocity and energy.
+
+### Weight and Volume Calculations
+
+**Volume from Weight:**
+```
+Volume (mm³) = (Weight (grains) / 15.4323584) / Density (g/cm³) × 1000
+```
+
+**Weight from Volume:**
+```
+Weight (grains) = Volume (mm³) / 1000 × Density (g/cm³) × 15.4323584
+```
+
+### Ogive Geometry
+
+**Radius of Curvature (Circular Arc Ogive):**
+```
+ρ = (R² + L²) / (2L)
+```
+
+Where:
+- `ρ` = radius of curvature (mm)
+- `R` = bullet radius at junction (mm)
+- `L` = ogive length (mm)
+
+**Ogive Length:**
+```
+L = (Ogive Caliber Ratio × Diameter) / 2
+```
 
 ### Recommended Twist Rate
 
-Calculated using Greenhill formula:
-- Standard: `T = 150 * D² / L`
-- High velocity (>2800 fps): Includes velocity correction
+**For Monolithic Copper/Brass Bullets:**
+```
+T_required = d × √[(30 × m) / (1.8 × d³ × l × (1 + l²))] × (2800/V)^(1/6)
+```
+
+**For Lead-Core Bullets (Greenhill Formula):**
+- Standard (V ≤ 2800 fps): `T = 150 × D² / L`
+- High velocity (V > 2800 fps): `T = 150 × D² / L × √(V/2800)`
+
+Where:
+- `T` = twist rate (inches per turn)
+- `D` = diameter (inches)
+- `L` = length (inches)
+- `m` = mass (grains)
+- `V` = velocity (fps)
+- `d` = effective diameter (inches)
+- `l` = length in calibers
 
 ## Material Database
 
-Built-in materials include:
-- Pure Copper (8.96 g/cm³)
-- Gilding Metal 95/5 (8.86 g/cm³)
-- Brass 70/30 (8.53 g/cm³)
-- Lead Core (11.34 g/cm³)
-- Copper Alloy (8.70 g/cm³)
-- Lead-Tin Alloy 95/5 (11.20 g/cm³)
-- Steel (7.85 g/cm³)
+Built-in materials with densities:
+
+| Material | Density (g/cm³) | Description |
+|----------|----------------|-------------|
+| **Pure Copper** | 8.96 | Pure copper, excellent for monolithic bullets |
+| **Gilding Metal (95/5)** | 8.86 | 95% copper, 5% zinc - common bullet jacket material |
+| **Brass (70/30)** | 8.53 | 70% copper, 30% zinc - harder than gilding metal |
+| **Copper Alloy** | 8.70 | General purpose copper alloy |
+| **Lead Core** | 11.34 | Pure lead - traditional bullet core material |
+| **Lead-Tin Alloy (95/5)** | 11.20 | 95% lead, 5% tin - common cast bullet alloy |
+| **Steel** | 7.85 | Steel core for armor-piercing bullets |
+
+**Material Selection for Stability Calculations:**
+- Materials with density **7.0-9.5 g/cm³** are treated as **monolithic copper/brass** (stability threshold: Sg ≥ 1.8)
+- Materials with density **> 10 g/cm³** are treated as **lead-core** bullets (stability threshold: Sg ≥ 1.5)
 
 Custom materials can be added through the material selection interface.
 
