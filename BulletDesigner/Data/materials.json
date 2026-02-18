@@ -47,6 +47,18 @@
       "density": 7.85,
       "color": [0.50, 0.50, 0.55],
       "description": "Steel core for armor-piercing bullets"
+    },
+    {
+      "name": "Tungsten Core",
+      "density": 19.3,
+      "color": [0.35, 0.35, 0.40],
+      "description": "Pure tungsten - very dense core material for armor-piercing bullets"
+    },
+    {
+      "name": "Jacketed Tungsten Core",
+      "density": 18.0,
+      "color": [0.50, 0.45, 0.40],
+      "description": "Jacketed bullet with tungsten core - high-density armor-piercing construction"
     }
   ]
 }

@@ -308,6 +308,8 @@ Built-in materials with densities:
 | **Jacketed Lead Core** | 10.8 | Jacketed bullet with lead core - typical FMJ construction (gilding metal jacket + lead core) |
 | **Lead-Tin Alloy (95/5)** | 11.20 | 95% lead, 5% tin - common cast bullet alloy |
 | **Steel** | 7.85 | Steel core for armor-piercing bullets |
+| **Tungsten Core** | 19.3 | Pure tungsten - very dense core material for armor-piercing bullets |
+| **Jacketed Tungsten Core** | 18.0 | Jacketed bullet with tungsten core - high-density armor-piercing construction |
 
 **Material Selection for Stability Calculations:**
 - Materials with density **7.0-9.5 g/cm³** are treated as **monolithic copper/brass** (stability threshold: Sg ≥ 1.8)
