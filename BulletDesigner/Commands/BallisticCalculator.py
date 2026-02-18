@@ -274,7 +274,7 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
         """Load data from bullet object."""
         obj = bullet_obj or self.bullet_obj
         
-            if obj and hasattr(obj, "Diameter"):
+        if obj and hasattr(obj, "Diameter"):
             self.diameter_spin.setValue(obj.Diameter)
             self.length_spin.setValue(obj.Length)
             self.weight_spin.setValue(obj.ActualWeight if obj.ActualWeight > 0 else obj.Weight)
@@ -366,7 +366,8 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
             stability, threshold = calculate_stability_factor_miller(
                 diameter, length, weight, twist_rate,
                 velocity, temperature, pressure,
-                effective_diameter, material_density
+                effective_diameter_mm=effective_diameter,
+                material_density_g_per_cm3=material_density
             )
             
             App.Console.PrintMessage(f"  Calculated stability: {stability:.4f}\n")
@@ -402,7 +403,8 @@ class BallisticCalculatorDialog(QtWidgets.QDialog):
             # Calculate recommended twist
             twist_rate, twist_str = calculate_recommended_twist_rate(
                 diameter, length, weight, velocity,
-                effective_diameter, material_density
+                effective_diameter_mm=effective_diameter,
+                material_density_g_per_cm3=material_density
             )
             self.recommended_twist_label.setText(twist_str)
             
