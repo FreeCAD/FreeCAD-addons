@@ -256,67 +256,46 @@ def generate_bullet_profile_points(
     # Ogive base radius is the body radius at the transition point
     ogive_base_radius = body_radius
     
-    # Generate ogive points
-    # Reduced number of points to minimize visible "sections" in display
-    # The stepped appearance comes from too many line segments being revolved
-    # Using fewer points (but still enough for smooth curve) reduces visible steps
-    # Minimum 20 points, scale with length (~1 point per mm)
-    # IMPORTANT: Ensure one point is exactly at the middle (t=0.5)
-    num_ogive_points = max(20, int(actual_ogive_length * 1.0))  # ~1 point per mm
+    # Generate ogive using endpoints and rim point (for circular arc)
+    # Instead of many segments, create a single arc from start to end with a rim point
     
-    # Generate points, ensuring t=0.5 is included
-    t_values = []
-    for i in range(num_ogive_points + 1):
-        t = i / num_ogive_points  # 0 to 1
-        t_values.append(t)
+    # Start point: junction with body
+    ogive_start_point = (ogive_start_z, ogive_base_radius)
     
-    # Ensure t=0.5 is in the list (middle point)
-    if 0.5 not in t_values:
-        # Find closest value and replace it with 0.5
-        closest_idx = min(range(len(t_values)), key=lambda i: abs(t_values[i] - 0.5))
-        t_values[closest_idx] = 0.5
-        # Sort to maintain order
-        t_values.sort()
+    # End point: tip/meplat
+    ogive_end_point = (ogive_end_z, meplat_radius)
     
-    for t in t_values:
-        z_ogive = ogive_start_z + t * actual_ogive_length
-        
-        if ogive_type == "Tangent":
-            # Tangent ogive
-            radius_ogive = generate_tangent_ogive_radius(
-                t, ogive_base_radius, meplat_radius, actual_ogive_length
-            )
-        elif ogive_type == "Secant":
-            # Secant ogive (more aggressive)
-            radius_ogive = generate_secant_ogive_radius(
-                t, ogive_base_radius, meplat_radius, actual_ogive_length
-            )
-        else:  # Elliptical
-            # Elliptical ogive
-            radius_ogive = generate_elliptical_ogive_radius(
-                t, ogive_base_radius, meplat_radius, actual_ogive_length
-            )
-        
-        points.append((z_ogive, radius_ogive))
+    # Rim point: midpoint of ogive (t=0.5) - defines the curve
+    z_rim = ogive_start_z + 0.5 * actual_ogive_length
+    if ogive_type == "Tangent":
+        radius_rim = generate_tangent_ogive_radius(
+            0.5, ogive_base_radius, meplat_radius, actual_ogive_length
+        )
+    elif ogive_type == "Secant":
+        radius_rim = generate_secant_ogive_radius(
+            0.5, ogive_base_radius, meplat_radius, actual_ogive_length
+        )
+    else:  # Elliptical
+        radius_rim = generate_elliptical_ogive_radius(
+            0.5, ogive_base_radius, meplat_radius, actual_ogive_length
+        )
+    ogive_rim_point = (z_rim, radius_rim)
     
-    # Tip (meplat) - MUST be at the total bullet length
-    # The last ogive point (t=1.0) should already be at ogive_end_z with meplat_radius
-    # But we need to ensure we close to the axis at the exact tip
+    # Store ogive points: start, rim (midpoint), end
+    # These will be detected in create_bullet_solid and converted to an arc
+    points.append(ogive_start_point)  # Start of ogive (junction with body)
+    points.append(ogive_rim_point)   # Rim point (midpoint at t=0.5)
+    points.append(ogive_end_point)   # End of ogive (tip/meplat)
+    
+    App.Console.PrintMessage(f"Ogive points: start ({ogive_start_point[0]:.2f}, {ogive_start_point[1]:.2f}), rim ({ogive_rim_point[0]:.2f}, {ogive_rim_point[1]:.2f}), end ({ogive_end_point[0]:.2f}, {ogive_end_point[1]:.2f})\n")
+    
+    # Tip (meplat) - The ogive end point is already at (length_mm, meplat_radius)
+    # We just need to add the axis point to close the wire
+    # Only add if meplat_radius > 0 (if meplat is zero, ogive end is already on axis)
     if meplat_radius > 0:
-        # Ensure meplat is at the exact tip (length_mm)
-        # The last ogive point should already be here, but add explicit point to be sure
-        if abs(points[-1][0] - length_mm) > 0.001:
-            # Last point wasn't at tip, add it
-            points.append((length_mm, meplat_radius))
-        # Always end on axis for proper wire closing
+        # Add point on axis at tip to close wire
         points.append((length_mm, 0.0))
-    else:
-        # If meplat is zero, ensure we end on axis at tip
-        if abs(points[-1][0] - length_mm) > 0.001:
-            points.append((length_mm, 0.0))
-        else:
-            # Last point is at tip but might not be on axis
-            points.append((length_mm, 0.0))
+    # If meplat_radius is 0, the ogive end point is already on axis, so we're done
     
     return points
 
@@ -445,33 +424,202 @@ def create_bullet_solid(profile_points: List[Tuple[float, float]]) -> Part.Shape
     profile_points = cleaned_points
     
     # Create wire from points
+    # Detect ogive section (3 consecutive points: start, rim, end) and create arc
     edges = []
-    for i in range(len(profile_points) - 1):
+    i = 0
+    ogive_arc_created = False
+    
+    App.Console.PrintMessage(f"=== Creating wire from {len(profile_points)} profile points ===\n")
+    
+    while i < len(profile_points) - 1:
         z1, r1 = profile_points[i]
+        
+        # Check if this is the start of an ogive (3 consecutive points forming ogive)
+        # Ogive: start point (junction), rim point (midpoint), end point (tip)
+        if i + 2 < len(profile_points):
+            z2, r2 = profile_points[i + 1]
+            z3, r3 = profile_points[i + 2]
+            
+            # Check if these 3 points form an ogive (rim point is between start and end)
+            # Ogive characteristics: z increases, r decreases from start to end, rim is midpoint
+            # More lenient check: allow rim point to be anywhere between start and end
+            is_ogive = (
+                z1 < z2 < z3 and  # Z increases
+                r1 > r2 and r2 > r3 and  # R decreases (convex curve)
+                (z2 - z1) > 0.1 and (z3 - z2) > 0.1  # Reasonable spacing
+            )
+            
+            App.Console.PrintMessage(f"  Point {i}: ({z1:.2f}, {r1:.2f}), checking ogive: {is_ogive}\n")
+            
+            if is_ogive:
+                # Create circular arc from 3 points (start, rim, end)
+                try:
+                    # Points in XZ plane (X = radius, Z = axis)
+                    start_point = App.Vector(r1, 0, z1)
+                    rim_point = App.Vector(r2, 0, z2)
+                    end_point = App.Vector(r3, 0, z3)
+                    
+                    # Try Part.ArcOfCircle with 3 points constructor
+                    try:
+                        arc = Part.ArcOfCircle(start_point, rim_point, end_point)
+                        arc_shape = arc.toShape()
+                        
+                        # Verify arc endpoints match expected points
+                        arc_start = arc_shape.Vertexes[0].Point
+                        arc_end = arc_shape.Vertexes[-1].Point
+                        
+                        if (arc_start - start_point).Length > 0.01 or (arc_end - end_point).Length > 0.01:
+                            App.Console.PrintWarning(f"Arc endpoints don't match: start diff={(arc_start - start_point).Length:.3f}, end diff={(arc_end - end_point).Length:.3f}\n")
+                            raise ValueError("Arc endpoints don't match")
+                        
+                        edges.append(arc_shape)
+                        App.Console.PrintMessage(f"Created ogive arc from 3 points: start ({z1:.2f}, {r1:.2f}), rim ({z2:.2f}, {r2:.2f}), end ({z3:.2f}, {r3:.2f})\n")
+                        ogive_arc_created = True
+                        
+                        # After creating arc, we need to connect from arc end (point i+2) to next point (i+3)
+                        # Set i to i+2 and update z1, r1 to arc end point so next iteration processes connection correctly
+                        i = i + 2
+                        z1, r1 = z3, r3  # Update to arc end point
+                        # Don't continue - let loop continue to process the connection
+                        # The arc ends at (z3, r3), so next iteration will connect (z3, r3) to next point
+                    except:
+                        # If direct constructor doesn't work, calculate circle from 3 points
+                        # Calculate circle center using perpendicular bisector method
+                        v1 = rim_point - start_point
+                        v2 = end_point - rim_point
+                        
+                        # Midpoints
+                        mid1 = start_point + v1 * 0.5
+                        mid2 = rim_point + v2 * 0.5
+                        
+                        # Perpendicular directions in XZ plane
+                        perp1 = App.Vector(-v1.z, 0, v1.x)
+                        perp2 = App.Vector(-v2.z, 0, v2.x)
+                        
+                        if perp1.Length < 1e-6 or perp2.Length < 1e-6:
+                            raise ValueError("Points are collinear")
+                        
+                        perp1.normalize()
+                        perp2.normalize()
+                        
+                        # Solve for circle center: mid1 + t1*perp1 = mid2 + t2*perp2
+                        # 2D system in XZ plane
+                        A = perp1.x
+                        B = -perp2.x
+                        C = mid2.x - mid1.x
+                        D = perp1.z
+                        E = -perp2.z
+                        F = mid2.z - mid1.z
+                        
+                        det = A * E - B * D
+                        if abs(det) < 1e-6:
+                            raise ValueError("Cannot solve for circle center")
+                        
+                        t1 = (C * E - B * F) / det
+                        center = mid1 + perp1 * t1
+                        
+                        # Calculate radius
+                        radius = (start_point - center).Length
+                        
+                        # Create circle
+                        circle = Part.Circle()
+                        circle.Center = center
+                        circle.Radius = radius
+                        circle.Axis = App.Vector(0, 1, 0)  # Normal to XZ plane
+                        
+                        # Create arc from start to end
+                        arc = Part.ArcOfCircle(circle, start_point, end_point)
+                        arc_shape = arc.toShape()
+                        
+                        # Verify arc endpoints match expected points
+                        arc_start = arc_shape.Vertexes[0].Point
+                        arc_end = arc_shape.Vertexes[-1].Point
+                        
+                        if (arc_start - start_point).Length > 0.01 or (arc_end - end_point).Length > 0.01:
+                            App.Console.PrintWarning(f"Arc endpoints don't match: start diff={(arc_start - start_point).Length:.3f}, end diff={(arc_end - end_point).Length:.3f}\n")
+                            raise ValueError("Arc endpoints don't match")
+                        
+                        edges.append(arc_shape)
+                        App.Console.PrintMessage(f"Created ogive arc: start ({z1:.2f}, {r1:.2f}), rim ({z2:.2f}, {r2:.2f}), end ({z3:.2f}, {r3:.2f}), center ({center.x:.2f}, {center.z:.2f}), radius {radius:.2f}\n")
+                        ogive_arc_created = True
+                        
+                        # After creating arc, we need to connect from arc end (point i+2) to next point (i+3)
+                        # Set i to i+2 and update z1, r1 to arc end point so next iteration processes connection correctly
+                        i = i + 2
+                        z1, r1 = z3, r3  # Update to arc end point
+                        # Don't continue - let loop continue to process the connection
+                        # The arc ends at (z3, r3), so next iteration will connect (z3, r3) to next point
+                except Exception as e:
+                    # If arc creation fails, fall back to line segments
+                    App.Console.PrintWarning(f"Failed to create ogive arc ({e}), using line segments\n")
+                    App.Console.PrintWarning(f"  Will create line segments instead\n")
+                    # Fall through to line segment creation - don't skip points
+                    is_ogive = False  # Reset flag so we process normally
+        
+        # Regular line segment
+        if i + 1 >= len(profile_points):
+            break
+            
         z2, r2 = profile_points[i + 1]
         
         # Skip if points are identical
         if abs(z1 - z2) < 0.001 and abs(r1 - r2) < 0.001:
+            i += 1
             continue
         
         # Create edge in XZ plane
         point1 = App.Vector(r1, 0, z1)
         point2 = App.Vector(r2, 0, z2)
         
-        edge = Part.makeLine(point1, point2)
-        edges.append(edge)
+        try:
+            edge = Part.makeLine(point1, point2)
+            edges.append(edge)
+            App.Console.PrintMessage(f"  Created line segment: ({z1:.2f}, {r1:.2f}) -> ({z2:.2f}, {r2:.2f})\n")
+        except Exception as e:
+            App.Console.PrintError(f"Failed to create line segment: {e}\n")
+            raise
+        
+        i += 1
+    
+    App.Console.PrintMessage(f"Created {len(edges)} edges total\n")
+    
+    if len(edges) == 0:
+        raise ValueError("No edges created from profile points")
     
     # Create wire from edges
-    wire = Part.Wire(edges)
+    try:
+        wire = Part.Wire(edges)
+        App.Console.PrintMessage(f"Wire created with {len(wire.Edges)} edges, closed={wire.isClosed()}\n")
+    except Exception as e:
+        App.Console.PrintError(f"Failed to create wire from edges: {e}\n")
+        App.Console.PrintError(f"  Number of edges: {len(edges)}\n")
+        for idx, edge in enumerate(edges):
+            try:
+                App.Console.PrintError(f"  Edge {idx}: {edge.ShapeType}, length={edge.Length:.3f}\n")
+            except:
+                App.Console.PrintError(f"  Edge {idx}: invalid\n")
+        raise ValueError(f"Failed to create wire: {e}")
     
     # Close the wire if needed - profile should start and end on axis
     if not wire.isClosed():
+        App.Console.PrintMessage(f"Wire is not closed, attempting to close it...\n")
+        # Get actual wire endpoints
+        if wire.Vertexes:
+            wire_first = wire.Vertexes[0].Point
+            wire_last = wire.Vertexes[-1].Point
+            App.Console.PrintMessage(f"  Wire first vertex: ({wire_first.x:.3f}, {wire_first.z:.3f})\n")
+            App.Console.PrintMessage(f"  Wire last vertex: ({wire_last.x:.3f}, {wire_last.z:.3f})\n")
+        
         # Add closing edge along the axis from tip back to base
         first_z, first_r = profile_points[0]
         last_z, last_r = profile_points[-1]
         
+        App.Console.PrintMessage(f"  Profile first point: ({first_z:.3f}, {first_r:.3f})\n")
+        App.Console.PrintMessage(f"  Profile last point: ({last_z:.3f}, {last_r:.3f})\n")
+        
         # Profile should start and end on axis (r=0), but verify
         if first_r > 0.001 or last_r > 0.001:
+            App.Console.PrintMessage(f"  Profile endpoints not on axis, adding closing edges...\n")
             # If not on axis, add edges to close to axis
             first_point = App.Vector(first_r, 0, first_z)
             last_point = App.Vector(last_r, 0, last_z)
@@ -495,18 +643,61 @@ def create_bullet_solid(profile_points: List[Tuple[float, float]]) -> Part.Shape
                 ))
             
             all_edges = edges + closing_edges
-            wire = Part.Wire(all_edges)
+            App.Console.PrintMessage(f"  Added {len(closing_edges)} closing edges, total edges: {len(all_edges)}\n")
+            try:
+                wire = Part.Wire(all_edges)
+                App.Console.PrintMessage(f"  New wire created, closed={wire.isClosed()}\n")
+            except Exception as e:
+                App.Console.PrintError(f"  Failed to create wire with closing edges: {e}\n")
+                raise
         else:
             # Both ends on axis - just need axis edge to close
-            axis_edge = Part.makeLine(
-                App.Vector(0, 0, last_z),
-                App.Vector(0, 0, first_z)
-            )
+            App.Console.PrintMessage(f"  Both endpoints on axis, adding axis edge...\n")
+            App.Console.PrintMessage(f"  Creating axis edge from ({last_z:.3f}, 0) to ({first_z:.3f}, 0)\n")
+            
+            # Get actual wire endpoints to ensure proper connection
+            if wire.Vertexes:
+                wire_last_pt = wire.Vertexes[-1].Point
+                wire_first_pt = wire.Vertexes[0].Point
+                App.Console.PrintMessage(f"  Wire last vertex: ({wire_last_pt.z:.3f}, {wire_last_pt.x:.3f})\n")
+                App.Console.PrintMessage(f"  Wire first vertex: ({wire_first_pt.z:.3f}, {wire_first_pt.x:.3f})\n")
+                
+                # Use wire's actual endpoints for axis edge
+                axis_edge = Part.makeLine(wire_last_pt, wire_first_pt)
+            else:
+                # Fallback to profile points
+                axis_edge = Part.makeLine(
+                    App.Vector(0, 0, last_z),
+                    App.Vector(0, 0, first_z)
+                )
+            
             all_edges = edges + [axis_edge]
-            wire = Part.Wire(all_edges)
+            App.Console.PrintMessage(f"  Added axis edge, total edges: {len(all_edges)}\n")
+            try:
+                wire = Part.Wire(all_edges)
+                App.Console.PrintMessage(f"  New wire created, closed={wire.isClosed()}\n")
+                if not wire.isClosed():
+                    # Try to fix by ensuring edges are properly ordered
+                    App.Console.PrintWarning(f"  Wire still not closed, checking edge connectivity...\n")
+                    for idx, edge in enumerate(all_edges):
+                        if edge.Vertexes:
+                            v1 = edge.Vertexes[0].Point
+                            v2 = edge.Vertexes[-1].Point
+                            App.Console.PrintMessage(f"    Edge {idx}: ({v1.z:.3f}, {v1.x:.3f}) -> ({v2.z:.3f}, {v2.x:.3f})\n")
+            except Exception as e:
+                App.Console.PrintError(f"  Failed to create wire with axis edge: {e}\n")
+                raise
     
     # Validate wire is closed
     if not wire.isClosed():
+        App.Console.PrintError(f"Wire is not closed after closing attempt\n")
+        if wire.Vertexes:
+            App.Console.PrintError(f"  First vertex: {wire.Vertexes[0].Point}\n")
+            App.Console.PrintError(f"  Last vertex: {wire.Vertexes[-1].Point}\n")
+            first_pt = wire.Vertexes[0].Point
+            last_pt = wire.Vertexes[-1].Point
+            dist = (first_pt - last_pt).Length
+            App.Console.PrintError(f"  Distance between first and last: {dist:.6f}\n")
         raise ValueError("Wire could not be closed - invalid profile")
     
     # Create face from wire - required for proper solid creation
