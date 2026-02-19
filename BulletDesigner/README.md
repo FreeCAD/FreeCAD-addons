@@ -50,35 +50,22 @@ If bands don't fit, reduce bands/band length/spacing, increase total length, or 
 
 See the [User Manual](USER_MANUAL.md#important-constraints) for detailed explanation and examples.
 
-## Visual Appearance: Sectional Lines on Ogive
+## Ogive Geometry Implementation
 
-You may notice visible sectional lines (segments) on the ogive (nose) section of the bullet. This is **normal and expected** behavior.
+The ogive (nose section) is created using a **circular arc** defined by three points:
 
-### Why Ogive Sectional Lines Appear
+- **Start point**: Junction with the body (at ogive base)
+- **Rim point**: Midpoint of the ogive (at 50% of ogive length, t=0.5)
+- **End point**: Tip/meplat (at bullet tip)
 
-The ogive is created by revolving a 2D profile around the Z-axis. The ogive profile consists of line segments connecting points along the curved ogive shape:
+This approach creates a **smooth, continuous arc** without visible sectional lines. The arc is mathematically precise and accurately represents the ogive curve (tangent, secant, or elliptical) based on the selected ogive type.
 
-- The ogive curve (tangent, secant, or elliptical) is approximated using multiple line segments
-- One of these segments is **always positioned at the middle** of the ogive (at 50% of the ogive length)
-- These segments are necessary to accurately represent the mathematical curves that define the ogive shape
+### Technical Details
 
-When revolved, these line segments create visible sectional lines on the ogive surface in the 3D view.
-
-### Do Sectional Lines Affect Functionality?
-
-**No, the visible sectional lines do NOT affect:**
-
-- **Sectional views**: Cross-sections and cut views work perfectly - the lines are purely visual
-- **Geometry accuracy**: The solid geometry is mathematically correct and precise
-- **Export quality**: Exported STL and STEP files maintain full geometric accuracy
-- **Measurements**: All dimensions and calculations are accurate
-- **3D printing**: The exported geometry is suitable for manufacturing
-
-The sectional lines are a **visual artifact** of how FreeCAD displays revolved surfaces created from line segments. The underlying solid geometry is continuous and accurate. When you create sectional views or export the bullet, FreeCAD uses the actual solid geometry, not the visual representation with lines.
-
-### Technical Note
-
-The ogive is generated with multiple points (typically 20+ points depending on ogive length), ensuring one point is always at the exact middle (t=0.5) for accurate representation. These points are connected with line segments, which when revolved create the visible sectional lines you see.
+- The ogive profile uses `Part.ArcOfCircle` to create a single smooth arc from the three points
+- The rim point ensures accurate representation of the ogive curve at its midpoint
+- When revolved around the Z-axis, this creates a smooth, continuous ogive surface
+- The arc geometry is mathematically correct and suitable for manufacturing and export
 
 ## Screenshots
 
@@ -274,7 +261,14 @@ Weight (grains) = Volume (mm³) / 1000 × Density (g/cm³) × 15.4323584
 
 ### Ogive Geometry
 
-**Radius of Curvature (Circular Arc Ogive):**
+The ogive is created as a circular arc using three points: start (junction with body), rim (midpoint), and end (tip/meplat).
+
+**Ogive Length:**
+```
+L = (Ogive Caliber Ratio × Diameter) / 2
+```
+
+**Radius of Curvature (for Tangent Ogive):**
 ```
 ρ = (R² + L²) / (2L)
 ```
@@ -284,10 +278,7 @@ Where:
 - `R` = bullet radius at junction (mm)
 - `L` = ogive length (mm)
 
-**Ogive Length:**
-```
-L = (Ogive Caliber Ratio × Diameter) / 2
-```
+The ogive curve is calculated mathematically based on the selected ogive type (tangent, secant, or elliptical), and the rim point ensures accurate representation of the curve at its midpoint.
 
 ### Recommended Twist Rate
 
@@ -366,7 +357,28 @@ BulletDesigner/
 └── Data/                  # Data files
     ├── materials.json
     └── bullet_templates.json
+├── examples/              # Example files
+    ├── README.md          # Examples documentation
+    ├── *.FCStd           # Example FreeCAD bullet designs
+    └── *.pdf             # PDF technical drawings
 ```
+
+## Examples
+
+Example bullet designs and PDF drawings are available in the `examples/` directory:
+
+- **FreeCAD Documents (.FCStd)**: Ready-to-use bullet designs you can open, modify, and learn from
+  - 6.5mm bore riding 140 gr
+  - 6.5mm bore riding 150 gr
+  - 6.5mm bore riding 165 gr
+
+- **PDF Drawings**: Technical drawings with dimensions and specifications
+  - 140gr bore rider 6.5mm
+  - 150gr bore rider 6.5mm
+
+See [examples/README.md](examples/README.md) for detailed descriptions of each example file.
+
+**Note:** Example `.FCStd` files may use older stability formulas. Use the current Ballistic Calculator to recalculate stability with the updated formulas.
 
 ## Requirements
 
@@ -383,8 +395,6 @@ BulletDesigner/
 
 - Cartridge design is not yet implemented (placeholder)
 - Bullet library browser is not yet implemented (placeholder)
-- Advanced analysis features (trajectory, drag coefficient plots) are planned
-- Technical drawing generation is planned
 - **Bands must fit on bullet**: If bands don't fit within body length, solid generation will fail (this is by design to prevent invalid geometry)
 
 ## Contributing
