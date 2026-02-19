@@ -67,6 +67,15 @@ class BulletDesignerWorkbench(Gui.Workbench):
             App.Console.PrintError(traceback.format_exc())
         
         try:
+            from Commands import TrajectoryCalculator
+            commands_loaded.append("TrajectoryCalculator")
+            App.Console.PrintLog("  ✓ TrajectoryCalculator loaded\n")
+        except Exception as e:
+            App.Console.PrintError(f"  ✗ Failed to import TrajectoryCalculator: {e}\n")
+            import traceback
+            App.Console.PrintError(traceback.format_exc())
+        
+        try:
             from Commands import CreateCartridge
             commands_loaded.append("CreateCartridge")
             App.Console.PrintLog("  ✓ CreateCartridge loaded\n")
@@ -122,9 +131,10 @@ class BulletDesignerWorkbench(Gui.Workbench):
         self.appendMenu(["Bullet Designer", "Library"], library_menu)
         
         analysis_menu = [
-            "BulletDesigner_BallisticCalculator"
+            "BulletDesigner_BallisticCalculator",
+            "BulletDesigner_TrajectoryCalculator"
         ]
-        self.appendMenu(["Bullet Designer", "Analysis"], analysis_menu)
+        self.appendMenu(["Bullet Designer", "Calculate"], analysis_menu)
         
         export_menu = [
             "BulletDesigner_ExportSTL",

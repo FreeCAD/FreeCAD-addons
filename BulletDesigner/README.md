@@ -24,6 +24,12 @@ A comprehensive FreeCAD workbench for parametric bullet and projectile design wi
   - Ballistic coefficient estimation (G1)
   - Sectional density
   - Recommended twist rate (Greenhill)
+- **Trajectory Calculator**:
+  - Point-mass trajectory integration (RK4)
+  - Transonic zone analysis
+  - Velocity decay and drop calculation
+  - Spin drift estimation (Litz formula)
+  - G7 ballistic coefficient conversion
 - **Material Database**: Built-in materials (copper, lead, brass, gilding metal) with customizable properties
 - **Export Capabilities**: Export to STEP and STL formats for manufacturing
 
@@ -127,6 +133,23 @@ For detailed step-by-step instructions, see the **[User Manual](USER_MANUAL.md)*
    - Ballistic coefficient
    - Sectional density
    - Recommended twist rate
+
+### Trajectory & Transonic Calculator
+
+1. Select a bullet object (optional) or enter parameters manually
+2. Go to menu: `Bullet Designer` → `Calculate` → `Trajectory & Transonic`
+3. Enter or adjust parameters:
+   - Bullet dimensions (auto-filled if bullet selected)
+   - Boat tail angle (for G7 BC conversion)
+   - Muzzle velocity
+   - Barrel elevation angle
+   - Atmospheric conditions (temperature, pressure)
+   - Maximum range
+4. Click "Calculate" to see results:
+   - Trajectory table with range, velocity, Mach, drop, spin drift, and time
+   - Transonic entry/exit points
+   - Stability warning at transonic entry
+   - BC truing formula reference
 
 ### Exporting Bullets
 
@@ -303,6 +326,100 @@ Where:
 - For **land-riding bullets**: `d_effective` = band diameter (typically 6.5-6.6 mm, **NOT** 6.7 mm nominal)
 - For **groove-riding bullets**: `d_effective` = nominal diameter
 
+### Trajectory & Transonic Analysis
+
+The trajectory calculator uses a point-mass model with RK4 integration to calculate bullet flight path, velocity decay, and transonic zone analysis.
+
+#### G7 Ballistic Coefficient
+
+G7 BC is calculated from G1 BC using boat tail angle conversion factors:
+
+```
+BC_G7 = BC_G1 / conversion_factor
+```
+
+Conversion factors:
+- **Flat base** (0°): 2.3
+- **5-7° boat tail**: 2.1
+- **7-9° boat tail**: 2.0
+- **9-11° boat tail**: 1.95
+
+#### Air Density
+
+Air density calculated using ideal gas law:
+
+```
+ρ = (P_pa × 0.0289644) / (8.31446 × T_kelvin)
+```
+
+Where:
+- `ρ` = air density (kg/m³)
+- `P_pa` = pressure in Pascals (hPa × 100)
+- `T_kelvin` = temperature in Kelvin (Celsius + 273.15)
+- `0.0289644` = molar mass of dry air (kg/mol)
+- `8.31446` = universal gas constant (J/(mol·K))
+
+#### Speed of Sound
+
+```
+c = 331.3 × √(T_kelvin / 273.15)
+```
+
+Transonic thresholds:
+- **Transonic entry**: Mach 1.1 = 1.1 × c
+- **Transonic exit**: Mach 0.9 = 0.9 × c
+
+#### G7 Drag Table
+
+The calculator uses the G7 reference drag table (CD vs Mach) with linear interpolation between table points. The bullet's drag coefficient is calculated as:
+
+```
+CD = i7 × CD_G7(mach)
+```
+
+Where `i7` (G7 form factor) = `SD / BC_G7`
+
+#### Trajectory Integration (RK4)
+
+State vector: `[x, y, vx, vy]`
+
+Derivatives:
+```
+dx/dt = vx
+dy/dt = vy
+dvx/dt = -(F_drag / m) × (vx / v)
+dvy/dt = -(F_drag / m) × (vy / v) - g
+```
+
+Where:
+- `F_drag = 0.5 × ρ × v² × CD × A`
+- `A` = bullet cross-sectional area (m²)
+- `m` = bullet mass (kg)
+- `g` = 9.80665 m/s²
+
+RK4 integration with time step `dt = 0.001` seconds.
+
+#### Spin Drift (Litz Formula)
+
+```
+drift_inches = 1.25 × (SG + 1.2) × (bullet_length_calibers^1.83)
+```
+
+Where:
+- `SG` = Miller stability factor
+- `bullet_length_calibers` = L / d (length in calibers)
+
+Drift accumulates with range and is converted to millimeters for display.
+
+#### BC Truing Factor
+
+Reference formula (display only):
+```
+BC_true = BC_nominal × (V_measured / V_calculated)^(1/2)
+```
+
+This formula is shown for reference; actual truing requires field measurement data.
+
 ## Material Database
 
 Built-in materials with densities:
@@ -337,6 +454,8 @@ BulletDesigner/
 ├── LICENSE                # MIT License
 ├── Commands/              # Command implementations
 │   ├── CreateBullet.py
+│   ├── BallisticCalculator.py
+│   ├── TrajectoryCalculator.py
 │   ├── BallisticCalculator.py
 │   ├── CreateCartridge.py
 │   ├── BulletLibrary.py
