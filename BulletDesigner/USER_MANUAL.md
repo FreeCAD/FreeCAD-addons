@@ -9,9 +9,10 @@
 5. [Parameter Guide](#parameter-guide)
 6. [Important Constraints](#important-constraints)
 7. [Ballistic Calculator](#ballistic-calculator)
-8. [Exporting Bullets](#exporting-bullets)
-9. [Tips and Best Practices](#tips-and-best-practices)
-10. [Troubleshooting](#troubleshooting)
+8. [Trajectory & Transonic Calculator](#trajectory--transonic-calculator)
+9. [Exporting Bullets](#exporting-bullets)
+10. [Tips and Best Practices](#tips-and-best-practices)
+11. [Troubleshooting](#troubleshooting)
 
 ## Introduction
 
@@ -44,6 +45,7 @@ After installation, you'll see the Bullet Designer toolbar with the following co
 
 - **Create Bullet**: Create a new parametric bullet object
 - **Ballistic Calculator**: Calculate stability and ballistic coefficients
+- **Trajectory & Transonic Calculator**: Calculate bullet trajectory with transonic zone analysis
 - **Create Cartridge**: (Placeholder - coming soon)
 - **Bullet Library**: (Placeholder - coming soon)
 - **Export Tools**: Export bullets to STL or STEP format
@@ -236,6 +238,130 @@ The ballistic calculator helps you analyze bullet stability and performance.
 - **Sectional Density**: Weight per unit of frontal area
 - **Recommended Twist Rate**: Calculated using Greenhill formula
 
+## Trajectory & Transonic Calculator
+
+The Trajectory & Transonic Calculator provides detailed trajectory analysis including velocity decay, drop, spin drift, and transonic zone detection. This tool uses advanced RK4 numerical integration to simulate bullet flight through the atmosphere.
+
+### Accessing the Calculator
+
+1. Go to menu: `Bullet Designer` → `Calculate` → `Trajectory & Transonic`
+2. Or use keyboard shortcut: `T` (when Bullet Designer workbench is active)
+
+### Input Parameters
+
+The calculator can automatically load parameters from a selected bullet object, or you can enter them manually:
+
+**Bullet Parameters:**
+- **Diameter**: Bullet diameter in millimeters
+- **Length**: Bullet length in millimeters
+- **Weight**: Bullet weight in grains
+- **Boat Tail Angle**: Boat tail angle in degrees (0° for flat base)
+  - Used for G7 BC conversion
+  - Typical values: 7-9° for most boat tail bullets
+- **BC G1**: G1 ballistic coefficient
+  - Can be auto-calculated from bullet geometry
+  - Or manually entered if you have measured BC values
+
+**Launch Conditions:**
+- **Muzzle Velocity**: Initial velocity in meters per second
+- **Barrel Elevation**: Barrel elevation angle in degrees (0° = horizontal)
+  - Positive values = upward angle
+  - Negative values = downward angle
+
+**Atmospheric Conditions:**
+- **Temperature**: Air temperature in Celsius
+  - Standard: 15°C (59°F)
+- **Pressure**: Atmospheric pressure in hectopascals (hPa)
+  - Standard sea level: 1013.25 hPa
+  - Altitude affects pressure (decreases with altitude)
+
+**Calculation Range:**
+- **Max Range**: Maximum distance to calculate trajectory (meters)
+  - Default: 2000 m
+  - Range: 100-5000 m
+
+### Understanding the Results
+
+**Trajectory Table:**
+The calculator displays a table with trajectory data at 100-meter intervals:
+
+- **Range (m)**: Distance from muzzle
+- **Velocity (m/s)**: Bullet velocity at that range
+- **Mach**: Mach number (velocity / speed of sound)
+- **Drop (cm)**: Bullet drop below line of sight (in centimeters)
+- **Spin Drift (mm)**: Lateral drift due to bullet spin (cumulative in millimeters)
+- **Time (s)**: Time of flight to that range
+
+**Summary Information:**
+The summary box displays:
+
+- **BC G1 and BC G7**: Ballistic coefficients
+  - G1: Standard drag model
+  - G7: Modern drag model (converted from G1 based on boat tail angle)
+- **Sectional Density**: Weight per unit frontal area
+- **G7 Form Factor**: Used for drag calculations
+- **Air Density**: Calculated from temperature and pressure
+- **Speed of Sound**: Calculated from temperature
+
+**Transonic Zone Analysis:**
+The calculator identifies critical velocity zones:
+
+- **Transonic Entry**: Range where bullet enters transonic zone (Mach 1.1)
+  - Bullets experience increased drag and potential instability
+  - Highlighted in orange
+- **Transonic Zone**: Range between Mach 1.1 and Mach 0.9
+  - Most critical for stability
+  - Bullets may experience yaw and increased dispersion
+- **Fully Subsonic**: Range where bullet drops below Mach 0.9
+  - Highlighted in green
+  - Drag characteristics stabilize
+
+**Stability Warning:**
+If stability factor (SG) at transonic entry is below threshold:
+- **Monolithic copper/brass bullets**: Warning if SG < 1.8
+- **Lead-core bullets**: Warning if SG < 1.5
+- Red warning message displayed in summary
+
+**BC Truing Formula:**
+Reference formula shown for field truing:
+```
+BC_true = BC_nominal × (V_measured / V_calculated)^(1/2)
+```
+This formula helps adjust BC values based on actual velocity measurements.
+
+### Practical Applications
+
+**Long-Range Shooting:**
+- Use trajectory table to determine holdover at various ranges
+- Identify transonic zone to understand where accuracy may degrade
+- Check spin drift for windage compensation
+
+**Bullet Design Optimization:**
+- Compare different bullet designs by running multiple calculations
+- Optimize boat tail angle for best G7 BC
+- Verify stability through transonic zone
+
+**Load Development:**
+- Test different muzzle velocities
+- Adjust BC values based on measured velocities (BC truing)
+- Compare performance at different atmospheric conditions
+
+### Tips for Accurate Results
+
+1. **Use Measured BC**: If you have chronograph data, use measured BC values rather than estimated
+2. **Correct Atmospheric Conditions**: Enter actual temperature and pressure for your shooting location
+3. **Boat Tail Angle**: Accurate boat tail angle improves G7 BC conversion
+4. **Stability Check**: Always verify stability factor is above threshold at transonic entry
+5. **Range Limits**: Set max range appropriate to your shooting distance to reduce calculation time
+
+### Limitations
+
+- **Point Mass Model**: Assumes bullet is a point mass (no yaw, precession, or nutation)
+- **Standard Atmosphere**: Uses ideal gas law (doesn't account for humidity)
+- **No Wind**: Wind effects are not included
+- **Spin Drift Approximation**: Uses empirical formula (may vary for extreme designs)
+- **G7 Drag Table**: Uses standard G7 reference drag table (may not match all bullet shapes exactly)
+
 ## Exporting Bullets
 
 ### Export Formats
@@ -268,6 +394,7 @@ The ballistic calculator helps you analyze bullet stability and performance.
 4. **Add Boat Tail Last**: Boat tail affects body length available for bands
 5. **Use Live Preview**: Enable to see changes in real-time
 6. **Check Ballistic Calculator**: Verify stability before finalizing design
+7. **Run Trajectory Calculator**: Analyze trajectory and transonic behavior for long-range applications
 
 ### Common Design Patterns
 
@@ -414,6 +541,12 @@ For issues, questions, or feature requests:
 ## Version Information
 
 This manual is for Bullet Designer version 1.0.0 and FreeCAD 0.21+.
+
+**Recent Updates:**
+- Added Trajectory & Transonic Calculator with RK4 integration
+- G7 ballistic coefficient conversion
+- Transonic zone detection and stability warnings
+- Spin drift calculation using Litz formula
 
 ---
 
