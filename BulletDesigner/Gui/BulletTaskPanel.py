@@ -351,16 +351,36 @@ class BulletTaskPanel:
         try:
             # Basic
             if hasattr(self.bullet_obj, "DesignType"):
-                index = self.design_type_combo.findText(self.bullet_obj.DesignType)
+                # Block signals to prevent triggering _on_design_type_changed during load
+                obj_design_type = self.bullet_obj.DesignType
+                App.Console.PrintMessage(f"=== _load_values() - Loading DesignType ===\n")
+                App.Console.PrintMessage(f"  bullet_obj.DesignType = {obj_design_type}\n")
+                App.Console.PrintMessage(f"  Combo box currentText before load: {self.design_type_combo.currentText()}\n")
+                self.design_type_combo.blockSignals(True)
+                index = self.design_type_combo.findText(obj_design_type)
                 if index >= 0:
                     self.design_type_combo.setCurrentIndex(index)
+                    App.Console.PrintMessage(f"  Set combo box to index {index} ({obj_design_type})\n")
+                else:
+                    App.Console.PrintWarning(f"  WARNING: DesignType '{obj_design_type}' not found in combo box!\n")
+                self.design_type_combo.blockSignals(False)
+                App.Console.PrintMessage(f"  Combo box currentText after load: {self.design_type_combo.currentText()}\n")
             if hasattr(self.bullet_obj, "LandRiding"):
                 land_riding_val = bool(self.bullet_obj.LandRiding)
+                App.Console.PrintMessage(f"=== _load_values() - Loading LandRiding ===\n")
+                App.Console.PrintMessage(f"  bullet_obj.LandRiding = {land_riding_val}\n")
+                App.Console.PrintMessage(f"  Checkbox isChecked() before load: {self.land_riding_checkbox.isChecked()}\n")
+                # Block signals to prevent triggering _on_land_riding_changed during load
+                self.land_riding_checkbox.blockSignals(True)
                 self.land_riding_checkbox.setChecked(land_riding_val)
+                self.land_riding_checkbox.blockSignals(False)
+                App.Console.PrintMessage(f"  Set checkbox to {land_riding_val}\n")
+                App.Console.PrintMessage(f"  Checkbox isChecked() after load: {self.land_riding_checkbox.isChecked()}\n")
                 # Update land diameter visibility based on land riding state
                 self.land_diameter_label.setVisible(land_riding_val)
                 self.land_diameter_spin.setVisible(land_riding_val)
                 self.land_diameter_spin.setEnabled(land_riding_val)
+                App.Console.PrintMessage(f"  Updated UI visibility: land_diameter_label/spin visible={land_riding_val}, enabled={land_riding_val}\n")
             if hasattr(self.bullet_obj, "Diameter"):
                 self.diameter_spin.setValue(to_float(self.bullet_obj.Diameter))
             if hasattr(self.bullet_obj, "LandDiameter"):
@@ -480,6 +500,7 @@ class BulletTaskPanel:
     def _on_land_riding_changed(self, state):
         """Handle land riding checkbox change."""
         if not self.bullet_obj:
+            App.Console.PrintMessage(f"=== _on_land_riding_changed() - No bullet_obj, returning ===\n")
             return
         
         # Skip during initial load
@@ -489,16 +510,25 @@ class BulletTaskPanel:
         
         is_checked = (state == 2)  # Qt.Checked = 2
         
-        App.Console.PrintMessage(f"=== _on_land_riding_changed() - Land riding set to {is_checked} ===\n")
+        # Get current value before change
+        old_land_riding = self.bullet_obj.LandRiding if hasattr(self.bullet_obj, "LandRiding") else "None"
+        App.Console.PrintMessage(f"=== _on_land_riding_changed() ===\n")
+        App.Console.PrintMessage(f"  Checkbox state: {state} (Qt.Checked=2)\n")
+        App.Console.PrintMessage(f"  Old LandRiding: {old_land_riding}\n")
+        App.Console.PrintMessage(f"  New LandRiding: {is_checked}\n")
+        App.Console.PrintMessage(f"  Checkbox isChecked(): {self.land_riding_checkbox.isChecked()}\n")
         
         # Show/hide land diameter based on checkbox state
         self.land_diameter_label.setVisible(is_checked)
         self.land_diameter_spin.setVisible(is_checked)
         self.land_diameter_spin.setEnabled(is_checked)
+        App.Console.PrintMessage(f"  Updated UI visibility: land_diameter_label/spin visible={is_checked}, enabled={is_checked}\n")
         
         # Update object property
         if hasattr(self.bullet_obj, "LandRiding"):
             self.bullet_obj.LandRiding = is_checked
+            App.Console.PrintMessage(f"  Set bullet_obj.LandRiding = {is_checked}\n")
+            App.Console.PrintMessage(f"  Verified bullet_obj.LandRiding = {self.bullet_obj.LandRiding}\n")
         
         # Force recompute to update geometry immediately
         try:
@@ -519,6 +549,7 @@ class BulletTaskPanel:
     def _on_design_type_changed(self, design_type):
         """Called when design type changes."""
         if not self.bullet_obj:
+            App.Console.PrintMessage(f"=== _on_design_type_changed() - No bullet_obj, returning ===\n")
             return
         
         # Skip during initial load
@@ -526,7 +557,18 @@ class BulletTaskPanel:
             App.Console.PrintMessage(f"=== _on_design_type_changed() - Skipped (initial load) ===\n")
             return
         
-        App.Console.PrintMessage(f"=== _on_design_type_changed() - Design type changed to {design_type} ===\n")
+        # Get current value before change
+        old_design_type = self.bullet_obj.DesignType if hasattr(self.bullet_obj, "DesignType") else "None"
+        App.Console.PrintMessage(f"=== _on_design_type_changed() ===\n")
+        App.Console.PrintMessage(f"  Old DesignType: {old_design_type}\n")
+        App.Console.PrintMessage(f"  New DesignType: {design_type}\n")
+        App.Console.PrintMessage(f"  Combo box currentText: {self.design_type_combo.currentText()}\n")
+        
+        # CRITICAL: Set the DesignType property first, otherwise _load_values() will reset it
+        if hasattr(self.bullet_obj, "DesignType"):
+            self.bullet_obj.DesignType = design_type
+            App.Console.PrintMessage(f"  Set bullet_obj.DesignType = {design_type}\n")
+            App.Console.PrintMessage(f"  Verified bullet_obj.DesignType = {self.bullet_obj.DesignType}\n")
         
         # Update defaults based on design type (DO NOT change LandRiding)
         if design_type == "VLD":
