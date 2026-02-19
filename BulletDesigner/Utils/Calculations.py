@@ -96,17 +96,22 @@ def calculate_recommended_twist_rate(
     Calculate recommended barrel twist rate using Greenhill formula or Miller-based formula.
     
     For monolithic copper/brass bullets, uses Miller-based required twist calculation:
-    T_required = d × √[(30 × m) / (1.8 × d³ × l × (1 + l²))] × (2800/V)^(1/6)
+    T_required = d_effective × √[(30 × m) / (1.8 × d_effective³ × l × (1 + l²))] × (2800/V)^(1/6)
     
     For lead-core bullets, uses Greenhill formula:
     T = 150 * D^2 / L (or with velocity correction for V > 2800 fps)
+    
+    CRITICAL: Uses d_effective (band diameter), NOT nominal diameter.
+    For land-riding bullets: d_effective = band diameter (typically 6.5-6.6 mm, NOT 6.7 mm)
     
     Args:
         diameter_mm: Bullet diameter in millimeters (nominal/groove diameter)
         length_mm: Bullet length in millimeters
         weight_grains: Bullet weight in grains
         velocity_mps: Muzzle velocity in meters per second (default 853 m/s = ~2800 fps)
-        effective_diameter_mm: Effective diameter at bearing bands (if None, uses diameter_mm)
+        effective_diameter_mm: Effective diameter at bearing bands (band diameter for land-riding bullets).
+                                For land-riding bullets: typically 6.5-6.6 mm (NOT 6.7 mm nominal).
+                                If None, uses diameter_mm.
         material_density_g_per_cm3: Material density in g/cm³ (used to determine bullet type)
         
     Returns:
@@ -123,10 +128,11 @@ def calculate_recommended_twist_rate(
             is_monolithic_copper_brass = True
     
     # Use effective diameter (bearing band diameter) if provided
+    # CRITICAL: For land-riding bullets, d_effective = band diameter (typically 6.5-6.6 mm, NOT 6.7 mm)
     d_effective_mm = effective_diameter_mm if effective_diameter_mm is not None else diameter_mm
     
     # Convert to inches (formula uses imperial units)
-    diameter_inches = d_effective_mm / 25.4
+    d_effective_inches = d_effective_mm / 25.4
     length_inches = length_mm / 25.4
     
     # Convert velocity to fps
@@ -134,14 +140,14 @@ def calculate_recommended_twist_rate(
     
     if is_monolithic_copper_brass:
         # Miller-based required twist for monolithic copper/brass bullets
-        # T_required = d × √[(30 × m) / (1.8 × d³ × l × (1 + l²))] × (2800/V)^(1/6)
-        length_calibers = length_inches / diameter_inches
+        # T_required = d_effective × √[(30 × m) / (1.8 × d_effective³ × l × (1 + l²))] × (2800/V)^(1/6)
+        length_calibers = length_inches / d_effective_inches
         
         # Calculate numerator: 30 × m
         numerator = 30.0 * weight_grains
         
-        # Calculate denominator: 1.8 × d³ × l × (1 + l²)
-        denominator = 1.8 * (diameter_inches ** 3) * length_calibers * (1.0 + length_calibers ** 2)
+        # Calculate denominator: 1.8 × d_effective³ × l × (1 + l²)
+        denominator = 1.8 * (d_effective_inches ** 3) * length_calibers * (1.0 + length_calibers ** 2)
         
         # Calculate square root term
         sqrt_term = math.sqrt(numerator / denominator) if denominator > 0 else 0.0
@@ -152,15 +158,15 @@ def calculate_recommended_twist_rate(
         else:
             velocity_correction = 1.0
         
-        # Final twist rate
-        twist_rate = diameter_inches * sqrt_term * velocity_correction
+        # Final twist rate: T_required = d_effective × sqrt_term × velocity_correction
+        twist_rate = d_effective_inches * sqrt_term * velocity_correction
     else:
         # Greenhill formula for lead-core bullets
         if velocity_fps <= 2800:
-            twist_rate = 150.0 * (diameter_inches ** 2) / length_inches
+            twist_rate = 150.0 * (d_effective_inches ** 2) / length_inches
         else:
             velocity_factor = math.sqrt(velocity_fps / 2800.0)
-            twist_rate = 150.0 * (diameter_inches ** 2) / length_inches * velocity_factor
+            twist_rate = 150.0 * (d_effective_inches ** 2) / length_inches * velocity_factor
     
     # Round to nearest reasonable value (typically 7, 8, 9, 10, 12, 14)
     twist_rate = round(twist_rate)
@@ -185,23 +191,30 @@ def calculate_stability_factor_miller(
     """
     Calculate stability factor using Miller's formula with modified threshold for monolithic bullets.
     
-    FORMULA:
-    Sg = (30 × m × (V/2800)^(1/3)) / ((T/d)² × d³ × l × (1 + l²))
+    CORRECTED FORMULA (3 steps):
+    
+    Step 1: Basic calculation
+    l = L / d_effective
+    t = T / d_effective
+    Sg = (30 × m) / (t² × d_effective³ × l × (1 + l²))
+    
+    Step 2: Velocity correction
+    Sg_corrected = Sg × (V_fps / 2800)^(1/3)
+    
+    Step 3: Stability threshold
+    Monolithic copper/brass: Sg_corrected ≥ 1.8
+    Lead-core bullets: Sg_corrected ≥ 1.5
     
     WHERE:
     - m = bullet mass (grains)
-    - V = muzzle velocity (ft/sec)
+    - V_fps = muzzle velocity (ft/sec)
     - T = twist rate (inches per turn)
-    - d = effective bullet diameter (inches) - use bearing band diameter for land-riding bullets
-    - l = bullet length in calibers = L/d
+    - d_effective = effective bullet diameter (inches) - use bearing band diameter for land-riding bullets
+    - l = bullet length in calibers = L/d_effective
     - L = bullet length (inches)
     
-    STABILITY THRESHOLD:
-    - Monolithic copper/brass bullets: Sg ≥ 1.8
-    - Lead-core bullets: Sg ≥ 1.5
-    
-    CRITICAL: Use EFFECTIVE diameter for land-riding/banded bullets, not nominal diameter.
-    The effective diameter is the diameter at the bearing bands, not the full bullet diameter.
+    CRITICAL: Use d_effective (band diameter), NOT nominal diameter.
+    For land-riding bullets: d_effective = band diameter (typically 6.5-6.6 mm, NOT 6.7 mm)
     
     Args:
         diameter_mm: Bullet diameter in millimeters (nominal/groove diameter)
@@ -211,7 +224,9 @@ def calculate_stability_factor_miller(
         velocity_mps: Muzzle velocity in meters per second (default ~853 m/s = ~2800 fps)
         temperature_c: Temperature in Celsius (default 15°C = ~59°F)
         pressure_hpa: Atmospheric pressure in hectopascals (default 1013.25 hPa = 29.92 inHg)
-        effective_diameter_mm: Effective diameter at bearing bands (if None, uses diameter_mm)
+        effective_diameter_mm: Effective diameter at bearing bands (band diameter for land-riding bullets).
+                                For land-riding bullets: typically 6.5-6.6 mm (NOT 6.7 mm nominal).
+                                If None, uses diameter_mm.
         material_density_g_per_cm3: Material density in g/cm³ (used to determine if monolithic copper/brass)
         
     Returns:
@@ -236,12 +251,12 @@ def calculate_stability_factor_miller(
     stability_threshold = 1.8 if is_monolithic_copper_brass else 1.5
     
     # Use effective diameter (bearing band diameter) if provided, otherwise use nominal diameter
-    # For land-riding bullets, effective diameter is the groove diameter (where bands engage)
+    # CRITICAL: For land-riding bullets, d_effective = band diameter (typically 6.5-6.6 mm, NOT 6.7 mm)
     # For groove-riding bullets, effective diameter equals nominal diameter
     d_effective_mm = effective_diameter_mm if effective_diameter_mm is not None else diameter_mm
     
     # Convert to inches (formula uses imperial units)
-    diameter_inches = d_effective_mm / 25.4
+    d_effective_inches = d_effective_mm / 25.4
     length_inches = length_mm / 25.4
     
     # Mass in grains
@@ -250,13 +265,30 @@ def calculate_stability_factor_miller(
     # Convert velocity to fps
     velocity_fps = velocity_mps * 3.28084
     
-    # Length in calibers (critical: Miller uses length/diameter, not absolute length)
-    length_calibers = length_inches / diameter_inches
+    # Step 1: Basic calculation
+    # Length in calibers: l = L / d_effective
+    length_calibers = length_inches / d_effective_inches
     
-    # Twist rate in calibers per turn
-    twist_calibers = twist_rate_inches / diameter_inches
+    # Twist rate in calibers per turn: t = T / d_effective
+    twist_calibers = twist_rate_inches / d_effective_inches
     
-    # Convert metric inputs to imperial for corrections
+    # Basic Miller formula: Sg = (30 × m) / (t² × d_effective³ × l × (1 + l²))
+    stability = (30.0 * mass_grains) / (
+        (twist_calibers ** 2) * 
+        (d_effective_inches ** 3) * 
+        length_calibers * 
+        (1.0 + length_calibers ** 2)
+    )
+    
+    # Step 2: Velocity correction
+    # Sg_corrected = Sg × (V_fps / 2800)^(1/3)
+    if velocity_fps > 0:
+        velocity_correction = math.pow(velocity_fps / 2800.0, 1.0 / 3.0)
+    else:
+        velocity_correction = 1.0
+    stability = stability * velocity_correction
+    
+    # Convert metric inputs to imperial for atmospheric corrections
     # Temperature: Celsius to Fahrenheit
     temperature_f = (temperature_c * 9.0 / 5.0) + 32.0
     # Pressure: hPa to inHg (1 hPa = 0.0295299830714 inHg)
@@ -269,24 +301,8 @@ def calculate_stability_factor_miller(
     # Pressure correction (standard is 29.92 inHg)
     pressure_correction = math.sqrt(pressure_inhg / 29.92)
     
-    # Velocity correction factor: f_v = (v/2800)^(1/3)
-    # Standard reference velocity is 2800 fps
-    if velocity_fps > 0:
-        velocity_correction = math.pow(velocity_fps / 2800.0, 1.0 / 3.0)
-    else:
-        velocity_correction = 1.0
-    
-    # Miller's formula with velocity correction: Sg = (30 × m × (V/2800)^(1/3)) / ((T/d)² × d³ × l × (1 + l²))
-    # Note: The velocity correction is already applied above, so we multiply it in
-    stability = (30.0 * mass_grains * velocity_correction) / (
-        (twist_calibers ** 2) * 
-        (diameter_inches ** 3) * 
-        length_calibers * 
-        (1.0 + length_calibers ** 2)
-    )
-    
     # Apply atmospheric corrections
-    stability *= temp_correction * pressure_correction
+    stability = stability * temp_correction * pressure_correction
     
     # Round to 2 decimal places for display
     return (round(stability, 2), stability_threshold)

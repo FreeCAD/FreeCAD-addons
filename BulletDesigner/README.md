@@ -194,31 +194,46 @@ For detailed step-by-step instructions, see the **[User Manual](USER_MANUAL.md)*
 
 The stability factor (Sg) indicates bullet stability using Miller's formula with modified thresholds for monolithic bullets.
 
-**FORMULA:**
+**CORRECTED FORMULA (3 Steps):**
+
+**Step 1: Basic Calculation**
 ```
-Sg = (30 × m × (V/2800)^(1/3)) / ((T/d)² × d³ × l × (1 + l²))
+l = L / d_effective
+t = T / d_effective
+Sg = (30 × m) / (t² × d_effective³ × l × (1 + l²))
 ```
+
+**Step 2: Velocity Correction**
+```
+Sg_corrected = Sg × (V_fps / 2800)^(1/3)
+```
+
+**Step 3: Stability Threshold**
+- **Monolithic copper/brass bullets**: Sg_corrected ≥ 1.8 (stable)
+- **Lead-core bullets**: Sg_corrected ≥ 1.5 (stable)
+- **1.0 < Sg_corrected < threshold**: Marginally stable
+- **Sg_corrected < 1.0**: Unstable
 
 **WHERE:**
 - `m` = bullet mass (grains)
-- `V` = muzzle velocity (ft/sec)
+- `V_fps` = muzzle velocity (ft/sec)
 - `T` = twist rate (inches per turn)
-- `d` = effective bullet diameter (inches) - **use bearing band diameter for land-riding bullets**
-- `l` = bullet length in calibers = L/d
+- `d_effective` = **effective bullet diameter** (inches) - **use bearing band diameter for land-riding bullets**
+- `l` = bullet length in calibers = L / d_effective
 - `L` = bullet length (inches)
+- `t` = twist rate in calibers per turn = T / d_effective
 
-**STABILITY THRESHOLDS:**
-- **Monolithic copper/brass bullets**: Sg ≥ 1.8 (stable)
-- **Lead-core bullets**: Sg ≥ 1.5 (stable)
-- **1.0 < Sg < threshold**: Marginally stable
-- **Sg < 1.0**: Unstable
+**CRITICAL:** Use **d_effective** (band diameter), **NOT nominal diameter**.
 
-**CRITICAL:** Use **effective diameter** (diameter at bearing bands) for land-riding/banded bullets, not nominal diameter. The effective diameter is the groove diameter where the bands engage the rifling.
+- For **land-riding bullets**: `d_effective` = band diameter (typically 6.5-6.6 mm, **NOT** 6.7 mm nominal)
+- For **groove-riding bullets**: `d_effective` = nominal diameter
+
+The effective diameter is the diameter at the bearing bands where the bullet engages the rifling.
 
 **Atmospheric Corrections:**
 - Temperature correction: `√((T_F + 459.67) / 518.67)`
 - Pressure correction: `√(P_inHg / 29.92)`
-- Velocity correction: `(V_fps / 2800)^(1/3)`
+- Applied after velocity correction
 
 **Sources:** Litz, Applied Ballistics; Courtney & Courtney (2012)
 
@@ -278,21 +293,24 @@ L = (Ogive Caliber Ratio × Diameter) / 2
 
 **For Monolithic Copper/Brass Bullets:**
 ```
-T_required = d × √[(30 × m) / (1.8 × d³ × l × (1 + l²))] × (2800/V)^(1/6)
+T_required = d_effective × √[(30 × m) / (1.8 × d_effective³ × l × (1 + l²))] × (2800/V)^(1/6)
 ```
 
 **For Lead-Core Bullets (Greenhill Formula):**
-- Standard (V ≤ 2800 fps): `T = 150 × D² / L`
-- High velocity (V > 2800 fps): `T = 150 × D² / L × √(V/2800)`
+- Standard (V ≤ 2800 fps): `T = 150 × d_effective² / L`
+- High velocity (V > 2800 fps): `T = 150 × d_effective² / L × √(V/2800)`
 
 Where:
 - `T` = twist rate (inches per turn)
-- `D` = diameter (inches)
 - `L` = length (inches)
 - `m` = mass (grains)
 - `V` = velocity (fps)
-- `d` = effective diameter (inches)
-- `l` = length in calibers
+- `d_effective` = **effective diameter** (inches) - **use bearing band diameter for land-riding bullets**
+- `l` = length in calibers = L / d_effective
+
+**CRITICAL:** Use **d_effective** (band diameter), **NOT nominal diameter**.
+- For **land-riding bullets**: `d_effective` = band diameter (typically 6.5-6.6 mm, **NOT** 6.7 mm nominal)
+- For **groove-riding bullets**: `d_effective` = nominal diameter
 
 ## Material Database
 
