@@ -419,7 +419,7 @@ For issues, questions, or feature requests, please use the GitHub issue tracker.
 
 ## Version History
 
-### Version 1.0.0 (2025-02-16)
+### Version 1.0.0 (19 FEB 2026)
 - Initial release
 - Parametric bullet creation
 - Ballistic calculator
