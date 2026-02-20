@@ -7,9 +7,9 @@
     <maintainer email="maintainer@example.com">Bullet Designer Team</maintainer>
     <author>Bullet Designer Team</author>
     <license>MIT</license>
-    <url type="repository">https://github.com/Supermagnum/FreeCAD-addons</url>
-    <url type="readme">https://github.com/Supermagnum/FreeCAD-addons/blob/master/BulletDesigner/README.md</url>
-    <url type="documentation">https://github.com/Supermagnum/FreeCAD-addons/blob/master/BulletDesigner/USER_MANUAL.md</url>
+    <url type="repository">https://github.com/Supermagnum/BulletDesigner</url>
+    <url type="readme">https://github.com/Supermagnum/BulletDesigner/blob/main/README.md</url>
+    <url type="documentation">https://github.com/Supermagnum/BulletDesigner/blob/main/USER_MANUAL.md</url>
     <icon>Resources/icons/BulletDesigner.svg</icon>
     <content>
         <workbench>
