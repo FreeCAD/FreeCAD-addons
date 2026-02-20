@@ -1,0 +1,27 @@
+[flake8]
+# Flake8 configuration for Bullet Designer workbench
+# Following FreeCAD coding conventions: https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Fem/coding_conventions.md#python-and-c
+
+# Maximum line length (FreeCAD uses 100)
+max-line-length = 100
+
+# Ignore specific errors that are common in FreeCAD addons
+# E501: line too long (handled by max-line-length)
+# E402: module level import not at top of file (FreeCAD addons often need path manipulation)
+# W503: line break before binary operator (conflicts with W504)
+ignore = E402, W503
+
+# Exclude directories
+exclude = 
+    .git,
+    __pycache__,
+    *.pyc,
+    .FreeCAD,
+    Resources,
+    examples,
+    Data
+
+# Per-file ignores
+per-file-ignores =
+    __init__.py:F401
+    */Commands/*.py:E402

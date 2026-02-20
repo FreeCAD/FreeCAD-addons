@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+    <name>BulletDesigner</name>
+    <description>Comprehensive parametric bullet and projectile design workbench for FreeCAD with advanced ballistic calculations, trajectory analysis, and manufacturing export capabilities. Create precision bullets with customizable ogives, driving bands, boat tails, and material properties. Includes Miller stability calculations, G1/G7 ballistic coefficient estimation, RK4 trajectory integration with transonic zone analysis, and spin drift calculations.</description>
+    <version>1.0.0</version>
+    <date>2026-02-16</date>
+    <maintainer email="maintainer@example.com">Bullet Designer Team</maintainer>
+    <author>Bullet Designer Team</author>
+    <license>MIT</license>
+    <url type="repository">https://github.com/Supermagnum/FreeCAD-addons</url>
+    <url type="readme">https://github.com/Supermagnum/FreeCAD-addons/blob/master/BulletDesigner/README.md</url>
+    <url type="documentation">https://github.com/Supermagnum/FreeCAD-addons/blob/master/BulletDesigner/USER_MANUAL.md</url>
+    <icon>Resources/icons/BulletDesigner.svg</icon>
+    <content>
+        <workbench>
+            <classname>BulletDesignerWorkbench</classname>
+            <subdirectory>./</subdirectory>
+        </workbench>
+        <freecaddependency>0.21</freecaddependency>
+        <pythonminversion>3.8</pythonminversion>
+    </content>
+    <category>Product Design</category>
+    <tag>bullet</tag>
+    <tag>projectile</tag>
+    <tag>ballistics</tag>
+    <tag>ballistic coefficient</tag>
+    <tag>trajectory</tag>
+    <tag>transonic</tag>
+    <tag>stability</tag>
+    <tag>miller formula</tag>
+    <tag>parametric</tag>
+    <tag>design</tag>
+    <tag>ogive</tag>
+    <tag>boat tail</tag>
+    <tag>driving bands</tag>
+    <tag>rifle</tag>
+    <tag>ammunition</tag>
+    <tag>reloading</tag>
+    <tag>precision</tag>
+    <tag>match</tag>
+    <tag>hunting</tag>
+    <tag>copper</tag>
+    <tag>lead</tag>
+    <tag>material database</tag>
+    <tag>export</tag>
+    <tag>STL</tag>
+    <tag>STEP</tag>
+    <tag>manufacturing</tag>
+    <tag>3D printing</tag>
+    <tag>CAD</tag>
+    <tag>RK4</tag>
+    <tag>spin drift</tag>
+    <tag>G1</tag>
+    <tag>G7</tag>
+    <tag>BC</tag>
+    <tag>sectional density</tag>
+    <tag>twist rate</tag>
+    <tag>greenhill</tag>
+    <tag>mach</tag>
+    <tag>velocity</tag>
+    <tag>drop</tag>
+    <tag>long range</tag>
+    <tag>precision shooting</tag>
+</package>

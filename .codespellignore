@@ -1,0 +1,3 @@
+# Codespell ignore list for Bullet Designer
+# FreeCAD API uses "Vertexes" (not "Vertices") as the property name
+Vertexes
