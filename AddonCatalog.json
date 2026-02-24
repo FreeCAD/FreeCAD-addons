@@ -961,6 +961,14 @@
       "zip_url": "https://github.com/joelgraff/pivy_trackers/archive/refs/heads/master.zip"
     }
   ],
+  "PlanarMechSim": [
+    {
+      "repository": "https://github.com/cecilchurms/FreeCAD-PlanarMechSim.git",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/cecilchurms/FreeCAD-PlanarMechSim/archive/refs/heads/master.zip"
+    }
+  ],
   "Plot": [
     {
       "repository": "https://github.com/FreeCAD/Plot",
