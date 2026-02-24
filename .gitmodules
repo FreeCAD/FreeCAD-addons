@@ -461,6 +461,10 @@
     path = pivy_trackers
     url = https://github.com/joelgraff/pivy_trackers
     branch = master
+[submodule "PlanarMechSim"]
+    path = PlanarMechSim
+    url = https://github.com/cecilchurms/FreeCAD-PlanarMechSim
+    branch = master
 [submodule "Plot"]
     path = Plot
     url = https://github.com/FreeCAD/Plot
