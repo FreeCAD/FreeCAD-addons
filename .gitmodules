@@ -665,3 +665,7 @@
 	path = yaml-workbench
 	url = https://github.com/Mambix/FreeCAD-yaml-workbench
     branch = master
+[submodule "AutoAlias"]
+    path = AutoAlias
+    url = https://github.com/FreeCADPraxis/AutoAlias.git
+    branch = main
