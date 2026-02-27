@@ -1405,13 +1405,15 @@
       "branch_display_name": "FreeCAD ≥ v1.0",
       "freecad_min": "1.0.0",
       "zip_url": "https://github.com/Mambix/FreeCAD-yaml-workbench/archive/refs/heads/master.zip"
-    },
-      {
-     "repository": "https://github.com/FreeCADPraxis/AutoAlias",
+    }
+  ],
+  "AutoAlias": [
+    {
+        "repository": "https://github.com/FreeCADPraxis/AutoAlias",
         "git_ref": "main",
         "branch_display_name": "FreeCAD ≥ v1.0",
         "freecad_min": "1.0.0",
         "zip_url": "https://github.com/FreeCADPraxis/AutoAlias/archive/refs/heads/main.zip"
-      }
+    }
   ]
 }
