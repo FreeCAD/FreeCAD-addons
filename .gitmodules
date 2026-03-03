@@ -137,6 +137,10 @@
     path = CubeMenu
     url = https://github.com/triplus/CubeMenu
     branch = master
+[submodule "Cubinets"]
+	path = Cubinets
+	url = https://github.com/foreachidea/Cubinets
+	branch = master
 [submodule "cura_engine"]
     path = cura_engine
     url = https://github.com/cblt2l/FreeCAD-CuraEngine-Plugin

@@ -312,6 +312,14 @@
       "zip_url": "https://github.com/triplus/CubeMenu/archive/refs/heads/master.zip"
     }
   ],
+  "Cubinets": [
+    {
+      "repository": "https://github.com/foreachidea/Cubinets",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "zip_url": "https://github.com/foreachidea/Cubinets/archive/refs/heads/master.zip"
+    }
+  ],
   "cura_engine": [
     {
       "repository": "https://github.com/cblt2l/FreeCAD-CuraEngine-Plugin",
