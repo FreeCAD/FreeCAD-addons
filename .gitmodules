@@ -157,6 +157,10 @@
     path = Design456
     url = https://github.com/MariwanJ/Design456
     branch = main
+[submodule "DesignProof"]
+    path = DesignProof
+    url = https://github.com/Unai-Pz-de-A/FreeCAD-DesignProof
+    branch = main
 [submodule "DesignSPHysics"]
     path = DesignSPHysics
     url = https://github.com/DualSPHysics/DesignSPHysics
